@@ -1,0 +1,62 @@
+\section{Arten des Einsatzes von Software Engineering}
+Aufgrund der unterschiedlichen Art von Software sind gewisse Verfahren nur in einem bestimmten Bereich nützlich.
+
+\subsection{Nähe und Anzahl der Kunden}
+Zu unterscheiden ist hier zwischen Individual- und Standardsoftware:
+
+\begin{itemize}
+    \item \textbf{Individualsoftware} wird von einem einzelnen Kunden beauftragt, durch den die Anforderungen (i.d.R.) sehr genau bestimmt werden.
+    \item \textbf{Standardsoftware} entwickeln bedeutet, einen großen Kreis von Kunden mit unterschiedlichen Anforderungen / Bedürfnissen\footnote{Geduld, Lernbereitschaft, Geld, Wissen, ...} zu bedienen (bspw. Steuersoftware, Textverarbeitung, Grafikprogramme).
+    Die Herausforderung hierbei ist, die Software so zu entwickeln, dass möglichst viele Wünsche / Bedürfnisse ohne direkte Befragung abgedeckt / vorgeahnt sind
+\end{itemize}
+
+\subsection{Art der Benutzer / der Benutzung}
+Bei \textbf{seltener Benutzung} einer Software sollte darauf geachtet werden, dass die Software robust und intuitiv zu bedienen ist.\\
+
+\noindent
+\textbf{Professionelle, geschulte Anwender}, die \textit{häufig} mit einer Siftware arbeiten, benötigen effektive Werkzeuge, die die Produktivität und Effizienz erhöhen.\\
+
+\noindent
+Müssen beide Benutzergruppen abgedeckt werden, wird es schwieriger.\\
+
+\noindent
+$\rightarrow$ \textit{Usability Engineering} als Zweig des SE beschäftigt sich u.a. mit diesen Fragen.
+
+\subsection{Größe / Komplexität der Software und des Projektes}
+In einem kleineren Projekt mit wenigen Entwicklern sind viele Methoden des SE nicht notwendig und würden den Aufwand unnötig in die Höhe treiben.\\
+
+\noindent
+Dennoch dürfen die \textbf{notwendigen Methoden}\footnote{und Werkzeuge} nicht vernachlässigt werden, um die Produktivität nicht zu gefährden.\\
+
+\noindent
+In großen Projekten mit vielen Entwicklern sind Methoden und ``Zeremonien`` unabdingbar, damit alle produktiv zusammenarbeiten können.
+
+\subsection{Wie kritisch ist nicht-technisches Domänenwissen?}
+Entwickler arbeiten oft in Projekten, in denen die \textit{keine} fachlichen Experten sind (Flugsicherheit, Medizintechnik,\ldots).\\
+Hierbei sind sie auf \textbf{Fachexperten} angewiesen, wobei diese oft garnicht wissen, welche Informationen die Entwickler benötigen $\rightarrow$ hierbei besteht die Gefahr, dass beide Seiten aneinander vorbeireden\footnote{
+womit sich schon seit jeher die Fachliteratur beschäftigt, bspw. \textit{Brooks}' 1975 in \textit{Why did the Tower of Babel fail?} (\cite{Bro95}) sowie \textit{Evans} Anfang der 2000er in \cite{Eva03}, wo er eine \textit{Ubiquitous Language} vorschlägt, die ein einheitliches Vokabular für alle Projektbeteiligten beinhaltet (``Getting all team members to speak the same language``)
+}.\\
+Liegt eine komplexe Fachlichkeit vor, ist es notwendig, Methoden des SE zu benutzen, die zur Lösung solcher Probleme entwickelt wurden (Anforderungsmanagement, Analyse; Wahl eines Vorgehensmodells, um Fachexperten in die Entwicklung einzubinden\footnote{
+man denke hier bspw. an \textit{Cross-Functional Teams}; s. \url{https://en.wikipedia.org/wiki/Cross-functional_team} - abgerufen 24.03.2024
+}).\\
+
+\subsection{Müssen Näherungslösungen verwendet werden?}
+Wenn Anforderungen so beschaffen sind, dass Aufgaben nicht vollständig gelöst werden können (bspw. wegen Komplexität), müssen die Probleme mit \textbf{Näherungsverfahren} gelöst werden.\\
+
+\subsection{Wie kritisch ist Effizienz?}
+In bestimmten Umgebungen muss bei der Implementierung auch auf Effizienz hinsichtlich Laufzeit und Speicherverbrauch geachtet werden, z.B. bei \textit{embedded systems}.\\
+Hier kann sich eine sub-optimale Implementierung negativ auf den Energieverbrauch auswirken.\\
+Müssen hohe Stückzahlen von Hardware günstig produziert werden, wird meist auf ein gewisses Maß an Leistung verzichtet (Prozessor, Speicher), weshalb auch hier die Implementierung besonders effiziente Implementierungen anstreben sollte.\\
+
+\subsection{Wir kritisch ist Verlässlichkeit?}
+Unter \textbf{Verlässlichkeit} versteht man die Summer aus
+\begin{itemize}
+    \item \textbf{Zuverlässigkeit}
+    \item \textbf{Sicherheit}
+    \item \textbf{Verfügbarkeit}
+    \item \textbf{Schutz vor unberechtigtem Zugriff}
+\end{itemize}\\
+
+\noindent
+Einige Programmfehler können bei bestimmten Anwendungen ohne weitere KOnsequenzen sein, in manchen können sie hingegen fatale Auswirkungen haben (Flugsicherheit, Medizintechnik, selbstfahfrende Autos\ldots).
+
