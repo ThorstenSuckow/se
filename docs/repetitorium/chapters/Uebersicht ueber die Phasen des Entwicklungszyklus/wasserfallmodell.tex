@@ -1,0 +1,107 @@
+\section{Wasserfallmodell}
+
+Das \textbf{Wasserfallmodell} löst für \textit{bestimmte} Projekte die Probleme des opportunistischen Vorgehens und ist in \textbf{6 Phasen} aufgeteilt (s. Abbildung~\ref{fig:wasserfallmodell}).\\
+Die Ergebnisse der Phasen sind \textit{Dokumente},\textit{Modelle},\textit{Code} oder \textit{Testprotokolle}, die man zusammenfassen als \textbf{Artefakte} bezeichnet.\\
+
+\subsection*{Eigenschaften des Wasserfallmodells}
+\begin{itemize}
+    \item Die Phasen des Wasserfallmodells folgen \textbf{strikt hintereinander}.
+    \item Ergebnisse abgeschlossener Phasen werden nicht mehr geändert.
+    \item Stellt sich heraus, dass in einer vorhergehenden Phase schwerwiegende Fehler begangen wurden, muss das gesamte Team in diese Phase zurückspringen, den Fehler beheben und von da an jede nachfolgende Phase erneut durchlaufen.
+    \item[] $\rightarrow$ Voraussetzung für ein erolgreiches Arbeiten mit diesem Modell ist eine vollständige und fehlerfreie Erstellung von Artefakten in jeder Phase
+    \item \textbf{Vorteile}:
+        \begin{itemize}
+            \item Bei überschaubaren Projekten bietet das Modell eine genauere Planbarkeit, da spätestens nach dem Entwurf klar ist, welche Arbeiten erledigt werden müssen.
+            \item Die Planung ist in drei Phasen eingeteilt (Anforderung, Analyse, Entwurf), in denen die zu erledigenden Tätigkeiten herausgearbeitet werden können.
+        \end{itemize}
+    \item \textbf{Nachteile}: Bei kaum überschaubaren Objekten bzw. in Projekten mit hoher Eigendynamik und sich laufend ändernden Anforderungen ist das Projekt zu rigide und erlaubt keine die angemessene Flexibilität.
+\end{itemize}
+
+
+
+\begin{figure}
+    \centering
+    \includegraphics[scale=0.3]{chapters/Uebersicht ueber die Phasen des Entwicklungszyklus/img/wasserfallmodell}
+    \caption{Phasen des Wasserfallmodells. (Quelle: in Anlehnung an \cite[318, Abbildung 14-3]{AABG14n})}
+    \label{fig:wasserfallmodell}
+\end{figure}
+
+
+\noindent
+Vorgehensweisen, die auf dem Wasserfallmodell beruhen, sind das \textbf{Tailoring} und der \textbf{Team Software Process (TSP)} des Software Engineering Institute der Carnegie Mellon University.\\
+
+\noindent
+Das \textbf{Wasserfallmodell} ist ein \textit{sequentielles} und \textit{dokumentengetriebenes} Phasenmodell:
+
+\blockquote[{\cite[319]{AABG14n}}]{
+    Während aller Phasen der Systementwicklung, sowohl bei Individualentwicklung
+    wie auch bei der Einführung von Standardsoftware, sollte beispielsweise durch
+    Modelle auf Strategie- und Prozessebene, Machbarkeitsstudie, Fachkonzept, DVKonzept, Implementierungsdokumentation
+    und Testbeschreibungen eine permanente Dokumentation erfolgen.
+}
+
+\subsection{Phasen des Wasserfallmodells}
+
+
+\subsubsection{Anforderungen (1)}
+In dieser Phase arbeitet man sich in die Fachlichkeit ein, um das Geschäftsfeld des Kunden zu verstehen und eine gemeinsame Sprache zu sprechen, wenn es um die Anforderungen der Software geht.\\
+Danach wird mit dem Kunden ein Konzept erstellt, dass die Funktionalität der Software im ersten Release beschreibt - dieses Dokument wird als \textbf{Lastenheft}\footnote{
+oder auch \textit{Vision \& Scope}.
+} bezeichnet.\\
+Es werden auch \textbf{nicht-funktionale} Anforderungen festgehalten, wie bspw. Antwortzeiten, Datenmengen und erwartete Auslastung des Systems (bspw. Benutzerzahlen zu Stoßzeiten).\\
+Die umzusetzende Funktionalität wird anhand von \textbf{Anwendungsfällen} beschrieben.\\
+
+\noindent
+In diesem Kontext spricht man deswegen auch von \textbf{Requirements Engineering}.
+
+
+\subsubsection{Analyse (2)}
+In dieser Phase geht es drum, die grobgranularen Ergebnisse aus der ersten Phase systematisch zu analysieren, um Zusammenhänge und Anläufe besser zu verstehen sowie die Vollständigkeit der Anforderungen zu überprüfen, um danach alles noch detaillierter zu spezifizieren.\\
+Im Zuge dessen wird ein \textbf{Fachkonzept} erstellt, in dem fachliche Zusammenhänge und Geschäftsabläufe in einem Modell \textbf{formalisiert} werden, dem sogenannten \textbf{Domänen-Modell}; die Formalisierung hierbei ist sehr wichtig, um Zweideutigkeiten und Mißverständnisse zu vermeiden\footnote{
+    In diesem Modell sind nicht nur Geschäftsregeln und -logik dokumentiert, sondern auch Wertebereiche von Eingabefeldern.
+}.\\
+Als Beschreibungssprache wird i.d.R. \textbf{UML} verwendet.\\
+
+\noindent
+In diesen  Modellen kommen keinerlei technische Details vor, damit man nicht Gefahr läuft, bereits in dieser Phase technische Details zu diskutieren, und sich klar auf die Anforderungen konzentriert.\\
+
+\noindent
+Anhand des erstellten Modells und der Anforderungen können auch Schnittstellen nach Außen definiert werden, wie bspw. das GUI als Mensch-Maschine-Schnittstelle, oder Schnittstellen zu anderen Systemen (bspw. Import- und/oder Exportschnittstellen).
+
+\noindent
+Da die Phase der Analyse eng mit der Phase der Anforderungen verknüpft ist, werden diese beiden Phasen häufig abwechselnd bearbeitet.
+
+
+\subsubsection{Entwurf (3)}
+In dieser Phase wird das in der Anforderungs-Phase erstellte \textit{Fachkonzept} zu einem \textbf{DV-Konzept} fortgesetzt:
+
+\blockquote[{\cite[319]{AABG14n}}]{
+    Das Ergebnis dieser Phase wird oftmals als DV-Konzept bezeichnet und enthält eine systematische Beschreibung
+    der Daten-, Funktions-, Organisations- und Steuerungssicht des zu entwickelnden Systems.
+}
+
+\noindent
+Es wird ein Modell des Softwaresystems erstellt und die Architektur des Systems geplant.\\
+Anhand dessen können Entwickler zu erstellenden Programmcode, Strukturen und Muster vorschlagen und durchspielen um den für das umzusetzende System besten Ansatz zu finden.\\
+Es werden Schnittstellen einzelner Module spezifiziert.\\
+Auch hier wird wieder \textbf{UML} und objektorientierte Verfahren eingesetzt.\\
+
+\noindent
+\textit{Alpar et al.} merken an, dass dieser Schritt häufig komplex ist.
+Er kann deshalb weiter unterteilt werden in \textit{Grobentwurf} (Hard-, Softwarearchitektur), \textit{Feinentwurf} (Screenlayouts, Programmentwürfe, detaillierte logische Schemata) und \textit{Testplanung} (vgl.~\cite[319]{AABG14n}).
+
+\subsubsection{Implementierung (4)}
+Das \textit{DV-Konzept} wird durch Datenstrukturen und Algorithmen in die Konstrukte der Hard- und Softwareumgebung implementiert (vgl.~\cite[319]{AABG14n}).\\
+Hierbei werden die Systemkomponenten bereits getestet.\\
+Bei den Implementierungen können Top-Down- oder Bottom-Up-Ansätze verfolgt werden\footnote{
+    Top-Down: Funktionen übergeordneter Module werden schrittweise durch detailliertere Low-Level Module realisiert. Bottom-Up: Detaillierte Module werden inkrementell in übergeordnete Komponenten integriert.
+}.\\
+Das Ergebnis dieser Phase sind \textbf{Programmcode} und \textbf{Datenbankschemen}.
+
+\subsubsection{Test (5)}
+Die einzelnen Subsysteme werden in das Gesamtsystem integriert und getestet (\textit{Systemtests}, \textit{Integrationstests}).\\
+Auch die Einhaltung nicht-funktionaler Anforderungen wird überprüft (bspw. durch \textbf{Lasttest}).\\
+Das Ergebnis dieser Phase sind \textbf{Testfälle} und \textbf{Testprotokolle}.
+
+\subsubsection{Einführung und Wartung (6)}
+Das System wird an den Kunden ausgeliefert und geht in den Produktiv- bzw. \textbf{Wirkbetrieb} über, danach wird es durch Wartung und Aktualisierungen \textit{gepflegt}.

@@ -120,6 +120,7 @@
 \usepackage{lstmisc}
 \usepackage{mathtools}
 \usepackage{mdwtab}
+\usepackage{datagidx}
 \hyphenation{Ele-men-tar-ob-jek-te  ab-ge-tas-tet Aus-wer-tung House-holder-Matrix Le-ast-Squa-res-Al-go-ri-th-men} 		% Weitere Silbentrennung bei Bedarf angeben
 \setlength{\textheight}{1.1\textheight}
 \pagestyle{myheadings} 			% Erzeugt selbstdefinierte Kopfzeile
@@ -143,12 +144,28 @@
 
 \addbibresource{literatur.bib}
 
-\renewcommand*{\glstextformat}[1]{\textbf{#1}}
+
+\newglossarystyle{mystyle}{%
+	\setglossarystyle{treegroup}%
+
+	\renewcommand*{\glossentry}[2]{%
+		\glsentryitem{##1}\textbf{\glstarget{##1}{\glossentryname{##1}}}%
+		\par
+		\glossentrydesc{##1}
+		\par
+		\vspace{1cm}
+	}%
+}
+
+\setglossarystyle{mystyle}
+
+
 \makenoidxglossaries
 \loadglsentries{chapters/Glossar/index.tex}
 
 %--------------------------------------------------------------------------
 \begin{document}
+
 %------------------------- Titelblatt -------------------------------------
 	\title{\begin{center}
 			   Repetitorium SE
@@ -194,6 +211,7 @@
 	\input{chapters/Software und Software Engineering/index}
 	\input{chapters/Uebersicht ueber die Phasen des Entwicklungszyklus/index}
 
+	\glsaddall
 	\printnoidxglossary[title=Glossar, toctitle=Glossar]
 
 	\input{chapters/Anhang/index}
@@ -212,5 +230,6 @@
 	\fussy
 
 	\printindex
+
 
 \end{document}
