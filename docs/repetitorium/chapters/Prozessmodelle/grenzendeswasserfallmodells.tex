@@ -1,0 +1,49 @@
+\section{Grenzen des Wasserfallmodells}
+
+\noindent
+Die Beliebtheit des Wasserfallmodells gründet u.a. auf:
+
+\begin{itemize}
+    \item logischer Aufbau der Abfolge der Aktivitäten (Theorie $\rightarrow$ Praxis)
+    \item Ergebnisse einer einzelnen Phase ist Grundlage für die darauffolgende Phase (hohe Effektivität bei fehlerfreien Ergebnissen)
+    \item einfache Verwaltung des Projektes durch das Management; Abschluss einer Phase durch Fertigstellung der Dokumente leicht als \textit{Meilensteine} definierbar
+    \item Kunden wissen, welches Produkt sie erhalten; nach der Anfordeurngsphase sind die Anforderungen klar, weitere Kommunikation nach der Analyse ist nicht mehr notwendig\footnote{
+    der Kunde wird in wenige weitere Phasen miteinbezogen, grundsätzlich läuft die Entwicklung dann aber ohne Kundenfeedback, im Gegensatz zu agilen Prozessen.
+    }
+    \item
+\end{itemize}
+
+\noindent
+Oftmals sprechen (Projekt-)umstände aber gegen den Einsatz des Wasserfallmodells:
+
+\begin{itemize}
+    \item Anforderungen lassen sich zu Beginn nicht \textit{eindeutig} bestimmen: Kunden besitzen eine unklare Vorstellung von dem, was sie benötigen/wollen, was oft erst in Phasen erkannt wird, in dem der Kunde das erste mal mit dem System in Berührung kommt\footnote{
+    was bei dem Wasserfallmodell halt recht spät ist
+    }.
+    Trotzdem soll wegen Zeitdruck bereits früh mit der Entwicklung begonnen werden.
+    \item Kunden fällt die Abstraktion ihrer Anforderungen schwer.
+    Oft lassen sich Anforderungen leichter anhand bereits lauffähiger Software klären, anstatt über Dokumente und Konzepte (\textit{Lastenheft})
+    \item Kunden erhalten erst durch das lauffähige System Feedback darüber, wie ihre Anforderungen tatsächlich verstanden wurden.
+    Ist das der Fall, wurde ein nicht unwesentlicher Aufwand in Entwurf, Implementierung und Tests investiert.
+    \item Bei der Entwicklung der Architektur stellen sich viele Fragen über die Anforderungen mit dem Ergebnis, dass sich die Anforderungen ändern.
+    Oft wird auch klar, dass die Anforderungen (technisch) nicht umsetzbar sind\footnote{
+     das gleiche gilt für den Entwurf, wenn also bspw. das Fachkonzept in ein DV-Konzept gegossen werden soll
+    }.
+    $\rightarrow$ im Wasserfallmodell ist nicht geregelt, wie solche Erkenntnisse Einfluss auf die Anforderungen nehmen können
+    \item Aufwand und Folgen durch den Einsatz neuer Technologien, die bspw. im Entwurf festgelegt werden, können nur schwer eingeschätzt werden, wenn den Entwicklern die Erfahrung damit fehlt.
+    \item Bei dem Einsatz neuer Technologien stellt sich manchmal erst bei der Realisierung heraus, dass bestimmte Architekturen / Vorgehensweisen nicht möglich sind, und in früheren Phasen (Entwurf) andere Entscheidungen hätten getroffen werden sollen.
+    Auch hierfür gibt es im Wasserfallmodell keinen Weg, der diese Erkenntnisse nachträglich in die ggw. Prozessphase (bspw. Entwicklung) einfliessen lassen kann.
+\end{itemize}
+
+\textit{Alpar et al.} merken an, dass aus der umfangreichen Projektdokumentation eine Anzahl von Problemen resultieren kann, und stellen diesbzgl. ähnliche Probleme fest:
+
+\blockquote[{\cite[323]{AABG14n}}]{
+    \begin{itemize}
+        \item Die Anforderungen müssen komplett vor Beginn der Entwicklung vorhanden
+        sein.
+        \item Der Auftraggeber hat Probleme, sämtliche Anforderungen konkret zu formulieren.
+        \item Einige Wünsche der Anwender ergeben sich erst nach der ersten Nutzung.
+        \item Von der Spezifikation der Anforderungen bis zum ersten Release vergehen oft
+        Monate oder Jahre.
+    \end{itemize}
+}
