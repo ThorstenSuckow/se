@@ -1,0 +1,99 @@
+\section{Nicht-funktionale Anforderungen}
+
+\noindent
+\textbf{Nicht-funktionale Anforderungen} werden in \textbf{Qualitätsanforderungen} und \textbf{Randbedingungen} unterschieden:
+
+\begin{itemize}
+    \item \textbf{Qualitätsanforderungen} beschreiben die Qualität oder Eignung eines Systems (Performance, Benutzerfreundlichkeit, \ldots)
+    \item \textbf{Randbedingungen} beschreiben technische Anforderungen (Programmiersprache, Framework, \ldots) oder organisatorische Anforderungen (Budget, Deadlines, \ldots)
+\end{itemize}
+
+\noindent
+Auch nicht-funktionale Anforderungen verursachen Aufwand, da sie in allen Phasen mitberücksichtigt werden müssen.\\
+Es ist deshalb nötig, alle nicht-funktionalen Anforderungen zu priorisieren, und sich gemeinsam mit Kunde und Anwendern auf die notwendigsten zu einigen.\\
+Gute Praxis ist es, die Qualitätsmerkmale genau zu definieren.
+
+\subsection*{Nicht-funktionale Anforderungen sind entscheidend}
+Nicht-funktionale Anforderungen sind insb. entscheidend für die Systemarchitektur.\\
+Es muss zumindest \textit{eine} Systemarchitektur, die die fundamentalen Anforderungen (Erreichbarkeit, Antwortzeiten, Funktionalität) abdeckt.
+
+\subsection*{Systematik der Qualitätsanforderungen}
+Vorgefertigte Kategorien und Typen von Qualitätsmerkmalen können bei der Erfassung von Qualitätsanforderungen helden, die Übersicht zu bewahren und keine wichtige Anforderung zu übersehen\footnote{man nennt dies \textit{systematische Aufstellungen} bzw. \textit{Qualitätssysteme}}.\\
+
+\noindent
+Die im Kurs verwendete Systematik folgt dem Standard \textbf{IEEE 1061-1998}:
+
+\blockquote[{\url{https://standards.ieee.org/ieee/1061/1549/}\footnote{abgerufen 01.04.2024}}]{
+    This IEEE Standards product is part of the family on Software Engineering. A methodology for establishing quality requirements and identifying, implementing, analyzing, and validating the process and product software quality metrics is defined. The methodology spans the entire software life cycle.
+}
+
+\noindent
+Es existieren u.a. folgende Kategoerien:
+
+\begin{itemize}
+    \item \textbf{Verfügbarkeit (Availability)}: geplante Betriebszeit, während der das System vollständig nutzbar ist (formal beschrieben durch Verhältnis tatsächlicher Uptime / geplanter Uptime).
+    Als Ausfallzeit werden i.d.R. nur ungeplante Ausfälle gezählt, aber nicht die Wartungsfenster.
+    \item \textbf{Effizienz (Efficiency)}: Maß, wie gut ein System vorhandene Systemresourcen (Speicher, Prozessorleistung) nutzt.
+    Nötig, wenn mehrere Programme auf dieselben Systemressourcen zugreifen muss, oder wenn Erweiterungen geplant sind
+    \item \textbf{Erweiterbarkeit (Flexibility / Extensibility)}: beschreibt, wie leicht neue Funktionalität in das System eingebaut werden kann, um es zu erweitert.
+    Bspw. können \textbf{Functional Points} verwendet werden, um die Komplexität eines Dialogs im UI zu messen\footnote{jedes \textit{control} erhält hier einen Wert, die Summe ergibt die ``Komplexität``}
+    \item \textbf{Wartbarkeit}: Änderbarkeit des Systems aus technischer Sicht.
+    Hiermit ist vor allem die\textit{Änderung existierender Funktionalität} gemeint, im Gegensatz zu \textbf{Erweiterbarkeit}, die die Erweiterung des Funktionsumfangs beschreibt
+    \item \textbf{Integrität (Integrity)}: Sicherheit des Systems, bspw. gegen unberechtigte Zugriffe
+    \item \textbf{Interoperabilität (Interoperability)}: wie leicht das System mit anderen Systemen kommunizieren oder Daten austauschen kann (bspw. Export in andere Formate, Schnittstellen zu externen Systemen, \ldots)
+    \item \textbf{Zuverlässigkeit (Reliability)}: Durchschnittliche Zeit oder durchschnittliche Anzahl an Operationen, während der ein System fehlerfrei arbeitet
+    \item \textbf{Robustheit (Robustness)}: Das Verhalten des Systems unter fehlerhaften (Rand-)Bedingungen (Falscheingaben, Hardwarefehler, \ldots)
+    \item \textbf{Benutzbarkeit (Usability)}: Bedienbarkeit des Programms, bspw. Ergonomie, Barrierefreiheit, wie lange bestimmte Prozesschritte benötigen, bis sie von einem erfahrenen / unerfahrenen Anwender durchgeführt wurden, \ldots
+    \item \textbf{Portabilität (Portability)}: Aufwand, eine Software auf ein anderes OS eine andere Hardware zu portieren (bspw. \textit{mobile})
+    \item \textbf{Wiederverwendbarkeit (Reusability)}: Anforderung an Wiederverwendbarkeit einzelner Komponenten / Subsysteme in anderen Systemen; bedeutet i.d.R. zusätzlichen Aufwand durch Absprachen der involvierten Teams
+    \item \textbf{Testbarkeit (Testability)}: Software muss so konstruiert sein, dass Testverfahren durchgeführt werden können (bspw. in der Industrie, wenn Testverfahren vorgeschrieben sind). \textbf{Testbarkeit} entspricht zumeist auch \textbf{Wartbarkeit}, da eine Software gut wartbar ist, wenn sie testbar ist, und umgekehrt gut testbar, wenn sie wartbar ist
+    \item \textbf{Performance}: Antwortzeit bei Anfragen an das System.
+    Faustregel: Systeme mit direkter Nutzeraktion sollten 1 sek als Antwortzeit nicht überschreiten; in manchen Umgebungen sind Antwortzeiten nicht garantierbar (Internet), im Embedded-Bereich müssen sie garantiert werden können (vgl.~\cite[62]{Wed09}).
+    Vorhersehbare Kriterien wie Im-/Export großer Datenmengen über das Internet müssen berücksichtigt werden, da sich solche Gegebenheiten auf den Entwurf/die Architektur auswirken können (bspw. wegen Komprimierungsverfahren).
+\end{itemize}
+
+
+\noindent
+Eine genaue Auswahl, Definition und Priorisierung hilft allen Stakeholdern, sich auf gemeinsame und realistische Ziele zu einigen.\\
+Dabei sollte darauf geachtet werden, auch die Anforderungen mit zu erfassen, die nicht Teil eines Standards sind, weil alle geäußerten Anforderungen erheblichen Einfluss auf das Produkt haben können.
+
+
+\subsection*{Technische Randbedingung}
+\textbf{Randbedingungen} sind eine weitere wichtige Kategorie von nicht-funktionalen Anforderungen.\\
+
+\vspace{5mm}
+\begin{tcolorbox}
+    \blockquote[{\cite[65, Hervorhebung eigene]{Wed09}}]{
+        Bei \textbf{Randbedingungen} handelt es sich um Vorgaben vom Kunden, nicht um die Vorstellung der Softwareentwickler.
+    }
+\end{tcolorbox}
+\vspace{5mm}
+
+\noindent
+Unterschieden wird hierbei zwischen \textbf{technischen} und \textbf{organisatorischen} Randbedingungen.\\
+
+\noindent
+Randbedingungen sind nicht priorisierbar, aber es kann angegeben werden, ob diese \textit{fest} oder \textit{anpassbar} sind.
+
+\begin{itemize}
+    \item \textbf{Technische Randbedingungen} definieren die einzusetzenden technischen Komponenten, wie bspw.
+        \begin{itemize}
+            \item Hardware-Infrastruktur
+            \item Software-Infrastruktur
+            \item Programmiersprachen
+            \item Frameworks
+        \end{itemize}
+    \item \textbf{Organisatorische Randbedingungen} sind Vorgaben, die die Organisation des Projektes betreffen, wie bspw.
+    \begin{itemize}
+        \item Termine
+        \item Dokumentationsvorgaben
+        \item Vorgaben zur Vorgehensweise
+        \item Vorgaben zu Tests oder Abnahmeprozessen
+    \end{itemize}
+\end{itemize}
+
+\noindent
+Organisatorische Randbedingungen können im einzelnen auf unterschiedliche Aspekte des Projektes Auswirkungen haben (QS, Implementierung, Projektorganisation).\\
+
+\noindent
+Es kann mitunter herausfordernd sein, zwischen eigenen Ideen und den Kundenanforderungen zu unterscheiden, was aber wichtig ist, da ``Randbedingungen Einschränkungen für mögliche Lösungen darstellen und damit entscheidende Auswirkungen auf die gesamte Tätigkeit haben`` (\cite[65]{Wed09}).
