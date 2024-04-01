@@ -1,0 +1,79 @@
+\section{Anforderungen}
+
+\vspace{5mm}
+\begin{tcolorbox}
+    Die Entwicklung und Einführung einer Software ist für eine Unternehmen dann erfolgreich, wenn die im Vision \& Scope definierten Ziele in der Praxis erreicht werden, unter Voraussetzung, dass die Endanwender auch tatsächlich mit dem System arbeiten können: Hierzu müssen die Anforderungen der Endanwender unter Berücksichtigung der \textbf{Geschäftsanforderungen} des Kunden erfüllt sein (vgl.\cite[54]{Wed09}).
+\end{tcolorbox}
+\vspace{5mm}
+
+\noindent
+Nicht nur die Anforderungen des Kunden sind ein wesentliches Kriterium für die Umsetzung des Projektes, sondern auch die Wünsche und Bedürfnisse der Endanwender müssen gesammelt und dokumentiert werden.\\
+
+\noindent
+Um die Anforderungen auf geeignete Weise schriftlich festzuhalten, was auch als Grundlage für die Vertragsgestaltung sowie zur weiteren Planung dient und Mißverständnissen vorbeugt, kann man folgendes Vorgehen wählen:
+
+\begin{itemize}
+    \item Identifizierung der Endanwender.
+    \item Auswahl von Stakeholdern als Stellvertreter der identifizierten Endanwender.
+    \item Gemeinsame Erarbeitung der Anforderungen mit den Stellvertretern.
+    \item Dokumentation der \textbf{nicht-funktionalen} und \textbf{funktionalen Anforderungen} als User-Storys, Anwendungsfälle, Regeln oder Eventtabellen.
+\end{itemize}
+
+
+\noindent
+\subsubsection*{Anforderungen werden mit dem Anwender erarbeitet}
+Oftmals sind Kunden und Endanwender nicht in der Lage, Bedürfnisse strukturiert und widerspruchsfrei zu äußern, außerdem sind Anforderungen und Lösungverschläge verschiedener Anwender nicht immer miteinander vereinbar oder widersprechen sich oder dem erstellen \textbf{Vision \& Scope}, u.U. liefern Anwender auch (wissentlich) Falschinformationen.\\
+
+\noindent
+Eine unreflektierte Umsetzung der Anforderungen wäre also ein Fehler, weshalb es Aufgabe des Entwicklers ist, gemeinsam mit dem Kunden die Anforderungen zu bearbeiten.
+
+\subsection*{Nutzerklassen}
+Anwender unterscheiden sich (im Bezug auf das neue System) hinsichtlich
+
+\begin{itemize}
+    \item Häufigkeit der Nutzung
+    \item Erfahrung mit dem Umfeld
+    \item ihrer Tätigkeiten und damit der benötigten Features
+    \item Zugriffsrechte
+    \item COmputerexpertise
+\end{itemize}
+
+\noindent
+Basierend darauf ist es möglich, Nutzer in unterschiedliche \textbf{Nutzerklassen} einzuteilen.\\
+Hierbei ist es auch möglich, dass ``Nutzer`` keine Person beschreiben, sondern andere Systeme, die über externe Schnittstellen mit dem geplanten System interagieren werden.
+
+\subsection*{Stellvertreter}
+Damit die verschiedenen Nutzerklassen berücksichtigt werden können, sollten konkrete Personen die jeweiligen Klassen vertreten: Diese definieren die Anforderungen und stimmen diese mit den Stellvertretern anderer Klassen ab.\\
+Ausreichende Entscheidungsbefugnisse der Stellvertreter verhindern unnötige Rückfragen/-versicherungen.\\
+Stellvertreter können auch dabei helfen, Testfälle für das System zu definieren.
+
+\noindent
+Ein Problem bei diesem Ansatz ist, dass die Stellvertreter wirklich die Interessen der Nutzerklassen vertreten, was bspw. über Feedbackschleifen sichergestellt werden kann.\\
+Hierzu können Vertreter des Anforderungsteams gewählt werden, um als Vermittler zu fungieren: Dies kann als Teil des \textit{Informationsprozesses} gesehen werden, der eine \textit {Organisationsentwicklung} begleitet\footnote{s.a. \cite[53]{Wed09}, wo erwähnt wird, wie ein \textit{Diagnoseprozess} von Organisationsentwicklern organisiert wird, um bestehende Probleme und Befürchtungen in der Organisation bei der Einführung neuer Software/Prozesse zu untersuchen}.
+
+\subsection*{Techniken}
+Unterschiedliche Quellen, wie bspw. Interviews mit Mitarbeitern, in denen Wünsche und Bedürfnissein Hinsicht auf die neue Software - oder auch Unzufriedenheit mit der bestehenden Lösung - geäußert werden, können als Quelle für Anforderungen dienen.\\
+
+\noindent
+Die genaue Untersuchung und Analyse von bestehender Software (bspw. Formulare zum Anlegen von Daten für benötigte Geschäftsprozesse), aber auch das Begleiten der Anwender beim Einsatz der Bestandslösung kann dabei helfen, die Anforderungen zu verstehen bzw. auszumachen.
+Vor allem der letzte Fall kann auch dabei helfen, Vertrauen zwischen Mitarbeitern und Entwicklern herzustellen.\\
+
+\noindent
+Auch die Analyse bestehender konkurrierender Softwareprodukte im Hinblick auf Stärken und Schwächen kann hilfreich sein.
+
+\subsection*{Klassifizierung der Angaben der Nutzer}
+Die Angaben der Anwender können systematisch sortiert werden.
+Es eignet sich bspw. eine Einteilung in
+
+\begin{itemize}
+    \item \textbf{Nicht-funktionale Anforderungen} (Performance, Verfügbarkeit, Nutezrfreundlichkeit etc.)
+    \item \textbf{Anwendungsfälle und User-Storys} zur Beschreibung funktionaler Anforderungen
+    \item \textbf{Regeln} die die verschiedenen \textbf{Geschäftsobjekte} erfüllen müssen
+    \item \textbf{Interface-Beschreibungen} Beschreibung der Schnittstellen zu anderen Systemen, vorgegebenen Dateiformaten oder der Hardware.
+    Das GUI als Mensch/Maschine-Schnittstelle wird i.d.R. erst bei der Analyse entworfen.
+    \item \textbf{Datendefinitionen}: Informationen, in welchem FFormat bestimmte Daten vorliegen müssen.
+    Wird bei der Anforderungsphase im sogenannten \textbf{Datadictionary} gesammelt.
+    \item \textbf{Lösungsideen} der Mitarbeiter, wie bestimmte. Prozesse vereinfacht / verbessert abgebildet werden können.
+    Hier sollten ersteinmal \textit{alle} Lösungsideen erfasst werden, auch solche, die ggf. als unmöglich umsetzbar/ widersprüchlich erscheinen
+\end{itemize}
+
