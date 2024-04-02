@@ -1,0 +1,31 @@
+\section{Datadictionary und Mengengerüst}
+In einem \textbf{Datadictionary} wird festgehalten, in welchem Format welche Daten verarbeitet werden.\\
+
+\noindent
+Über solch ein zentrales Dokument kann verhindert werden, dass unterschiedliche Anwendungsteile, die von unterschiedlichen Teams entwickelt werden, die Daten auch in unterschiedlichen Formaten verwalten.\\
+
+\noindent
+Zur Datendefinition gehören:
+
+\begin{itemize}
+    \item Typ (\textit{String}, \textit{Integer}, \ldots)
+    \item Format (bspw. kalendarische Datumsformate)
+    \item ggf. die Einheit
+    \item andere \textit{Daten} bei zusammengesetzten Datentypen (bspw. bei Adressen)
+\end{itemize}
+
+\noindent
+Zu beachten ist, dass es sich bei dem Datadictionary um ein \textbf{vorläufiges Dokument} handelt: Es dient dazu, Informationen, die während der Anforderungsphase gesammelt wurden, systematisch zu sammeln.\\
+$\rightarrow$ die endgültige Datendefinition erfolgt erst in der Analysephase, weil dann erst genügend Informationen zusammengetragen wurden.
+
+\vspace{5mm}
+\begin{tcolorbox}
+    Das Datadictionary ist als strukturierte Merkhilfe zu verstehen.
+\end{tcolorbox}
+\vspace{5mm}
+
+\subsection{Mengengerüst}
+Das \textbf{Mengengerüst} beschreibt die zu erwartende Anzahl der Daten\footnote{Kundendatensätze, Adressdatensätze, \ldots} als wichtiges Kriterium, da sich damit festgehaltenen Kennzahlen direkt auf die Architektur bzw. Datenhaltung (Datenbanksysteme) auswirken kann.\\
+
+\noindent
+\textit{Wedemann} merkt an, dass es sich hierbei streng genommen um eine \textit{nicht-funktionale} Anforderung handelt, aber nicht-funktionale Anforderungen meist globaler gefasst sind als ein detailliertes Mengengerüst (\cite[76]{Wed09}).
