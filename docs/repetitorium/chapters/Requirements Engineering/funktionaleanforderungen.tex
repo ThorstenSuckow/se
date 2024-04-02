@@ -1,0 +1,88 @@
+\section{Funktionale Anforderungen}
+
+\vspace{5mm}
+\begin{tcolorbox}
+    \textbf{Funktionale Anforderungen} definieren, welche Funktionen eines zu entwickelnden Systems von Endanwendern oder anderen Systemen benutzt werden können (\cite[66]{Wed09}).
+\end{tcolorbox}
+\vspace{5mm}
+
+\noindent
+Ein weit verbreiteter Ansatz zur Erarbeitung von Anforderungen ist die Erfassung von \textbf{Anwendungsfällen} (\textit{Use Case}), oder auch von \textbf{User Storys}.\\
+
+\noindent
+Die Verfahren können gleichzeitig eingesetzt werden, da sind unterschiedlich detailliert sind und andere Perspektiven beleuchten.
+
+\subsection{User Story}
+
+\textbf{User Storys} beschreiben in ein bis zwei Sätzen, wie ein Endanwender mit dem System arbeiten möchte, bspw. ``Der Vertrieb bezieht aus dem System die Wiedervorlageliste und protokolliert die durchgeführten Gespräche``.\\
+
+\noindent
+Eine \textbf{User Story} ist aufgrund der fehlenden Details als eine Art \textbf{Merkhilfe} für Stakeholder und Entwickler zu verstehen, und nicht als formale Beschreibung eines Prozesses; idealerweise werden die Storys von den Stakeholdern erstellt.\\
+
+\noindent
+User Stories sind dazu geeignet, ``die Welt des Kunden zu verstehen``\footnote{
+\textit{Wedemann} verweist hier auf \textit{Beck}, s.~\cite[66]{Wed09}
+}.\\
+Es kann durchaus passieren, dass sich User Storys widersprechen, wenn mehrere unterschiedliche Stakeholder die Storys erstellen.\\
+
+\noindent
+Auf eine \textit{exakte und detaillierte} Beschreibung der einzelnen Storys wird \textit{verzichtet}, da davon ausgegangen wird, dass die Stellvertreter der Endanwender jederzeit erreichbar sind.
+
+\noindent
+\textbf{Story Cards} (Karteikarten) werden verwendet, um die Storys zu notieren.\\
+I.d.R. werden sie für Planungszwecke mit einer Nummer, sowie Kennungen für Priorität und Aufwand versehen.
+
+
+\begin{itemize}
+    \item \textbf{Vorteile}
+        \begin{itemize}
+            \item hilfreich für die direkte Arbeit mit den Endanwendern: Beschreibung, was mit dem System gemacht werden soll, hilft dem Endanwender, über seine Wünsche zu reflektieren, und dem Entwickler, die Bedürfnisse des Kunden zu verstehen
+        \end{itemize}
+    \item \textbf{Nachteile}
+        \begin{itemize}
+            \item schwierig, wenn Stakeholder nicht (dauernd) anwesend oder nicht erreichbar sind, da die knappe schriftl. Form zu vage ist, womit auch eine Dokumentation fehlt
+            \item Formalisierung (wie in Anwendungsfällen) würde es den Stakeholdern und Endanwendern möglich machen, nichts zu vergessen und bei komplizierten Schaverhalten den Überblick zu behalten
+        \end{itemize}
+\end{itemize}
+
+\subsection{Anwendungsfall}
+\blockquote[{\cite[67, Hervorhebung eigene]{Wed09}}]{Ein \textbf{Anwendungsfall} beschreibt, wie Nutzer mit einem System in einer abgeschlossenen, ununterbrochenen Folge arbeiten, um ein fachliches Ziel zu verwirklichen.}
+
+\noindent
+Die Abläufe sollten für die Beschreibung als Anwendungsfälle nicht zu komplex sein.\\
+
+\noindent
+Man unterscheidet i.d.R. zwischen zwei Typen von Anwendungsfällen: \textbf{Grundlegende Anwendungsfälle} (\textit{Essential Use Case}) und \textbf{traditionelle Anwendungsfälle} (\textit{System Use Case}).
+
+\subsubsection*{Grundlegender Anwendungsfall (Geschäftsvorfall)}
+Ein \textbf{Grundlegender Anwendungsfall} beschreibt \textit{unter vollständigem Verzicht} auf Details der Technik oder der späteren Umsetzung, wie der Endnutzer mit dem System umgeht und wie das System darauf reagieren soll (vgl.~\cite[68]{Wed09}).\\
+
+\noindent
+Der Anwender ist hierbei in der Regel der \textbf{Akteur}, externe Systeme oder Hardware können als auch als \textit{Akteure} gesehen werden.\\
+Das System selber ist nie ein Akteur.
+
+\subsubsection*{Traditioneller Anwendungsfall (Systemanwendungsfall)}
+\textbf{Traditionelle Anwenundgsfälle} können deutlich detaillierter als grundlegende Anwendungsfälle sein und \textit{Details der Implementierung berücksichtigen}.\\
+Sie unterscheiden sich außerdem im Format zu den grundlegenden Anwendungsfällen und können unterschiedlich detailliert ausfallen.\\
+
+\noindent
+Ansatz zur Erstellung:
+
+\begin{enumerate}
+    \item Anwendungsfalls \texctit{high-level} erstellen (bloße Überschrift)
+    \item Anwendungsfall \textit{informell} erstellen (grundlegender Ablauf)
+    \item Anwendungsfall \textit{formell} ausprägen
+\end{enumerate}
+
+
+\subsubsection*{Probleme mit formellen Anwendungsfällen}
+Für die detailierte bzw. formelle Ausprägung von Anwendungsfällen eignen sich eher Werkzeuge und Hilfsmittel, die während der Analsephase verwendet werden, wie \textbf{Aktivitätsdiagramme} der Anwendungsfälle, \textbf{Entwürfe} und \textbf{Ablaufdiagramme} der Benutzeroberfläche, oder das \textbf{Domänenmodell}.\\
+Mit diesen Werkzeugen kann dann auch das Zusammenspiel mehrere Anwendungsfälle modelliert werden, wie \textit{Wedemann} feststellt (vgl.~\cite[71]{Wed09}).\\
+
+\noindent
+Ingesamt entstehen viele Dokumente.\\
+Je umfangreicher das Projekt, desto häufiger müssen diese Dokumente geändert werden, was zusätzlichen Aufwand bedeutet.\\
+Man sollte deshalb abwägen, welche Dokumente für den Einmalgebrauch bestimmt sind und welche auch für die zukünftige Dokumentation und Planung geeignet sind.
+
+\subsection{UML Use Case-Diagramm}
+Bei größeren Systemen, in denen Stakeholder und Entwickler gemeinsam viele Anwendungsfäll entwickeln, werden \textbf{Use Case-Diagramme} verwendet, die durch die \textit{Unifield Modeling Language} \textbf{UML} standardisiert sind.\\
