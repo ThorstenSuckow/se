@@ -1,0 +1,112 @@
+\section{Pflichtenheft}
+
+\noindent
+Ein übliches Vorgehen ist es, die nach \textit{Vision \& Scope} entwickelten Dokumente
+\begin{itemize}
+    \item nicht-funktionale Anforderungen
+    \item funktionale Anforderungen (Anwendungsfälle)
+    \item Regeln (Geschäftsregeln)
+    \item Datadictionaries und Mengengerüste
+\end{itemize}
+
+in einzelnen Dokumenten über ein Dokumentenmanagementsystem zur Verfügung zu stellen.\\
+Dadurch können einzelne Dokumente separat bearbeitet und versioniert werden.\\
+
+\noindent
+Wird allerdings nach dem \textbf{Wasserfallmodell} gearbeitet, werden die Ergebnisse i.d.R. in einem durchgehenden Dokument zur Verfügung gestellt, dem \textbf{Pflichtenheft}.\\
+
+Der Kurs nutzt hierzu die Gliederung nach dem Vorbild von \textbf{IEEE 830}\footnote{
+mit Modifikationen  von \textit{Wiegers} aus \cite[190 ff.]{WJ13}
+}:
+
+\blockquote[{\url{https://standards.ieee.org/ieee/830/1222/}\footnote{abgerufen 02.04.2024}}]{
+    The content and qualities of a good software requirements specification (SRS) are described and several sample SRS outlines are presented. This recommended practice is aimed at specifying requirements of software to be developed but also can be applied to assist in the selection of in-house and commercial software products.
+}
+
+\noindent
+Das Pflichtenheft kann dabei wie folgt aufgebaut sein (s.a. \cite[190 ff.]{WJ13}):
+
+\subsection*{1. Einführung}
+Aufbau des Pflichtenhefts, Hinweise zur Verwendung.
+
+\subsubsection*{1.1 Zweck des Dokuments}
+Welches System beschrieben wird, Verweis auf Vision \& Scope.
+
+\subsubsection*{1.2 Konventionen des Dokuments}
+Typographische / formale Konventionen, Priorisierungen etc.
+
+\subsubsection*{1.3 Zielgruppe}
+Welche Leser mit dem Dokument bedient werden, Hinweise auf die für die jeweilige Lesergruppe essenziellen Abschnitte.
+
+\subsubsection*{1.4 Produktfokus}
+Verweis auf Vision \& Scope. Beschreibt das Pflichtenheft den Release einer Software, wird hier der Fokus des Release aufgeführt.
+
+\subsubsection*{1.5 Referenzen}
+Andere Dokumente, die in dem Pflichtenheft referenziert werden, sind hier aufgeführt, inkl. Angaben zu den Quellen.
+
+
+\subsection*{2. Beschreibung}
+
+
+\subsubsection*{2.1 Produkt-Perspektiven}
+Verweis auf Vision \& Scope. Beschreibung des Kontexts und des Ursprungs des Systems.
+
+\subsubsection*{2.2 Produkt-Funktionen}
+Auflistung der wichtigsten Features und Funktionen. Verweis auf Vision \& Scope und Kontextdiagramm.
+
+\subsubsection*{2.3 Anwenderklassen}
+Nennung aller Klassen von Endanwendern.
+
+\subsubsection*{2.4 Betriebsumgebung}
+Die Hardware-Plattform, das Betriebssystem, die Datenbank, \ldots mit denen das System arbeiten soll.
+
+\subsubsection*{2.5 Randbedingungen für Entwurf und Umsetzung}
+Weitere und noch nicht genannte Randbedingungen, wie Programmiersprache, Frameworks, \ldots
+
+\subsubsection*{2.6 Anwenderdokumentation}
+Aufführung der zu liefernden Anwenderdokumentation.
+
+\subsubsection*{2.7 Annahmen und Abhängigkeiten}
+Beschreibung, welche Annahmen bei der Erstellung getroffen wurden, welche Abhängikeiten es von externen Faktoren gab.
+
+
+\subsection*{3. System Features}
+
+\subsubsection*{3.x Anwendungsfall x}
+Beschreibung der einzelnen Anwendungsfälle, die mit der Software abgedeckt werden. \textit{Wiegers} unterteilt in \cite[194]{WJ13} weiter in \textit{3.x.1 Beschreibung} und \textit{3.x.2 Funktionale Anforderungen}
+
+\subsection*{4. Externe Schnittstellen}
+
+\subsubsection*{4.1 Nutzerschnittstellen}
+Standards oder Vorschriften zum Layout (GUI).
+Keine Dialogentwürfe, da diese Teil der Analysephase sind.
+
+\subsubsection*{4.2 Hardwareschnittstellen}
+
+\subsubsection*{4.3 Softwareschnittstellen}
+
+\subsubsection*{4.4 Kommunikationsschnittstellen}
+Protokolle und/oder Anwendungen, die verwendet werden sollen
+
+\subsection*{5. Weitere nicht-funktionale Anwendungen}
+
+\subsubsection*{5.1 Performance}
+\subsubsection*{5.2 Sicherheit}
+\subsubsection*{5.3 Qualität}
+Weitere, noch nicht genannte Qualitätsanforderungen.
+
+\subsection*{6. Weitere Anforderungen}
+Geschäftsregeln, Internationalisierung etc.
+
+
+\subsection{Vor- und Nachteile}
+Als Vorteil einer solchen Gliederung der Informationen in \textit{ein} Dokument ist sicherlich die Konsistenz des Formats, in dem die Anforderungen zur Verfügung gestellt werden müssen: Durch die Vorgabe der Gliederung ist es eher unwahrscheinlich, dass einige (wichtige) Teile vergessen werden.\\
+
+\noindent
+Sind allerdings mehrere Autoren an der Erstellung des Dokumentes beteiligt, müssen entsprechende Maßnahmen zur Verwaltung getroffen werden (bspw. VCS).\\
+Da in der Gliederung immer wieder auf Vision \& Scope verwiesen wird, ist eine Abgrenzung zu diesen eher unklar.\\
+Wichtige Anforderungen wie Geschäftsregeln werden in der Vorlage nur am Ende erwähnt (vgl.\cite[79]{Wed09}).\\
+
+\noindent
+\textit{Wedemann} empfiehlt in \cite[80]{Wed09} - im Gegensatz zu Vision \& Scope - auf die Zusammenfassung in einem Dokument zu verzichten und stattdessen einzelne Dokumente zu verwenden, die auf die Problemstellung zugeschnitten sind.
+
