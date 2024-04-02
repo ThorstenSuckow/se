@@ -1,0 +1,26 @@
+\section{Regeln}
+\textbf{Geschäftsregeln} (\textit{Business Rules}), die in der Software implementiert werden müssen, verstehen sich als zugrundeliegende Regeln von (Geschäfts-)Prozessen.\\
+Die Einhaltung dieser Regeln erhöht die Zuverlässigkeit der Anwendung und die Qualität der Daten.\\
+
+\noindent
+Geschäftsregeln können in folgende Typen eingeteilt werden:
+
+\begin{itemize}
+    \item \textbf{Randbedingungen (Constraint)} beschränken, was Nutzer tun dürfen (Stichwörter \textit{muss}, \textit{darf nicht}, \textit{nur})
+    \item \textbf{Aktionsauslöser (Action Enabler)} beschrieben, was nach Auslösung eines Ereignisses passiert (\textit{wenn \ldots, dann} [Aktion])
+    \item \textbf{Wissenserzeuger (Inference)} erzeugen neues Wissen, wenn eine Bedingung zutrifft (\textit{wenn \ldots, dann} [neues Wissen])
+    \item \textbf{Berechnung (Computation)}: Vorschriften zur Berechnung mit Formeln oder Algorithmen
+\end{itemize}
+
+\noindent
+Regeln sollten in einer Art \textit{Regelbuch} festgehalten werden.\\
+Stakeholder und Entwickler haben dadurch die gleiche Sicht auf alle Regeln.\\
+Folgende Spalten sind sinnvoll:
+
+\begin{itemize}
+    \item Nummer der Regel
+    \item Beschreibung der Regel
+    \item Typ der Regel
+    \item Dynamik der Regel\footnote{\textit{statisch} oder \textit{dynamisch}, also ändert sich die Regel, oder bleibt sie unverändert?}
+    \item Quelle\footnote{aus welchem Geschäftsbereich stammt die Regel?}
+\end{itemize}
