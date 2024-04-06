@@ -1,6 +1,8 @@
 \section{Wasserfallmodell}
 
-Das \textbf{Wasserfallmodell} löst für \textit{bestimmte} Projekte die Probleme des opportunistischen Vorgehens und ist in \textbf{6 Phasen} aufgeteilt (s. Abbildung~\ref{fig:wasserfallmodell}).\\
+Das \textbf{Wasserfallmodell} löst für \textit{bestimmte} Projekte\footnote{
+zu den Grenzen des Wasserfallmodells s. a. Abschnitt~\ref{sec:grenzen-des-wasserfallmodells}
+} die Probleme des opportunistischen Vorgehens und ist in \textbf{6 Phasen} aufgeteilt (s. Abbildung~\ref{fig:wasserfallmodell}).\\
 Die Ergebnisse der Phasen sind \textit{Dokumente},\textit{Modelle},\textit{Code} oder \textit{Testprotokolle}, die man zusammenfassen als \textbf{Artefakte} bezeichnet.\\
 
 \subsection*{Eigenschaften des Wasserfallmodells}
@@ -8,13 +10,13 @@ Die Ergebnisse der Phasen sind \textit{Dokumente},\textit{Modelle},\textit{Code}
     \item Die Phasen des Wasserfallmodells folgen \textbf{strikt hintereinander}.
     \item Ergebnisse abgeschlossener Phasen werden nicht mehr geändert.
     \item Stellt sich heraus, dass in einer vorhergehenden Phase schwerwiegende Fehler begangen wurden, muss das gesamte Team in diese Phase zurückspringen, den Fehler beheben und von da an jede nachfolgende Phase erneut durchlaufen.
-    \item[] $\rightarrow$ Voraussetzung für ein erolgreiches Arbeiten mit diesem Modell ist eine vollständige und fehlerfreie Erstellung von Artefakten in jeder Phase
+    \item[] $\rightarrow$ Voraussetzung für ein erfolgreiches Arbeiten mit diesem Modell ist eine vollständige und fehlerfreie Erstellung von Artefakten in jeder Phase
     \item \textbf{Vorteile}:
         \begin{itemize}
             \item Bei überschaubaren Projekten bietet das Modell eine genauere Planbarkeit, da spätestens nach dem Entwurf klar ist, welche Arbeiten erledigt werden müssen.
             \item Die initiale Planung ist in drei Phasen eingeteilt (Anforderung, Analyse, Entwurf), in denen die zu erledigenden Tätigkeiten herausgearbeitet werden können.
         \end{itemize}
-    \item \textbf{Nachteile}: Bei kaum überschaubaren Objekten bzw. in Projekten mit hoher Eigendynamik und sich laufend ändernden Anforderungen ist das Projekt zu rigide und erlaubt keine die angemessene Flexibilität.
+    \item \textbf{Nachteile}: Bei kaum überschaubaren Objekten bzw. in Projekten mit hoher Eigendynamik und sich laufend ändernden Anforderungen ist das Projekt zu rigide und erlaubt keine angemessene Flexibilität.
 \end{itemize}
 
 
@@ -28,7 +30,7 @@ Die Ergebnisse der Phasen sind \textit{Dokumente},\textit{Modelle},\textit{Code}
 
 
 \noindent
-Vorgehensweisen, die auf dem Wasserfallmodell beruhen, sind das \textbf{Tailoring} und der \textbf{Team Software Process (TSP)} des Software Engineering Institute der Carnegie Mellon University.\\
+Vorgehensweisen, die auf dem Wasserfallmodell beruhen, sind das \textbf{V-Modell 97} und der \textbf{Team Software Process (TSP)} des Software Engineering Institute der Carnegie Mellon University.\\
 
 \noindent
 Das \textbf{Wasserfallmodell} ist ein \textit{sequentielles} und \textit{dokumentengetriebenes} Phasenmodell:
@@ -44,10 +46,12 @@ Das \textbf{Wasserfallmodell} ist ein \textit{sequentielles} und \textit{dokumen
 
 
 \subsubsection{Anforderungen (1)}
-In dieser Phase arbeitet man sich in die Fachlichkeit ein, um das Geschäftsfeld des Kunden zu verstehen und eine gemeinsame Sprache zu sprechen, wenn es um die Anforderungen der Software geht.\\
-Danach wird mit dem Kunden ein Konzept erstellt, dass die Funktionalität der Software im ersten Release beschreibt - dieses Dokument wird als \textbf{Lastenheft}\footnote{
-oder auch \textit{Vision \& Scope}.
-} bezeichnet.\\
+In dieser Phase arbeitet man sich in die Fachlichkeit ein\footnote{
+die sog. \textit{Domänenanalyse}, die vor der Erarbeitung der Anforderungen stattfindet. S.a. Abschnitt~\ref{sec:domanenanalyse}
+}, um das Geschäftsfeld des Kunden zu verstehen und im folgenden eine ``gemeinsame Sprache`` zu sprechen, wenn es um die Anforderungen der Software geht.\\
+Danach wird mit dem Kunden ein Konzept erstellt, das die Funktionalität der Software im ersten Release beschreibt und im sogenannten \textbf{Lastenheft}\footnote{
+oder auch \textit{Vision \& Scope}. Hier finden sich auch Angaben zu der erhofften Wirtschaftlichkeit des geplanten Produkts.
+} festgehalten wird.\\
 Es werden auch \textbf{nicht-funktionale} Anforderungen festgehalten, wie bspw. Antwortzeiten, Datenmengen und erwartete Auslastung des Systems (bspw. Benutzerzahlen zu Stoßzeiten).\\
 Die umzusetzende Funktionalität wird anhand von \textbf{Anwendungsfällen} beschrieben.\\
 
@@ -56,9 +60,9 @@ In diesem Kontext spricht man deswegen auch von \textbf{Requirements Engineering
 
 
 \subsubsection{Analyse (2)}
-In dieser Phase geht es drum, die grobgranularen Ergebnisse aus der ersten Phase systematisch zu analysieren, um Zusammenhänge und Anläufe besser zu verstehen sowie die Vollständigkeit der Anforderungen zu überprüfen, um danach alles noch detaillierter zu spezifizieren.\\
+In dieser Phase geht es darum, Ergebnisse aus der ersten Phase systematisch zu analysieren, um Zusammenhänge und Anläufe besser zu verstehen sowie die Vollständigkeit der Anforderungen zu überprüfen, um danach alles detaillierter zu spezifizieren.\\
 Im Zuge dessen wird ein \textbf{Fachkonzept} erstellt, in dem fachliche Zusammenhänge und Geschäftsabläufe in einem Modell \textbf{formalisiert} werden, dem sogenannten \textbf{Domänen-Modell}; die Formalisierung hierbei ist sehr wichtig, um Zweideutigkeiten und Mißverständnisse zu vermeiden\footnote{
-    In diesem Modell sind nicht nur Geschäftsregeln und -logik dokumentiert, sondern auch Wertebereiche von Eingabefeldern.
+    In diesem Modell sind nicht nur Geschäftsregeln und -logik dokumentiert, sondern bspw. auch Wertebereiche von Eingabefeldern.
 }.\\
 Als Beschreibungssprache wird i.d.R. \textbf{UML} verwendet.\\
 
@@ -66,7 +70,7 @@ Als Beschreibungssprache wird i.d.R. \textbf{UML} verwendet.\\
 In diesen  Modellen kommen keinerlei technische Details vor, damit man nicht Gefahr läuft, bereits in dieser Phase technische Details zu diskutieren, und sich klar auf die Anforderungen konzentriert.\\
 
 \noindent
-Anhand des erstellten Modells und der Anforderungen können auch Schnittstellen nach Außen definiert werden, wie bspw. das GUI als Mensch-Maschine-Schnittstelle, oder Schnittstellen zu anderen Systemen (bspw. Import- und/oder Exportschnittstellen).
+Anhand des erstellten Models und der Anforderungen können auch Schnittstellen nach Außen definiert werden, wie bspw. das GUI als Mensch-Maschine-Schnittstelle, oder Schnittstellen zu anderen Systemen (bspw. Import-/Exportschnittstellen).\\
 
 \noindent
 Da die Phase der Analyse eng mit der Phase der Anforderungen verknüpft ist, werden diese beiden Phasen häufig abwechselnd bearbeitet.
@@ -87,8 +91,13 @@ Es werden Schnittstellen einzelner Module spezifiziert.\\
 Auch hier wird wieder \textbf{UML} und objektorientierte Verfahren eingesetzt.\\
 
 \noindent
-\textit{Alpar et al.} merken an, dass dieser Schritt häufig komplex ist.
-Er kann deshalb weiter unterteilt werden in \textit{Grobentwurf} (Hard-, Softwarearchitektur), \textit{Feinentwurf} (Screenlayouts, Programmentwürfe, detaillierte logische Schemata) und \textit{Testplanung} (vgl.~\cite[319]{AABG14n}).
+\textit{Alpar et al.} merken an, dass dieser Schritt häufig komplex ist, und weisen auf eine weitere Unterteilung hin\footnote{vgl.~\cite[319]{AABG14n}}, und zwar in
+
+\begin{itemize}
+    \item \textit{Grobentwurf} (Hard-, Softwarearchitektur)
+    \item \textit{Feinentwurf} (Screenlayouts, Programmentwürfe, detaillierte logische Schemata)
+    \item \textit{Testplanung}
+\end{itemize}
 
 \subsubsection{Implementierung (4)}
 Das \textit{DV-Konzept} wird durch Datenstrukturen und Algorithmen in die Konstrukte der Hard- und Softwareumgebung implementiert (vgl.~\cite[319]{AABG14n}).\\
@@ -104,4 +113,4 @@ Auch die Einhaltung nicht-funktionaler Anforderungen wird überprüft (bspw. dur
 Das Ergebnis dieser Phase sind \textbf{Testfälle} und \textbf{Testprotokolle}.
 
 \subsubsection{Einführung und Wartung (6)}
-Das System wird an den Kunden ausgeliefert und geht in den Produktiv- bzw. \textbf{Wirkbetrieb} über, danach wird es durch Wartung und Aktualisierungen \textit{gepflegt}.
+Das System wird an den Kunden ausgeliefert und geht in den Produktiv- bzw. \textbf{Wirkbetrieb} über, danach wird es durch Fehlerbehebungen und Aktualisierungen \textit{gewartet}.
