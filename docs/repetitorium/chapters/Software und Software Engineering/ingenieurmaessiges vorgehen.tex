@@ -1,7 +1,28 @@
 \section{Ingenieurmäßiges Vorgehen}
 
+Software Engineering zeichnet sich durch ingenieurmäßiges Vorgehen aus.
+\textit{Schader und Rundshagen} merken zu IV an:
+
+\blockquote[{\cite[2]{SR94}}]{
+    Im
+    Rahmen der Durchführung eines Softwareprojekts werden hier Prinzipien aus den Ingenieurdisziplinen verfolgt - d.h. es wird versucht, den
+    Entwicklungsprozeß zu strukturieren und wiederholbar zu gestalten.
+    [\ldots]
+    Ziele, die durch ein ``ingenieurmäßiges`` Vorgehen bei der Softwareentwicklung erreicht werden sollen, sind unter anderem:
+    \begin{itemize}
+        \item Korrektheit und Überprüfbarkeit,
+        \item  Robustheit,
+        \item  Erweiterbarkeit,
+        \item  Wiederverwendbarkeit,
+        \item  Effizienz,
+        \item  Benutzerfreundlichkeit sowie
+        \item  Wartungsfreundlichkeit des entstehenden Softwareprodukts.
+    \end{itemize}
+
+}
+
 \begin{tcolorbox}
-    \textbf{Software Engineering} ist dann erfolgreich eingesetzt worden, wenn der Nutzen der Software für den Kunden höher ist als die Kosten und dies in der Lebenszeit der Software so bleibt.
+    \textbf{Software Engineering} ist dann erfolgreich eingesetzt worden, wenn der Nutzen der Software für den Kunden höher ist als die Kosten und dies in der Lebenszeit der Software so bleibt (vgl.\cite[5]{Wed09}).
 \end{tcolorbox}
 
 \noindent
@@ -24,7 +45,13 @@ Das \textbf{Paretoprinzip} besagt, dass in $20$\% der eingesetzten Zeit $80$\% d
 s. \url{https://de.wikipedia.org/wiki/Paretoprinzip} - abgerufen 24.03.2024
 }.\\
 Umgekehrt bedeutet das, dass in $80$\% der Zeit nur $20$\% Ergebnisse erzielt werden.\\
-Hier muss das Managemenet sicherstellen, dass nicht benötigte Funktionalität nicht (unnötigerweise) umgesetzt wird, und dass auf nicht benötigte Qualitätsziele verzichtet wird.\\
+Hier muss das Management sicherstellen, dass nicht-benötigte Funktionalität nicht (unnötigerweise) umgesetzt wird.
+Auf nicht benötigte Qualitätsziele sollte deshalb verzichtet werden.\\
+
+\subsection*{Strategien}
+Bei der Bearbeitung einer Aufgabe sollte man die Probleme und ihre Wichtigkeit verstehen: Kosten und Nutzen der Vorgehensweise und Technologie sollten immer kritisch hinterfragt werden\footnote{
+    was auch während der Entwicklung bzw. bei der Wartung eines Systems zutrifft, wo bei den Defects / Anforderungen zwischen \textit{Severity} und \textit{Priority} unterschieden wird: \textit{Severity} bezeichnet hier den Grad der Auswirkung, den ein Defect / ein fehlendes Feature auf den operativen Zustand des Systems hat, \textit{Priority} die Priorität, mit der ein fehlendes Feature implementiert bzw. ein Defect behoben werden soll, meist aus der Perspektive der \textit{Geschäftlichkeit}. So kann ein Defect mit einer hohen Severity eine niedrige Priorität zugewiesen bekommen, wenn der Defect zwar das komplette System zum Absturz bringt, dies aber nur äußerst selten aufgrund bestimmter Randbedingungen auftritt, die nur durch einen vernachlässigbaren geringen Anteil von Endanwendern betrifft.
+}.
 
 \subsection*{Machbarkeit}
 Entwicklung von großen Systemen mit (sehr) vielen Mitarbeitern\footnote{
