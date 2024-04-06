@@ -1,7 +1,7 @@
 \section{Lastenheft: Vision \& Scope}
 
-Software-Ingenierure helfen Kunden dabei, bei der Entwicklung oder Anpassung von Software einen wirtschaftlichen Nutzen zu erreichen, bspw. eine \textit{erhöhte Produktivität} oder die Einhaltung gesetzlicher Vorschriften.\\
-Der Aufwand für die Entwicklungder Softwarelösung muss geringer sein as der voraussichtliche Nutzen, was man unter \textbf{Business Case} zusammenfaßt.
+Software-Ingenieure helfen Kunden dabei, bei der Entwicklung oder Anpassung von Software einen wirtschaftlichen Nutzen zu erreichen, bspw. eine \textit{erhöhte Produktivität} oder die Einhaltung gesetzlicher Vorschriften.\\
+Der Aufwand für die Entwicklung der Softwarelösung muss geringer sein als der voraussichtliche Nutzen, was man unter \textbf{Business Case} zusammenfasst:
 
 \blockquote[{\cite[11]{Brug09}}]{
     Ein Business Case ist ein Szenario zur betriebswirtschaftlichen Beurteilung einer Investition.
@@ -12,19 +12,19 @@ Der Aufwand für die Entwicklungder Softwarelösung muss geringer sein as der vo
     Kosten des Projektes und der mit seinen Ergebnissen erwarteten Ertragsauswirkungen und Kosteneinsparungen getroffen werden.
 }
 
-\noindent
+\subsubsection*{Definition der Ziele und des Umfangs}
 Die Ziele des Kunden (\textbf{Vision}) dienen als Voraussetzung für eine Auswahl der Funktionalität für die zu entwickelnde Lösung.\\
 Der Projektumfang (\textbf{Scope}) grenzt den Projektumfang ein und gibt Auskunft darüber, was entwickelt werden soll und was nicht.\\
 Da der Nutzen für den kunden im Vordergrund steht, muss es sich bei \textbf{Vision \& Scope} um die \textit{Kundensicht} handeln.\\
 
-\noindent
+\subsubsection*{Beteiligte entwickeln gemeinsam eine Richtung}
 Die \textbf{Stakeholder} - also alle vom Projekt betroffenen Personen - erarbeiten dabei eine gemeinsame Sicht auf die \textit{Zielstellung} und den \textit{Nutzen} des Projektes.\\
 Wird auf diesen Schritt verzichtet und keine gemeinsame Sicht erarbeitet, werden mit hoher Wahrscheinlichkeit einige Personen(gruppen) ihre Interessen bei der Anforderungsanalyse oder  Entwicklung nicht vertreten sehen, woraus (tiefgreifende) Anpassungen oder auch die Ablehnung der entwickelten Lösung resultieren kann.\\
 Aus diesem Grund ist es eine Frage der Effektivität und der Risikovermeidung, Vision \& Scope \textit{am Anfang} der Entwicklung zu klären (vgl.~\cite[44]{Wed09}).
 
 \noindent
 Der Kunde sollte seine Ziele in einem solchen Lastenheft festhalten. \\
-Entwickler \ Berater können hier bei der Projektdefinition helfen und auch die Machbarkeit aus technischer Sicht klären.\\
+Entwickler/Berater können hier bei der Projektdefinition helfen und auch die Machbarkeit aus technischer Sicht klären.\\
 
 \noindent
 Wichtig ist die Klärung von \textit{Kernfragen} in einem solchen Dokument:
@@ -38,8 +38,9 @@ Wichtig ist die Klärung von \textit{Kernfragen} in einem solchen Dokument:
 \noindent
 Der Kurs nutzt hierzu eine Vorlage von \textit{Wiegers}, die wie folgt aufgebaut ist (vgl. \cite[81 ff. sowie 576 ff.]{WJ13}):
 
-\begin{enumerate}
-    \item Geschäftsanforderungen
+\begin{tcolorbox}[colback=white]
+    \begin{enumerate}
+        \item Geschäftsanforderungen
         \begin{enumerate}[label*=\arabic*.]
             \item Hintergrund
             \item Geschäftsmöglichkeit
@@ -47,37 +48,48 @@ Der Kurs nutzt hierzu eine Vorlage von \textit{Wiegers}, die wie folgt aufgebaut
             \item Erfordernisse von Kunde oder Markt
             \item Geschäftsrisiken
         \end{enumerate}
-    \item Vision der Lösung
+        \item Vision der Lösung
         \begin{enumerate}[label*=\arabic*.]
             \item Vision
             \item Wichtigste Features
             \item Annahmen und Abhängigkeiten
         \end{enumerate}
-    \item Fokus und Grenzen
+        \item Fokus und Grenzen
         \begin{enumerate}[label*=\arabic*.]
             \item Umfang des ersten Release
             \item Umfang der folgenden Releases
             \item Begrenzung und Ausschlüsse
         \end{enumerate}
-    \item Geschäftskontext
+        \item Geschäftskontext
         \begin{enumerate}[label*=\arabic*.]
             \item Stakeholder
             \item Projektprioritäten
             \item Technische Anwendungsumgebung
         \end{enumerate}
-\end{enumerate}
+    \end{enumerate}
+\end{tcolorbox}
+
+\noindent
+Im Folgenden wird auf die einzelnen Abschnitte kurz eingegangen:
 
 \subsection*{1. Geschäftsanforderungen}
 Dieser Abschnitt stellt dar, \textbf{wie} und \textbf{für wen} umgesetzt werden soll.
 
 \subsubsection*{1.1 Hintergrund}
-Enthält eine zusammenfassung über die Hintergründe, die zzu der Entscheidung geführt haben, die Software zu entwickeln.
+Enthält eine Zusammenfassung über die Hintergründe, die zu der Entscheidung geführt haben, die Software zu entwickeln.
 
 \subsubsection*{1.2 Geschäftsmöglichkeit}
-Für \textbf{kommerzielle Systeme werden} in diesem Abschnitt \textit{Marktlücke} und \textit{Markt} beschrieben, bei \textbf{Invividualentwicklungen} das \textit{Geschäftsproblem} und die zu \textit{verbessernden Geschäftsprozesse}.
+Für \textbf{kommerzielle Systeme} werden in diesem Abschnitt \textit{Marktlücke} und \textit{Markt} beschrieben, bei \textbf{Invividualentwicklungen} das \textit{Geschäftsproblem} und die zu \textit{verbessernden Geschäftsprozesse}.
 
 \subsubsection*{1.3 Geschäftsziele und Erfolgskriterien}
-Die \textbf{wichtigsten Nutzen} des Projektes werden in diesem Abschnitt auf \textit{messbare} Art und Weise zusammengefasst, wie \textit{Marktanteile}, \textit{Umsatzziele}, \textit{Gewinnziele}, \textit{Einhaltung gesetzlicher Vorgaben}, \textit{Ablösung von nicht mehr unterstützter Sofztware} und / oder \textit{Hardware}.
+Die \textbf{wichtigsten Nutzen} des Projektes werden in diesem Abschnitt auf \textit{messbare} Art und Weise zusammengefasst, wie
+\begin{itemize}
+    \item \textit{Marktanteile}
+    \item \textit{Umsatzziele}
+    \item \textit{Gewinnziele}
+    \item \textit{Einhaltung gesetzlicher Vorgaben}
+    \item \textit{Ablösung von nicht mehr unterstützter Software} und / oder \textit{Hardware}
+\end{itemize}
 
 \subsubsection*{1.4 Erfordernisse von Kunde oder Markt}
 Die \textbf{Bedürfnisse} des \textbf{Kunden} oder eines \textbf{Nutzers} des Marktsegments werden in diesem Abschnitt beschrieben.
@@ -113,20 +125,20 @@ Andere Stakeholder werden diesen Annahmen u.U. nicht zustimmen.
 
 \subsubsection*{3.1 Umfang des ersten Release}
 Die \textbf{wichtigsten Features} des \textbf{ersten Release} werden hier aufgeführt, außerdem die \textbf{Qualitätsmerkmale} des ersten Releases.\\
-Manche Qualitätsmerkmale wie Performance, GUI-Design können u.U. erst für ein späteres Release wichtig sein.
+Manche Qualitätsmerkmale wie Performance oder GUI-Design können u.U. erst für ein späteres Release wichtig sein.
 
 \subsubsection*{3.2 Umfang der folgenden Releases}
-Die \textbf{Features} der \textbf{nochfolgenden Releases} werden hier aufgeführt.
+Die \textbf{Features} der \textbf{nachfolgenden Releases} werden hier aufgeführt.
 
 \subsubsection*{3.3 Begrenzung und Ausschlüsse}
 Der Abschnitt definiert, was \textbf{zu dem Produkt gehört} und was nicht.\\
-Auch Funktionen, die von  solche einer Lösung erwartet werden würden, die aber nicht geplant sind, werden hier aufgeführt.
+Auch Funktionen, die von  solch einer Lösung erwartet werden würden, die aber nicht geplant sind, werden hier aufgeführt.
 
 \subsubsection*{4. Geschäftskontext}
 
 \subsubsection*{4.1 Stakeholder}
 Die \textbf{wichtigsten Stakeholder} werden hier aufgeführt, sowie den Nutzen, den diese von dem Projekt haben, ihre Einstellung zu dem Projekt, für sie wesentliche Features sowie Einschränkungen, denen die Stakeholder unterliegen\footnote{
-\textit{Einschränkungen} bei \textit{Wiegers}: \textit{constraints}. Ein \textit{constraint} für Vertriebsmitarbeiter könnte bspw. sein, dass diese die Anwendung fast ausschließlich mobil nutzen, oder dass andere Stakeholder (bspw. nicht technisch-affine Mitarbeiter) Schulungen in neu eingeführten Systemen benötigen
+\textit{Einschränkungen} bei \textit{Wiegers}: \textit{constraints}. Ein \textit{constraint} für Vertriebsmitarbeiter könnte bspw. sein, dass diese die Anwendung fast ausschließlich mobil nutzen, oder dass andere Stakeholder (bspw. nicht technisch-affine Mitarbeiter) Schulungen benötigen
 } (s. Tabelle~\ref{tab:stakeholder}).
 
 
@@ -153,6 +165,6 @@ Nach Möglichkeit sollen hierzu $5$ Kategorien unterschieden werden: \textit{Fea
 Es kann zudem unterschieden werden zwischen \textit{festen}, \textit{anpassbaren} und \textit{gewählten} Prioritäten.\\
 
 \subsubsection*{4.3 Technische Anwendungsumgebung}
-Beschreibt die \textbf{technische Umgebung}, in der die Anwendung laufen soll. also \textit{Hardware}, \textit{Betriebssysteme}, \textit{Netzwerk} usw.\\
+Beschreibt die \textbf{technische Umgebung}, in der die Anwendung laufen soll, also \textit{Hardware}, \textit{Betriebssysteme}, \textit{Netzwerk} usw.\\
 Anforderungen an \textbf{Verfügbarkeit} und \textbf{Performance} und \textbf{Sicherheit} haben hier genauso ihren Platz.\\
 Außerdem wird festgehalten, ob \textbf{Nutzer} oder \textbf{Hardware} \textbf{räumlich verteilt} sind.
