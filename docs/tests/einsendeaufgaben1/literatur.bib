@@ -1,0 +1,219 @@
+@book{Bro95,
+    author = {Brooks, Frederick P.},
+    title = {The mythical man-month (anniversary ed.)},
+    year = {1995},
+    isbn = {0201835959},
+    publisher = {Addison-Wesley Longman Publishing Co., Inc.},
+    address = {USA},
+    abstract = {Few books on software project management have been as influential and timeless as The Mythical Man-Month. With a blend of software engineering facts and thought-provoking opinions, Fred Brooks offers insight for anyone managing complex projects. These essays draw from his experience as project manager for the IBM System/360 computer family and then for OS/360, its massive software system. Now, 20 years after the initial publication of his book, Brooks has revisited his original ideas and added new thoughts and advice, both for readers already familiar with his work and for readers discovering it for the first time.The added chapters contain (1) a crisp condensation of all the propositions asserted in the original book, including Brooks' central argument in The Mythical Man-Month: that large programming projects suffer management problems different from small ones due to the division of labor; that the conceptual integrity of the product is therefore critical; and that it is difficult but possible to achieve this unity; (2) Brooks' view of these propositions a generation later; (3) a reprint of his classic 1986 paper "No Silver Bullet"; and (4) today's thoughts on the 1986 assertion, "There will be no silver bullet within ten years." 0201835959B04262002}
+}
+
+@book{Eva03,
+    author = {Evans},
+    title = {Domain-Driven Design: Tacking Complexity In the Heart of Software},
+    year = {2003},
+    isbn = {0321125215},
+    publisher = {Addison-Wesley Longman Publishing Co., Inc.},
+    address = {USA},
+    abstract = {From the Book: Leading software designers have recognized domain modeling and design as critical topics for at least twenty years, yet surprisingly little has been written about what needs to be done or how to do it. Although it has never been clearly formulated, a philosophy has developed as an undercurrent in the object community, which I call "domain-driven design". I have spent the past decade focused on developing complex systems in several business and technical domains. I've tried best practices in design and development process as they have emerged from the leaders in the object-oriented development community. Some of my projects were very successful; a few failed. A feature common to the successes was a rich domain model that evolved through iterations of design and became part of the fabric of the project. This book provides a framework for making design decisions and a technical vocabulary for discussing domain design. It is a synthesis of widely accepted best practices along with my own insights and experiences. Projects facing complex domains can use this framework to approach domain-driven design systematically. Contrasting Three Projects Three projects stand out in my memory as vivid examples of the dramatic effect domain design practice has on development results. Although all three delivered useful software, only one achieved its ambitious objectives and delivered complex software that continued to evolve to meet ongoing needs of the organization. I watched one project get out of the gate fast with a useful, simple web-based trading system. Developers were flying by the seat of their pants, but simplesoftware can be written with little attention to design. As a result of this initial success, expectations for future development were sky-high. It was at this point that I was approached to work on the second version. When I took a close look, I saw that they lacked a domain model, or even a common language on the project, and were saddled with an unstructured design. So when the project leaders did not agree with my assessment, I declined the job. A year later, they found themselves bogged down and unable to deliver a second version. Although their use of technology was not exemplary, it was the business logic that overcame them. Their first release had ossified prematurely into a high-maintenance legacy. Lifting this ceiling on complexity calls for a more serious approach to the design of domain logic. Early in my career, I was fortunate to end up on a project that did emphasize domain design. This project, in a domain at least as complex as the one above, also started with a modest initial success, delivering a simple application for institutional traders. But this delivery was followed up with successive accelerations of development. Each successive iteration opened exciting new options for integration and elaboration of functionality. The team way able to respond to the needs of the traders with flexibility and expanding capability. This upward trajectory was directly attributable to an incisive domain model, repeatedly refined and expressed in code. As the team gained new insight into the domain, the model deepened. The quality of communication improved among developers and between developers and domain experts, and the design, far from imposing an ever-heavier maintenance burden, became easier to modify and extend. Unfortunately, not all projects that start with this intention manage to arrive at this virtuous cycle. One project I joined started with lofty aspirations to build a global enterprise system based on a domain model, but finally had a disappointing result. The team had good tools, a good understanding of the business and gave serious attention to modeling. But a separation of developer roles led to a disconnect between the model and implementation, so the design did not reflect the deep analysis that was going on. In any case, the design of detailed business objects was not rigorous enough to support combining them in elaborate applications. Repeated iteration produced no improvement in the code, due to uneven skill-level among developers with no clear understanding of the particular kind of rigor needed. As months rolled by, development work became mired in complexity and the team lost its cohesive vision of the system. After years of effort, the project did produce modest, useful software, but had given up the early ambitions along with the model focus. Of course many things can put a project off course, bureaucracy, unclear objectives, lack of resources, to name a few, but it is the approach to design that largely determines how complex software can become. When complexity gets out of hand, the software can no longer be understood well enough to be easily changed or extended. By contrast, a good design can make opportunities out of those complex features. Some of these design factors are technological, and a great deal of effort has gone into the design of networks, databases, and other technical dimension of software. Books have been written about how to solve these problems. Developers have cultivated their skills. Yet the most significant complexity of many applications is not technical. It is in the domain itself, the activity or business of the user. When this domain complexity is not dealt with in the design, it won't matter that the infrastructural technology is well-conceived. A successful design must systematically deal with this central aspect of the software. The premise of this book is that For most software projects, the primary focus should be on the domain and domain logic. Complex domain designs should be based on a model. Domain-driven design is a way of thinking and a set of priorities, aimed at accelerating software projects that have to deal with complicated domains. To accomplish that goal, this book presents an extensive set of design practices, techniques and principles. Design vs. Development Process Design books. Process books. They seldom even reference each other. Each is a complex topic in its own right. This is a design book. But I believe that these two issues are inextricable if design concepts are to be put into successful practice and not dry up into academic discussion. When people learn design techniques, they feel excited by the possibilities, but then the messy realities of a real project descend on them. They don't see how to fit the new design ideas with the technology they must use. Or they don't know when to worry about a particular design aspect and when to let go in the interest of time. While it is possible to talk with other team members about the applica design principle in the abstract, it is more natural to talk about the things we do together. So, while this is a design book, I'm going to barge right across that artificial boundary when I need to. This will place design in the context of a development process. This book is not specific to a particular methodology, but it is oriented toward the new family of "Agile Development Processes". Specifically, it assumes a couple of process practices are in place on the project. These two practices are prerequisites for applying the approach in this book. Iterative development. The practice of iterative development has been advocated and practiced for decades, and is a corner stone of the Agile development methods. There are many good discussions in the literature of Agile development and Extreme Programming, among them, Cockburn1998 and Beck 1999. A close relationship between developers and domain experts. Domain-driven design crunches a huge amount of knowledge into a model that reflects deep insight into the domain and a focus on the key concepts. This is a collaboration between those who know the domain and those who know how to build software. Because it is iterative, this collaboration must continue throughout the project's life. Extreme Programming (XP), conceived by Kent Beck, Ward Cunningham and others Beck2000, is the most prominent of the agile processes and the one I have worked with most. To make the discussion concrete, I will use XP throughout the book as the basis for discussion of the interaction of design and process. The principles illustrated are easily adapted to other Agile Processes. In recent years there has been a rebellion against elaborate development methodologies that burden projects with useless, static documents and obsessive upfront planning and design. Instead, the Agile Processes, such as XP, emphasize the ability to cope with change and uncertainty. XP recognizes the importance of design decisions, but strongly resists upfront design. Instead, it puts an admirable effort into increasing communication, and increasing the project's ability to change course rapidly. With that ability to react, developers can use the "simplest thing that could work" at any stage of a project and then continuously refactor, making many small design improvements, ultimately arriving at a design that fits the customer's true needs. This has been a much-needed antidote to some of the excesses of design enthusiasts. Projects have bogged down in cumbersome documents that provided little value. They have suffered "analysis paralysis", so afraid of an imperfect design that they made no progress at all. Something had to change. Unfortunately, some of these new process ideas can be easily misinterpreted. Each person has a different definition of "simplest". Continuous refactoring without design principles to guide these small redesigns developers can produce a code base hard to understand or change - the opposite of agility. And, while fear of unanticipated requirements often leads to over-engineering, the attempt to avoid over-engineering can develop into another fear: The fear of any deep design thinking at all. In fact, XP works best for developers with a sharp design sense. The XP process assumes that you can improve a design by refactoring, and that you will do this often and rapidly. But design choices make refactoring itself easier or harder. The XP process attempts to increase team communication. But model and design choices clarify or confuse communication. What is needed is an approach to domain modeling and design that pulls its weight. This book intertwines design and development practice and illustrates how domain-driven design and agile development reinforce each other. A sophisticated approach to domain modeling within the context of an agile development process will accelerate development. The interrelationship of process with domain development makes this approach more practical than any treatment of "pure" design in a vacuum. The Structure of This Book The book is divided into four major sections: Part I: Putting the Domain Model to Work presents the basic goals of domain-driven development that motivate the practices in later sections. Since there are so many approaches to software development, Part I defines terms, and gives an overview of the implications of placing the domain model in the role of driving communication and design. Part II: The Building Blocks of Model-driven Design condenses a core of best practices in object-oriented domain modeling into a set of basic building blocks. The focus of this section is on bridging the gap between models and practical, running software. Sharing these standard patterns brings order to the design and makes it easy for team members to understand each other's work. Using standard patterns also establishes a common language, which all team members can use to discuss model and design decisions. But the main point of this section is on the kind of decisions that keep the model and implementation aligned with each other, reinforcing each other's effectiveness. This alignment requires attention to the detail of individual elements. Careful crafting at this small scale gives developers a steady platform to apply the modeling approaches of Parts III and IV. Part III: Refactoring Toward Deeper Insight goes beyond the building blocks to the challenge of assembling them into practical models that provide the payoff. Rather than jumping directly into esoteric design principles, this section emphasizes the discovery process. Valuable models do not emerge immediately. They require a deep understanding of the domain. That understanding comes from diving in, implementing an initial design based on a probably naive model, and then transforming it again and again. Each time the team gains insight, the model is transformed to reveal that richer knowledge, and the code is refactored to reflect the deeper model and make it's potential available to the application. Then, once in a while, this onion pealing leads to an opportunity to break through to a much deeper model, attended by a rush of profound design changes. Exploration is inherently open-ended, but it does not have to be random. Part III delves into modeling principles that can guide choices along the way, and techniques that help direct the search. Part IV: Strategic Design deals with situations that arise in complex systems, larger organizations, interactions with external systems and legacy systems. This section explores a triad of principles that apply to the system as a whole: Bounded Context, Distillation, and Large-Scale Structure. Strategic design decisions are made by teams, or even between teams. Strategic design enables the goals of Part I to be realized on a larger scale, for a big system or in an application that fits in an enterprise-wide network. Throughout the book, discussions are illustrated with realistic examples, drawn from actual projects, rather than oversimplified "toy" problems. Much of the book is written as a set of "patterns." The reader should be able to fully understand the material without concern about this device, but those who are interested in the style and format of the patterns can read Appendix A. Who This Book Is Written For This book is primarily written for developers of object-oriented software. Most members of a software project team can benefit from some parts of it. It will make most sense to people who are on a project, trying to do some of these things as they go through, or who have deep experience already to relate it to.Some knowledge of object-oriented modeling is necessary to benefit from this book. The examples include UML diagrams and Java code, so the ability to read those languages at a basic level is important, but it is unnecessary to have mastered the details of either UML or Java. Knowledge of Extreme Programming will add perspective to the discussions of development process, but the discussion should be understandable without background knowledge. For an intermediate software developer, a reader who already knows something of object-oriented design and may have read one or two software design books, this book will fill in gaps and provide perspective on how object modeling fits into real life on a software project. It will help an intermediate developer make the jump to applying sophisticated modeling and design skills to practical problems.An advanced or expert software developer should be interested in the comprehensive framework for dealing with the domain. The systematic approach to design will help them in leading teams down this path. The coherent terminology will help them communicate with peers. Readers of various backgrounds may wish to take different paths through the book, shifting emphasis to different points. I recommend all readers to start with the introduction to Part I, and Chapter 1. This book is a narrative, and can be read beginning to end, or from the beginning of any chapter. A skimmer who already has some grasp of a topic should be able to pick up the main points by reading headings and bolded text. A very advanced reader may want to skim Parts I and II, and will probably be most interested in Parts III and IV. In addition to this core readership, the book will be of interest to analysts and to relatively technical project managers. Analysts can draw on the connection between model and design to make more effective contributions in the context of an "Agile" project. Analysts may also use some of the principles of strategic design to better focus and organize their work. Project managers should be interested in the emphasis on making a team more effective and more focused on designing software meaningful to business experts and users. And, since, strategic design decisions are interrelated with team organization and work styles, these design decisions necessarily involve the leadership of the project, and have a major impact on the project's trajectory. While an individual developer who understands domain-driven design will gain valuable design techniques and perspective, the biggest gains come when a team joins to apply a domain-driven design approach and move the domain model to the center of discourse of the project. The team members will share a language that enriches their communication and keeps it connected to the software. They will produce an implementation in step with the model, giving leverage to application development. They will share a map of how design work of different teams relates, and will systematically focus attention on the most features most distinctive and valuable to the organization. A domain-driven design is a difficult technical challenge that can pay off big, opening opportunities just at the stage when most software projects begin to ossify into legacy. Eric Evans, San Francisco, California, March 2003}
+}
+
+@book{Wed09,
+    author = {Wedemann, Gero},
+    title = {Grundlagen der Softwaretechnik und Requirements Engineering},
+    year = {2009},
+    isbn = {0321125215},
+    publisher = {Trier University of Applied Sciences},
+}
+
+@book{Mar03,
+    author = {Martin, Robert Cecil},
+    title = {Agile Software Development: Principles, Patterns, and Practices},
+    year = {2003},
+    isbn = {0135974445},
+    publisher = {Prentice Hall PTR},
+    address = {USA},
+    abstract = {From the Publisher: Best selling author and world-renowned software development expert Robert C. Martin shows how to solve the most challenging problems facing software developers, project managers, and software project leaders today. This comprehensive, pragmatic tutorial on Agile Development and eXtreme programming, written by one of the founding father of Agile Development: Teaches software developers and project managers how to get projects done on time, and on budget using the power of Agile Development. Uses real-world case studies to show how to of plan, test, refactor, and pair program using eXtreme programming. Contains a wealth of reusable C++ and Java code. Focuses on solving customer oriented systems problems using UML and Design Patterns. Robert C. Martin is President of Object Mentor Inc. Martin and his team of software consultants use Object-Oriented Design, Patterns, UML, Agile Methodologies, and eXtreme Programming with worldwide clients. He is the author of the best-selling book Designing Object-Oriented C++ Applications Using the Booch Method (Prentice Hall, 1995), Chief Editor of, Pattern Languages of Program Design 3 (Addison Wesley, 1997), Editor of, More C++ Gems (Cambridge, 1999), and co-author of XP in Practice, with James Newkirk (Addison-Wesley, 2001). He was Editor in Chief of the C++ Report from 1996 to 1999. He is a featured speaker at international conferences and trade shows. Author Biography: ROBERT C. MARTIN is President of Object Mentor Inc. Martin and his team of software consultants use Object-Oriented Design, Patterns, UML, Agile Methodologies, and eXtreme Programming with worldwide clients. He is the author of the best-selling book Designing Object-Oriented C++ Applications Using the Booch Method (Prentice Hall, 1995), Chief Editor of, Pattern Languages of Program Design 3 (Addison Wesley, 1997), Editor of, More C++ Gems (Cambridge, 1999), and co-author of XP in Practice, with James Newkirk (Addison-Wesley, 2001). He was Editor in Chief of the C++ Report from 1996 to 1999. He is a featured speaker at international conferences and trade shows.}
+}
+
+@Inbook{AABG14n,
+    author="Alpar, Paul
+and Alt, Rainer
+and Bensberg, Frank
+and Grob, Heinz Lothar
+and Weimann, Peter
+and Winter, Robert",
+    title="Phasenmodelle in der Systementwicklung",
+    bookTitle="Anwendungsorientierte Wirtschaftsinformatik: Strategische Planung, Entwicklung und Nutzung von Informationssystemen",
+    year="2014",
+    publisher="Springer Fachmedien Wiesbaden",
+    address="Wiesbaden",
+    pages="315--359",
+    abstract="Ein IS unterliegt wie jedes Produkt einem Lebenszyklus. Dieser Lebenszyklus ist in Zeitabschnitte, so genannte Phasen, unterteilt und wird im Folgenden kurz dargestellt, um die Einordnung der Systementwicklung in den Lebenszyklus aufzuzeigen. Anlehnend an die Norm ISO 12207 [ISO 12207 1995] ist dieser Lebenszyklus in Abbildung 14-1 dargestellt.",
+    isbn="978-3-658-00521-4",
+    doi="10.1007/978-3-658-00521-4_14",
+    url="https://doi.org/10.1007/978-3-658-00521-4_14"
+}
+
+@Inbook{AABG14m,
+    author="Alpar, Paul
+and Alt, Rainer
+and Bensberg, Frank
+and Grob, Heinz Lothar
+and Weimann, Peter
+and Winter, Robert",
+    title="Begriffe und Vorgehensweisen",
+    bookTitle="Anwendungsorientierte Wirtschaftsinformatik: Strategische Planung, Entwicklung und Nutzung von Informationssystemen",
+    year="2014",
+    publisher="Springer Fachmedien Wiesbaden",
+    address="Wiesbaden",
+    pages="297--314",
+    abstract="Der vierte Teil konzentriert sich auf die Gestaltung und Entwicklung von IS. Dabei sind zwei grunds{\"a}tzlich unterschiedliche Vorgehensweisen zu differenzieren:(1)IS werden anforderungsspezifisch im Rahmen eines Eigenentwicklungsprojekts individuell entwickelt.(2)Es werden standardisierte IS eingef{\"u}hrt und in die jeweilige betriebliche Informationsverarbeitung integriert.",
+    isbn="978-3-658-00521-4",
+    doi="10.1007/978-3-658-00521-4_13",
+    url="https://doi.org/10.1007/978-3-658-00521-4_13"
+}
+
+
+
+@ARTICLE{Boe88,
+    author={Boehm, B. W.},
+    journal={Computer},
+    title={A spiral model of software development and enhancement},
+    year={1988},
+    volume={21},
+    number={5},
+    pages={61-72},
+    keywords={Spirals;Programming;Military computing;Software prototyping;Testing;Application software;Productivity;Navigation;Prototypes},
+    doi={10.1109/2.59}}
+
+@book{BT04,
+    author = {Boehm and Turner, Richard},
+    title = {Balancing Agility and Discipline: A Guide for the Perplexed},
+    year = {2003},
+    isbn = {0321186125},
+    publisher = {Addison-Wesley Longman Publishing Co., Inc.},
+    address = {USA},
+    abstract = {From the Book: Why We Wrote This Book True believers represent software development alternatives In the last few years, two ostensibly conflicting approaches to software development have competed for hegemony. Agile method supporters released a manifesto that shifts the focus from traditional plan-driven, process-based methods to lighter, more adaptive paradigms. Traditional methods have reasserted the need for strong process discipline and rigorous practices. True believers on both sides have raised strident, often antagonistic, voices. This book is for the rest of us We wrote this book for the rest of usthose caught in the middle of the method wars simply trying to get our projects completed and accepted within too-tight schedules and budgets. We hope to clarify the perplexity about the roles of discipline, agility, and process in software development. We objectively compare and contrast the traditional, plan-driven approaches to the newer, agile approaches and present an overview of their home grounds, strengths, and weaknesses. We then describe a risk-based approach to aid in balancing agility and discipline within a software development project. Our goal is to help you in your business environment We hope that this is a practical book. It is intended to be neither academic nor exhaustive, but pragmatic. It is based on our own development experiences, current and past literature, long conversations with proponents of agile and plan-driven approaches, teaching students how to balance discipline and agility, and years of observing and measuring software development in industry, government, and academia. We discuss the subjectmatter absent a need to choose sides. Our goal is to help you gain the understanding and information you need to integrate the approaches in a manner that best fits your business environment. Who Should Read This Book The perplexedor just curious This book is for perplexed software and management professionals who have heard the buzz about agile methods and want to separate the chaff from the wheat. Perhaps you have a CMM- or ISO-certified organization and want to know if and how agile methods can help you. Or perhaps some part of your organization has adopted agile methods and you are unsure of how they should fit in. Fundamentally, if you need to understand how the latest software development approaches can help meet business goals, this book is for you. Software project managers and mid-level executives should read this book to understand the agility/plan-driven controversy and learn how best to apply the new approaches in your organizations. Software developers should read this book to better understand how your field is evolving and what it means for your career. Computer science and software engineering students should read this book to better understand how to make choices about your own level of discipline, both in school and at work. Academicians should read this book to understand some of what your students are asking about, and how to help them make informed decisions. Proponents of both agile and plan-driven methods should read this book to dispassionately look at your opponent's ideas. CIOs and CEOs should read this book to help you understand what's going on in the software world and what implications it may have for your company. How To Read This Book Several ways to read the book Most of you are busy people, and "must-read" material attacks you from all sides, 24/7. Some of you want to quickly assess the material for later reflection. Others want to know how to implement the concepts we present. For that reason, we've tried to make this book easy to read quickly but with pointers to more in-depth material. In a hurry Use the fast track for a quick overview If time is short, use the fast track summaries to scan the total content of the book, stopping to read things you find interesting or particularly applicable to your needs, and following the icons for specific technical information. If you find you need even more detailed material, there are references as well as a list of additional resources in Appendix F. First and last chapters are key You can also tailor your reading through chapter selection. Reading the first and last chapters gives a pretty good idea of the material at a familiarization level. You can read the chapters in any order. Here is a quick summary: The first chapter sets the stage for what follows. It introduces the main points and provides an executive summary of the book. Chapter 2 compares the agile and plan-driven approaches and provides insight into the type of projects where each has been most successfultheir home grounds. Chapter 3 provides an experiential introduction to the approaches by describing how both a typical and not-so-typical day might be spent using each. Chapter 4 presents two project case studies that illustrate the limits of pure agile and pure plan-driven implementations and the benefits of integrating the approaches. Chapter 5 describes a risk-based approach for making methodology decisions that integrate agile and plan-driven practices, and illustrates it with representative examples. Chapter 6 summarizes the material and offers some final observations. Appendix A provides top-level descriptions of the major agile and plan-driven methods, highlighting their primary distinguishing factors, and a summary of those factors for comparison. Appendices B-E provide technical and background information to support our analyses and speak to specific technical topics. Appendix F supplies references and the endnotes are listed by chapter in Appendix G. 0321186125P04142003}
+}
+
+@Inbook{Brug09,
+    author="Brugger, Ralph",
+    title="Business Case -- Grundlagen",
+    bookTitle="Der IT Business Case: Kosten erfassen und analysieren Nutzen erkennen und quantifizieren Wirtschaftlichkeit nachweisen und realisieren",
+    year="2009",
+    publisher="Springer Berlin Heidelberg",
+    address="Berlin, Heidelberg",
+    pages="11--31",
+    abstract="Ein Business Case ist ein Szenario zur betriebswirtschaftlichen Beurteilung einer Investition. Auch ein Projekt stellt eine Investition dar und muss deshalb seine Vorteilhaftigkeit gegen{\"u}ber der Gesch{\"a}ftsleitung unter Beweis stellen. Im Kontext dieses Buches handelt es sich bei den Investitionsvorhaben um „IT-Projekte``. Ein IT-Projekt ist mit Ausgaben verbunden. Um den Mitteleinsatz zu rechtfertigen, muss dem Management aufgezeigt werden, welchen Gegenwert („Return``) es von dem Projekt erwarten kann. Hierzu m{\"u}ssen Annahmen hinsichtlich der voraussichtlichen Kosten des Projektes und der mit seinen Ergebnissen erwarteten Ertragsauswirkungen und Kosteneinsparungen getroffen werden.",
+    isbn="978-3-540-93858-3",
+    doi="10.1007/978-3-540-93858-3_2",
+    url="https://doi.org/10.1007/978-3-540-93858-3_2"
+}
+
+@book{WJ13,
+    author = {Wiegers, Karl E and Beatty, Joy},
+    title = {Software Requirements 3},
+    year = {2013},
+    isbn = {0735679665},
+    publisher = {Microsoft Press},
+    address = {USA},
+    abstract = {Now in its third edition, this classic guide to software requirements engineering has been fully updated with new topics, examples, and guidance. Two leaders in the requirements community have teamed up to deliver a contemporary set of practices covering the full range of requirements development and management activities on software projects. Describes practical, effective, field-tested techniques for managing the requirements engineering process from end to end. Provides examples demonstrating how requirements "good practices" can lead to fewer change requests, higher customer satisfaction, and lower development costs. Fully updated with contemporary examples and many new practices and techniques. Describes how to apply effective requirements practices to agile projects and numerous other special project situations. Targeted to business analysts, developers, project managers, and other software project stakeholders who have a general understanding of the software development process. Shares the insights gleaned from the authors extensive experience delivering hundreds of software-requirements training courses, presentations, and webinars. New chapters are included on specifying data requirements, writing high-quality functional requirements, and requirements reuse. Considerable depth has been added on business requirements, elicitation techniques, and nonfunctional requirements. In addition, new chapters recommend effective requirements practices for various special project situations, including enhancement and replacement, packaged solutions, outsourced, business process automation, analytics and reporting, and embedded and other real-time systems projects.}
+}
+
+@book{BMEY07,
+    author = {Booch, Grady and Maksimchuk, Robert and Engle, Michael and Young, Bobbi and Conallen, Jim and Houston, Kelli},
+    title = {Object-oriented analysis and design with applications, third edition},
+    year = {2007},
+    isbn = {9780201895513},
+    publisher = {Addison-Wesley Professional},
+    edition = {Third},
+    abstract = {Object-Oriented Design with Applications has long been the essential reference to object-oriented technology, which, in turn, has evolved to join the mainstream of industrial-strength software development. In this third edition--the first revision in 13 years--readers can learn to apply object-oriented methods using new paradigms such as Java, the Unified Modeling Language (UML) 2.0, and .NET.The authors draw upon their rich and varied experience to offer improved methods for object development and numerous examples that tackle the complex problems faced by software engineers, including systems architecture, data acquisition, cryptoanalysis, control systems, and Web development. They illustrate essential concepts, explain the method, and show successful applications in a variety of fields. You'll also find pragmatic advice on a host of issues, including classification, implementation strategies, and cost-effective project management.New to this new edition are An introduction to the new UML 2.0, from the notation's most fundamental and advanced elements with an emphasis on key changes New domains and contexts A greatly enhanced focus on modeling--as eagerly requested by readers--with five chapters that each delve into one phase of the overall development lifecycle. Fresh approaches to reasoning about complex systems An examination of the conceptual foundation of the widely misunderstood fundamental elements of the object model, such as abstraction, encapsulation, modularity, and hierarchy How to allocate the resources of a team of developers and mange the risks associated with developing complex software systems An appendix on object-oriented programming languagesThis is the seminal text for anyone who wishes to use object-oriented technology to manage the complexity inherent in many kinds of systems.Sidebars\"{\i} \"{\i} Preface\"{\i} Acknowledgments \"{\i} \"{\i} About the Authors \"{\i} \"{\i} Section I: Concepts\"{\i} \"{\i} Chapter 1: Complexity\"{\i} \"{\i} \"{\i} Chapter 2: The Object Model \"{\i} \"{\i} Chapter 3: Classes and Objects \"{\i} \"{\i} Chapter 4: Classification \"{\i} \"{\i} Section II: Method \"{\i} Chapter 5: Notation \"{\i} \"{\i} Chapter 6: Process Chapter 7: Pragmatics\"{\i} \"{\i} \"{\i} Chapter 8: System Architecture: Satellite-Based Navigation \"{\i} \"{\i} Chapter 9: Control System: Traffic Management \"{\i} \"{\i} Chapter 10: Artificial Intelligence: Cryptanalysis \"{\i} \"{\i} Chapter 11: Data Acquisition: Weather Monitoring Station \"{\i} Chapter 12: Web Application: Vacation Tracking System \"{\i} \"{\i} \"{\i} Appendix A: Object-Oriented Programming Languages\"{\i} Appendix B: Further Reading \"{\i} \"{\i} Notes \"{\i} \"{\i} Glossary \"{\i} \"{\i} Classified Bibliography \"{\i} \"{\i} Index \"{\i} \"{\i}}
+}
+
+@InProceedings{PWB09,
+    author="Petersen, Kai
+and Wohlin, Claes
+and Baca, Dejan",
+    editor="Bomarius, Frank
+and Oivo, Markku
+and Jaring, P{\"a}ivi
+and Abrahamsson, Pekka",
+    title="The Waterfall Model in Large-Scale Development",
+    booktitle="Product-Focused Software Process Improvement",
+    year="2009",
+    publisher="Springer Berlin Heidelberg",
+    address="Berlin, Heidelberg",
+    pages="386--400",
+    abstract="Waterfall development is still a widely used way of working in software development companies. Many problems have been reported related to the model. Commonly accepted problems are for example to cope with change and that defects all too often are detected too late in the software development process. However, many of the problems mentioned in literature are based on beliefs and experiences, and not on empirical evidence. To address this research gap, we compare the problems in literature with the results of a case study at Ericsson AB in Sweden, investigating issues in the waterfall model. The case study aims at validating or contradicting the beliefs of what the problems are in waterfall development through empirical research.",
+    isbn="978-3-642-02152-7"
+}
+
+@book{Bal08,
+    abstract = {Eine Softwareentwicklung läuft nicht von alleine ab. Wissen, Können und Fertigkeiten auf den Gebieten Allgemeines Management, Softwaremanagement sowie Prozess- und Qualitätsmodelle sind erforderlich, um zeit-, kosten- und qualitätsgerecht Software zu entwickeln. Dieser Band des dreiteiligen Lehrbuchs der Softwaretechnik vermittelt in systematischer und klassifizierender Art und Weise die notwendigen Informationen, um als Softwaremanager erfolgreich zu sein.},
+    address = {Heidelberg},
+    author = {Balzert, Helmut},
+    edition = 2,
+    file = {Springer Product page:http\://www.springer.com/978-3-8274-1161-7:URL;Amazon Search inside:http\://www.amazon.de/gp/reader/3827411610/:URL},
+    isbn = {978-3-8274-1161-7},
+    publisher = {Spektrum},
+    title = {Lehrbuch der Software-Technik: Softwaremanagement},
+    year = 2008
+}
+
+@Inbook{SR94,
+    author="Schader, Martin
+and Rundshagen, Michael",
+    title="Einleitung",
+    bookTitle="Objektorientierte Systemanalyse: Eine Einf{\"u}hrung",
+    year="1994",
+    publisher="Springer Berlin Heidelberg",
+    address="Berlin, Heidelberg",
+    pages="1--11",
+    abstract="Die letzten Jahre zeichnen sich im Bereich der Kostenentwicklung f{\"u}r DV-Systeme durch den einerseits anhaltenden Verfall der Hardwarepreise --- bei kontinuierlich zunehmender Rechnerleistung --- und andererseits durch st{\"a}ndig wachsende Anforderungen an die Software, die zu einem ebenso rapiden Anstieg der Softwareentwicklungskosten gef{\"u}hrt haben, aus. Bedingt durch die zunehmende Gr{\"o}{\ss}e und Komplexit{\"a}t der zu entwickelnden Softwaresysteme vergr{\"o}{\ss}ert sich dabei gleichzeitig der Anteil der Softwarewartungskosten (Kosten f{\"u}r Fehlerbeseitigung und Weiterentwicklung) an den Gesamtkosten eines Softwareprojekts. Dabei erweist sich die Beseitigung von Fehlern eines Softwareprodukts als um so aufwendiger, je sp{\"a}ter diese entdeckt werden. Dies sind unter anderem Gr{\"u}nde f{\"u}r eine gerade im Rahmen der objektorientierten Softwareerstellung starke Betonung der Phasen Analyse und Design, die der Implementation vorausgehen. Nicht zuletzt kann damit die stark wachsende Zahl ver{\"o}ffentlichter Methoden zur Unterst{\"u}tzung von objektorientierter Systemanalyse und objektorientiertem Systemdesign erkl{\"a}rt werden.",
+    isbn="978-3-662-00659-7",
+    doi="10.1007/978-3-662-00659-7_1",
+    url="https://doi.org/10.1007/978-3-662-00659-7_1"
+}
+
+@book{Coh09,
+    author = {Cohn, Mike},
+    title = {Succeeding with Agile: Software Development Using Scrum},
+    year = {2009},
+    isbn = {0321579364},
+    publisher = {Addison-Wesley Professional},
+    edition = {1st},
+    abstract = {Proven, 100\% Practical Guidance for Making Scrum and Agile Work in Any Organization This is the definitive, realistic, actionable guide to starting fast with Scrum and agileand then succeeding over the long haul. Leading agile consultant and practitioner Mike Cohn presents detailed recommendations, powerful tips, and real-world case studies drawn from his unparalleled experience helping hundreds of software organizations make Scrum and agile work. Succeeding with Agile is for pragmatic software professionals who want real answers to the most difficult challenges they face in implementing Scrum. Cohn covers every facet of the transition: getting started, helping individuals transition to new roles, structuring teams, scaling up, working with a distributed team, and finally, implementing effective metrics and continuous improvement. Throughout, Cohn presents Things to Try Now sections based on his most successful advice. Complementary Objection sections reproduce typical conversations with those resisting change and offer practical guidance for addressing their concerns. Coverage includes Practical ways to get started immediatelyand get good fast Overcoming individual resistance to the changes Scrum requires Staffing Scrum projects and building effective teams Establishing improvement communities of people who are passionate about driving change Choosing which agile technical practices to use or experiment with Leading self-organizing teams Making the most of Scrum sprints, planning, and quality techniques Scaling Scrum to distributed, multiteam projects Using Scrum on projects with complex sequential processes or challenging compliance and governance requirements Understanding Scrums impact on HR, facilities, and project management Whether you've completed a few sprints or multiple agile projects and whatever your rolemanager, developer, coach, ScrumMaster, product owner, analyst, team lead, or project leadthis book will help you succeed with your very next project. Then, it will help you go much further: It will help you transform your entire development organization.}
+}
+
+@book{Amb04,
+    author = {Ambler, Scott},
+    year = {2004},
+    month = {03},
+    pages = {},
+    title = {The object primer: agile modeling-driven development with UML 2.0},
+    isbn = {9780521540186},
+    doi = {10.1017/CBO9780511584077}
+}
+
+
+@BOOK{Oes05,
+    title     = "Analyse und Design mit UML 2",
+    author    = "Oestereich, Bernd",
+    publisher = "Oldenbourg Wissenschaftsverlag GmbH",
+    year      =  2005,
+    isbn      = {3486576542},
+}
+
+
+@inbook{CL01,
+    author = {Constantine, Larry L. and Lockwood, Lucy A. D.},
+    title = {Structure and style in use cases for user interface design},
+    year = {2001},
+    isbn = {0201657899},
+    publisher = {Addison-Wesley Longman Publishing Co., Inc.},
+    address = {USA},
+    booktitle = {Object Modeling and User Interface Design: Designing Interactive Systems},
+    pages = {245–279},
+    numpages = {35}
+}
