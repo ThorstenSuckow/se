@@ -1,0 +1,32 @@
+Welche Vorgehensweise schlagen Sie für folgendes Projekt vor und warum:\\
+
+\noindent
+[...]
+
+\section*{Antwort}
+Es sind zwei Aufgaben von drei erfahrenen Personen zu realisieren:
+
+\begin{enumerate}
+    \item einen Treiber zur Marktreife entwickeln
+    \item eine existierende Software zu einer marktfähigen Software zur Benutzung der Karte entwickeln
+\end{enumerate}
+
+
+\noindent
+Es würde sich das \textbf{Wasserfallmodell} anbieten, denn:
+
+\begin{itemize}
+    \item das Team ist erfahren und besteht aus nicht zu vielen Personen
+    \item die Anforderungen an die Funktionsweise des Treibers sind klar definiert
+    \item[] \textit{und}
+    \item für die zu erstellende Anwendung stehen die Anforderungen in Form eines ausgereiften Entwurfs des GUI zur Verfügung
+    \item[] $\rightarrow$ die Realisierungsphase kann zielgerichtet in voller Breite durchgeführt werden
+    \item es ist ausreichend Zeit vorhanden ($+2$ Wochen Puffer für initiale Aufwandsabschätzung)
+\end{itemize}
+
+\section*{Anmerkung}
+Auch ein \textbf{nebenläufiges Vorgehen}  wäre denkbar, wenn die Aufgabe \textit{Treiberentwicklung} unabhängig von der Aufgabe \textit{Anwendungsentwicklung} gesehen werden darf: Da allerdings die Wahrscheinlichkeit besteht, dass die Anwendung von in der Entwurfsphase herausgearbeiteten Schnittstellen der Karte / des Treibers abhängig ist, besteht hier keine klare Abgrenzung der beiden Aufgaben.\\
+Nichtsdestotrotz könnte man das Team \textit{Treiberentwicklung} als Vorgängerteam (ggf. zwei Mann aufgrund des fachlichen Anspruchs) im nebenläufigen Modell sehen, und das Team \textit{Anwendungsentwicklung} als Nachfolger``team`` (eine Person), das sofort beginnt, wenn die ersten Schnittstellen herausgearbeitet wurden (ggfl. parallel mit der Implementierung der verschiedenen Layouts, Interaktionselemente usw.).\\
+Bei diesem Vorgehen müßten dann in der Umsetzungsphase Rückkoppelungen und Überarbeitungen in Kauf genommen werden, wobei
+\textit{Balzert} in~\cite[522]{Bal08} feststellt, dass die Gesamtdauer i.d.R. dennoch kürzer als beim sequentiellen Modell ist.
+Genauso führt er dort allerdings auf, dass das Modell gut geeignet ist, wenn die ``Anforderungen beim Projektstart noch nicht alle bekannt sind`` (\cite[524]{Bal08}) - im Gegensatz zu den in der Aufgabe beschriebenen Gegebenheiten, die in Summe für das Wasserfallmodell sprechen.
