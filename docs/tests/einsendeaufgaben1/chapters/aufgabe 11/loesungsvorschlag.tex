@@ -1,0 +1,38 @@
+Schreiben Sie einen grundlegenden Anwendungsfall für ein Simulationsspiel einer
+Modelleisenbahn anhand des folgenden High‐Level Anwendungsfalls:
+
+\begin{itemize}
+    \item \textbf{Zug zusammenstellen}
+    \begin{itemize}
+        \item Zugnummer eingeben
+        \item Zugtyp auswählen
+        \item Lok auswählen
+        \item Wagons auswählen
+    \end{itemize}
+\end{itemize}
+
+\noindent
+Hinweise:\\
+Die Zugnummer muss einem bestimmten Format entsprechen (ZNR1).\\
+Die Länge des Zugs darf 30 Wagons nicht überschreiten (ZNR2).\\
+Lok und Wagons müssen zum Zugtyp passen (ZNR3).
+
+\section*{Antwort}
+
+s. Tabelle~\ref{tab:aufgabe11}
+
+\setlength{\tabcolsep}{0.1em}
+\begin{table}[]
+    \begin{tabular}{|llllll|}
+        \hline
+        \multicolumn{6}{|l|}{\cellcolor[HTML]{EFEFEF}\begin{tabular}[c]{@{}l@{}}Zug zusammenstellen (ZZS1)\\ Vorbedingungen: -\\ Nachbedingungen: -\end{tabular}}                                                                                                                                                                                      \\ \hline
+        \multicolumn{3}{|l|}{\cellcolor[HTML]{EFEFEF}\textbf{Vorhaben Anwender}}    & \multicolumn{3}{l|}{\cellcolor[HTML]{EFEFEF}\textbf{Verantwortlichkeit d. Systems}}                                                                                                                                                                              \\ \hline
+        \multicolumn{3}{|l|}{Zugnummer eingeben}                                    & \multicolumn{3}{l|}{\begin{tabular}[c]{@{}l@{}} - Überprüfen der Eingabe auf vorgegebenes \\ Format (Regel ZNR1)\\ - Fehlertext bei ungültigem Format\\ - Aktivierung Feld Zugtyp bei gültigem Format\end{tabular}} \\ \hline
+        \multicolumn{3}{|l|}{Zugtyp auswählen}                                      & \multicolumn{3}{l|}{\begin{tabular}[c]{@{}l@{}}- Aktivierung des Auswahlfeldes Lok,\\Auswahl basierend auf Zugtyp (ZNR3)\end{tabular}}                                                                                                                                  \\ \hline
+        \multicolumn{3}{|l|}{Lok auswählen}                                         & \multicolumn{3}{l|}{\begin{tabular}[c]{@{}l@{}} - Aktivierung des Eingabefeldes Waggons,\\ Auswahl basierend auf Zugtyp (ZNR3)\end{tabular}}                                                                         \\ \hline
+        \multicolumn{3}{|l|}{Waggons auswählen}                                     & \multicolumn{3}{l|}{\begin{tabular}[c]{@{}l@{}}- Überprüfung auf Anzahl d. Waggons (ZNR2)\\- Option zum Speichern bei gültiger Eingabe\end{tabular}}                                 \\ \hline
+        \multicolumn{3}{|l|}{Zusammenstellung speichern}                            & \multicolumn{3}{l|}{- Daten persistieren}                                                                                                                                                                                                                        \\ \hline
+    \end{tabular}
+    \caption{}
+    \label{tab:aufgabe11}
+\end{table}
