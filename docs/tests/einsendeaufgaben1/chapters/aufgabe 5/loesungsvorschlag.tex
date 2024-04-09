@@ -1,7 +1,13 @@
 Welche Vorgehensweise schlagen Sie für folgendes Projekt vor und warum:\\
 
 \noindent
-[...]
+Ein Unternehmen hat eine neue Messkarte entwickelt, mit der mit einem PC elektrische Signale aufgezeichnet werden können.
+Der Prototyp der Karte ist fertig.
+Die Ingenieure sind dabei sich zu überlegen, wie sie die Produktion verbilligen können, und fangen demnächst mit der Planung der Produktion und Vermarktung an.
+Die Karte ist sehr gut dokumentiert und es gibt bereits einfache Treiber für Testzwecke.
+Sie sollen mit zwei erfahrenen Mitarbeitern den Treiber zur Marktreife entwickeln und ausgehend von einer existierenden Software eine marktfähige Software zur Benutzung der Karte entwickeln.
+Die Marketingabteilung hat einen gut nachvollziehbaren und ausgereiften Entwurf für die GUI erstellt.
+Sie haben drei Monate Zeit, zwei Wochen mehr, als Sie für den Aufwand geschätzt haben.
 
 \section*{Antwort}
 Es sind zwei Aufgaben von drei erfahrenen Personen zu realisieren:
@@ -16,7 +22,8 @@ Es sind zwei Aufgaben von drei erfahrenen Personen zu realisieren:
 Es würde sich das \textbf{Wasserfallmodell} anbieten, denn:
 
 \begin{itemize}
-    \item das Team ist erfahren und besteht aus nicht zu vielen Personen
+    \item das Team ist erfahren
+    \item das Team besteht aus nicht zu vielen Personen (geringer Managementaufwand)
     \item die Anforderungen an die Funktionsweise des Treibers sind klar definiert
     \item[] \textit{und}
     \item für die zu erstellende Anwendung stehen die Anforderungen in Form eines ausgereiften Entwurfs des GUI zur Verfügung
@@ -26,8 +33,8 @@ Es würde sich das \textbf{Wasserfallmodell} anbieten, denn:
 
 \section*{Anmerkung}
 Auch ein \textbf{nebenläufiges Vorgehen}  wäre denkbar, wenn die Aufgabe \textit{Treiberentwicklung} unabhängig von der Aufgabe \textit{Anwendungsentwicklung} gesehen werden darf: Da allerdings die Wahrscheinlichkeit besteht, dass die Anwendung von in der Entwurfsphase herausgearbeiteten Schnittstellen der Karte / des Treibers abhängig ist, besteht hier keine klare Abgrenzung der beiden Aufgaben.\\
-Man könnte das Team \textit{Treiberentwicklung} als Vorgängerteam (ggf. zwei Mann aufgrund des fachlichen Anspruchs) im nebenläufigen Modell sehen, und das Team \textit{Anwendungsentwicklung} als Nachfolger``team`` (eine Person), das sofort beginnt, wenn die ersten Schnittstellen herausgearbeitet wurden (ggfl. parallel mit der Implementierung der verschiedenen Layouts, Interaktionselemente usw.).\\
+Dennoch könnte unter Anwendung dieses Modells das Team \textit{Treiberentwicklung} als Vorgängerteam (ggf. zwei Mann aufgrund des fachlichen Anspruchs) fungieren, und das Team \textit{Anwendungsentwicklung} als Nachfolger``team`` (eine Person), das sofort mit der Implementierung (verschiedene Layouts, Interaktionselemente usw.) beginnt, aber spätestens dann,  wenn die ersten Schnittstellen, die die Anwendung zu dem Treiber bedienen muß, herausgearbeitet wurden.\\
 Bei diesem Vorgehen müßten dann in der Umsetzungsphase Rückkoppelungen und Überarbeitungen in Kauf genommen werden, wobei
 \textit{Balzert} in~\cite[522]{Bal08} feststellt, dass die Gesamtdauer i.d.R. dennoch kürzer als beim sequentiellen Modell ist.
 Genauso führt er dort auf, dass das Modell gut geeignet ist, wenn die ``Anforderungen beim Projektstart noch nicht alle bekannt sind`` (\cite[524]{Bal08}). \\
-Nichtsdestotrotz sprechen die in der Aufgabe beschriebenen Umstände in Summe für das Wasserfallmodell.
+In Summe sprechen die in der Aufgabe beschriebenen Umstände dennoch für das Wasserfallmodell, insb. weil gute, endgültige Definitionen und Entwürfe vorzuliegen scheinen, was \textit{Balzert} als notwendige Voraussetzung für eine erfolgreiche Durchführung dieser Vorgehensweise aufführt (vgl.~\cite[519]{Bal08})
