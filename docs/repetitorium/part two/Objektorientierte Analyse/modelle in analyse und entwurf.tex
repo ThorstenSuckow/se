@@ -1,0 +1,81 @@
+\section{Modelle in Analyse und Entwurf}
+
+\subsection*{Analyse}
+
+\vspace{2mm}
+Die Analyse beschreibt fachliche Zusammenhänge, keine technischen.
+\vspace{2mm}
+
+
+
+Bereits in der ersten Phase der Softwareentwicklung gesammelte Anforderungen können nicht direkt umgesetzt werden, da sie meist viel zu ungenau sind.
+Offene Punkte müßten durch einen dauernden Kontakt zu Endanwender und Kunde geklärt werden.\\
+Außerdem zeigt sich, dass Anforderungen in sich widersprüchlich sein können, ohne, dass das auf den ersten Blick erkennbar ist.\\
+
+\noindent
+Eine Lösung wäre es, die Dokumente aus der Anforderungsphase sehr formal zu gestalten, wodurch die Dokumente aber sehr umfangreich und schwer verständlich werden.\\
+
+\noindent
+Stattdessen erstellt man in der \textbf{Analysephase} ein formales Modell sowohl des Problems \textit{in seinem Umfeld} als auch der Lösung.
+
+\subsection*{Entwurf}
+In der \textbf{Entwurfsphase} werden die \textbf{Architektur} der Anwendung bestimmt, unter Berücksichtung technischer Randbedingungen, die im Rahmen nicht-funktionaler Anforderungen in der Anforderungsphase gesammelt wurden und vom Kunden stammen (s. Abschnitt~\ref{subsec:technische-randbedingung}).\\
+Die Architektur schließt u.a. ein:
+
+\begin{itemize}
+    \item Programmiersprache
+    \item Frameworks
+    \item Einsatz von Datenbanken
+    \item \ldots
+\end{itemize}
+
+\noindent
+Meist bleiben im Anschluss technische Fragen offen, die in der \textbf{Entwurfsphase} beantwortet werden.
+
+\begin{itemize}
+    \item Welche \textbf{Klassen} aus der \textbf{Analyse} können übernommen werden?
+    \item Wie werden Klassen in einem relationalen Datenbank-Schema gespeichert?
+    \item Welche Steuerungklassen müssen für die GUI implementiert werden?
+\end{itemize}
+
+\noindent
+Das Erstellen eines Modells der geplanten Software bietet den Vorteil, das Entwurfs-Alternativen einfacher und schneller durchdacht werden können, und die Zusammenarbeit einfacher ist, wenn die Umsetzung genauer geplant wird (vgl. \cite[2]{Wed09b}).
+
+
+\subsection*{Definition Modell}
+
+
+\vspace{2mm}
+\begin{tcolorbox}[title=Arbeitsdefinition ``Modell``]
+    Ein \textbf{Modell} ist ein Produkt des \textbf{Modellierungsvorgangs}.\\
+
+    \noindent
+    Es beschriebt tatsächliche oder gedachte Gegenstände oder Konzepte und deren Beziehungen.\\
+
+    \noindent
+    Ein Modell erfasst diese Konzepte nicht vollständig, sondern \textbf{abstrakt}, also verkürzt und vereinfacht (vgl. \cite[2]{Wed09b}).
+\end{tcolorbox}
+\vspace{2mm}
+
+\subsection*{Statische und dynamische Modelle}
+
+\noindent
+Modelle der Analyse und des Entwurfs bestehen aus miteinander verzahnten \textbf{statischen} und \textbf{dynamischen} Modellen:
+
+\begin{itemize}
+    \item \textbf{statische Modelle} beschreiben die Bausteine eines Systems und wie sie zusammengesetzt sind\footnote{vergleichbar mit technischen Zeichnungen}
+    \item \textbf{dynamische Modelle} beschreiben die Zusammenarbeit der Bausteine, also deren verhalten und die Nachrichten, die Verhalten auslösen
+\end{itemize}
+
+\noindent
+\textbf{Dynamische Modelle} sind \textit{notwendig}, da das Zusammenspiel der Modellelemente aus dem statischen Modell nicht immer eindeutig abgeleitet werden kann.\\
+
+\noindent
+Als Grundlage zur Modellierung wird meist der \textbf{objektorientierte} Ansatz gewählt\footnote{
+    mit dem Vorteil, dass für die Modellierung dieselben Techniken gewählt werden wie bei der späteren Umsetzung
+}.\\
+
+\noindent
+Hierfür wird i.d.R. \textbf{UML}\footnote{
+s. UML Version 2.5.1: \url{https://www.omg.org/spec/UML/}, abgerufen 10.04.2024
+} verwendet, damit die Beschreibung eindeutig für alle Benutzer ist.
