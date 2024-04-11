@@ -1,0 +1,403 @@
+\chapter{Einführung in UML}
+
+\textbf{UML} (\textit{Unified Modeling Language}) ist eine grafische Notation zur Modellierung von Software\footnote{
+die Spezifikationen sind zu finden unter \url{https://www.omg.org/spec/UML/} - abgerufen 28.01.2024.\\
+Der in diesem Abschnitt enthaltene Text und seine Abbildungen wurde entnommen aus ``Repetitorium FOPT, WS 23/24``, \url{https://thorsten.suckow-homberg.de}
+}.\\
+
+\noindent
+UML erlaubt die Modellierung unterschiedlicher Sichten auf ein Software-System, z.B
+
+\begin{itemize}
+    \item die \textbf{funktionalen Anforderungen} durch \textbf{Use Cases}
+    \item die \textbf{statische Struktur}, {bspw.} strukturierende Einheiten wie Klassen und Packages und deren Beziehungen zueinander über Klassen- und Komponentendiagramme
+    \item das dynamische Verhalten eines Systems, also zur Laufzeit, {bspw.} durch \textbf{Sequenzdiagramme}, \textbf{Aktivitätsdiagramme} und Diagramme für \textbf{endliche Automaten}
+\end{itemize}
+\noindent
+
+\section{Klassendiagramme}
+
+\textbf{Klassendiagramme} beschreiben die statische Struktur eines Programms und spiegeln in abstrakter Form den Quellcode des Programms wider.\\
+
+\noindent
+Wesentliche Einheiten: Klassen, Schnitstellen und deren Beziehungen zueinander.\\
+
+\noindent
+Symbole für Sichtbarkeiten in einem Klassendiagramm:
+
+\begin{itemize}
+    \item \code{public}: \code{+}
+    \item \code{private}: \code{-}
+    \item \code{protected}: \code{#}
+    \item \code{package}: \code{~}
+\end{itemize}\\
+
+\noindent
+Eine Klasse in einem Klassendiagramm wird durch ein Rechteck dargestellt, das aus 3 vertikal angeordneten Blöcken bestehen kann:\\
+
+\begin{enumerate}
+    \item Klassenname / Schnittstellenname\footnote{
+        Wenn Klassendiagramme ohne Attribute und Methoden dargestellt werden, dann beinhaltet das Rechteck, das Klasse / Schnittstelle repräsentiert, nur den \textit{Namen}.
+    }
+        \begin{itemize}
+            \item abstrakte Klassen werden kursiv geschrieben
+            \item wenn es sich um ein Interface handelt, kann zur Kenntlichmachung ein \code{<<interface>>} über den Klassennamen gesetzt werden
+        \end{itemize}
+    \item Attribute
+        \begin{itemize}
+            \item[] \code{[Sichtbarkeit] [Name]:[Typ]}
+        \end{itemize}
+    \item Methoden
+    \begin{itemize}
+        \item[] \code{[Sichtbarkeit] [Name]([Parameterliste]):[Rückgabetyp]}
+        \item[] Parameterliste := \code{[Name]:Typ}, kommasepariert
+    \end{itemize}
+\end{enumerate}\\
+
+\noindent
+Statische Attribute und Methoden werden \ul{unterstrichen}.\\
+
+\noindent
+Klassen und Schnittstellen, die zu einem \textbf{Package} gehören, können in einem Rechteck zusammengefasst werden, das mit dem Package-Namen beschriftet ist.
+
+\begin{figure}
+    \centering
+    \includegraphics[scale=0.5]{chapters/Anhang/Einführung in UML/img/classdiagram}
+    \caption{Ein Beispiel für ein UML-Klassendiagramm. (Quelle: eigene)}
+    \label{fig:classdiagram}
+\end{figure}
+
+\section{Assoziationen}
+
+Ein Attribut, das vom Typ einer Schnittstelle oder einer Klasse ist, kann durch eine \textbf{Assoziation} dargestellt werden.\\
+
+\noindent
+Assoziationen sind einfache Pfeile, die in Richtung der verwendeten Klasse/ Schnittstelle zeigen, die das Attribut darstellt.\\
+
+\noindent
+Klassendiagramme sind statisch; eine mögliche Dynamik kann über \textbf{Kardinalitäten} dargestellt werden.\\
+In der folgenden Abbildung~\ref{fig:association} referenziert im Beispiel b) ein \code{Company}-Objekt genau ein \code{Employee}-Objekt.\\
+Im Beispiel c) referenziert ein \code{Company}-Objekt genau ein oder kein \code{Employee}-Objekt.\\
+
+
+\noindent
+Werden mehrere \code{Employee}-Objekte zur Laufzeit erzeugt, kann man deren Beziehungen zu den \code{Company}-Objekten ebenfalls durch Kardinalitäten ausdrücken:\\
+\noindent
+Im Beispiel d) wird ein \code{Employee}-Objekt von mehreren \code{Company}-Objekten referenziert.\\
+\noindent
+Im Beispiel e) wird ein \code{Employee}-Objekt immer von genau einem \code{Company}-Objekt referenziert.
+
+\begin{figure}
+    \centering
+    \includegraphics[scale=0.5]{chapters/Anhang/Einführung in UML/img/association}
+    \caption{Beispiele für Assoziation mit Kardinalitäten. (Quelle: eigene)}
+    \label{fig:association}
+\end{figure}
+
+\noindent
+In Abbildung~\ref{fig:multipleemployees} kann ein \code{Company}-Objekt mehrere \code{Employee}-Objekte referenzieren, das folgende Listing demonstriert eine Implementierung.\\
+
+\begin{figure}
+    \centering
+    \includegraphics[scale=0.5]{chapters/Anhang/Einführung in UML/img/multipleemployees}
+    \caption{Ein Company-Objekt referenziert mehrere Employee-Objekte. (Quelle: eigene)}
+    \label{fig:multipleemployees}
+\end{figure}
+
+
+\begin{minted}[mathescape,
+    linenos,
+    numbersep=5pt,
+    gobble=2,
+    frame=lines,
+    framesep=2mm]{java}
+    public class Company {
+
+        private List<Employee> employees;
+
+        public Company() {
+            employees = new ArrayList<Employee>();
+        }
+
+    }
+\end{minted}\\
+
+\section{Objektdiagramme}
+
+\textbf{Objektdiagramme} beschreiben eine Situation zu einem bestimmten Zeitpunkt.\\
+
+\noindent
+Objekte werden durch ein Rechteck dargestellt, in der ein \ul{unterstrichenes} \code{:[Klassenname]} die Instanz repräsentiert. \\
+In dieser Schreibweise wird eine anonyme Instanz repräsentiert.
+Wird hingegen ein Bezeichner vor den Doppelpunkt gestellt, wird auf ein konkretes Objekt verwiesen.\\
+
+\begin{figure}
+    \centering
+    \includegraphics[scale=0.5]{chapters/Anhang/Einführung in UML/img/objectdiagram}
+    \caption{Beispiel für ein Objektdiagramm (ohne Attribute). (Quelle: eigene)}
+    \label{fig:objectdiagram}
+\end{figure}
+
+\noindent
+Verschiedene Assoziationen von Objekten sind in Abbildung~\ref{fig:objectassociations} dargestellt.\\
+In dem Beispiel b) referenziert eine \code{Company} mehrere \code{Employee}s.\\
+Im Beispiel c) wird ein \code{Employee} von mehreren \code{Company}s referenziert.\\
+
+\begin{figure}
+    \centering
+    \includegraphics[scale=0.5]{chapters/Anhang/Einführung in UML/img/objectassociations}
+    \caption{Beispiele für Assoziationen bei Objektdiagrammen. (Quelle: eigene)}
+    \label{fig:objectassociations}
+\end{figure}
+
+\noindent
+$\rightarrow$ Objektdiagramme sind nur zu einem bestimmten Zeitpunkt während des Ablaufs eines Programms gültig.\\
+
+\noindent
+$\rightarrow$ In einem Klassendiagramm modelliert man die Aspekte, die bei einer bestimmten Betrachtung betont werden sollen.\\
+
+\noindent
+Es ist auch möglich, Assoziationen in beide Richtungen zu modellieren, wie Abbildung~\ref{fig:bidirectionalassociation} zeigt.
+Folgendes Listing demonstriert eine mögliche Implementierung:
+
+\begin{figure}
+    \centering
+    \includegraphics[scale=0.5]{chapters/Anhang/Einführung in UML/img/bidirectionalassociation}
+    \caption{Beispiel für eine bidirektionale Assoziation. (Quelle: eigene)}
+    \label{fig:bidirectionalassociation}
+\end{figure}
+
+
+\begin{minted}[mathescape,
+    linenos,
+    numbersep=5pt,
+    gobble=2,
+    fontsize=\small,
+    frame=lines,
+    framesep=2mm]{java}
+    public class Company {
+        private Employee emp;
+    }
+    public class Employee {
+        private Company comp;
+    }
+\end{minted}\\
+
+\noindent
+    Bei einer bidirektionalen Assoziation muss nicht unbedingt ein Objekt auf das referenzierende Objekt zurückverweisen - hierbei kann es sich auch um ein unterschiedliches Objekt desselben Typen handeln.\\
+
+\begin{figure}
+    \centering
+    \includegraphics[scale=0.5]{chapters/Anhang/Einführung in UML/img/bidirectionalassocexample}
+    \caption{Beispiele für bidirektionale Assoziation. In b) ist die Situation dargestellt, bei denen auf das referenzierende Objekt nicht unbedingt von dem
+    referenzierten Objekt zurückverwiesen werden muss (s. Abbildung~\ref{fig:bidirectionalassociation} für das korrespondierende Klassendiagramm) (Quelle: eigene)}
+    \label{fig:bidirectionalassocexample}
+\end{figure}
+
+\newpage
+Die Situation aus Abbildung~\ref{fig:bidirectionalassocexample} b) kann wie folgt im Code implementiert werden.
+
+\begin{minted}[mathescape,
+    linenos,
+    numbersep=5pt,
+    gobble=2,
+    frame=lines,
+    framesep=2mm]{java}
+    Company powerPlant = new Company();
+    Company mrPlow = new Company();
+    Employee homer = new Employee();
+
+    powerPlant.setEmployee(homer);
+    homer.setCompany(mrPlow);
+\end{minted}\\
+
+\noindent
+Assoziationen können auch \textbf{reflexiv} sein:
+
+
+\begin{figure}
+    \centering
+    \includegraphics[scale=0.5]{chapters/Anhang/Einführung in UML/img/reflexive}
+    \caption{Beispiel für eine Klasse, die sich selbst referenziert. Die Referenz muss nicht unbedingt auf dieselbe Instanz verweisen, aber zumindest auf denselben Typen. (Quelle: eigene)}
+    \label{fig:reflexive}
+\end{figure}
+
+\newpage
+\section{Benutzt-Beziehungen}
+
+\begin{tcolorbox}[enlarge top by=0.5cm,enlarge bottom by=0.5cm]
+    Referenzen, die einen Methodenaufruf nicht überdauern (Parameter, Rückgabe, lokale Variable), werden durch \textbf{Benutzt-Beziehungen} ausgedrückt.\\
+
+    \noindent
+    Eine \textbf{Assoziation} schließt eine \textbf{Benutzt-Beziehung} immer mit ein.
+\end{tcolorbox}\\
+
+\noindent
+Wenn eine Klasse \code{X} kein Objekt-Attribut vom Typ \code{Y} deklariert, kann der Typ \code{Y} dennoch von \code{X} \textit{benutzt} werden: Als Parameter und/oder Rückgabetyp von Methoden, oder als lokale Variable\footnote{
+s. hierzu auch ``4.12.3. Kinds of Variables``: \url{https://docs.oracle.com/javase/specs/jls/se21/html/jls-4.html#jls-4.12.3} - abgerufen 02.03.2024
+}.\\
+Eine \textbf{Benutzt-Beziehung} wird durch eine gestrichelte Linie dargestellt.\footnote{
+Das Skript zu FOPT 3 geht bei der Benutzt-Beziehung nicht sehr in die Tiefe, auch wird i.d.R. eine gestrichelte Pfeilspitze anstatt einer geschlossenen für die Benutzt-Beziehungen verwendet. Siehe hierzu auch die UML-Spezifikation unter \url{https://www.omg.org/spec/UML/2.5.1/PDF} - abgerufen 28.01.2024
+}
+
+
+\begin{figure}
+    \centering
+    \includegraphics[scale=0.5]{chapters/Anhang/Einführung in UML/img/uses}
+    \caption{Beispiel für eine Benutzt-Beziehung unter Verwendung der Notation aus dem FOPT 3 Skript. (Quelle: eigene)}
+    \label{fig:uses}
+\end{figure}
+
+\section{Vererbungs- und Implementierungsbeziehungen}
+
+\textbf{Vererbungsbeziehungen} werden durch einen offenen Pfeil und eine durchgezogene Linie Richtung der Elternklasse dargestellt (s. Abbildung~\ref{fig:inheritance} a).\\
+
+\textbf{Implementierungsbeziehungen} werden durch einen offenen Pfeil und eine gestrichelte Linie Richtung der implementierten Schnittstelle dargestellt (s. Abbildung~\ref{fig:inheritance} b).\\
+
+In Java kann ein Interface mehrere Superinterfaces implementieren\footnote{
+    ``8.1.5. Superinterfaces``: \url{https://docs.oracle.com/javase/specs/jls/se21/html/jls-8.html#jls-8.1.5} - abgerufen 02.03.2024
+}, was in (s. Abbildung~\ref{fig:inheritance} c) dargestellt ist:\\
+
+\begin{minted}[mathescape,
+    numbersep=5pt,
+    gobble=2,
+    frame=none,
+    framesep=2mm]{java}
+    public Interface A extends B, C {
+        ...
+    }
+\end{minted}\\
+
+\begin{figure}
+    \centering
+    \includegraphics[scale=0.5]{chapters/Anhang/Einführung in UML/img/inheritance}
+    \caption{Beispiele für Vererbungs- (a, c) und Implementierungsbeziehungen (b). (Quelle: eigene)}
+    \label{fig:inheritance}
+\end{figure}
+
+\newpage
+\section{Sequenzdiagramme}
+
+\textbf{Sequenzdiagramme} dienen zur grafischen Beschreibung des dynamischen Verhaltens eines Programmes.
+
+\begin{tcolorbox}[enlarge top by=0.5cm,enlarge bottom by=0.5cm]
+\blockquote[{\cite[333]{Oes05}}]{
+Der Zweck von Sequenzdiagrammen ist es, genau ein Szenario darzustellen und nicht eine Menge von verschiedenen Abläufen.
+}
+\end{tcolorbox}
+
+\noindent
+Sequenzdiagramme werden auch \textbf{Raum-Zeit-Diagramme} genannt, weil auf der $x$-Achse der Raum der involvierten
+Objekte dargestellt wird, während die $y$-Achse nach unten die Zeit symbolisiert.\\
+
+\noindent
+Als Beispiel sei folgender Code gegeben, der in dem Sequenzdiagramm in Abbildung~\ref{fig:sequence} dargestellt ist.
+
+\begin{minted}[mathescape,
+    linenos,
+    numbersep=5pt,
+    gobble=2,
+    frame=lines,
+    framesep=2mm]{java}
+    class X {
+        public void foo(Y y) {
+            y.bar();
+        }
+    }
+    public class SequenceDemo {
+        X x;
+        Y y;
+        public static void main(String[] args) {
+            x = new X();
+            y = new Y();
+            x.foo(y);
+        }
+    }
+\end{minted}\\
+
+
+\begin{figure}
+    \centering
+    \includegraphics[scale=0.5]{chapters/Anhang/Einführung in UML/img/sequence}
+    \caption{Beispiel für ein Sequenzdiagramm. (Quelle: eigene)}
+    \label{fig:sequence}
+\end{figure}
+
+\noindent
+Die Kästchen auf der $x$-Achse symbolisieren \textbf{Objekte}, \textit{nicht} Klassen.\\
+
+\noindent
+Gestrichelte vertikale Linien unter den Objekten stellen die Lebenszeit der involvierten Objekte dar.\\
+
+\noindent
+Der \textbf{Aufruf} einer Methode wird durch eine durchgezogene Linie gekennzeichnet, die \textbf{Rückkehr} aus der Methode durch eine
+gestrichelte Linie.
+
+\begin{tcolorbox}[enlarge top by=0.5cm,enlarge bottom by=0.5cm]
+Ein Sequenzdiagramm gibt immer einen von mehreren möglichen Abläufen an.\\
+\end{tcolorbox}
+
+
+\noindent
+Findet ein Methodenaufruf bei einem Objekt statt, auf dem bereits ein Methodenaufruf stattfindet, wird das Kästchen für den Methodenaufruf leicht versetzt dargestellt, wie in Abbildung~\ref{fig:callback} zu sehen ist; nachfolgendes Listing enthält die Implementierung dazu.
+
+\begin{minted}[mathescape,
+    linenos,
+    numbersep=5pt,
+    gobble=2,
+    frame=lines,
+    framesep=2mm]{java}
+    class Y {
+        public void bar(X x) {
+            x.callback();
+        }
+    }
+
+    class X {
+        public void foo(Y y) {
+            y.bar(this);
+        }
+
+        public void callback() {
+            ...
+        }
+    }
+    public class SequenceDemo {
+        X x;
+        Y y;
+        public static void main(String[] args) {
+            x = new X();
+            y = new Y();
+            x.foo(y);
+        }
+    }
+\end{minted}\\
+
+\begin{figure}
+    \centering
+    \includegraphics[scale=0.5]{chapters/Anhang/Einführung in UML/img/callback}
+    \caption{Beispiel für ein Sequenzdiagramm, bei dem eine Methode des aufrufenden Objektes aufgerufen wird. (Quelle: eigene)}
+    \label{fig:callback}
+\end{figure}
+
+\noindent
+Die Darstellung \textbf{rekursiver Aufrufe} ist ebenfalls möglich, wie Abbildung~\ref{fig:recursion} zeigt.
+
+\begin{figure}
+    \centering
+    \includegraphics[scale=0.5]{chapters/Anhang/Einführung in UML/img/recursion}
+    \caption{Beispiel für ein Sequenzdiagramm für rekursive Aufrufe der Methode foo(). (Quelle: eigene)}
+    \label{fig:recursion}
+\end{figure}
+
+
+\noindent
+Werden erst während der Abfolge eines Sequenzdiagramms neue Objekte erzeugt, werden diese Objekte in dem Sequenzdiagramm versetzt dargestellt, wie in Abbildung~\ref{fig:create} zu sehen ist.
+
+\begin{figure}
+    \centering
+    \includegraphics[scale=0.5]{chapters/Anhang/Einführung in UML/img/create}
+    \caption{Beispiel für die Darstellung der Erzeugung eines neuen Objektes in einem Sequenzdiagramm. (Quelle: eigene)}
+    \label{fig:create}
+\end{figure}
+
