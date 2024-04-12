@@ -1,0 +1,105 @@
+\section{Domänenmodell}
+
+\noindent
+Der Begriff \textbf{Domäne} bezeichnet das fachliche Umfeld der Aufgabe.\\
+
+\noindent
+Das \textbf{Domänenmodell} ist das \textit{statische Modell} der Domäne.\\
+
+\noindent
+In der \textbf{Analysephase} wird das Domänenmodell in Form von Klassendiagrammen erstellt.
+Es beschreibt damit
+
+
+\begin{itemize}
+    \item welche Klassen es in einer Domäne gibt
+    \item wie diese Klassen ausgeprägt sind
+    \item welche Beziehungen sie untereinander haben
+\end{itemize}
+
+\noindent
+Als Artefakt der Analyse gilt für das Domänenmodell, dass auf eine Darstellung technischer Gesichtspunkte verzichtet wird.\\
+
+\noindent
+Für die weitere Arbeit ist das Domänenmodell
+
+\begin{itemize}
+    \item Grundlage für die Entwicklung der grafischen Benutzeroberfläche
+    \item sowie in der \texbf{Realisierungsphase} Basis für
+        \begin{itemize}
+            \item die Implementierung der Datenhaltung der Software
+            \item Datenbankmodelle
+            \item Formate von Daten
+            \item Schnittstellen zwischen Anwendungen
+        \end{itemize}
+\end{itemize}
+
+\subsection{Erstellung eines Domänenmodells}
+Das \textbf{Domänenmodell} basiert auf den Anforderungen und den in der Anforderungsphase gesammelten Informationen.\\
+
+\noindent
+Die einzelnen Teile des Modells können systematisch ermittelt werden, bspw. in folgender Reihenfolge:
+
+\begin{enumerate}
+    \item Klassen
+    \item Assoziationen
+    \item Attribute
+    \item Vererbungsbeziehungen
+    \item Verantwortlichkeiten oder Operationen
+\end{enumerate}
+
+\subsection*{Klassen ermitteln}
+Hauptwörter in den in den Anforderungen erfassten User Storys oder Anwendungsfällen stehen meistens für \textbf{Klassen}, \textbf{Objekte} oder \textbf{Attribute}.
+
+\subsection*{Assoziationen}
+\textbf{Assoziationen} erkennt man an Beschreibungen wie
+\begin{itemize}
+    \item \textit{hat}
+    \item \textit{besitzt}
+    \item \textit{kontrolliert}
+    \item \textit{ist verbunden mit}
+    \item \textit{ist Teil von}
+    \item \textit{hat Teil}
+    \item \textit{ist Mitglied von}
+    \item \textit{besitzt Mitglied}
+\end{itemize}
+
+\subsection*{Attribute ermitteln}
+
+\noindent
+Hinter den Formulierungen \textit{hat} und \textit{besitzt} verbergen sich auch häufig \textbf{Attribute}.\\
+
+\noindent
+\textbf{Attribute} sind Informationen, die eine Klasse besitzt und pflegt.
+
+\subsection*{Vererbungsbeziehungen}
+\textbf{Vererbungsbeziehungen} erkennt man daran, dass Daten oder Verhalten mehrere Klassen identisch sind.
+
+\vspace{2mm}
+\begin{tcolorbox}
+    Für die Beziehung zwischen einer abgeleiteten Klasse und ihrer Superklasse muss gelten
+    \textit{kann verwendet werden als} und \textit{ist ein}\footnote{
+    s. Abschnitt~\ref{sec:beziehungen-von-klassen}
+    } (vgl.\cite[16]{Wed09b}).
+\end{tcolorbox}
+\vspace{2mm}
+
+
+\subsection*{Verantwortlichkeit}
+Unter dem Begriff \textbf{Verantwortlichkeit} fasst man die Summe des Verhaltens einer Klasse zusammen.\\
+Zum typischen Verhalten gehören bspw.
+
+\begin{itemize}
+    \item \textit{lesen}
+    \item \textit{schreiben}
+    \item \textit{suchen}
+    \item \textit{berechnen}
+    \item \textit{entscheiden}
+\end{itemize}
+
+\subsection*{Anzahl der Verantwortlichkeiten einer Klasse}
+Wenn eine Verantwortlichkeit nicht eindeutig einer Klasse zugeordnet werden kann, sollte man überprüfen, ob ein Fehler in der Modellierung vorliegt oder ob explizit eine Klasse modelliert werden muss, die diese Verantwortung trägt.\\
+
+\noindent
+Klassen sollten max. ein bis zwei Verantwortlichkeiten haben.\\
+Sollten mehrere Verantwortlichkeiten vorliegen, sollte man überlegen, die Klasse aufzuteilen.
