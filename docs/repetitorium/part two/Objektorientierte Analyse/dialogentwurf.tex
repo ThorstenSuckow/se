@@ -1,0 +1,136 @@
+\section{Dialogentwurf}
+Im \textbf{Dialogentwurf} wird die Schnittstelle zwischen Anwendern und einem System entworfen, die sogenannte \textbf{Benutzeroberfläche}.\\
+
+\noindent
+Dabei wird geplant
+
+\begin{itemize}
+    \item welche Informationen an welcher Stelle angezeigt werden
+    \item welche Aktionen in welchem Zusammenhang ausgeführt werden können
+    \item wie die Abläufe für die Benutzer(gruppen) sein werden
+    \item wie die graphische Oberfläche gestaltet wird
+\end{itemize}
+
+\noindent
+Der Dialogentwurf ist wichtig für den Erfolg einer Software: Der Dialog ist das \textit{Gesicht der Anwendung} und deswegen oft entscheidend für die Zufriedenheit der Endnutzer und den Kauf des Produktes.\\
+
+\noindent
+Technische Randbedingungen und kommerzielle Interessen müssen bei dem Dialogentwurf berücksichtigt werden.
+
+
+\subsection{Vorgehen}
+
+Folgendes Vorgehen wird vorgeschlagen (vgl.~\cite[29]{Wed09b}):
+
+\begin{enumerate}
+    \item Entscheiden, um welche prinzipielle Art der Anwendung es sich handelt
+    \item \textbf{Informationsarchitektur} planen: Inhalte und Verteilung der Inhalte überlegen
+    \item basierend auf diesen Überlegungen wird die äußere Struktur und das äußere Erscheinungsbild entworfen
+\end{enumerate}
+
+\noindent
+Grundlage für diese Arbeiten sind die \textbf{Anforderungen} und die bisherigen \textbf{Ergebnisse der Analyse}.
+
+\subsubsection*{Informationsarchitektur}
+Die \textbf{Informationsarchitektur} (\textbf{logische Gestalt}) einer Anwendung definiert, wie die Informationen und die Funktionalität einer Anwendung strukturiert sind, ohne bereits einen konkreten graphischen Entwurf vor Augen zu haben (vgl.\cite[30]{Wed09b}).\\
+
+\noindent
+Die Informationsarchitektur definiert außerdem die \textbf{Navigation} für die Benutzer.\\
+
+\noindent
+Es wird unterschieden zwischen \textbf{Primärdialogen} und \textbf{Sekundärdialogen}:
+
+\begin{itemize}
+    \item \textbf{Primärdialoge}: Stehen dem Benutzer zur Aufgabenerledigung zur Verfügung
+    \item \textbf{Sekundärdialoge}: Führen Hilfsarbeitsschritte durch
+\end{itemize}
+
+\subsubsection*{Objektorientiertes und Anwendungsfallorientiertes Bedienkonzept}
+Bei den Bedienkonzepten unterscheidet man zwischen \textbf{objektorientiertem}\footnote{
+\textit{objektorientiert} nicht im Sinne von OOP
+} und \textbf{Anwendungsfallorientiertem} Bedienkonzept:
+
+\begin{itemize}
+    \item \textbf{Objektorientiert}: Auf in der Oberfläche ausgewählte Objekte können Aktionen durchgeführt werden.
+    \item[] Bei dem Entwurf kann man sich am Domänenmodell orientieren, als Faustregel gilt: Jede Domänenklasse benötigt einen Dialog zur Ansicht, Neuanlage und Änderung, für jede $1:n$-Assoziation wird ein Listendialog benötigt
+    \item \textbf{Anwendungsfallorientiert}: Je Anwendungsfall gibt es einen Dialog\footnote{
+    Dialog ``Adresse ändern``, ``Benutzerkonto einsehen`` \ldots
+    }.
+\end{itemize}
+
+
+\subsubsection*{Dialogablaufplan}
+Einzelne Dialoge werden als Rechtecke dargestellt und mit ihren Titeln versehen.\\
+Übergänge zwischen den Dialogen werden als Pfeile dargestellt.\\
+In einem separaten Dokument kann für jeden Dialog der INhalt festgehalten werden (in tabellarischer Form also Eingabefelder, mögliche Aktionen...).
+
+\subsubsection*{Physische Form}
+Neben der \textbf{logischen} ist auch die \textbf{äußere Gestalt} zu entwerfen, die \textbf{physische Form}.\\
+Hierbei wird u.a. entschieden, ob die Anwendung aus einem komplexen Fenster besteht, in dem sich Teile ändern (die einzelnen Kacheln, \textit{Tiles}, wie bspw. in einem Email-Programm), ob sich der INhalt des Fensters ändert (bspw. \textit{Wizards}), oder ob es mehrere Fenster geben soll.\\
+I.d.R. sind bei großen Anwendungen Mischlösungen anzutreffen, wo bspw. der \textbf{Primärdialog} in einem gekachelten Fenster implementiert ist und \textbf{Sekundärdialoge} in anderen Fenstern.\\
+
+\noindent
+Anschließend kann der genaue Inhalt und das graphische Aussehen bestimmt werden.
+
+\subsubsection*{Prototyping}
+Das \textbf{Prototyping} kann bspw. über Mockups bzw. Wireframes realisiert werden, oder auc mit Bleistift und Papier.\\
+In jedem Fall sind so Änderungswünsche in einem Kundengespräch schnell und unkompliziert durchgeführt.
+
+\subsection{Ergonomie}
+Mit dem Begriff \textbf{Software-Ergonomie} (\textit{Usability}) wird die \textbf{Benutzbarkeit} bzw. \textbf{Gebrauchstauglichkeit} von Software bezeichnet.\\
+
+\noindent
+Die Ergonomie ist wichtig, damit
+
+\begin{itemize}
+    \item die Anwendung von den Benutzern akzeptiert wird
+    \item die Benutzer längere Zeit ohne phsysische und psychische Ermüdungserscheinungen arbeiten können\footnote{
+    in Deutschland bspw. geregelt über die \textit{Bildschirmarbeitsverordnung}, wenn Softwrae für kommerzielle Zwecke eingesetzt wird.
+    }
+\end{itemize}
+
+\noindent
+In Sicherheitskritischen Bereichen wie der Luftfahrt ist Ergonomie wichtig, da Ermüdungserscheinungen fatale Folgen haben können.\\
+
+\noindent
+Das Ziel der \textbf{User Experience} (\textbf{UX}, \textit{Nutzungserlebnis}) ist ein möglichst angenehmes Nutzungserlebnis, was nicht unbedingt mit einer guten Ergonomie verbunden ist.\\
+
+\noindent
+Einflüsse auf die Ergonomie haben u.a. die logische Aufteilung der Inhalte, die graphische Gestaltung und die Benutzerführung.
+
+\subsubsection*{Graphische Gestaltung}
+Die \textbf{graphische Gestaltung} ist für die Ergonomie einer Software nicht nur für das Erleben, sondern auch für eine stressfreie Nutzung wichtig.\\
+
+\noindent
+Als Grundregeln gelten hier die übersichtliche Gestaltung der Benutzeroberfläche, indem
+
+\begin{itemize}
+    \item genügend Platz gelassen
+    \item Zusammengehöriges gruppiert und voneinander abgesetzt wird
+    \item nicht zuviele verschieden Schriftarten verwendet werden
+    \item Farben sparsam und konsistent ohne zu große Kontraste eingesetzt werden
+    \item Farben und Schriftarten auf die Bedürfnisse der Nutzer anpassbar sind
+\end{itemize}
+
+\subsubsection*{Styleguide}
+Gleiche Elemente einer Benutzeroberfläche sollten gleich aussehen und nach einer durchgängigen Logik angeordnet sein.\\
+Solche Richtlinien lassen sich in einem \textbf{Styleguide} zusammenfassen.
+
+\subsubsection*{DIN EN ISO 9241}
+Die für die \textbf{Ergonomie von Bildschirmarbeitsplätzen} wichtigste Norm ist die \textbf{DIN EN ISO 9241}\footnote{
+s. \url{https://de.wikipedia.org/wiki/ISO_9241}, abgerufen 13.04.2024
+} (\textit{Ergonomie der Mensch-System-Interaktion}).\\
+Für die Gestaltung von Benutzeroberflächen ist insb. Teil 110 \textit{Grundsätze der Dialoggestaltung} relevant, in der 7 Gestaltungsgrundsätze zusammengefasst sind:
+
+\begin{itemize}
+    \item \textbf{Aufgabenangemessenheit}: Ein Dialog ist den Aufgaben angemessen, wenn er die Benutzer unterstützt, die Aufgaben effektiv und effizient zu erledigen.
+    \item \textbf{Selbstbeschreibungsfähigkeit}: Für die Benutzer ist jederzeit offensichtlich, im welchem Dialog und an welcher Stelle im Dialog sie sich befinden, welche Handlungen unternommen werden und wie diese ausgeführt werden können.
+    \item \textbf{Steuerbarkeit}: Der Benutzer ist in der lage, den Dialogablauf zu starten und seine Richtung und Geschwindigkeit zu ändern, bis das Ziel erreicht ist (bspw. Rückgängigmachfunktion, Vor-/Zurück-Buttons \ldots).
+    \item \textbf{Erwartungskonformität}: Ein Dialog ist erwartungskonform, wenn er konsistent ist und den Merkmalen des Benutzers entspricht (Kenntnisse Arbeitsgebiet, Ausbildung, Erfahrung, allgemein anerkannter Konventionen, bspw. einheitliche Verwendung von Funktionscodes und Funktionstasten in allen Dialogen).
+    \item \textbf{Fehlertoleranz}: Das beabsichtigten Arbeitsergebnis wird trotz erkennbar fehlerhafter Eingaben mit keinem oder \textbf{minimalen Korrekturaufwand} seitens des Benutzers erreicht.
+    \item \textbf{Individualisierbarkeit}: Das Dialogsystem erlaubt Anpassungen an Erfordernisse der Arbeitsaufgabe sowie individuelle Fähigkeiten und Vorlieben des Benutzers.
+    \item \textbf{Lernförderlichkeit}: Der Benutzer wird beim Erlernen des Dialogs unterstützt und angeleitet.
+\end{itemize}
+
+\subsubsection*{Barrierefreiheit}
+Unter Barrierefreiheit \textit{Accessibility} versteht man, dass eine Software so gestaltet ist, dass auch Menschen mit Behinderungen mit dieser Software arbeiten können.
