@@ -1,0 +1,27 @@
+\section{Beispiel}
+
+Bei \cite[43 ff.]{Wed09b} findet sich der beispielhafte Weg zu der Entwicklung einer Architektur für das in dem Skript vorgestellte \textit{Bibliothekssystem}.\\
+
+\noindent
+Die Systemidee schreibt den Einsatz einer Datenbank zur Speicherung und zum Durchsuchen der Daten vor.\\
+Weitere Anforderungen, aus denen auch Anforderungen an die Architektur entstehen, lauten wie folgt:
+
+\begin{itemize}
+    \item \textbf{N1: Mehrbenutzerbetrieb}
+    \item[] Alle Daten liegen zentral, was u.a. für eine \textbf{Client-Server}-Architektur spricht
+    \item \textbf{N2: Robustheit}
+    \item[] Daten der Bibliothek dürfen nicht verloren gehe, also muss ein Backup aller Daten möglich sein
+    \item \textbf{N3: Verfügbarkeit}
+    \item[] Ausfälle müssen vermieden werden, die Komponenten auf Hardwareseite müssen redundant sein.
+    \item[] Für die Datenbank wird \textbf{aktive Redundanz} als Taktik gewählt
+    \item \textbf{N4: Benutzerfreundlichkeit}
+    \item[] mit \textbf{N6} und Verfügbarkeit als Internetanwendung folgt diese Anforderung
+    \item \textbf{N5: Geringe Antwortzeiten}
+    \item[] Das System muss skalierbar seinund leicht mit zusätzlicher Hardware erweitert werden können.
+    \item[] Es wird eine Referenzarchitektur gewählt, mit der das Entwicklerteam auch bereits gute Erfahrungen gemacht hat.
+    \item[] Ein Lastverteiler verteilt die Anfragen auf die verfügbaren Systeme.
+    \item \textbf{N6: Verteilte Anwendung}
+    \item[] Die Benutzer sollen über das Internet an die Daten der Bibliothek kommen, weshalb die Anwendung als Webanwendung geplant wird.
+    \item \textbf{N7: Integrität}
+    \item[] Da die Anwendung über das Internet erreichbar ist, muss sichergestellt werden, dass ausreichende Sicherheitsmechanismen den Nutzerrollen entsprechend Zugriff auf Daten gewährt oder verweigert
+\end{itemize}
