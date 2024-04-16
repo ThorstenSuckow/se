@@ -1,0 +1,33 @@
+\section{Klassen im Entwurf}
+
+Im Unterschied zu den Entwürfen aus der Analyse  beschreiben Klassen des Entwurfs nicht fachliche Zusammenhänge, sondern Klassen, die in der gewählten objektorientierten Sprache umgesetzt werden.\\
+
+\noindent
+Damit besitzen die Klassen des Entwurfs \textbf{technische Verantwortichkeiten}, wie
+
+\begin{itemize}
+    \item Datenhaltung (\textit{Entity})
+    \item Durchführung von Berechnungen
+    \item Überprüfung von Regeln
+    \item Interaktion mit dem Anwender (\textit{User Interface})
+    \item Ablaufsteuerung (\textit{Control})
+    \item Schnittstellen zu anderen Systemen (\textit{Boundary})
+    \item Services für andere Klassen (\textit{Utility})
+\end{itemize}
+
+\subsection*{Eine Verantwortlichkeit pro Klasse}
+Wie in der Analyse gilt: jede klasse sollte eine, max. zwei Verantwortlichkeiten besitzen.\\
+$\rightarrow$ die Klassen werden dadurch leichter verständlich und änderbar.\\
+
+\noindent
+Klassen mit ähnlichen Verantwortlichkeiten werden gemeinsam in \textbf{Schichten} oder \textbf{Module}\footnote{
+bspw. \textit{Pakete} bei \textit{Wedemann} (vgl.\cite[49]{Wed09b}). In einem System mit hoher \textit{Kohäsion} liegt eine starke funktionale Abgrenzung der Module, Klassen und Methoden vor (vgl.\cite[310 ff.]{Dem79}).
+} verteilt.\\
+Viele Klassen, die jeweils wenig Funktionalität besitzen, sind einfacher zu verstehen, als wenig Klassen, die unübersichtlich viel Funktionalität besitzen (vgl. \cite[49]{Wed09b})}\footnote{
+s. a. \textit{Martin} in \cite[95, The Single-Responsibility Principle]{Mar03}: ``A class should have only one reason to change ``
+}. \\
+
+
+
+\noindent
+Die \textbf{Übersicht} über die Vielzahl der Klassen wird durch einen \textbf{sauberen Entwurf} gewährleistet.
