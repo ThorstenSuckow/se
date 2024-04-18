@@ -1,0 +1,34 @@
+\section{Beispiel eines Entwurfs}
+\textit{Wedemann} gibt in~\cite[63 ff.]{Wed09b} ein Beispiel für einen Entwurf, indem er wie folgt vorgeht:
+
+\begin{enumerate}
+    \item Aufteilung der User Story in Anwendungsfälle
+    \item \textbf{Analyseergebnis}:
+    \begin{itemize}
+        \item  Aus den funktionalen Anforderungen extrahiert er das \textbf{Domänenmodell}, das in ein (wenig detailliertes) UML-Klassendiagramm überführt wird
+        \item  ein \textbf{fachlicher Dialogentwurf} zeigt eine grobe Skizze des UI mit einigen Interaktionselementen
+    \end{itemize}
+    \item \textbf{Entwurf}:
+    \begin{itemize}
+        \item ein \textbf{technischer Dialogentwurf} erweitert den fachlichen Dialogentwurf um konkrete Typen der einzelnen Interaktionselemente und verwendeten Komponenten
+        \item das Klassendiagramm der Analyse wird erweitert, Klassendiagramme der Komponenten werden hinzugefügt und um technischen Details ergänzt
+    \end{itemize}
+\end{enumerate}
+
+\noindent
+\textit{Wedemann} weist darauf hin, dass bei dem Entwurf darauf geachtet werden sollte, dass die Verantwortlichkeiten so verteilt werden sollen, dass die einzelnen Klassen eine bis max. zwei Verantwortlichkeiten übernehmen.\\
+
+\noindent
+Sollten außerdem Erfahrung mit Entwurfsmustern und (eingesetzten) Programmiersprachen und Frameworks fehlen, empfiehlt es sich, zunächst kleinteilig zu entwerfen und im Anschluss zu implementieren (\textit{Prove it with code}, \textit{Model in small increments}).
+Er weist aber darauf hin, dass dieses Vorgehen den Nachteil hat, dass Probleme in späteren Teilen entstehen können, wenn bestimmte Funktionalität (oder auch Muster) nicht erkannt wurde und diese nachträglich eingefügt werden muß.\\
+Er empfiehlt, Prototypen zu bauen\footnote{
+    \textit{Throw-Aways} - also Prototypen, die verworfen werden
+}.\\
+\textit{Thomas und Hunt} wissen über diesen Prozess:
+
+\blockquote[{\cite[57]{TH19}}]{
+Prototyping is a learning experience. Its values lies not in the code produced, but in the lessons learned. That's really the point of prototyping.
+}
+
+\noindent
+Demgemäß sollen die daraus gewonnenen Erkenntnisse und Erfahrungen im Anschluss zur Erstellung des Systems genutzt werden.
