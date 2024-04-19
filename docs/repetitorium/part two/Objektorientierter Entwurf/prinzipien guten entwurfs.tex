@@ -1,0 +1,163 @@
+\usepackage{lstmisc}\section{Prinzipien guten Entwurfs}
+
+Der Abschnitt~\cite[69, 3.7 Prinzipien guten Entwurfs]{Wed09b} vermittelt Kenntnisse, anhand derer man
+
+\begin{itemize}
+    \item Kriterien kennt, anhand derer man gute und weniger gute Entwürfe unterscheiden kann
+    \item die Güte eines Entwurfs beurteilen kann
+    \item besserer Entwürfe erstellen kann
+\end{itemize}
+
+\subsection{Was ist ein guter Entwurf}
+
+Die Frage läßt sich nciht generell beantworten, sondenr hängt von verschiedenen Faktoren ab, wie den Anforderugen einer konkreten Aufgabe.\\
+
+\subsubsection*{Generelle Prinzipien}
+
+Generelle Prinzipien müssen in allen Entwürfen berücksichtigt werden.
+Dazu zählen u.a. \textbf{grundlegende Qualitätsziele} wie
+
+\begin{itemize}
+    \item Funktionsfähigkeit
+    \item Änderbarkeit
+\end{itemize}
+
+\subsection{Teile und Herrsche}
+Da Lösungen, die aus einem großen Block bestehen, meist nur schwer nachvollziehbar sind, bietet es sich an, Lösungen in verschiedene Teillösungen aufzuteilen.
+
+\subsubsection*{Vorteile der Zerlegung}
+
+\begin{itemize}
+    \item Kleine Teile sind einfacher zu verstehen als große
+    \item Änderbarkeit wird erleichtert, da nicht das gesamte System, sondern nur einzelne Teile verstanden werden müssen
+    \item Zuverlässigkeit wird erhöht, da Fehler auf Teile begrenzt sind und die Testbarkeit einzelner Teile erleichtert wird, da separat getestet werden kann
+    \item gleiche Aufgaben werden in gemeinsamen Teilen gelöst, anstatt gleiche Aufgaben mehrfach in einer Software zu lösen
+    \item mehrere Entwickler können gleichzeitig arbeiten
+\end{itemize}
+
+\subsubsection*{Nachteile der Zerlegung}
+\begin{itemize}
+    \item ein System aus sehr vielen kleine Teilen ist schwieriger zu verstehen, weil die Übersicht fehlt
+\end{itemize}
+
+\noindent
+Dennoch spricht folgendes für eine Zerlegung:
+
+\begin{itemize}
+    \item durchgehend einem logischen Entwurf folgen und Entwurfsdokumentation wie Klassendiagramme fördern Verständnis und Übersicht
+    \item große Teile sind i.d.R komplizierter aufgebaut, wenn sie stattdessen weiter zerlegt werden könnten
+    \item das System ist häufig komplizierter, da komplexe Bausteine wegen interner Komplexität auch komplexere Beziehungen haben
+\end{itemize}
+
+\subsubsection*{Beispiel für eine Zerlegung}
+\begin{itemize}
+    \item Systeme in Subsysteme
+    \item Subsysteme in Pakete
+    \item Pakete in Klassen
+    \item Klassen in Methoden
+\end{itemize}
+
+
+\subsection{Hohe Kohäsion}
+Erfolgt eine Zerlegung in Pakete oder KLassen, mpssen die einzelnen Teile in einem funktionierenden System so gestaltet sein, dass sie miteinander zusammenarbeiten.\\
+Arbeiten Teile miteinander zusammen, hängen sie aber auch in einer bestimmten Art und Weise voneinander ab.\\
+Dies wirkt sich auf das Verständnis bzw. Änderung einzelner Teile aus, da dann auch alle zusammenhängenden Teile verstanden bzw. u.U. geändert werden müssen.\\
+
+\noindent
+Man nennt diese Art von Abhängigkeit \textbf{Kopplung}.
+
+\subsubsection*{Kopplung vermeiden}
+Inwieweit kann man bei stark gekoppelten Teilen noch von einzelnen Teilen sprechen? Kopplung ist also nach Möglichkeit zu vermeiden, um an Ende nicht doch wieder einen stark zusammenhängenden Block zu erhalten, statt ein System aus veilen kleinen Teilen.
+
+\subsubsection*{Erhöhe Zusammenhalt, wo möglich}
+Das wichtigste Prinzip lautet:
+
+\blockquote[{\cite[71]{Wed09b}}]{
+[\ldots] den Zusammenhalt innerhalb der Teile möglichst hoch zu halten und Abhängigkeiten nach außen zu minimieren (Zusammenhalt = Cohesion).
+}
+\noindent
+Dinge, die zusammengehören, sollen innerhalb eines Teils erledigt werden, anbere Dinge sollten herausgehalten werden, bspw durch:
+
+\begin{itemize}
+    \item $\rightarrow$ Operationen, die auf denselben Daten arbeiten, gehören zu einer Klasse
+    \item $\rightarrow$ Klassen, die ähnliche Aufgaben haben, liegen in einem Paket
+\end{itemize}
+
+\subsubsection*{Typen des Zusammenhalts}
+
+Man unterscheiden zwischen folgenden Typen des Zusammenhalts:
+
+\begin{itemize}
+    \item \textbf{Funktionaler Zusammenhalt}
+    \item[] ähnliche Funktionalität wird in gleichen Softwareteilen implementiert
+    \item[] die Funktionalität ist nach Möglichkeit nicht von anderer Funktionalität abhängig und besitzt keine Nebeneffekte
+    \item[] Idealfall: Eine Operation liefert ein bestimmtes Ergebnis und ist unabhängig von vorausgegangen Aufrufen, internen Zuständen oder Teilen des Systems
+    \item[] Forderung nach Unabhängigkeit allerdings meist nicht möglich, da in der OO Objekte i.d.R. über Attribute interne Zustände besitzen (s. Abbildung~\ref{fig:adt}); außerdem benutzen Klassen anderen Klassen, oder externe Systeme wie Datenbanken
+    \item \textbf{Schichten-Zusammenhalt}
+    \item[] Teile, die ähnliche Services für andere Teile zur Verfügung stellen, werden in Schichten zusammengefügt (s. Abschnitt~\ref{sec:architekturmuster})
+    \item \textbf{kommunikativer Zusammenhalt}
+    \item[] Teile, die auf gleichen Daten operieren, gehören zusammen
+    \item[] der Zusammenhalt ist an der Stelle schwächer als der Schichten-Zusammenhalt, da man i.d.R. nicht Geschäftslogik und Zugriff auf Datenbanken in derselben Klasse implementiert, auch, wenn das Model dieselben Daten benötigt
+    \item \textbf{Utility-Zusammenhalt}
+    \item[] unter ``\textit{Utilitiy}`` werden hier Teile gemeint, die ähnliche Funktionalität bereitstellen, sich aber logisch nicht ordnen lassen (bspw. in Schichten)\footnote{s. bspw. Klassen aus \url{https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/package-summary.html}, abgerufen 19.04.2024}
+\end{itemize}
+
+\noindent
+Der Zusammenhalt wird in der Reihenfolge schwächer (s. Abbildung~\ref{fig:zusammenhalt}).
+
+\begin{figure}
+    \centering
+    \includegraphics[scale=0.4]{part two/Objektorientierter Entwurf/img/zusammenhalt}
+    \caption{Typen des Zusammenhaltes. Der funktionale Zusammenhalt ist verständlicherweise sehr hoch, während der Utility-Zusammenhalt eher schwach ist (Quelle: eigene)}
+    \label{fig:zusammenhalt}
+\end{figure}
+
+
+\begin{figure}
+    \centering
+    \includegraphics[scale=0.4]{part two/Objektorientierter Entwurf/img/adt}
+    \caption{Schematische Darstellung eines abstrakten Datentyps. Das Verhalten ist sowohl intern als auch extern über enstprechende Schnittstellen steuerbar.  (Quelle: eigene)}
+    \label{fig:adt}
+\end{figure}
+
+\subsection{Lose Kopplung}
+\textbf{Kopplungen} sind unvermeidlich, da bestimmte Teile zusammenarbeiten müssen.\\
+Dennoch müssen Kopplungen möglichst schwach sein, da die Teile der Software unabhängig voneinander sein sollen.
+
+\subsubsection*{Typen von Kopplungen}
+Im Software Engineering wird die Kopplung von Teilen nach Typen klassifiziert, wobei die Stärke der Kopplung unterschiedlich bewertet wird (s. Abbildung~\ref{fig:kopplung}).
+
+\noindent
+Mit absteigender Reihenfolge nimmt auch die Stärke der Kopplung in folgender Liste ab:
+
+
+\begin{itemize}
+    \item \textbf{Content-Kopplung}
+    \item[] ein Teil ändert interne Daten eines anderen Teils
+    \item[] die ändernde Klasse ist von der Struktur der zu ändernden Klasse \textbf{abhängig}
+    \item[] diese Art der Kopllung sollte vermieden werden, bspw. über Zugriffsmodifizierer und Zugriffsmethoden
+    \item[] unerwünschte Seiteneffekte können bspw. über das \textit{Immutable}-Pattern\footnote{
+    s. Abschnitt~\ref{subsec:immutable}
+    } erreicht werden
+    \item \textbf{Common-Kopplung}
+    \item[] bezeichnet Kopplung über die gemeinsame Verwendung globaler Variablen\footnote{
+        bspw. unsachgemäße Verwendung von \textit{static} in Java
+    }
+    \item[] führt zu unlesbarem und schwer änderbaren Code, und sollte vermieden werden
+    \item \textbf{Stamp-Kopplung}
+    \item[] ein Objekt wird als Argument einer Methode verwendet
+    \item[] wird der öffentliche Teil der Klasse des Objektes geändert, muss auch die aufrufende Methode geändert werden
+    \item[] zur vermeidung dieser Kopplung können einfache Variablen übergeben werden\footnote{
+        erhöht dann aber die \textbf{Data-Kopplung}) (siehe Martin, max. Anzahl parameter clean code)
+    \item }, oder es werden \textit{Interfaces} oder Klasse genutzt, die weit oben in der Ableitungshierarchie stehen
+    \item[] muss man sich für eine Alternative entscheiden, sollte man bedenken, dass die Anzahl der einfachen Variablen nicht zu groß sein darf
+    \item \textbf{Data-Kopplung}
+    \item[] je mehr Argumente eine Methode hat, desto größer ist die Kopplung mit der benutzenden Komponente
+    \item[] \textbf{Stamp-Kopplung} und \textbf{Data-Kopplung} bedingen sich gegenseitig: Wird Stamp-Kopplung vermieden, erhöht sich i.d.R. Data-Kopplung, und umgekehrt
+    \item \textbf{Routine Call-Kopplung}
+    \item[] eine Methode ruft eine andere Methode auf
+    \item[] werden sehr viele MEthoden eines anderen Teils aufgerufen, sollte man die ZErlegung überlegen\footnote{
+    siehe Fowler featur eenvy
+    }
+    \item[] werden Methoden immer in gleicher Sequenz aufgerufen, könnte man überlegen, die Sequenz auch als eigebständige Methode zusammenfassen
+\end{itemize}
