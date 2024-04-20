@@ -1,4 +1,4 @@
-\usepackage{lstmisc}\section{Prinzipien guten Entwurfs}
+\section{Prinzipien guten Entwurfs}
 
 Der Abschnitt~\cite[69, 3.7 Prinzipien guten Entwurfs]{Wed09b} vermittelt Kenntnisse, anhand derer man
 
@@ -10,7 +10,7 @@ Der Abschnitt~\cite[69, 3.7 Prinzipien guten Entwurfs]{Wed09b} vermittelt Kenntn
 
 \subsection{Was ist ein guter Entwurf}
 
-Die Frage läßt sich nciht generell beantworten, sondenr hängt von verschiedenen Faktoren ab, wie den Anforderugen einer konkreten Aufgabe.\\
+Die Frage läßt sich nicht generell beantworten, sondern hängt von verschiedenen Faktoren ab, wie den Anforderungen einer konkreten Aufgabe.\\
 
 \subsubsection*{Generelle Prinzipien}
 
@@ -59,7 +59,7 @@ Dennoch spricht folgendes für eine Zerlegung:
 
 
 \subsection{Hohe Kohäsion}
-Erfolgt eine Zerlegung in Pakete oder KLassen, mpssen die einzelnen Teile in einem funktionierenden System so gestaltet sein, dass sie miteinander zusammenarbeiten.\\
+Erfolgt eine Zerlegung in Pakete oder Klassen, müssen die einzelnen Teile in einem funktionierenden System so gestaltet sein, dass sie miteinander zusammenarbeiten.\\
 Arbeiten Teile miteinander zusammen, hängen sie aber auch in einer bestimmten Art und Weise voneinander ab.\\
 Dies wirkt sich auf das Verständnis bzw. Änderung einzelner Teile aus, da dann auch alle zusammenhängenden Teile verstanden bzw. u.U. geändert werden müssen.\\
 
@@ -76,7 +76,7 @@ Das wichtigste Prinzip lautet:
 [\ldots] den Zusammenhalt innerhalb der Teile möglichst hoch zu halten und Abhängigkeiten nach außen zu minimieren (Zusammenhalt = Cohesion).
 }
 \noindent
-Dinge, die zusammengehören, sollen innerhalb eines Teils erledigt werden, anbere Dinge sollten herausgehalten werden, bspw durch:
+Dinge, die zusammengehören, sollen innerhalb eines Teils erledigt werden, anbete Dinge sollten herausgehalten werden, bspw durch:
 
 \begin{itemize}
     \item $\rightarrow$ Operationen, die auf denselben Daten arbeiten, gehören zu einer Klasse
@@ -99,7 +99,7 @@ Man unterscheiden zwischen folgenden Typen des Zusammenhalts:
     \item[] Teile, die auf gleichen Daten operieren, gehören zusammen
     \item[] der Zusammenhalt ist an der Stelle schwächer als der Schichten-Zusammenhalt, da man i.d.R. nicht Geschäftslogik und Zugriff auf Datenbanken in derselben Klasse implementiert, auch, wenn das Model dieselben Daten benötigt
     \item \textbf{Utility-Zusammenhalt}
-    \item[] unter ``\textit{Utilitiy}`` werden hier Teile gemeint, die ähnliche Funktionalität bereitstellen, sich aber logisch nicht ordnen lassen (bspw. in Schichten)\footnote{s. bspw. Klassen aus \url{https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/package-summary.html}, abgerufen 19.04.2024}
+    \item[] unter ``\textit{Utility}`` werden hier Teile gemeint, die ähnliche Funktionalität bereitstellen, sich aber logisch nicht ordnen lassen (bspw. in Schichten)\footnote{s. bspw. Klassen aus \url{https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/package-summary.html}, abgerufen 19.04.2024}
 \end{itemize}
 
 \noindent
@@ -116,7 +116,7 @@ Der Zusammenhalt wird in der Reihenfolge schwächer (s. Abbildung~\ref{fig:zusam
 \begin{figure}
     \centering
     \includegraphics[scale=0.4]{part two/Objektorientierter Entwurf/img/adt}
-    \caption{Schematische Darstellung eines abstrakten Datentyps. Das Verhalten ist sowohl intern als auch extern über enstprechende Schnittstellen steuerbar.  (Quelle: eigene)}
+    \caption{Schematische Darstellung eines abstrakten Datentyps. Verhalten und Zustand sind sowohl intern als auch extern änderbar.  (Quelle: eigene)}
     \label{fig:adt}
 \end{figure}
 
@@ -135,7 +135,7 @@ Mit absteigender Reihenfolge nimmt auch die Stärke der Kopplung in folgender Li
     \item \textbf{Content-Kopplung}
     \item[] ein Teil ändert interne Daten eines anderen Teils
     \item[] die ändernde Klasse ist von der Struktur der zu ändernden Klasse \textbf{abhängig}
-    \item[] diese Art der Kopllung sollte vermieden werden, bspw. über Zugriffsmodifizierer und Zugriffsmethoden
+    \item[] diese Art der Kopplung sollte vermieden werden, bspw. über Zugriffsmodifizierer und Zugriffsmethoden
     \item[] unerwünschte Seiteneffekte können bspw. über das \textit{Immutable}-Pattern\footnote{
     s. Abschnitt~\ref{subsec:immutable}
     } erreicht werden
@@ -148,16 +148,99 @@ Mit absteigender Reihenfolge nimmt auch die Stärke der Kopplung in folgender Li
     \item[] ein Objekt wird als Argument einer Methode verwendet
     \item[] wird der öffentliche Teil der Klasse des Objektes geändert, muss auch die aufrufende Methode geändert werden
     \item[] zur vermeidung dieser Kopplung können einfache Variablen übergeben werden\footnote{
-        erhöht dann aber die \textbf{Data-Kopplung}) (siehe Martin, max. Anzahl parameter clean code)
-    \item }, oder es werden \textit{Interfaces} oder Klasse genutzt, die weit oben in der Ableitungshierarchie stehen
+        was dann wiederum die \textbf{Data-Kopplung} erhöht, s.u.
+    }, oder es werden \textit{Interfaces} oder Klasse genutzt, die weit oben in der Ableitungshierarchie stehen
     \item[] muss man sich für eine Alternative entscheiden, sollte man bedenken, dass die Anzahl der einfachen Variablen nicht zu groß sein darf
     \item \textbf{Data-Kopplung}
-    \item[] je mehr Argumente eine Methode hat, desto größer ist die Kopplung mit der benutzenden Komponente
+    \item[] je mehr Argumente eine Methode hat, desto größer ist die Kopplung mit der benutzenden Komponente\footnote{
+    ``The ideal number of arguments for a function is zero (niladic).`` (\cite[40]{Mar08}). Monadische Funktionen sind Funktionen mit einem Argument, dyadische mit zwei, triadische entsprechend mit 3 Argumenten. Polyadische Funktionen sollten laut \textit{Martin} vermieden werden (ebenda).
+    }
     \item[] \textbf{Stamp-Kopplung} und \textbf{Data-Kopplung} bedingen sich gegenseitig: Wird Stamp-Kopplung vermieden, erhöht sich i.d.R. Data-Kopplung, und umgekehrt
     \item \textbf{Routine Call-Kopplung}
     \item[] eine Methode ruft eine andere Methode auf
-    \item[] werden sehr viele MEthoden eines anderen Teils aufgerufen, sollte man die ZErlegung überlegen\footnote{
-    siehe Fowler featur eenvy
+    \item[] werden sehr viele Methode eines anderen Teils aufgerufen, sollte man die Zerlegung überlegen\footnote{
+    s. hierzu auch \textbf{Feature Envy}, ein \textit{Code Smell}, der dadurch charakterisiert ist, dass ``a method seems more interested in a class than the one it actually is in`` \cite[80 f.]{Fow99}
     }
-    \item[] werden Methoden immer in gleicher Sequenz aufgerufen, könnte man überlegen, die Sequenz auch als eigebständige Methode zusammenfassen
+    \item[] werden Methoden immer in gleicher Sequenz aufgerufen, könnte man überlegen, die Sequenz auch als eigenständige Methode zusammenfassen
 \end{itemize}
+
+\begin{figure}
+    \centering
+    \includegraphics[scale=0.4]{part two/Objektorientierter Entwurf/img/kopplung}
+    \caption{Typen von Kopplung, mit absteigender Anordnung werden die Kopplungskonzepte schwächer.  (Quelle: in Anlehnung an \cite[73, Abb. 3.18]{Wed09b})}
+    \label{fig:kopplung}
+\end{figure}
+
+\subsection{Grundlegende Prinzipien, die weiterhelfen}
+
+\subsubsection*{Abstraktion}
+Eine der grundlegenden Prinzipien ist das Prinzip der \textbf{Abstraktion}\footnote{
+\textit{Wedemann} merkt an, dass die Bedeutung der Abstraktion für das Software Engineering ``von \textit{Barbara Liskov} und \textit{John Guttag} entdeckt wurde`` (\cite[75, Hervorhebung eigene]{Wed09b}) und erwähnt ein ``sehr anspruchsvolles Buch`` der beiden zu dem Thema, leider ohne weitere Quellenangabe. Man darf vermuten, dass hiermit \cite{LG00} gemeint ist
+}.
+
+\noindent
+Das Prinzip besagt, dass Bauteile und Abläufe nach außen hin abstrakt sein sollen, also Details weggelassen werden sollten.
+
+\vspace{2mm}
+\begin{tcolorbox}[title=Abstraktion]
+    \blockquote[{\cite[75, Hervorhebung eigene]{Wed09b}}]{
+        Unter \textbf{Abstraktion} versteht man das Herausheben von Wesentlichem, Charakteristischem oder Gesetzmäßigem. Das Prinzip der Abstraktion beruht auf der Beobachtung, dass ein Teil leichter zu verstehen ist, wenn nicht alle Details verstanden werden müssen, sondern nur das Wesentliche.
+    }
+\end{tcolorbox}
+\vspace{2mm}
+
+\subsubsection*{Beispiele für Abstraktion}
+\begin{itemize}
+    \item Vertikale Schichten sind eine schrittweise Abstraktion von der Hardware
+    \item öffentliche Schnittstellen einer Klasse\footnote{
+        was als Geheimnisprinzip verstanden werden kann, das \textbf{Content-Kopplung} verhindert
+    } können als Abstraktion der Klasse gesehen werden
+    \item werden Interfaces zur Vermeidung von \textbf{Stamp-Kopplung} verwendet, ist das Interface die Abstraktion der tatsächlichen Klasse
+    \item ein \textbf{Iterator} ist eine Abstraktion des Zugriffs auf eine Datenstruktur
+    \item die Ergebnisse von Anforderungen, Analyse und Entwurf können als Abstraktion des zu erstellenden Systems betrachtet werden
+\end{itemize}
+
+
+\susubsection*{The Law of Demeter}
+\textit{Lieberherr}, \textit{Holland}, und \textit{Riel} formulieren 1988 in \cite{LHR88} das \textbf{Law of Demeter}, das das Ziel hat, eine Software möglichst modular zu erstellen.
+Dabei ist das Prinzip recht einfach gehalten:
+
+\blockquote[{\cite[325]{LHR88}}]{
+    Any method written to obey this Law will only know about the immediate structure of the class to which it is attached.
+}
+
+\noindent
+\textit{Martin} schreibt hierzu:
+
+\blockquote[{\cite[97 f.]{Mar08}}]{
+[...] the law of Demeter says that a method $f$ of a class $C$ should only call the methods of these:
+\begin{itemize}
+    \item $C$
+    \item An object created by $f$
+    \item An object passed as an argument to $f$
+    \item An object held in an instance variable of $C$
+\end{itemize}
+}
+\noindent
+und faßt ebenda das Prinzip folgendermaßen zusammen: ``talk to friends, not to strangers.``\footnote{
+s. hierzu auch \url{https://www2.ccs.neu.edu/research/demeter/demeter-method/LawOfDemeter/general-formulation.html}, abgerufen 20.04.2024
+}
+
+\subsubsection*{Vermeidung zirkulärer Abhängigkeiten}
+Eine \textbf{zirkuläre Abhängigkeit} liegt vor, wenn Beziehungen zwischen Klassen kreisförmig sind (s. Abbildung~\ref{fig:zirkulaer} a).\\
+Dadurch können Klassen nicht einzeln entwickelt bzw. getestet werden, was eine sehr starke Kopplung ausdrückt.\\
+Eine zyklische Abhängigkeit ist lft ein Fehler im Entwurf.\\
+Beruht die Abhängigkeit nicht auf einem Fehler, kann sie durch den Einsatz eines Interfaces aufgelöst werden (s. Abbildung~\ref{fig:zirkulaer} b).).
+
+\begin{figure}
+    \centering
+    \includegraphics[scale=0.4]{part two/Objektorientierter Entwurf/img/zirkulaer}
+    \caption{
+        Beispiel für eine zirkuläre Abhängigkeit (a) und deren Auflösung (b).
+        (Quelle: in Anlehnung an \cite[76, Abb. 3.19]{Wed09b})
+    }
+    \label{fig:zirkulaer}
+\end{figure}
+
+\subsubsection*{Liskovsches Substitutionsprinzip}
+Das \textbf{Ersetzbarkeitsprinzip} wurde bereits im Zusammenhang mit \textbf{Polymorphie} im Abschnitt~\ref{sec:beziehungen-von-klassen} eingeführt.
