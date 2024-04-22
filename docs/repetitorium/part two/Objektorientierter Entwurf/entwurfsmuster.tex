@@ -44,9 +44,9 @@ Das Entwurfsmuster ist auch unter \textit{publish-subscribe} bekannt.
 Die Verantwortlichkeiten werden unterteilt in
 
 \begin{itemize}
-    \item \textbf{Model} beinhalten Daten und fachliche Funktionalitäten
-    \item \textbf{View} zeigen Daten (des Models) an
-    \item \textbf{Controller} nehmen Eingabedaten entgegen, speichern Daten im Model und steuern Elemente des UI
+    \item \textbf{Model}: beinhalten Daten und fachliche Funktionalitäten
+    \item \textbf{View}: zeigen Daten (des Models) an
+    \item \textbf{Controller}: nehmen Eingabedaten entgegen, speichern Daten im Model und steuern Elemente des UI
 \end{itemize}
 
 \noindent
@@ -68,7 +68,7 @@ Die Vorteile sind eine klare Trennung der Verantwortlichkeiten sowie die hierdur
 
 \subsubsection*{Problem}
 \begin{itemize}
-    \item Referenzen auf Instanzen werden von einem Objekt an ein andere weitergegeben
+    \item Referenzen auf Instanzen werden von einem Objekt an andere Objekte weitergegeben
     \item Änderungen der Inhalte der Referenzen wirken sich unerwünscht auf andere Objekte aus\footnote{
     auch bekannt als \textbf{Aliasing Bug}, s. \url{https://martinfowler.com/bliki/AliasingBug.html}, abgerufen 17.04.2024
     }
@@ -120,7 +120,7 @@ Die Vorteile sind eine klare Trennung der Verantwortlichkeiten sowie die hierdur
     \item Attribute im Konstruktor definieren
     \item nur \code{get*}-Methoden implementieren, aber keine \code{set*}-Methoden
     \item es wird keine Methode implementiert, die den \textbf{internen Zustand} des Objektes verändert
-    \item sollte eine Änderung des internen ZUstands benötigt sein, wird eine neue Instanz der Klasse mit den
+    \item sollte eine Änderung des internen Zustands benötigt sein, wird eine neue Instanz der Klasse mit den
     gewünschten Aktualisierungen erzeugt - das ursprüngliche Objekt bleibt so unverändert\footnote{
         Anwendung bspw. in \textbf{Value Object}s, vgl.~\cite[486]{Fow03}
     }
@@ -128,7 +128,7 @@ Die Vorteile sind eine klare Trennung der Verantwortlichkeiten sowie die hierdur
 \end{itemize}
 
 \subsubsection*{Probleme und Alternativen}
-Sollten trotzdem die Eigenschaften eines Objektes oft geändert werden müssen, sollten die Klassen als \textit{mutable} implementiert werden, aber die \textit{Getter} der privaten Objekte sollten dann Kopien dieser Objekte zurückliefern.
+Sollten trotzdem die Eigenschaften eines Objektes oft geändert werden müssen, sollten die Klassen als \textit{mutable} implementiert werden, aber die \textit{Getter} der privaten Objekte sollten dann \textbf{Kopien} dieser Objekte zurückliefern.
 
 \subsection{Iterator}
 
@@ -138,7 +138,7 @@ Sollten trotzdem die Eigenschaften eines Objektes oft geändert werden müssen, 
     \item sollen Methoden sequentiell auf alle Objekte zugreifen, die ein Aggregat beinhalten, muss für jede Datenstruktur der Zugriff anders organisiert werden\footnote{
     Baum wird in bestimmter Reihenfolge traversiert, auf ein Array wird über einen Laufindex zugegriffen usw.
     }
-    \item dieStruktur soll verborgen bleiben, dam sie für den sequentiellen Zugriff unerheblich ist; die Datenstruktur wird darüber leicht austauschbar
+    \item die Struktur soll verborgen bleiben, damit sie für den sequentiellen Zugriff unerheblich ist; die Datenstruktur wird darüber leicht austauschbar
 \end{itemize}
 
 \subsubsection*{Lösung}
@@ -158,13 +158,13 @@ Es wird von dem verwendeten Framework / der Programmiersprache ein \textbf{Itera
 \subsubsection*{Problem}
 \begin{itemize}
     \item Klassen nutzen eine zusammengehörige Gruppe von zusammenarbeitenden Klassen
-    \item die Details der Gruppe sollen verborgen bleiben, damit einzelne BEstandteile leichter geändert oder ausgetauscht werden können
+    \item die Details der Gruppe sollen verborgen bleiben, damit einzelne Bestandteile leichter geändert oder ausgetauscht werden können
 \end{itemize}
 
 \subsubsection*{Lösung}
 \begin{itemize}
     \item Bereitstellen einer Klasse, die eine \textbf{Fassade} repräsentiert
-    \item die Klasse stellt Methoden bereits, die eine Untermenge der Funktionalität des Systems bereitstellt
+    \item die Klasse stellt Methoden bereit, die eine Untermenge der Funktionalität des Systems bereitstellt
     \item andere Klassen kennen die öffentliche Schnittstelle der Fassade und greifen nur noch auf diese zu
     \item die Fassade delegiert die Aufrufe an die Objekte, aus denen die Fassade besteht
 \end{itemize}
