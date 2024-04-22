@@ -10,15 +10,15 @@ Weitere Anforderungen, aus denen auch Anforderungen an die Architektur entstehen
     \item \textbf{N1: Mehrbenutzerbetrieb}
     \item[] Alle Daten liegen zentral, was u.a. für eine \textbf{Client-Server}-Architektur spricht
     \item \textbf{N2: Robustheit}
-    \item[] Daten der Bibliothek dürfen nicht verloren gehe, also muss ein Backup aller Daten möglich sein
+    \item[] Daten der Bibliothek dürfen nicht verloren gehen, also muss ein Backup aller Daten möglich sein
     \item \textbf{N3: Verfügbarkeit}
     \item[] Ausfälle müssen vermieden werden, die Komponenten auf Hardwareseite müssen redundant sein.
-    \item[] Für die Datenbank wird \textbf{aktive Redundanz} als Taktik gewählt
+    \item[] Für die Datenbank wird \textbf{aktive Redundanz}\footnote{s. Glossar} als Taktik gewählt
     \item \textbf{N4: Benutzerfreundlichkeit}
-    \item[] mit \textbf{N6} und Verfügbarkeit als Internetanwendung folgt diese Anforderung
+    \item[] mit \textbf{N6} und \textit{Verfügbarkeit als Internetanwendung} folgt diese Anforderung
     \item \textbf{N5: Geringe Antwortzeiten}
-    \item[] Das System muss skalierbar seinund leicht mit zusätzlicher Hardware erweitert werden können.
-    \item[] Es wird eine Referenzarchitektur gewählt, mit der das Entwicklerteam auch bereits gute Erfahrungen gemacht hat.
+    \item[] Das System muss skalierbar sein und leicht mit zusätzlicher Hardware erweitert werden können.
+    \item[] Es wird mit \textit{Java Enterprise Edition (JSS)} eine Referenzarchitektur gewählt, mit der das Entwicklerteam bereits gute Erfahrungen bei skalierbaren Webanwendungen gemacht hat.
     \item[] Ein Lastverteiler verteilt die Anfragen auf die verfügbaren Systeme.
     \item \textbf{N6: Verteilte Anwendung}
     \item[] Die Benutzer sollen über das Internet an die Daten der Bibliothek kommen, weshalb die Anwendung als Webanwendung geplant wird.
