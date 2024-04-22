@@ -2,12 +2,9 @@
 
 \subsection*{Analyse}
 
-\vspace{2mm}
-Die Analyse beschreibt fachliche Zusammenhänge, keine technischen.
-\vspace{2mm}
 
 
-
+\noindent
 Bereits in der ersten Phase der Softwareentwicklung gesammelte Anforderungen können nicht direkt umgesetzt werden, da sie meist viel zu ungenau sind.
 Offene Punkte müßten durch einen dauernden Kontakt zu Endanwender und Kunde geklärt werden.\\
 Außerdem zeigt sich, dass Anforderungen in sich widersprüchlich sein können, ohne, dass das auf den ersten Blick erkennbar ist.\\
@@ -16,7 +13,15 @@ Außerdem zeigt sich, dass Anforderungen in sich widersprüchlich sein können, 
 Eine Lösung wäre es, die Dokumente aus der Anforderungsphase sehr formal zu gestalten, wodurch die Dokumente aber sehr umfangreich und schwer verständlich werden.\\
 
 \noindent
-Stattdessen erstellt man in der \textbf{Analysephase} ein formales Modell sowohl des Problems \textit{in seinem Umfeld} als auch der Lösung.
+Stattdessen erstellt man in der \textbf{Analysephase} ein formales Modell:
+
+\vspace{2mm}
+\begin{tcolorbox}
+    In der \textbf{Analysephase} wird ein formales Modell sowohl des Problems \textit{in seinem Umfeld} als auch der Lösung erstellt.\\
+    Die Analyse beschreibt \textbf{fachliche Zusammenhänge}, keine technische.
+\end{tcolorbox}
+\vspace{2mm}
+
 
 \subsection*{Entwurf}
 In der \textbf{Entwurfsphase} werden die \textbf{Architektur} der Anwendung bestimmt, unter Berücksichtung technischer Randbedingungen, die im Rahmen nicht-funktionaler Anforderungen in der Anforderungsphase gesammelt wurden und vom Kunden stammen (s. Abschnitt~\ref{subsec:technische-randbedingung}).\\
@@ -30,16 +35,16 @@ Die Architektur schließt u.a. ein:
 \end{itemize}
 
 \noindent
-Meist bleiben im Anschluss technische Fragen offen, die in der \textbf{Entwurfsphase} beantwortet werden.
+Meist bleiben im Anschluss technische Fragen offen, die in der \textbf{Entwurfsphase} beantwortet werden, z.B.:
 
 \begin{itemize}
     \item Welche \textbf{Klassen} aus der \textbf{Analyse} können übernommen werden?
     \item Wie werden Klassen in einem relationalen Datenbank-Schema gespeichert?
-    \item Welche Steuerungklassen müssen für die GUI implementiert werden?
+    \item Welche Steuerungsklassen müssen für die GUI implementiert werden?
 \end{itemize}
 
 \noindent
-Das Erstellen eines Modells der geplanten Software bietet den Vorteil, das Entwurfs-Alternativen einfacher und schneller durchdacht werden können, und die Zusammenarbeit einfacher ist, wenn die Umsetzung genauer geplant wird (vgl. \cite[2]{Wed09b}).
+Das Erstellen eines Modells der geplanten Software bietet den Vorteil, dass Entwurfs-Alternativen einfacher und schneller durchdacht werden können, und die Zusammenarbeit einfacher ist, wenn die Umsetzung genauer geplant wird (vgl. \cite[2]{Wed09b}).
 
 
 \subsection*{Definition Modell}
@@ -64,7 +69,7 @@ Modelle der Analyse und des Entwurfs bestehen aus miteinander verzahnten \textbf
 
 \begin{itemize}
     \item \textbf{statische Modelle} beschreiben die Bausteine eines Systems und wie sie zusammengesetzt sind\footnote{vergleichbar mit technischen Zeichnungen}
-    \item \textbf{dynamische Modelle} beschreiben die Zusammenarbeit der Bausteine, also deren verhalten und die Nachrichten, die Verhalten auslösen
+    \item \textbf{dynamische Modelle} beschreiben die Zusammenarbeit der Bausteine, also deren Verhalten und die Nachrichten, die Verhalten auslösen
 \end{itemize}
 
 \noindent
