@@ -14,7 +14,7 @@ Bei der Analyse müssen diese Arten von Beziehungen ermittelt werden, damit ents
 \subsection*{Abhängigkeiten}
 \textbf{Abhängikeiten} nutzten eine gestrichelte Linie.\\
 Abhängigkeiten werden \textit{in der Analyse} i.d.R. selten modelliert.\\
-Als Beispiel für eine Abhängigkeit sei eine \textit{Benutzt-Beziehungen} in Form eines \textit{formalen Parameter} gegeben: Der aktuelle Parameter überdauert den Aufruf einer Methode in einer Klasse, für die diese Abhängigkeit modelliert werden soll, nicht.\\
+Als Beispiel für eine Abhängigkeit sei eine \textit{Benutzt-Beziehung} in Form eines \textit{formalen Parameter} gegeben: Der aktuelle Parameter überdauert den Aufruf einer Methode in einer Klasse, für die diese Abhängigkeit modelliert werden soll, nicht.\\
 Gleicherweise kann auch eine \textit{lokale Variable} eines bestimmten Typs eine Abhängigkeit bedeuten.
 
 \subsection*{Assoziation}
@@ -28,9 +28,10 @@ bzw. \textit{Verallgemeinerung} im Skript (vgl.~\cite[7]{Wed09b}).
 }.
 
 \subsection*{Polymorphie}
-Eine weitere Bedeutung der Vererbungsbeziehung, ist, dass eine Instanz einer Klasse genauso verwendet werden kann wie eine Instanz seiner übergeordneten Klasse. Allgemein faßt man dies unter \textbf{Polymorphie} zusammen.\\
+Eine weitere Bedeutung der Vererbungsbeziehung, ist, dass eine Instanz einer Klasse genauso verwendet werden kann wie eine Instanz seiner übergeordneten Klasse.
+Allgemein fasst man dies unter \textbf{Polymorphie} zusammen.\\
 Als Konsequenz folgt, dass immer dann, wenn ein bestimmter Typ gefordert wird, auch sein Untertyp erlaubt ist (vgl.~\cite[466]{Ull23}), was der Kern des \textit{Liskovschen Substitutionsprinzips}\footnote{
     ``Wikipedia - Liskov substitution principle``: \url{https://en.wikipedia.org/wiki/Liskov_substitution_principle}, abgerufen 11.04.2024
-} ist\footnote{
+}\footnote{
     s.a. ``Wikipedia - Covariance and Contravariance``: \url{https://en.wikipedia.org/wiki/Covariance_and_contravariance_(computer_science)}, , abgerufen 11.04.2024
-}.\\
+} ist.\\
