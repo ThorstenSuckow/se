@@ -67,7 +67,7 @@ Dies wirkt sich auf das Verständnis bzw. Änderung einzelner Teile aus, da dann
 Man nennt diese Art von Abhängigkeit \textbf{Kopplung}.
 
 \subsubsection*{Kopplung vermeiden}
-Inwieweit kann man bei stark gekoppelten Teilen noch von einzelnen Teilen sprechen? Kopplung ist also nach Möglichkeit zu vermeiden, um an Ende nicht doch wieder einen stark zusammenhängenden Block zu erhalten, statt ein System aus veilen kleinen Teilen.
+Inwieweit kann man bei stark gekoppelten Teilen noch von einzelnen Teilen sprechen? Kopplung ist also nach Möglichkeit zu vermeiden, um an Ende nicht doch wieder einen stark zusammenhängenden Block zu erhalten, statt ein System aus vielen kleinen Teilen.
 
 \subsubsection*{Erhöhe Zusammenhalt, wo möglich}
 Das wichtigste Prinzip lautet:
@@ -76,32 +76,40 @@ Das wichtigste Prinzip lautet:
 [\ldots] den Zusammenhalt innerhalb der Teile möglichst hoch zu halten und Abhängigkeiten nach außen zu minimieren (Zusammenhalt = Cohesion).
 }
 \noindent
-Dinge, die zusammengehören, sollen innerhalb eines Teils erledigt werden, anbete Dinge sollten herausgehalten werden, bspw durch:
+Dinge, die zusammengehören, sollen innerhalb eines Teils erledigt werden, andere Dinge sollten herausgehalten werden, bspw durch:
 
 \begin{itemize}
-    \item $\rightarrow$ Operationen, die auf denselben Daten arbeiten, gehören zu einer Klasse
-    \item $\rightarrow$ Klassen, die ähnliche Aufgaben haben, liegen in einem Paket
+    \item Operationen, die auf denselben Daten arbeiten, gehören zu einer Klasse
+    \item Klassen, die ähnliche Aufgaben haben, liegen in einem Paket
 \end{itemize}
 
 \subsubsection*{Typen des Zusammenhalts}
 
-Man unterscheiden zwischen folgenden Typen des Zusammenhalts:
+Man unterscheidet zwischen folgenden Typen des Zusammenhalts:
 
 \begin{itemize}
     \item \textbf{Funktionaler Zusammenhalt}
-    \item[] ähnliche Funktionalität wird in gleichen Softwareteilen implementiert
-    \item[] die Funktionalität ist nach Möglichkeit nicht von anderer Funktionalität abhängig und besitzt keine Nebeneffekte
-    \item[] Idealfall: Eine Operation liefert ein bestimmtes Ergebnis und ist unabhängig von vorausgegangen Aufrufen, internen Zuständen oder Teilen des Systems
-    \item[] Forderung nach Unabhängigkeit allerdings meist nicht möglich, da in der OO Objekte i.d.R. über Attribute interne Zustände besitzen (s. Abbildung~\ref{fig:adt}); außerdem benutzen Klassen anderen Klassen, oder externe Systeme wie Datenbanken
-    \item \textbf{Schichten-Zusammenhalt}
-    \item[] Teile, die ähnliche Services für andere Teile zur Verfügung stellen, werden in Schichten zusammengefügt (s. Abschnitt~\ref{sec:architekturmuster})
-    \item \textbf{kommunikativer Zusammenhalt}
-    \item[] Teile, die auf gleichen Daten operieren, gehören zusammen
-    \item[] der Zusammenhalt ist an der Stelle schwächer als der Schichten-Zusammenhalt, da man i.d.R. nicht Geschäftslogik und Zugriff auf Datenbanken in derselben Klasse implementiert, auch, wenn das Model dieselben Daten benötigt
-    \item \textbf{Utility-Zusammenhalt}
-    \item[] unter ``\textit{Utility}`` werden hier Teile gemeint, die ähnliche Funktionalität bereitstellen, sich aber logisch nicht ordnen lassen (bspw. in Schichten)\footnote{s. bspw. Klassen aus \url{https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/package-summary.html}, abgerufen 19.04.2024}
-\end{itemize}
+    \begin{itemize}
+        \item ähnliche Funktionalität wird in gleichen Softwareteilen implementiert
+        \item die Funktionalität ist nach Möglichkeit nicht von anderer Funktionalität abhängig und besitzt keine Nebeneffekte
+        \item Idealfall: Eine Operation liefert ein bestimmtes Ergebnis und ist unabhängig von vorausgegangen Aufrufen, internen Zuständen oder Teilen des Systems
+        \item Forderung nach Unabhängigkeit allerdings meist nicht möglich, da in der Objetorientierung Objekte i.d.R. über Attribute interne Zustände besitzen (s. Abbildung~\ref{fig:adt}); außerdem benutzen Klassen anderen Klassen, oder externe Systeme wie Datenbanken
+    \end{itemize}
 
+    \item \textbf{Schichten-Zusammenhalt}
+        \begin{itemize}
+            \item Teile, die ähnliche Services für andere Teile zur Verfügung stellen, werden in Schichten zusammengefügt (s. Abschnitt~\ref{sec:architekturmuster})
+        \end{itemize}
+    \item \textbf{kommunikativer Zusammenhalt}
+        \begin{itemize}
+            \item Teile, die auf gleichen Daten operieren, gehören zusammen
+            \item der Zusammenhalt ist an der Stelle schwächer als der Schichten-Zusammenhalt, da man i.d.R. nicht Geschäftslogik und Zugriff auf Datenbanken in derselben Klasse implementiert, auch, wenn das Model dieselben Daten benötigt
+        \end{itemize}
+    \item \textbf{Utility-Zusammenhalt}
+        \begin{itemize}
+            \item unter ``\textit{Utility}`` werden hier Teile gemeint, die ähnliche Funktionalität bereitstellen, sich aber logisch nicht ordnen lassen (bspw. in Schichten)\footnote{s. bspw. Klassen aus \url{https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/package-summary.html}, abgerufen 19.04.2024}
+        \end{itemize}
+\end{itemize}
 \noindent
 Der Zusammenhalt wird in der Reihenfolge schwächer (s. Abbildung~\ref{fig:zusammenhalt}).
 
@@ -116,7 +124,7 @@ Der Zusammenhalt wird in der Reihenfolge schwächer (s. Abbildung~\ref{fig:zusam
 \begin{figure}
     \centering
     \includegraphics[scale=0.4]{part two/Objektorientierter Entwurf/img/adt}
-    \caption{Schematische Darstellung eines abstrakten Datentyps. Verhalten und Zustand sind sowohl intern als auch extern änderbar.  (Quelle: eigene)}
+    \caption{Schematische Darstellung eines abstrakten Datentyps. Verhalten und Zustand kann sowohl intern als auch extern änderbar sein.  (Quelle: eigene)}
     \label{fig:adt}
 \end{figure}
 
@@ -133,41 +141,51 @@ Mit absteigender Reihenfolge nimmt auch die Stärke der Kopplung in folgender Li
 
 \begin{itemize}
     \item \textbf{Content-Kopplung}
-    \item[] ein Teil ändert interne Daten eines anderen Teils
-    \item[] die ändernde Klasse ist von der Struktur der zu ändernden Klasse \textbf{abhängig}
-    \item[] diese Art der Kopplung sollte vermieden werden, bspw. über Zugriffsmodifizierer und Zugriffsmethoden
-    \item[] unerwünschte Seiteneffekte können bspw. über das \textit{Immutable}-Pattern\footnote{
+    \begin{itemize}
+    \item ein Teil ändert interne Daten eines anderen Teils
+    \item die ändernde Klasse ist von der Struktur der zu ändernden Klasse \textbf{abhängig}
+    \item diese Art der Kopplung sollte vermieden werden, bspw. über Zugriffsmodifizierer und Zugriffsmethoden
+    \item unerwünschte Seiteneffekte können bspw. über das \textit{Immutable}-Pattern\footnote{
     s. Abschnitt~\ref{subsec:immutable}
     } erreicht werden
+    \end{itemize}
     \item \textbf{Common-Kopplung}
-    \item[] bezeichnet Kopplung über die gemeinsame Verwendung globaler Variablen\footnote{
+    \begin{itemize}
+    \item bezeichnet Kopplung über die gemeinsame Verwendung globaler Variablen\footnote{
         bspw. unsachgemäße Verwendung von \textit{static} in Java
     }
-    \item[] führt zu unlesbarem und schwer änderbaren Code, und sollte vermieden werden
+    \item führt zu unlesbarem und schwer änderbaren Code, und sollte vermieden werden
+    \end{itemize}
     \item \textbf{Stamp-Kopplung}
-    \item[] ein Objekt wird als Argument einer Methode verwendet
-    \item[] wird der öffentliche Teil der Klasse des Objektes geändert, muss auch die aufrufende Methode geändert werden
-    \item[] zur vermeidung dieser Kopplung können einfache Variablen übergeben werden\footnote{
+    \begin{itemize}
+    \item ein Objekt wird als Argument einer Methode verwendet
+    \item wird der öffentliche Teil der Klasse des Objektes geändert, muss auch die aufrufende Methode geändert werden
+    \item zur Vermeidung dieser Kopplung können einfache Variablen übergeben werden\footnote{
         was dann wiederum die \textbf{Data-Kopplung} erhöht, s.u.
     }, oder es werden \textit{Interfaces} oder Klasse genutzt, die weit oben in der Ableitungshierarchie stehen
-    \item[] muss man sich für eine Alternative entscheiden, sollte man bedenken, dass die Anzahl der einfachen Variablen nicht zu groß sein darf
+    \item muss man sich für eine Alternative entscheiden, sollte man bedenken, dass die Anzahl der einfachen Variablen nicht zu groß sein darf
+    \end{itemize}
     \item \textbf{Data-Kopplung}
-    \item[] je mehr Argumente eine Methode hat, desto größer ist die Kopplung mit der benutzenden Komponente\footnote{
+    \begin{itemize}
+    \item je mehr Argumente eine Methode hat, desto größer ist die Kopplung mit der benutzenden Komponente\footnote{
     ``The ideal number of arguments for a function is zero (niladic).`` (\cite[40]{Mar08}). Monadische Funktionen sind Funktionen mit einem Argument, dyadische mit zwei, triadische entsprechend mit 3 Argumenten. Polyadische Funktionen sollten laut \textit{Martin} vermieden werden (ebenda).
     }
-    \item[] \textbf{Stamp-Kopplung} und \textbf{Data-Kopplung} bedingen sich gegenseitig: Wird Stamp-Kopplung vermieden, erhöht sich i.d.R. Data-Kopplung, und umgekehrt
+    \item \textbf{Stamp-Kopplung} und \textbf{Data-Kopplung} bedingen sich gegenseitig: Wird Stamp-Kopplung vermieden, erhöht sich i.d.R. Data-Kopplung, und umgekehrt
+    \end{itemize}
     \item \textbf{Routine Call-Kopplung}
-    \item[] eine Methode ruft eine andere Methode auf
-    \item[] werden sehr viele Methode eines anderen Teils aufgerufen, sollte man die Zerlegung überlegen\footnote{
-    s. hierzu auch \textbf{Feature Envy}, ein \textit{Code Smell}, der dadurch charakterisiert ist, dass ``a method seems more interested in a class than the one it actually is in`` \cite[80 f.]{Fow99}
+    \begin{itemize}
+    \item eine Methode ruft eine andere Methode auf
+    \item werden sehr viele Methode eines anderen Teils aufgerufen, sollte man die Zerlegung überlegen\footnote{
+    s. hierzu auch \textbf{Feature Envy}, ein \textit{Code Smell}, der wie folgt zusammengefasst werden kann: ``a method seems more interested in a class than the one it actually is in`` \cite[80 f.]{Fow99}
     }
-    \item[] werden Methoden immer in gleicher Sequenz aufgerufen, könnte man überlegen, die Sequenz auch als eigenständige Methode zusammenfassen
+    \item werden Methoden immer in gleicher Sequenz aufgerufen, könnte man überlegen, die Sequenz auch als eigenständige Methode zusammenfassen
+    \end{itemize}
 \end{itemize}
 
 \begin{figure}
     \centering
     \includegraphics[scale=0.4]{part two/Objektorientierter Entwurf/img/kopplung}
-    \caption{Typen von Kopplung, mit absteigender Anordnung werden die Kopplungskonzepte schwächer.  (Quelle: in Anlehnung an \cite[73, Abb. 3.18]{Wed09b})}
+    \caption{Typen von Kopplung, mit absteigender Anordnung wird auch die tatsächliche Kopplung schwächer.  (Quelle: in Anlehnung an \cite[73, Abb. 3.18]{Wed09b})}
     \label{fig:kopplung}
 \end{figure}
 
@@ -197,11 +215,11 @@ Das Prinzip besagt, dass Bauteile und Abläufe nach außen hin abstrakt sein sol
     } können als Abstraktion der Klasse gesehen werden
     \item werden Interfaces zur Vermeidung von \textbf{Stamp-Kopplung} verwendet, ist das Interface die Abstraktion der tatsächlichen Klasse
     \item ein \textbf{Iterator} ist eine Abstraktion des Zugriffs auf eine Datenstruktur
-    \item die Ergebnisse von Anforderungen, Analyse und Entwurf können als Abstraktion des zu erstellenden Systems betrachtet werden
+    \item die Ergebnisse von \textbf{Anforderungen}, \textbf{Analyse} und \textbf{Entwurf} können als Abstraktion des zu erstellenden Systems betrachtet werden
 \end{itemize}
 
 
-\susubsection*{The Law of Demeter}
+\subsubsection*{The Law of Demeter}
 \textit{Lieberherr}, \textit{Holland}, und \textit{Riel} formulieren 1988 in \cite{LHR88} das \textbf{Law of Demeter}, das das Ziel hat, eine Software möglichst modular zu erstellen.
 Dabei ist das Prinzip recht einfach gehalten:
 
@@ -222,14 +240,14 @@ Dabei ist das Prinzip recht einfach gehalten:
 \end{itemize}
 }
 \noindent
-und faßt ebenda das Prinzip folgendermaßen zusammen: ``talk to friends, not to strangers.``\footnote{
+und fasst ebenda das Prinzip folgendermaßen zusammen: ``talk to friends, not to strangers.``\footnote{
 s. hierzu auch \url{https://www2.ccs.neu.edu/research/demeter/demeter-method/LawOfDemeter/general-formulation.html}, abgerufen 20.04.2024
 }
 
 \subsubsection*{Vermeidung zirkulärer Abhängigkeiten}
 Eine \textbf{zirkuläre Abhängigkeit} liegt vor, wenn Beziehungen zwischen Klassen kreisförmig sind (s. Abbildung~\ref{fig:zirkulaer} a).\\
 Dadurch können Klassen nicht einzeln entwickelt bzw. getestet werden, was eine sehr starke Kopplung ausdrückt.\\
-Eine zyklische Abhängigkeit ist lft ein Fehler im Entwurf.\\
+Eine zyklische Abhängigkeit ist oft ein Fehler im Entwurf.\\
 Beruht die Abhängigkeit nicht auf einem Fehler, kann sie durch den Einsatz eines Interfaces aufgelöst werden (s. Abbildung~\ref{fig:zirkulaer} b).).
 
 \begin{figure}
