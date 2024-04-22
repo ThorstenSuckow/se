@@ -2,7 +2,7 @@
 
 \textbf{Architekturmuster} sind wie Analysemuster\footnote{
     s. Abschnitt~\ref{sec:analysemuster}
-}\textbf{Lösungsskizzen} verallgemeinerter Architekturprobleme.
+} \textbf{Lösungsskizzen} verallgemeinerter Architekturprobleme.
 
 Im Folgenden werden zwei Muster vorgestellt.
 
@@ -14,8 +14,7 @@ Im Folgenden werden zwei Muster vorgestellt.
     \item es wird auf dieselben Daten zugegriffen
     \item Daten werden ausgetauscht
     \item gemeinsame Daten bzw. Arbeitsabläufe werden synchronisiert
-    \item eine \textit{direkte Kommunikation} zwischen den Arbeitsplätzen ist \textit{nicht erwünscht}
-    \item[] bspw. aus Sicherheitsgründen oder wegen der hohen Anzahl der Nutzer
+    \item eine \textit{direkte Kommunikation} zwischen den Arbeitsplätzen ist \textit{nicht erwünscht}, bspw. aus Sicherheitsgründen oder wegen der hohen Anzahl der Nutzer
 \end{itemize}
 
 
@@ -43,7 +42,7 @@ Webanwendungen.
 
 \subsubsection*{Alternativen}
 \begin{itemize}
-    \item \textbf{Peer-to-Peer}: Die CLients kommunizieren untereinander, Verbuindungen werden über einen Server  vermittelt.
+    \item \textbf{Peer-to-Peer}: Die Clients kommunizieren untereinander, Verbindungen werden über einen Server  vermittelt.
     \item reine Server-Lösung: Es gibt nur ein System, das bspw. über Terminals genutzt wird.
     Durch Einschränkungen in der Nutzerfreundlichkeit wird dieses System in der Praxis kaum noch verwendet.
 \end{itemize}
@@ -99,6 +98,6 @@ Orthogonal dazu gibt es die horizontale Schichtenbildung von Schnittstellen zu d
 \begin{figure}
     \centering
     \includegraphics[scale=0.4]{part two/Objektorientierte Analyse/img/layerstiers}
-    \caption{Beispiel für eine Schichtenbildung, horizontal wurden die \textit{Layers} gebildet, vertikal die \textit{Tiers}. I.d.R. veranschaulicht eine hierarchische Anordnung der \texbf{Tiers} ihren Kommunikationsfluss besser. Zu der Unterteilung der Infrastrukturschicht int Ressourcen-/Integrationsschicht s.a. \cite[144]{Sta14g} (Quelle: in Anlehnung an \cite[42]{Wed09b})}
+    \caption{Beispiel für eine Schichtenbildung, horizontal wurden die \textit{Layers} gebildet, vertikal die \textit{Tiers}. I.d.R. veranschaulicht eine hierarchische Anordnung der \texbf{Tiers} ihren Kommunikationsfluss besser. Zu der Unterteilung der Infrastrukturschicht in Ressourcen-/Integrationsschicht s.a. \cite[144]{Sta14g} (Quelle: in Anlehnung an \cite[42]{Wed09b})}
     \label{fig:layerstiers}
 \end{figure}
