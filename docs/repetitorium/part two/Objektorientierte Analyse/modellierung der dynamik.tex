@@ -4,14 +4,14 @@
 In der \textbf{statischen Modellierung} im Domänenmodell werden Klassen in ihrem \textit{Zusammenhang} modelliert.\\
 
 \noindent
-Das statische Modell gibt keine Informationen über den Zustand eines Objektes oder wie Botschaften untereinander ausgetauscht werden, und wie sich Objekte / KLassen daraufhin verhalten.\\
+Das statische Modell gibt keine Informationen über den Zustand eines Objektes oder wie Botschaften untereinander ausgetauscht werden, und wie sich Objekte / Klassen daraufhin verhalten.\\
 
 \noindent
 Um darzustellen, wie sich Klassen oder Objekte verhalten, nutzt man das \textbf{dynamische Modell}.\\
 
 \noindent
-Hierzu wird in der \textbf{Analyse} Zustände und Zustandsübergänge eines Systems sowie Aktivitäten modelliert.\\
-Grundlage sind Dokumente der Anforderungen, die Verhalten beschreiben, also User Storys, Anwendungsfälle und Szenarien.\\
+Hierzu werden in der \textbf{Analyse} Zustände und Zustandsübergänge eines Systems sowie Aktivitäten modelliert.\\
+Grundlage sind Dokumente der Anforderungen, die \textbf{Verhalten} beschreiben, also\textbf{User Stories}, \textbf{Anwendungsfälle} und \textbf{Szenarien}.\\
 Die dort beschriebenen Abläufe werden bei der dynamischen Modellierung konkretisiert und genauer definiert.
 
 \subsection*{Zustände und Zustandsänderungen}
@@ -21,7 +21,14 @@ Die dort beschriebenen Abläufe werden bei der dynamischen Modellierung konkreti
 Oft sind nur Übergänge zwischen bestimmten Zuständen möglich.\\
 
 \noindent
-Die grafische Darstellung dieses Verhaltens erreicht man über \textbf{UML-Zustandsdiagramme}.
+Die grafische Darstellung dieses Verhaltens erreicht man über \textbf{UML-Zustandsdiagramme} (s. Abbildung~\ref{fig:statediagram}).
+
+\begin{figure}
+    \centering
+    \includegraphics[scale=0.4]{part two/Objektorientierte Analyse/img/statediagram}
+    \caption{In der Objektorientierung werden Zustandsautomaten mit Hilfe von Zustandsdiagrammen (\textit{statechart diagram}) dargestellt. Die in der Abbildung gezeigten /do/entry/exit-Aktivitäten werden innerhalb eines Zustands aufgerufen. Ein \textit{implizites Ereignis} (auch: \textit{Beendigungsereignis}) liegt vor, wenn die mit dem Vorgängerzustand verbundene Verarbeitung beendet ist, und eine \textit{Transition} in den Folgezustand führt. (Quelle: in Anlehnung an~\cite[90, Abb. 2.11-6]{Bal05})}
+    \label{fig:statediagram}
+\end{figure}
 
 \subsection*{Aktivitätsdiagramme}
 Bei Zustandsdiagrammen erschließt sich der Ablauf von Aktivitäten meist nur indirekt, da bspw. keine Auskunft über die beteiligten Akteure modelliert werden können.\\
@@ -32,5 +39,8 @@ Aus diesem Grund verwendet man \textbf{UML-Aktivitätsdiagramm}, in denen Aktivi
 \noindent
 Darüberhinaus kann mit Aktivitätsdiagrammen  auch der Fluss von Informationen un die Auswirkung auf Objekte dargestellt werden.\\
 
-\noindent
-Aktivitätsdiagramme sind zur Modellierung von User Storys, Szenarien oder Anwendungsfällen bestens geeignet.
+\vspace{2mm}
+\begin{tcolorbox}
+Aktivitätsdiagramme sind zur Modellierung von User Storys, Szenarien oder Anwendungsfällen geeignet.
+\end{tcolorbox}
+\vspace{2mm}
