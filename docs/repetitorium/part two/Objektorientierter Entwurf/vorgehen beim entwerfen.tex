@@ -1,18 +1,18 @@
 \section{Vorgehen beim Entwerfen}\label{sec:vorgehen-beim-entwerfen}
-Die Art und Weise, wie Klassen und ihr Zusammenspiel modelliert werden, hängt von der Aufgabenstellunf und der gewählten Architektur ab.\\
+Die Art und Weise, wie Klassen und ihr Zusammenspiel modelliert werden, hängt von der Aufgabenstellung und der gewählten Architektur ab.\\
 
 \noindent
 Typischerweise wird mit dem Entwurf der Datenhaltung begonnen.\\
 Hierzu werden die Klassen des \textbf{Domänenmodells} als Grundlage genutzt.\\
 
 \noindent
-Nacheinander werden Klassen entworfen, die, für die \textbf{Erfüllung der funktionalen Anforderungen} verantwortlich sind, und anschließend in Quelltext umgesetzt.\\
+Nacheinander werden Klassen entworfen, die für die \textbf{Erfüllung der funktionalen Anforderungen} verantwortlich sind, und anschließend in Quelltext umgesetzt.\\
 
 \noindent
 Zunächst werden die Klassen und ihre Beziehungen in einem Klassenmodell entworfen.\\
 
 \noindent
-\textbf{Sequenzdiagramme} werden meist nur für ausgewählte Abläufe modelliert, um zu prüfen, ob die entworfenen Klassen für die Abläufe geeignet sind, und zum anderen für die Dokumentation schwieriger oder unklarer Abläufe.\\
+\textbf{Sequenzdiagramme} werden meist nur für \textit{ausgewählte} Abläufe modelliert, um zu prüfen, ob die entworfenen Klassen für die Abläufe geeignet sind, und zum anderen für die Dokumentation schwieriger oder unklarer Abläufe.\\
 
 \noindent
 Für den Entwurf werden \textbf{Entwurfsmuster} genutzt.\\
@@ -30,8 +30,8 @@ Die folgenden Prinzipien gehen zurück auf \textit{Ambler}, \cite[112, Table 4.2
 \begin{itemize}
     \item \textbf{Travel light}: Anforderungen ändern sich im Laufe eines Projektes.
     Diagramme sollten deshalb kritisch überprüft werden, ob sie Wert für die weitere Entwicklung haben, oder ob sie unter Verzicht auf weitere Aktualisierung archiviert order verworfen werden
-    \item \textbf{Detailtiefe nach Problemstellung}: Es ist nicht immer sinvoll, Entwürfe formal detailliert auszugestalten, da manche Dinge für das verständnis nicht wichtig sind, wie bspw. \textit{Setter}/\textit{Getter} oder Sichtbarkeiten in einem Klassendiagramm.
-    \item \textbf{Iterate to another artifact}: Stagniert die Arbeit an einem Diagramm, kann es eine gute Idee sei, mit einem anderen Diagrammtyp weiterzumachen: Geht es in einem Klassendiagramm nicht weiter, kann ggf. ein Objektdiagramm oder die Darstellung dynamischen Verhaltens anhand eines Sequenzdiagrammes das Verständnis fördern.
+    \item \textbf{Detailtiefe nach Problemstellung}: Es ist nicht immer sinnvoll, Entwürfe formal detailliert auszugestalten, da manche Dinge für das Verständnis nicht wichtig sind, wie bspw. \textit{Setter}/\textit{Getter} oder Sichtbarkeiten in einem Klassendiagramm.
+    \item \textbf{Iterate to another artifact}: Stagniert die Arbeit an einem Diagramm, kann es eine gute Idee sein, mit einem anderen Diagrammtyp weiterzumachen: Geht es in einem Klassendiagramm nicht weiter, kann ggf. ein Objektdiagramm oder die Darstellung dynamischen Verhaltens anhand eines Sequenzdiagrammes das Verständnis fördern.
     \item \textbf{Model with others}: ``Software development is a lot like swimming: it is very dangerous to do it alone; it is also best to swim with people who know how to swim (they should at least know how to stay afloat).`` (\cite[52]{Amb04}\footnote{
     \textit{Wedemann}: Modellieren ist im Team effektiver und macht mehr Spaß (vgl.~\cite[52]{Wed09b})
     })
