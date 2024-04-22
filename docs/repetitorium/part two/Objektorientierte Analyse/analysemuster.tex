@@ -10,9 +10,10 @@ Bei der Entwicklung tauchen häufig ähnliche Probleme auf, bei denen sich auch 
 Die Beschreibung der verallgemeinerten Probleme und Lösungen auf eine \textbf{formalisierte Weise} nennt man \textbf{Muster}.\\
 
 \noindent
-Muster müssen zur Anwendung auf ein konkretes Problem \textit{konkretisiert} werden.
+Muster müssen zur Anwendung auf ein konkretes Problem \textit{konkretisiert} werden.\\
 
-Im Bereich des Software Engineerings gibt es Muster für Analyse, Architektur, Entwurf.
+\noindent
+Im Bereich des Software Engineerings gibt es Muster für \textbf{Analyse}, \textbf{Architektur}, \textbf{Entwurf}.
 
 \subsection*{Vorteile}
 
@@ -32,7 +33,8 @@ Im Bereich des Software Engineerings gibt es Muster für Analyse, Architektur, E
     \item Gegebenenfalls Antimuster
 \end{itemize}
 
-Eine Auswahl wichtigster Analysemuster in der o.a standardisierten Beschreibung findet sich in~\cite[22 ff.]{Wed09b} und wird wie folgt verkürzt wiedergegeben.
+\noindent
+Eine Auswahl wichtigster Analysemuster in der o.a standardisierten Beschreibung findet sich in~\cite[22 ff.]{Wed09b} und wird im Folgenden verkürzt wiedergegeben.
 
 \subsection{Exemplartyp (Abstraction - Occurence)}
 
@@ -108,16 +110,16 @@ s. Abbildung~\ref{fig:playerrole}
 
 \subsubsection*{Problem}
 \begin{itemize}
-    \item Objekte können hierarchisch angeordnete sein
+    \item Objekte können hierarchisch angeordnet sein
     \item Jedes Objekt kann maximal einem Objekt untergeordnet sein
     \item manche Objekte dieser Hierarchie können keine untergeordneten Objekte haben
 \end{itemize}
 
 \subsubsection*{Lösung}
 \begin{itemize}
-    \item Klassen werden von eine Superklasse \code{Node} abgeleitet
-    \item Klassen, die andere Klassen referenzieren können, \code{SuperiorNode}'s, besitzen Referenzen auf \code{Node}'s
-    \item Klassen, die keine anderen Klassen referenzieren können, sind \code{NonSuperiorNodes}'s
+    \item Klassen werden von einer Superklasse \code{Node} abgeleitet
+    \item Klassen, die andere Klassen referenzieren können, sog. \code{SuperiorNode}s, besitzen Referenzen auf \code{Node}s
+    \item Klassen, die keine anderen Klassen referenzieren können, sind \code{NonSuperiorNodes}s
 \end{itemize}
 
 \subsubsection*{Beispiel}
