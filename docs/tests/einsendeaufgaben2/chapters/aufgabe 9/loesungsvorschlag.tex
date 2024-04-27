@@ -1,0 +1,21 @@
+Nennen Sie 5 Regeln für einen guten Software-Entwurf
+
+\section*{Antwort}
+
+\begin{itemize}
+    \item Berücksichtigung der Qualitätsziele wie \textbf{Funktionsfähigkeit} und \textbf{Änderbarkeit}
+    \item \textbf{Teile und Herrsche}: Zerlegung eines Systems in kleinere Teile, da i.d.R. viele kleine Teile, die jeweils für wenig Funktionalität verantwortlich sind, leichter änderbar sind und besser verstanden werden können als wenige große Teile, die sehr viel Funktionalität implementieren\footnote{
+    ähnlich verhält es sich mit Schachtelsätzen.
+    }.\\
+    Bspw. kann folgende Zerlegung in objektorientierten Softwaresystemen durchgeführt werden (vgl.~\cite[70]{Wed09b}):
+        \begin{itemize}
+            \item Systeme in Subsysteme
+            \item Subsysteme in Pakete
+            \item Pakete in Klassen
+            \item Klassen in Methoden
+        \end{itemize}
+    \item \textbf{Lose Kopplung}: Starke Kopplung zwischen Teilen (wie bspw. \textbf{Content}- oder \textbf{Common}-Kopplung) sollte unbedingt vermieden werden.
+    \item \textbf{Hohe Kohäsion}: Ein System sollte so zerlegt werden, das Bestandteile einer Zerlegung einen hohen funktionalen Zusammenhang aufweisen, und wenig Abhängigkeiten nach außen aufweisen (bspw. durch die Organisation des Systems durch ~\textbf{Modularisierung}\footnote{
+    \cite{Par72}
+    } und Abgrenzung fachlicher Kontexte durch \textbf{Bounded Context}\footnote{\cite[335 ff.]{Eva03}}).
+\end{itemize}
