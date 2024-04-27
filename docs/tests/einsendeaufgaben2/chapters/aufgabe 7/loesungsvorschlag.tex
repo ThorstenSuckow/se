@@ -1,0 +1,13 @@
+Welches Entwurfsmuster wurde hier wie eingesetzt?
+
+\section*{Antwort}
+
+Die Klasse \code{Geld} stellt zwei Operationen \code{addiereBetrag} und \code{subtrahiereBetrag} zur Verfügung, die \textit{nicht} den Zustand (den ``\code{betrag}``) eines Objektes von diesem Typ ändern: Stattdessen liefern Aufrufe der Methode eine neue Instanz von \code{Geld} mit dem aktualisierten \code{betrag} zurück.\\
+
+\noindent
+Bei der Klasse \code{Geld} handelt es sich um ein \textbf{Value Object}\footnote{
+    ein Objekt, für das gilt: ``equality isn't based on identity`` (~\cite[486]{Fow03b}). Bspw. ist ein Objekt der Klasse \textit{String} in Java ein \textit{Value Object}
+}.\\
+Der Entwurf folgt dem im Skript vorgestellten \textbf{Immutable}-Muster\footnote{
+    s.~\cite[58]{Wed09b}. \textit{Fowler} führt in~\cite[488]{Fow03b} weiter aus, wie eine Klasse \textbf{Money} zur Repräsentation von Geldwerten auch Rundungsverhalten kapseln kann.
+}.\\
