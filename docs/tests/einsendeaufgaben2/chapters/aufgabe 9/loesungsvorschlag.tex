@@ -3,7 +3,7 @@ Nennen Sie 5 Regeln für einen guten Software-Entwurf
 \section*{Antwort}
 
 \begin{itemize}
-    \item Berücksichtigung der Qualitätsziele wie \textbf{Funktionsfähigkeit} und \textbf{Änderbarkeit}
+    \item Grundsätzlich: Berücksichtigung der Qualitätsziele wie \textbf{Funktionsfähigkeit} und \textbf{Änderbarkeit}
     \item \textbf{Teile und Herrsche}: Zerlegung eines Systems in kleinere Teile, da i.d.R. viele kleine Teile, die jeweils für wenig Funktionalität verantwortlich sind, leichter änderbar sind und besser verstanden werden können als wenige große Teile, die sehr viel Funktionalität implementieren\footnote{
     ähnlich verhält es sich mit Schachtelsätzen.
     }.\\
@@ -18,4 +18,9 @@ Nennen Sie 5 Regeln für einen guten Software-Entwurf
     \item \textbf{Hohe Kohäsion}: Ein System sollte so zerlegt werden, das Bestandteile einer Zerlegung einen hohen funktionalen Zusammenhang aufweisen, und wenig Abhängigkeiten nach außen aufweisen (bspw. durch die Organisation des Systems durch ~\textbf{Modularisierung}\footnote{
     \cite{Par72}
     } und Abgrenzung fachlicher Kontexte durch \textbf{Bounded Context}\footnote{\cite[335 ff.]{Eva03}}).
+    \item weitere Prinzipien\footnote{
+    einen weiteren Katalog von Prinzipien fasst bspw. auch \textit{Martin} mit den \textit{SOLID}-Prinzipien in \cite{Mar03} zusammen, die neben den im Skript besprochenen Prinzipien bspw. auch das \textit{Dependency Inversion Principle} beinhalten
+    } wie \textbf{Abstraktion}, \textbf{Ersetzbarkeitsprinzip} (\textit{LSP - Liskov Substitution Principle}), \textbf{Law of Demeter}\footnote{
+        ``Only talk to your immediate friends``, \url{https://www2.ccs.neu.edu/research/demeter/demeter-method/LawOfDemeter/general-formulation.html}, abgerufen 28.04.2024
+    }
 \end{itemize}

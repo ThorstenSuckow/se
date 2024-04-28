@@ -21,10 +21,11 @@ Beurteilen Sie folgendes Code-Fragment aus Sicht des Software Engineerings.
 \begin{itemize}
     \item Durch die Übergabe eines Referenz-Parameters liegt \textbf{Stamp}-Kopplung vor.
     \item Eine Bestellung ist ein \textit{Aggregat} und besteht aus mehreren \textit{Items} (Artikeln / Bestell-Positionen):\\
-    Es wird auf eine \textit{Collection} des übergebenen Objektes zugegriffen, über die iteriert wird, ohne, dass ein \textbf{Iterator} verwendet wird (der Aufrufer \textit{bricht}, wenn die Datenstruktur (\code{Vector}) gegen eine andere ausgetauscht wird).
+    Es wird auf eine \textit{Collection} des übergebenen Objektes zugegriffen, über die iteriert wird, ohne, dass ein \textbf{Iterator} verwendet wird.
+    Es besteht die Gefahr, dass der Aufrufer \textit{bricht}, wenn die Datenstruktur (\code{Vector}) gegen eine andere ausgetauscht wird.
     \item Innerhalb der Schleife muss die aufrufende Methode über die \textbf{interne Struktur} der einzelnen Teile der Collection Kenntnisse haben.
-    \item Prinzip des \textbf{Information Hiding} / der \textbf{Datenkapselung} verletzt, da auf das Attribut \code{price} eines Objekts der KLasse \code{Item} direkt zugegriffen werden kann.
-    \item Laufzeitfehler durch eine mögliche \code{ClassCastException} verursachen höchstwahrscheinlich einen Absturz der Software.
+    \item Prinzip des \textbf{Information Hiding} / der \textbf{Datenkapselung} ist verletzt, da auf das Attribut \code{price} eines Objekts der Klasse \code{Item} direkt zugegriffen werden kann.
+    \item Laufzeitfehler durch eine Fehler beim Casting können einen Absturz der Software herbeiführen.
 \end{itemize}
 
 \noindent
