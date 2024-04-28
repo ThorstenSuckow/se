@@ -2,8 +2,12 @@ Nennen Sie 5 Regeln für einen guten Software-Entwurf
 
 \section*{Antwort}
 
+Grundsätzlich: Berücksichtigung der Qualitätsziele wie \textbf{Funktionsfähigkeit} und \textbf{Änderbarkeit} sind immer wichtig.\\
+
+\noindent
+Generelle Prinzipien, die zu einem guten Software-Entwurf führen, sind u.a.:
+
 \begin{itemize}
-    \item Grundsätzlich: Berücksichtigung der Qualitätsziele wie \textbf{Funktionsfähigkeit} und \textbf{Änderbarkeit}
     \item \textbf{Teile und Herrsche}: Zerlegung eines Systems in kleinere Teile, da i.d.R. viele kleine Teile, die jeweils für wenig Funktionalität verantwortlich sind, leichter änderbar sind und besser verstanden werden können als wenige große Teile, die sehr viel Funktionalität implementieren\footnote{
     ähnlich verhält es sich mit Schachtelsätzen.
     }.\\
@@ -14,13 +18,15 @@ Nennen Sie 5 Regeln für einen guten Software-Entwurf
             \item Pakete in Klassen
             \item Klassen in Methoden
         \end{itemize}
-    \item \textbf{Lose Kopplung}: Starke Kopplung zwischen Teilen (wie bspw. \textbf{Content}- oder \textbf{Common}-Kopplung) sollte unbedingt vermieden werden.
-    \item \textbf{Hohe Kohäsion}: Ein System sollte so zerlegt werden, das Bestandteile einer Zerlegung einen hohen funktionalen Zusammenhang aufweisen, und wenig Abhängigkeiten nach außen aufweisen (bspw. durch die Organisation des Systems durch ~\textbf{Modularisierung}\footnote{
+    \item \textbf{Lose Kopplung}: Starke Kopplung zwischen Teilen (wie bspw. \textit{Content}- oder \textit{Common}-Kopplung) sollte unbedingt vermieden werden.
+    \item \textbf{Hohe Kohäsion}: Ein System sollte so zerlegt werden, das Bestandteile einer Zerlegung einen hohen funktionalen Zusammenhang aufweisen, und wenig Abhängigkeiten nach außen aufweisen (bspw. durch die Organisation des Systems durch ~\textit{Modularisierung}\footnote{
     \cite{Par72}
-    } und Abgrenzung fachlicher Kontexte durch \textbf{Bounded Context}\footnote{\cite[335 ff.]{Eva03}}).
+    } und Abgrenzung fachlicher Kontexte durch \textit{Bounded Context}\footnote{\cite[335 ff.]{Eva03}}).
     \item weitere Prinzipien\footnote{
     einen weiteren Katalog von Prinzipien fasst bspw. auch \textit{Martin} mit den \textit{SOLID}-Prinzipien in \cite{Mar03} zusammen, die neben den im Skript besprochenen Prinzipien bspw. auch das \textit{Dependency Inversion Principle} beinhalten
     } wie \textbf{Abstraktion}, \textbf{Ersetzbarkeitsprinzip} (\textit{LSP - Liskov Substitution Principle}), \textbf{Law of Demeter}\footnote{
         ``Only talk to your immediate friends``, \url{https://www2.ccs.neu.edu/research/demeter/demeter-method/LawOfDemeter/general-formulation.html}, abgerufen 28.04.2024
-    }
+    }, \textbf{Vermeidung zirkulärer Abhängigkeiten}, eine bzw. max. zwei \textbf{Verantwortlichkeiten} pro Klasse\footnote{
+    s. a. \textit{Single Responsible Principle}: ``A class should have only one reason to change`` (\cite[95 ff.]{Mar03}).
+    }, \ldots
 \end{itemize}

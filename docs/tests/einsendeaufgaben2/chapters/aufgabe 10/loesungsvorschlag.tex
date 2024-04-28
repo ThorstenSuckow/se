@@ -9,7 +9,7 @@ Beurteilen Sie folgendes Code-Fragment aus Sicht des Software Engineerings.
         Vector items=bestellung.items;
         double sum=0;
         for (int i=0; i<items.size(); i++) {
-        sum+=((Item)items.get(i)).price;;
+            sum+=((Item)items.get(i)).price;;
         }
         return sum;
     }
@@ -24,7 +24,7 @@ Beurteilen Sie folgendes Code-Fragment aus Sicht des Software Engineerings.
     Es wird auf eine \textit{Collection} des übergebenen Objektes zugegriffen, über die iteriert wird, ohne, dass ein \textbf{Iterator} verwendet wird.
     Es besteht die Gefahr, dass der Aufrufer \textit{bricht}, wenn die Datenstruktur (\code{Vector}) gegen eine andere ausgetauscht wird.
     \item Innerhalb der Schleife muss die aufrufende Methode über die \textbf{interne Struktur} der einzelnen Teile der Collection Kenntnisse haben.
-    \item Prinzip des \textbf{Information Hiding} / der \textbf{Datenkapselung} ist verletzt, da auf das Attribut \code{price} eines Objekts der Klasse \code{Item} direkt zugegriffen werden kann.
+    \item Prinzip des \textbf{Information Hiding} / der \textbf{Datenkapselung} ist verletzt (vgl. \textbf{Law of Demeter}), da auf das Attribut \code{price} eines Objekts der Klasse \code{Item} direkt zugegriffen werden kann (\textbf{Content}-Kopplung).
     \item Laufzeitfehler durch eine Fehler beim Casting können einen Absturz der Software herbeiführen.
 \end{itemize}
 
@@ -32,5 +32,5 @@ Beurteilen Sie folgendes Code-Fragment aus Sicht des Software Engineerings.
 Insgesamt wird festgestellt, dass der \textbf{Kopplungsgrad} unerwünscht \textbf{hoch} ist.\\
 
 \noindent
-Es bietet sich an, die Berechnung der Summe in die Klasse \code{Bestellung} zu verlagern.\\
+Es bietet sich an, die Berechnung der Summe in die Klasse \code{Bestellung} zu verlagern (\textbf{Kohäsion}).\\
 Aufrufende Methoden müssen dann keine Kenntnisse über die interne Struktur einer Bestellung besitzen.
