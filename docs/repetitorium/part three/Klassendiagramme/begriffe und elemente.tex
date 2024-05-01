@@ -1,0 +1,114 @@
+\section{Begriffe und Elemente}
+
+\subsection*{Properties}
+Es gibt zwei unterschiedliche Notationen für Properties: Die \textbf{Attribut}- und die \textbf{Assoziationsnotation}.
+
+\begin{itemize}
+    \item \textbf{Attributnotation}: Textzeile innerhalb des zweiten \textit{Compartments} der Klassenbox.\\
+    Neben \textbf{Instanzattributen}, die die Eigenschaften eines Objektes charakterisieren, können auch \textbf{Klassenattribute} angegeben werden: Der Bezeichner wird dann \underline{unterstrichen}.\\
+    Die formale Notation für ein Attribut lautet:
+    \begin{equation}\notag
+        \text{[Sichtbarkeit][/] name [:Typ][[Multiplizität]][=Vorgabewert][\{eigenschaftswert\}*]}
+    \end{equation}
+    Eckige Klammern stehen hierbei für \textit{optionale} Angaben\footnote{
+        die \textbf{Multipliziät} wird immer in eckigen Klammern angegeben, das zweite Klammernpaar steht hier für die optionale Angabe
+    }.
+    \begin{itemize}
+        \item \textbf{Sichtbarkeit}:
+            \begin{itemize}
+                \item \code{+} \textit{public}
+                \item \code{#} \textit{protected}
+                \item \code{-} \textit{private}
+                \item \code{~} \textit{package private}
+            \end{itemize}
+        \item \textbf{/}: es handelt sich um ein \textbf{abgeleitetes Attribut}\footnote{
+            \textit{abgeleitet}: der Wert wird berechnet und nicht durch den Anwender angegeben oder aus einer externen Quelle geladen
+        }
+        \item \textbf{Multiplizität}:
+        \begin{itemize}
+            \item \code{[0..*]}: optionales Attribut, gekennzeichnet durch $0$ als untere Grenze.
+            Der Stern $*$ zeigt an, dass bel. viele Ausprägungen vorhanden sein dürfen.
+            Statt \code{[0..*]} kann in dem Fall auch \code{[*]} gnotiert werden.
+            \item \code{[1..n]}: obligatorische Property, gekennzeichnet durch $1$ als untere Grenze ($n >= 1 \land n=*$):
+            \item \code{[1]}: Standardwert
+        \end{itemize}
+        \item \textbf{Vorgabewert}: Initialisierungswert
+        \item \textbf{Eigenschaftswert}: \textit{Tagged Values}.
+        Stellen besondere Eigenschaftswerte bezogen auf das \textbf{Modellelement} (hier: \textit{Attribut}) dar, {bspw.} \code{{readOnly}}, \code{{ordered}}, \code{{frozen}} usw. Werden keine Vorgaben der UML genutzt, hat der Eigenschaftswert die Form \code{{Eigenschaft=Wert}} (so ist bspw. \code{{readOnly}} eine Kurzschreibweise für  \code{{readOnly=true}})
+        \item \textbf{Einschränkungen}: Zusätzliche Einschränkungen, bspw. in der Notation der \textbf{OCL}, werden ebenfalls in geschweiften Klammern angegeben.
+        Diese Anforderungen, die das Attribut erfüllen muss, müssen als boolescher Ausdruck formuliert werden, so dass die Anforderung zu \code{true} oder \code{false} ausgewertet werden kann.
+        Einschränkungen können direkt hinter das Attribut, als Notiz oder ausgelagert in einer Textdatei angegeben werden.
+    \end{itemize}
+
+\end{itemize}
+
+\vspace{2mm}
+\begin{tcolorbox}[title=Fehlende Angaben zur Multiplizität]
+    \textit{Fowler} empfiehlt die Angabe von \textbf{Multiplizitäten}, um Unklarheiten zu vermeiden: Wird eine Multiplizität nicht angegeben, kann der Autor damit ausdrücken wollen, dass die Standard-Multiplizität $[1]$ gemeint ist - es kann aber auch sein, dass einfach keine Angaben dazu im Diagramm gemacht worden sind, weshalb man per se nicht von einer Multiplizität von $[1]$ ausgehen darf.
+    \blockquote[{\cite[39]{Fow03b}}]{
+        The default implicity of an attribute is [1]. Although this is true in the meta-model, you can't assume that an attribute in a diagram that's missing a multiplicity has a value of [1], as the diagram may be suppressing the multiplicity information. As a result, I prefer to explicitly state a [1] multiplicity if it's important.
+    }
+\end{tcolorbox}
+\vspace{2mm}
+
+\begin{tcolorbox}[title=Nur ein Wert $n > 1$ bei der Multiplizität,colback=red!20]
+    In~\cite[19]{Buh09} vermerkt \textit{Buhl}:
+    \blockquote{
+    [1] - untere Grenze 1 und obere Grenze 1.[\ldots] Ist nur ein Wert angegeben, so wird die untere Grenze grundsätzlich mit 1 angenommen.
+    }\\
+
+    \noindent
+    Im Gegensatz hierzu findet sich bei \textit{Oestereich}:\\
+    \blockquote[{\cite[274, Hervorhebung eigene]{Oes05}}]{
+        $0..3,\quad 7,\quad 9..*\quad$ von null bis drei oder \textbf{genau sieben} oder größer oder gleich neun
+    }\\
+    sowie in der Spezifikation:\\
+    \blockquote[{\cite[35]{UML17}}]{
+        If the lower bound is equal to the upper bound, then an alternate notation is to use a string containing just the upper
+        bound.
+    }\\
+    \textit{Balzert} argumentiert in \cite[43]{Bal05} gleich.
+\end{tcolorbox}
+
+\subsection*{Assoziationsnotation}
+
+\begin{tcolorbox}
+    Eine Assoziation repräsentiert die semantische Beziehung zwischen Klassen.
+\end{tcolorbox}
+
+Die \textbf{Assoziationsnotation} verwendet durchgehende Linien zwischen Klassen.\\
+
+\noindent
+Assoziationen können Namen besitzen, die mit einer Leserichtung ausgestattet sind (bspw. durch eine Pfeilspitze).\\
+
+\noindent
+\textbf{Assoziationsenden} können darüberhinaus mit folgenden Informationen versehen werden:
+
+\begin{itemize}
+    \item \textbf{Rollennamen}, zusätzlich mit \textit{Sichtbarkeiten}
+    \item \textbf{Eigenschaftswerte}\footnote{
+    ``Die bedeutung der von der UML vorgegebenen Eigenschaftswerte hat gegenüber den Attributen eine leicht abweichende Semantik.`` (\cite[20]{Buh09})
+    }
+    \item \textbf{Einschränkungen}
+    \item \textbf{Multiplizitäten}
+\end{itemize}
+
+\noindent
+\textbf{Pfeilspitzen} an Assoziationsenden geben die \textbf{Navigierbarkeit} an:
+
+\begin{itemize}
+    \item \textbf{Bidirektional}: Pfeilspitzen an beiden Enden
+    \item \textopf{Unidirektional}: Pfeilspitze an nur einem Ende
+    \item \textbf{keine Angabe}: bidirektionale Assoziation, oder Navigierbarkeit wurde noch nicht modelliert\footnote{
+     zur Vermeidung von Unklarheiten empfiehlt es sich, die Navigierbarkeit anzugeben. S. auch die obige Anmerkung zur \textit{Multiplizität}
+    }
+\end{itemize}
+
+\subsection*{Anmerkungen}
+\textit{Buhl} weist darauf hin, dass
+
+\begin{itemize}
+    \item Eigenschaftswerte von Properties in einer Implementierung (Java) umgesetzt werden müssen
+    \item es günstig ist, Klassen \textit{restriktiv} zu entwerfen: Rechte können in Unterklassen erweitert werden.\\
+    Rechte können aber nicht in Unterklassen eingeschränkt werden.
+\end{itemize}
