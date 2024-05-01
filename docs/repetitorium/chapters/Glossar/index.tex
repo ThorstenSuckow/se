@@ -255,6 +255,16 @@ Vorgehensmodell, bei dem ein Produktkern (\textit{Nullversion}) entwickelt wird,
 }
 }
 
+\newglossaryentry{Entwurf}
+{
+singular={Entwurf},
+plural={Entwurf},
+name={Entwurf},
+description={
+Aus der \textbf{Entwurfsphase} geht der \textbf{Entwurf} hervor, der die Aufgabe hat, aus den Ergebnissen der \textbf{OOA} eine Anwendung unter den geforderten technischen Randbedingungen zu realisieren. Hierbei wird das \textbf{OOD}-Modell unter den Gesichtspunkten \textit{Standardisierung} und \textit{Effizienz} konzipiert (vgl.~\cite[13]{Bal05}).
+}
+}
+
 \newglossaryentry{Pflichtenheft}
 {
 singular={Pflichtenheft},
@@ -270,6 +280,8 @@ die das zu entwickelnde Produkt/Dienstleistung aus der Sicht des Auftragnehmers
 erfüllen muss. Dabei geht es um den Funktions-, Leistungs- und Qualitätsumfang
 des Produkts. Das Pflichtenheft muss so abgefasst sein, dass es als Basis eines juristischen Vertrags dienen kann.
 }
+\noindent
+Das Pflichtenheft dient dem \textit{Systemanalytiker} als Grundlage zur Erstellung des \textbf{OOA-Modells}.
 }
 }
 
@@ -290,5 +302,65 @@ plural={Aktive Redundanz},
 name={Aktive Redundanz},
 description={
 \textbf{Aktive Redundanz} ist eine Taktik zur Verhinderung von Fehlfunktionen als Teil der Planung einer Softwarearchitektur: Redundante Systeme bearbeiten Anfragen gleichzeitig. Die Antwort des schnellsten Systems wird verwendet (s. \textit{Functional redundancy}, \cite[90]{BCK12}).
+}
+}
+
+\newglossaryentry{MOF}
+{
+singular={MOF},
+plural={MOF},
+name={MOF},
+description={
+\textbf{MOF} (\textit{Meta Object Facility}) ist Grundlage für die Definitionen des UML-Metamodells. Die Metaebene der MOF wird auch \textbf{M3} bezeichnet. Das Metamodell der UML 2.0 ist auch Ebene \textbf{M2}, in der Praxis verwendete Modellelement auf Ebene \textbf{M1} (von oben nach unten).
+}
+}
+
+
+\newglossaryentry{OOA}
+{
+singular={OOA},
+plural={OOA},
+name={OOA},
+description={
+\textbf{Objektorientierte Analyse}: Prozess, in dem Wünsche und Anforderungen eines Auftraggebers an eine neue Software ermittelt und beschrieben werden.\\
+\blockquote[{\cite[10]{Bal05}}]{
+Ziel der objektorientierten Analyse ist es, das zu realisierende Problem zu verstehen und in einem OOA-Modell zu beschreiben. Dieses Modell soll die essenzielle Struktur und Semantik des Problems, aber noch keine technische Lösung beschreiben.
+}
+
+
+}
+}
+
+\newglossaryentry{OOA-Modell}
+{
+singular={OOA-Modell},
+plural={OOA-Modell},
+name={OOA-Modell},
+description={
+Das \textbf{OOA-Modell} geht aus der \textbf{OOA} hervor und bildet die fachliche Lösung des zu realisierenden Systems.
+Deshalb ist das Produkt (Artefakt) der \textbf{Analysephase} das \textbf{Fachkonzept} (vgl.~\cite[11]{Bal05})
+
+}
+}
+
+
+\newglossaryentry{OOD}
+{
+singular={OOD},
+plural={OOD},
+name={OOD},
+description={
+s. \textbf{Entwurf}
+}
+}
+
+
+\newglossaryentry{OOD-Modell}
+{
+singular={OOD-Modell},
+plural={OOD-Modell},
+name={OOD-Modell},
+description={
+Aus der \textbf{Entwurfsphase} geht das \textbf{OOD-Modell} hervor, das ein Abbild der späteren Programme ist. Daraus folgt, dass der Entwurf und die \textbf{Implementierung} stark verzahnt sind: Jede im Entwurf entworfene Klasse kann direkt implementiert werden, unter Berücksichtigung der im OOD-Modell definierten Attribute und Operationen. Im Unterschied zum Programmcode zeigt das OOD-Modell ``das System auf einer höheren Abstraktionsebene und macht vor allem das Zusammenwirken einzelner Elemente deutlich.`` (\cite[15]{Bal05})
 }
 }
