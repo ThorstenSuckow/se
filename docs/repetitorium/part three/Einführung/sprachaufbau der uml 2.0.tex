@@ -54,11 +54,18 @@ Modellierungskonzepte werden im UML Metamodell beschrieben.
 }.
 Bspw. ist \code{class} ein bekanntes Modellierungskonzept, aus dem bspw. ein Modellelement \code{Person} erzeugt werden kann, das in einem Klassendiagramm eines Softwaresystems verwendet wird.
 
+\vspace{2mm}
+\begin{tcolorbox}
+Ein \textbf{Modellelement} ist eine Instanz eines \textbf{UML Modellierungskonzepts}.\\
+    Modellelemente werden durch Benutzer erstellt, die damit einen bestimmten Zweck verfolgen, {bspw.} die Platzierung des Elements in einem UML-Diagramm.
+\end{tcolorbox}
+\vspace{2mm}
+
 \subsection*{Diagramm}
 Ein \textbf{Diagramm} ist eine grafische Darstellung von Daten oder Informationen.\\
 \textbf{Modellelemente} eines UML Models können auf verschiedenen Diagrammen platziert werden.\\
 Diagramme können \textit{Struktur} oder \textit{Verhalten} visualisieren, weshalb Modellierungskonzepte der UML bestimmte grafische Notationen besitzen\footnote{
-bspw. wird \code{class} als Rechteck dargestellt, eine Instanz davon im Klassendiagramm dann als Rechteck, das den Namen der Instanz trägt
+bspw. wird \textit{class} als Rechteck dargestellt, eine Instanz davon im Klassendiagramm dann als Rechteck, das den Namen der Instanz trägt
 }.
 
 \subsection*{Metamodell}
@@ -84,6 +91,13 @@ Regeln zur syntaktischen Korrektheit werden mittels der \textbf{OCL} beschrieben
 Die Bedeutung der Modellierungskonzepte wird textlich beschrieben.\\
 Darüber hinaus werden die in der UML Superstructure erläuterten Modellierungskonzepte in Paketen zusammengefasst.
 
+\vspace{2mm}
+\begin{tcolorbox}
+    Das \textbf{UML Metamodell} regelt, in welchem Zusammenhang \textbf{UML Modellierungskonzepte} in Modellen auftreten dürfen, und welche Eigenschaften und Beziehungen zu anderen Sprachelementen zulässig sind.\\
+    Die im Metamodell verwendeten Erklärungen basieren hierbei auf einer abstrakten Syntax, für deren Beschreibung eine Untermenge (\textit{Klassendiagramme}) der UML verwendet wird.\\
+    Die \textbf{Semantik} der Modellierungskonzepte wird textlich beschrieben, zur Formalisierung von Regeln für die syntaktische Korrektheit wird die \textbf{OCL} verwendet (vgl.~\cite[82]{Buh09}).
+\end{tcolorbox}
+\vspace{2mm}
 
 \begin{figure}
     \centering
