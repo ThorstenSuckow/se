@@ -1,15 +1,20 @@
 \section{Begriffe und Elemente}
 
-\subsection*{Properties}
+\subsection{Properties}
 Es gibt zwei unterschiedliche Notationen für Properties: Die \textbf{Attribut}- und die \textbf{Assoziationsnotation}.
+
+\subsubsection*{Attributnotation}
 
 \begin{itemize}
     \item \textbf{Attributnotation}: Textzeile innerhalb des zweiten \textit{Compartments} der Klassenbox.\\
     Neben \textbf{Instanzattributen}, die die Eigenschaften eines Objektes charakterisieren, können auch \textbf{Klassenattribute} angegeben werden: Der Bezeichner wird dann \underline{unterstrichen}.\\
-    Die formale Notation für ein Attribut lautet:
-    \begin{equation}\notag
-        \text{[Sichtbarkeit][/] name [:Typ][[Multiplizität]][=Vorgabewert][\{eigenschaftswert\}*]}
-    \end{equation}
+    Die formale Notation für ein Attribut lautet:\\
+    \medskip
+     \noindent
+    \begin{small}
+        \textcolor{blue}{[Sichtbarkeit][/] name [:Typ][[Multiplizität]][=Vorgabewert][\{Eigenschaftswert [, Eigenschaftswert]*\}]}\\
+    \end{small}
+    \noindent
     Eckige Klammern stehen hierbei für \textit{optionale} Angaben\footnote{
         die \textbf{Multipliziät} wird immer in eckigen Klammern angegeben, das zweite Klammernpaar steht hier für die optionale Angabe
     }.
@@ -70,12 +75,13 @@ Es gibt zwei unterschiedliche Notationen für Properties: Die \textbf{Attribut}-
     \textit{Balzert} argumentiert in \cite[43]{Bal05} gleich.
 \end{tcolorbox}
 
-\subsection*{Assoziationsnotation}
+\subsubsection*{Assoziationsnotation}
 
 \begin{tcolorbox}
     Eine Assoziation repräsentiert die semantische Beziehung zwischen Klassen.
 \end{tcolorbox}
 
+\noindent
 Die \textbf{Assoziationsnotation} verwendet durchgehende Linien zwischen Klassen.\\
 
 \noindent
@@ -112,3 +118,136 @@ Assoziationen können Namen besitzen, die mit einer Leserichtung ausgestattet si
     \item es günstig ist, Klassen \textit{restriktiv} zu entwerfen: Rechte können in Unterklassen erweitert werden.\\
     Rechte können aber nicht in Unterklassen eingeschränkt werden.
 \end{itemize}
+
+\subsection{Operationen}
+
+\textbf{Operationen} sind Aktionen, die eine Klasse ausführen kann und korrespondieren mit den \textbf{Methoden} einer implementierten Klasse.\\
+
+\noindent
+Im engeren Sinne ist
+\begin{itemize}
+    \item eine \textbf{Operation} eine \textit{Deklaration} der Prozedur
+    \item eine \textbf{Methode} die \textit{Implementierung} der Operation
+\end{itemize}
+
+\noindent
+Operationen werden aufgerufen, indem ein \textbf{Client} eine Nachricht an ein Objekt oder eine Klasse versendet.\\
+Der Empfänger ruft dann eine Methode zur Ausführung der Operation auf.
+
+\noindent
+Wie bei den Attributen kann man zwischen \textbf{Instanz}- und \textbf{Klassenoperationen} unterscheiden.
+Letztere werden ebenso wie \textbf{Klassenattribute} \underline{unterstrichen} dargestellt.\\
+
+\noindent
+Unterscheidet sich die Parameterliste einer Operation durch \textbf{Überladen}, dürfen Operationen entprechend mit gleichem Namen aufgeführt werden.\\
+
+\noindent
+Die Notation einer Operation kann wie folgt spezifiziert werden:
+
+\medskip
+\noindent
+\begin{small}
+    \textcolor{blue}{[Sichtbarkeit] name [(Parameterliste)] [:Rückgabetyp][\{Eigenschaftswert\}/\{Einschränkungen\}]}
+\end{small}\\
+
+\noindent
+Für \textcolor{blue}{Parameterliste} gilt:\\
+\begin{small}
+    \textcolor{blue}{Parameter [, Parameter]*}\\
+\end{small}\\
+
+
+\noindent
+Für \textcolor{blue}{Parameter} gilt:\\
+\medskip
+\noindent
+\begin{small}
+    \textcolor{blue}{[Übergaberichtung] name: Typ [[Multiplizität]] [=Vorgabewert][\{Eigenschaftswert [, Eigenschaftswert]*\}]}\\
+\end{small}\\
+
+\noindent
+\textbf{Beispiele}:
+
+\begin{itemize}
+    \item[] \code{+add(in summand1:int[1], in summand2:int[1]): int}
+    \item[] \code{+getName(): String}
+\end{itemize}
+
+\noindent
+Die Bedeutung einzelner Angaben bei der Spezifikation lassen sich bereits aus der weiter oben eingeführten \textbf{Attributnotation} ableiten.\\
+Die \textbf{Übergaberichtung} gibt ab, wie ein Parameter verarbeitet wird.
+Mögliche Werte sind
+
+\begin{itemize}
+    \item \code{in}: Prameter wird eingelesen
+    \item \code{out}: Parameter wird nicht eingelesen, dient nur zur Ausgabe (vgl.~\cite[24]{Buh09})
+    \item \code{inout}: Parameter wird eingelesen, verarbeitet und ausgegeben
+\end{itemize}
+
+\noindent
+In \textbf{Java} ist die Übergaberichtung von Parameter eingeschränkt: \textit{Primitive Datentypen} können nur mit \code{in} gekennzeichnet werden, \textit{Referenztypen} nur mit \code{inout}, da in Java Objekte per Referenz übergeben werden.\\
+
+\noindent
+\textbf{Einschränkungen} für Operation werden als Vor- und Nachbedingung formuliert, im Rahmen des \textbf{Design by Contract}-Prinzips\footnote{
+etwa: \textit{Entwurf gemäß Vertrag}, \url{https://en.wikipedia.org/wiki/Design_by_contract}, abgerufen 02.05.2024
+}.\\
+Hierbei sichert der \textit{Auftragnehmer} \textbf{Nachbedingungen} zu, wenn der \textit{Auftraggeber} \textbf{Vorbedingungen} zusichert.\\
+Die Kontrolle dieser Bedingungen erfolgen während des Testens.\\
+Auf Basis dieser Begriffe läßt sich eine \textbf{Exception} (\textit{Ausnahme}) definieren: Eine Ausnahme ist dann gegeben, wenn eine Operation bei gültiger Vorbedingung die Nachbedingung nicht erfüllen kann.\\
+
+\noindent
+Wird eine Notiz zur Angabe der Vor-/Nachbedingung genutzt, können zur Kenntlichmachung die UML Schlüsselwörter
+
+\begin{itemize}
+    \item[] «precondition»
+    \item[] «prostcondition»
+\end{itemize}
+
+\noindent
+verwendet werden.
+Vor- und Nachbedingungen können auch in OCL formuliert und in einer Textdatei abgelegt werden.
+
+
+\begin{tcolorbox}[title=Doppelte Spitze Klammern,colback=red!20]
+    In~\cite[25]{Buh09} weist \textit{Buhl} darauf hin, dass UML Keywords in doppelte spitze Klammern gestellt werden.\\
+    Hierbei handelt es sich aber richtigerweise um sog. \textit{guillemets}\footnote{
+        \url{https://de.wikipedia.org/wiki/Guillemets}, abgerufen 02.05.2024
+    }.\\
+    S. hierzu auch \cite[745]{UML17}.
+\end{tcolorbox}
+
+\subsection*{Generalisierung}
+Neben der Darstellung von Klassen können auch \textbf{Generalisierungs}- und \textbf{Abhängigkeitsbeziehungen} in einem Klassendiagramm modelliert werden.\\
+
+\noindent
+Dabei ist die \textbf{Generalisierung} ein zentrales Konzept des objektorientierten Designs - der grundlegende Gedanke hier ist, dass alle \textit{vererbbaren} Features eines \textbf{Supertyps} auf den \textbf{Subtyp} übergehen (\textbf{Vererbung}).\\
+
+\noindent
+Wird \textbf{Generalisierung} verwendet, kann man das Ergebnis anhand des \textbf{Liskovschen Substitutionsprinzips} (\textit{Ersetzbarkeitsprinzip}) überprüfen, das besagt, dass Objekte der abgeleiteten Klasse stets an Stelle der Oberklasse treten können müssen.\\
+
+\noindent
+Im weiteren Sprachgebrauch wird zwischen \textbf{Subtyping} (\textit{Schnittstellenvererbung}) und \textbf{Subclassing} (\textit{Implementierungsvererbung}) unterschieden.
+Das Substitutionsprinzip gilt nur für die Implementierungsvererbung und hier nur für die konkrete Klasse (vgl.~\cite[26]{Buh09}).\\
+
+
+\begin{tcolorbox}[title=Subtyping und Subclassing,colback=red!20]
+    tbd.
+\end{tcolorbox}
+
+\noindent
+Generalisierungen können in Gruppen zusammengefasst werden, die weitere Eigenschaften besitzen können:
+
+\begin{itemize}
+    \item \code{complete}
+    \item \code{incomplete}
+    \item \code{disjoint}
+    \item \code{overlapping}
+\end{itemize}
+
+\subsection*{Abhängigkeitsbeziehungen}
+\textbf{Abhängigkeitsbeziehungen} (\textit{dependencies}) werden durch eine gestrichelte Linie dargestellt mit einer \textit{offenen Pfeilspitze}.\\
+Dabei geht die Leserichtung von dem \textbf{Client} aus in Richtung \textbf{Supplier} - der Client ist also abhängig vom Supplier, wodurch eine kopplung gegeben ist: Ändert sich der Supplier, muss sich in der Regel auch der Client ändern.\\
+
+\noindent
+Aus Gründen der Übersichtlichkeit sollten nur die wichtigsten Abhängigkeitsbeziehungen modelliert werden, also wenn ein wichtiger Sachverhalt dargestellt werden muss, bspw. bei \textit{parametrischen Abhängigkeiten}.\\
+Sinnvoll werden diese Beziehungen bei \textbf{Paketdiagrammen}.
