@@ -364,3 +364,32 @@ description={
 Aus der \textbf{Entwurfsphase} geht das \textbf{OOD-Modell} hervor, das ein Abbild der späteren Programme ist. Daraus folgt, dass der Entwurf und die \textbf{Implementierung} stark verzahnt sind: Jede im Entwurf entworfene Klasse kann direkt implementiert werden, unter Berücksichtigung der im OOD-Modell definierten Attribute und Operationen. Im Unterschied zum Programmcode zeigt das OOD-Modell ``das System auf einer höheren Abstraktionsebene und macht vor allem das Zusammenwirken einzelner Elemente deutlich.`` (\cite[15]{Bal05})
 }
 }
+
+\newglossaryentry{Ersetzbarkeitsprinzip}
+{
+singular={Ersetzbarkeitsprinzip},
+plural={Ersetzbarkeitsprinzip},
+name={Ersetzbarkeitsprinzip},
+description={
+s. \textbf{Liskovsches Substitutionsprinzip}
+}
+}
+
+
+\newglossaryentry{Liskovsches Substitutionsprinzip}
+{
+singular={Liskovsches Substitutionsprinzip},
+plural={Liskovsches Substitutionsprinzip},
+name={Liskovsches Substitutionsprinzip},
+description={
+Das \textbf{Liskovsche Substitutionsprinzip}, oder auch \textit{Ersetzbarkeitsprinzip}, wurde von \textit{Barbara Liskov} in \cite{Lis87} vorgestellt.\\
+Vereinfacht formuliert besagt es, dass ein Programm, dass mit Objekten der Klasse $T$ funktioniert, auch mit Objekten der Klasse $S$ funktionieren muss, wenn $S$ von $T$ abgeleitet ist.\\
+In \cite[174 ff.]{LG00} formuliert \textit{Liskov} am Beispiel der Sprache Java drei Regeln, die abgeleitete Typen befolgen müssen, damit das Ersetzbarkeitsprinzip erfüllt werden kann:
+\begin{itemize}
+\item \textbf{Signature Rule}: Die Subtypen müssen die Methoden des Supertyps implementieren, bei kompatibler Signatur
+\item \textbf{Methods Rule}: Das Verhalten der im Subtyp implementierten Methoden muß das gleiche Verhalten aufweisen, wie entsprechende Methoden des Supertypes
+\item \textbf{Properties Rule}: Der Subtype muss die gleichen Eigenschaften aufweisen (bspw. \textit{Invarianten}) wie der Supertyp
+\end{itemize}
+}
+}
+
