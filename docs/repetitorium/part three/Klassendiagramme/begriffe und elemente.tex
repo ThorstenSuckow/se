@@ -28,7 +28,7 @@ Es gibt zwei unterschiedliche Notationen für Properties: Die \textbf{Attribut}-
             \end{itemize}
         \item \textbf{/}: es handelt sich um ein \textbf{abgeleitetes Attribut}\footnote{
             \textit{abgeleitet}: der Wert wird berechnet und nicht durch den Anwender angegeben oder aus einer externen Quelle geladen
-        }
+        }. Bei abgeleiteten Attributen ist zu prüfen, ob sie  die Attribute zu speichern oder jeweils aktuell zu berechnen ``und daher in Operationen zu wandeln sind`` (\cite[414]{Bal05}). Eine Zwischenspeicherung als Attribut ist bspw. dann sinnvoll, wenn die Berechnung komplex und kostenintensiv ist.
         \item \textbf{Multiplizität}:
         \begin{itemize}
             \item \code{[0..*]}: optionales Attribut, gekennzeichnet durch $0$ als untere Grenze.
@@ -40,7 +40,8 @@ Es gibt zwei unterschiedliche Notationen für Properties: Die \textbf{Attribut}-
         \item \textbf{Vorgabewert}: Initialisierungswert
         \item \textbf{Eigenschaftswert}: \textit{Tagged Values}.
         Stellen besondere Eigenschaftswerte bezogen auf das \textbf{Modellelement} (hier: \textit{Attribut}) dar, {bspw.} \code{{readOnly}}, \code{{ordered}}, \code{{frozen}} usw. Werden keine Vorgaben der UML genutzt, hat der Eigenschaftswert die Form \code{{Eigenschaft=Wert}} (so ist bspw. \code{{readOnly}} eine Kurzschreibweise für  \code{{readOnly=true}})
-        \item \textbf{Einschränkungen}: Zusätzliche Einschränkungen, bspw. in der Notation der \textbf{OCL}, werden ebenfalls in geschweiften Klammern angegeben.
+        \item \textbf{Einschränkungen}: Zusätzliche Einschränkungen, bspw. in der Notation der \textbf{OCL}, werden ebenfalls in geschweiften Klammern angegeben.\\
+        Man spricht in diesem Zusammenhang auch von \textbf{(Klassen-)Invarianten}: Eigenschaften von Attributen, die für jedes Objekt der Klasse gelten (vgl.\cite[338]{Oes05}).
         Diese Anforderungen, die das Attribut erfüllen muss, müssen als boolescher Ausdruck formuliert werden, so dass die Anforderung zu \code{true} oder \code{false} ausgewertet werden kann.
         Einschränkungen können direkt hinter das Attribut, als Notiz oder ausgelagert in einer Textdatei angegeben werden.
     \end{itemize}
@@ -220,8 +221,8 @@ Vor- und Nachbedingungen können auch in OCL formuliert und in einer Textdatei a
 Neben der Darstellung von Klassen können auch \textbf{Generalisierungs}- und \textbf{Abhängigkeitsbeziehungen} in einem Klassendiagramm modelliert werden.\\
 
 \noindent
-Dabei ist die \textbf{Generalisierung} ein zentrales Konzept des objektorientierten Designs - der grundlegende Gedanke hier ist, dass alle \textit{vererbbaren} Features\footnote{
-``charakteristische Merkmale`` (\cite[17]{Buh09})
+Dabei ist die \textbf{Generalisierung} ein zentrales Konzept des objektorientierten Designs - der grundlegende Gedanke hier ist, dass alle Features\footnote{
+``charakteristische Merkmale``, also ``inhaltliche Eigenschaften [\ldots] und Operationen sowie Einschränkungen für deren Nutzen`` (\cite[17]{Buh09})
 } eines \textbf{Supertyps} auf den \textbf{Subtyp} übergehen (\textbf{Vererbung}).\\
 
 \noindent
