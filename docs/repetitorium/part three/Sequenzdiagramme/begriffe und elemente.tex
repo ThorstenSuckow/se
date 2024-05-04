@@ -1,4 +1,4 @@
-\section{Begriffe und Elemente}
+\section{Begriffe und Elemente}\label{sec:sd-begriffe-und-elemente}
 
 Ein \textbf{Sequenzdiagramm} besteht aus zwei Dimensionen: Die x-Achse beinhaltet die Kommunikationspartner, die y-Achse die \textbf{Lebenslinien} der beteiligten Kommunikationspartner.\\
 
@@ -90,21 +90,37 @@ Auf den Lebenslinien der Kommunikationspartner werden \textbf{Aktionssequenzen} 
 \end{figure}
 
 \noindent
-kommunikationspartner können erzeugt (\textbf{creation event}) und zerstört werden (\textbf{destruction event}), wodurch die Erzeugung und das Zerstören bspw. von Objekten im Interaktionsrahmen ausgedrückt wird.
+Kommunikationspartner können erzeugt (\textbf{creation event}) und zerstört werden (\textbf{destruction event}), wodurch die Erzeugung und das Zerstören bspw. von Objekten im Interaktionsrahmen ausgedrückt wird.
 Bei dem Zerstören eines Objektes wird an seine Lebenslinie ein \textbf{DestructionOccurrenceSpecification symbol} notiert, welches die gestalt eines "X" hat (vgl.~\cite[578]{OMG17}).
+
+\begin{tcolorbox}[title=creation event, colback=white]
+    Eine Nachricht, die das Erzeugen eines Objektes bewirkt, hat eine gestrichelte Linie und und eine offene Pfeilspitze (vgl~\cite[577]{OMG17})
+\end{tcolorbox}
 
 \subsection{Kombinierte Fragmente}
 Sequenzdiagramme können Interaktionsrahmen oder auch \textbf{kombinierte Fragmente} darstellen.\\
-Interaktionsrahmen bestehen aus einem \textbf{Interaktionsoperator} und einem oder mehreren \textbf{Interaktionsoperanden}.\\
-Der Name des Operators wird in der linken oberen Ecke des Interaktionsrahmen angegeben (s. Abbildung ~\ref{fig:interaktionsrahmen}, anstelle von \code{sd}).\\
-Folgende Bezeichner können für den Operator angegeben werden:
+Interaktionsrahmen bestehen aus einem \textbf{Interaktionsoperator} und einem oder mehreren \textbf{Interaktionsoperanden} (vgl.~\cite[582]{OMG17}).\\
+Der Name des Operators wird in der linken oberen Ecke des Interaktionsrahmen angegeben (s. Abbildung ~\ref{fig:interaktionsoperand}).\\
+Folgende Bezeichner können für den Operator angegeben werden (vgl.~\cite[583]{OMG17}):
 
 \begin{itemize}
-    \item \code{alt} - es können mehrere Abläufe definiert werden
+    \item \code{alt} - es können mehrere alternative Abläufe definiert werden
     \item \code{loop} - mehrere Ausführungen, die von einer Bedingung gesteuert werden
-    \item \code{op} - Ausführung, wenn eine geg. Bedingung zutrifft
+    \item \code{opt} - Ausführung, wenn eine geg. Bedingung zutrifft
     \item \code{par} - fragment läuft parallel
 \end{itemize}
+
+\begin{figure}
+    \centering
+    \includegraphics[scale=0.5]{part three/Sequenzdiagramme/img/interaktionsoperand}
+    \caption{Kombiniertes Fragment mit dem Operator \textbf{loop} und dem Operanden $i < 10$. (Quelle: eigene)}
+    \label{fig:interaktionsoperand}
+\end{figure}
+
+\begin{tcolorbox}[title=Syntax Antworten,colback=red!20]
+    Typo bei Operatorenname in ~\cite[34]{Buh09}:
+    Statt \textbf{op} muss es \textbf{opt} lauten.
+\end{tcolorbox}
 
 \subsection{Interaktionsreferenz}
 
