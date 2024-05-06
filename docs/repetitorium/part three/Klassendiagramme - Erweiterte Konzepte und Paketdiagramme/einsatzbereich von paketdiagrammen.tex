@@ -1,0 +1,32 @@
+\section{Einsatzbereich von Paketdiagrammen}
+
+\textbf{Paketdiagramme} zeigen Pakete und ihre Abhängigkeiten und werden in frühen Designphasen genutzt, um Strukturen (großer Systeme) aufzuzeigen.\\
+Durch die Gruppierung können Details weggelassen werden.
+
+Eine Abhängigkeit zwischen zwei Paketen gibt die Abhängigkeit darin enthaltener Elemente wieder.\\
+
+\noindent
+Ein Paket gruppiert Elemente und definiert Namensräume für die darin enthaltenen Elemente.\\
+
+\noindent
+Paketdiagramme können auch dazu genutzt werden, um UML Modelle zu vereinfachen: Logisch zusammengehörende UML Elemente werden in ein Paket gelegt.\\
+
+\noindent
+Folgende Symbolik kann verwendet werden, um Pakete in Diagrammen zu zeigen:
+
+\begin{itemize}
+    \item \textbf{Paketsymbol}
+    \item \textbf{Fully Qualified Name}\footnote{
+    s. \url{https://en.wikipedia.org/wiki/Fully_qualified_name}, abgerufen 06.05.2024
+    }
+    \item \textbf{Symbole in Kombination mit Namen}
+\end{itemize}
+
+\noindent
+Es können immer nur \textbf{public} Elemente in anderen Paketen gesehen werden.
+\textit{Buhl} weist darauf hin, dass dies erlaubt, ``Pakete mit Fassaden auszustatten. Das bedeutet, esgibt nur eine public Klasse (Facade) und alle anderen Klassen sind privat.`` (\cite[46]{Buh09}).\\
+
+\noindent
+Elemente sollten so in Paketen gruppiert werden, dass ihr \textbf{funktionaler Zusammenhalt} (\textit{Kohäsion}, s. Abschnitt~\ref{subsec:hohe-kohasion}) klar wird.\\
+Hierdurch kann vermieden werden, dass Änderungen einer Klasse eines Paketes auch Änderungen außerhalb des Paketes erfordern.\\
+Außerdem erhöht sich die Wahrscheinlichkeit, dass einzelne Pakete als solche in anderen Projekten wiederverwendet werden können.
