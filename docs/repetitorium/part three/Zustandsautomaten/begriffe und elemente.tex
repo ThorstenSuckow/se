@@ -107,6 +107,11 @@ Beim VErlassen von Zuständen können ebenfalls mehrere Arten verwendet werden:
 \subsubsection*{Regionen}
 \textbf{Regionen} dienen zur Darstellung paralleler oder konkurrierender Abläufe in einem Zustandsautomaten: Hier gelten ebenso alle Aussagen über Zustände
 
+
+\begin{tcolorbox}[colback=yellow!20]
+    Beispiel Radio für Regionen.
+\end{tcolorbox}
+
 \subsection{Implementierung}
-Zustandsautomaten werden klassischerweise mit einer \code{switch}-Anweisung realisiert: Einzelne ZUstände werden als Konstanten abgelegt, die die \code{switch}-Anweisung steuern.\\
+Zustandsautomaten werden klassischerweise mit einer \code{switch}-Anweisung realisiert: Einzelne Zustände werden als Konstanten abgelegt, die die \code{switch}-Anweisung steuern.\\
 Verschiedene Operationen realisieren dann die \code{do}-, \code{entry}- und \code{exit}-Aktionen sowie die Effekte der Zustände sowie die Rückgabe der Folgezustände (vgl. \cite[75]{Buh09}).
