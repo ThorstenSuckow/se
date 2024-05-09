@@ -1,0 +1,25 @@
+\section{Einsatzbereich}
+
+Mit \textbf{Zustandsautomaten} kann das \textit{Verhalten} von Systemen modelliert werden, wobei die \textit{Reaktionen} des Systems im Mittelpunkt stehen, und nicht die \textit{Aktionen}, wie bspw. bei den \textbf{Aktivitätsdiagrammen}.\\
+
+\noindent
+Oft werden \textbf{Zustandsautomaten} im \textbf{Design} als Ergänzung zu den \textbf{Klassendiagrammen} eingesetzt, da ein Zustandsautomat den \textit{Lebensweg} eines Objektes modellieren kann: So wird der \textbf{Zustand} eines Objektes durch die Werte seiner \textit{Attribute} bestimmt, und in Zustandsdiagrammen können sinnvolle Kombinationen der Attributwerte modelliert werden.\\
+Ein Objekt kann auf gleiche Anfragen in unterschiedlichen Zuständen unterschiedliche reagieren.\\
+
+\subsection*{Eigenschaften}
+
+Folgende Eigenschaften liegen Zustandsdiagrammen zugrunde:
+
+\begin{itemize}
+    \item endliche Anzahl von Zuständen\footnote{$S$, s. \textit{endlicher Automat}}
+    \item eine endliche Anzahl möglicher Eingaben\footnote{$w \in L \subseteq \Sigma^*$}
+    \item eine Übergangsfunktion (\textit{Transition}\footnote{$\delta$}) mit zwei Argumenten
+    \begin{itemize}
+        \item einem Anfangszustand
+        \item einer Eingabe
+    \end{itemize}
+    \noindent
+    und einem neuen Zustand als Rückgabewert
+    \item einem Startzustand\footnote{$s_0 \in S$}
+    \item einer Menge finaler Zustände\footnote{$F \subseteq S$}
+\end{itemize}
