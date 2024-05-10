@@ -155,17 +155,22 @@ Beim Verlassen von Zuständen können ebenfalls mehrere Arten verwendet werden:
 \end{itemize}
 
 
-\begin{tcolorbox}[colback=yellow!20]
-\cite[Abb. 6.11.7, 342]{Bal05}: tiefe Historie. Z3 außerdem als Beispiel, dass Zustände interne Zustände besitzen können,
-\end{tcolorbox}
-
 \subsubsection*{Regionen}
-\textbf{Regionen} dienen zur Darstellung paralleler oder konkurrierender Abläufe in einem Zustandsautomaten: Hier gelten ebenso alle Aussagen über Zustände
+\textbf{Regionen} dienen zur Darstellung paralleler oder konkurrierender Abläufe in einem Zustandsautomaten: Hier gelten ebenso alle Aussagen über Zustände (s. Abbildung~\ref{fig:region}).\\
 
+\blockquote[{\cite[307]{OMG17}}]{
+    A Region denotes a behavior fragment that may execute concurrently with its orthogonal Regions. Two or more
+    Regions are orthogonal to each other if they are either owned by the same State or, at the topmost level, by the same
+    StateMachine.
+}
 
-\begin{tcolorbox}[colback=yellow!20]
-    Beispiel Radio für Regionen.
-\end{tcolorbox}
+\begin{figure}
+    \centering
+    \includegraphics[scale=0.4]{part three/Zustandsautomaten/img/region}
+    \caption{Beispiel für die Darstellung von Regionen. Die gestrichelte Linie grenzt die Regionen voneinander ab. Im Zustand \textit{on} kann die Stereoanlage gleichzeitig  Zustände zur Anzeige der Zeit als auch Zustände zum Abspielen des Radios / einer CD einnehmen. (Quelle: in Anlehnung an \cite[74, Abb. 7.9]{Buh09})}
+    \label{fig:region}
+\end{figure}
+
 
 \subsection{Implementierung}
 Zustandsautomaten werden klassischerweise mit einer \code{switch}-Anweisung realisiert: Einzelne Zustände werden als Konstanten abgelegt, die die \code{switch}-Anweisung steuern.\\
