@@ -122,10 +122,18 @@ Beim Betreten von zusammengesetzten Zuständen können mehrere Arten unterschied
 \begin{itemize}
     \item \textbf{Standardeintritt}: Transition führt zum Rand des zusammengesetzten Zustands, wodurch der darin enthaltene Startzustand aktiviert wird
     \item \textbf{expliziter Eintritt}: Transition führt zu einem Zustand im zusammengesetzten Zustand
-    \item \textbf{flache Historie} (\textit{shallow history}): speichert den letzten Zustand in einem Unterzustand
+    \item \textbf{flache Historie} (\textit{shallow history}): speichert den letzten Zustand in einem Unterzustand (s. Abbildung~\ref{fig:flachehistorie})
     \item \textbf{tiefe Historie} (\textit{deep history}): speichert den letzten Zustand im Unterzustand und auch die Zustände der tiefer liegenden Unterzustände
     \item \textbf{Eintrittspunkt}: Transitionen enden am Eintrittspunkt und werden dann neu erzeugt, und enden an einem weiteren zusammengesetzten Zustand oder einem einfachen Zustand
 \end{itemize}
+
+\begin{figure}
+    \centering
+    \includegraphics[scale=0.4]{part three/Zustandsautomaten/img/flachehistorie}
+    \caption{Beispiel für die Modellierung eines Zustandsautomaten mit einer flachen Historie (Notation: Kreis mit H). Ist der Automat im \textit{Zustand 3}, kann durch das Ereignis \textit{e3} ein Übergang in \textit{Zustand 4} erfolgen, in dem das Ereignis \textit{e4} eine Transition in den \textbf{Historienzustand} auslöst. Da \textit{Zustand 3} der zuletzt eingenommene Zustand von \textit{Zustand 1} war, wird dies als Transition in den \textit{Zustand 3} interpretiert. Analog dazu: War \textit{Zustand 2} der zuletzt eingenommene Zustand von \textit{Zustand 1}, wird der Übergang von \textit{Zustand 4} in den \textbf{Historienzustand} als Transition nach \textit{Zustand 2} interpretiert (vgl. \cite[341 f.]{Bal05}). (Quelle: in Anlehnung an \cite[342, Abb. 6.11-6]{Bal05})}
+    \label{fig:flachehistorie}
+\end{figure}
+
 
 \noindent
 Beim Verlassen von Zuständen können ebenfalls mehrere Arten verwendet werden:
