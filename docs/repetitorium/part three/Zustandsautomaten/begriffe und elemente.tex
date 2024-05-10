@@ -3,21 +3,28 @@
 Ein \textbf{Zustand} bildet eine Situation ab, in der \textit{spezielle Bedingungen} gelten.\\
 
 \noindent
-Zustände können so lange andauern, we es bspw. die Dauer einer Aufgabe erfordert.\\
+Zustände können so lange andauern, wie es bspw. die Dauer einer Aufgabe erfordert: Die Dauer ist für die Modellierung von Zuständen und \textbf{Aktivitäten} (s.u.) nicht relevant (vgl.~\cite[88]{Bal05}). \\
 
 \noindent
 Sie beginnen mit dem Durchlaufen einer \textbf{Transition}, die zu dem Zustand hinführt, und enden mit dem Durchlaufen einer Transition, die von dem Zustand wegführt.\\
 Innerhalb dieser Zeitspanne ist der Zustand aktiv.\\
 
 \noindent
-Ein Zustand kann \textbf{interne Aktivitäten} beinhalten:
+Ein Zustand kann \textbf{interne Aktivitäten} beinhalten (s. Abbildung~\ref{fig:entryexitdo}):
 
 \begin{itemize}
-    \item \textbf{Eintrittsaktivitäten} (\textit{entry})
-    \item \textbf{Austrittsaktivitäten} (\textit{exit})
-    \item \textbf{andauernde Aktivitäten} (\textit{do})
+    \item \textbf{Eintrittsaktivitäten} (\code{entry}): Wird ausgeführt, sobald sich das Objekt im betreffenden Zustand befindet.
+    \item \textbf{Austrittsaktivitäten} (\code{exit}): Wird ausgeführt, bevor der Zustand verlassen wird.
+    \item \textbf{andauernde Aktivitäten} (\code{do}): Wird ausgeführt, sobald ein Objekt den betreffenden Zustand einnimmt, und endet, sobald der Zustand verlassen wird.
     \item ein Zustand kann weitere interne Aktivitäten aufweisen (\cite[69]{Buh09})
 \end{itemize}
+
+\begin{figure}
+    \centering
+    \includegraphics[scale=0.4]{part three/Zustandsautomaten/img/entryexitdo}
+    \caption{Notationen für \textbf{entry}-,\textbf{exit}- und \textbf{do}-Aktivitäten sowie deren Dauer. Die \textbf{do}-Aktivität endet, wenn der Zustand verlassen wird. Die \textbf{entry}-Aktivität beendet sich von selbst. (Quelle: in Anlehnung an \cite[89, Abb. 2.11-3]{Bal05})}
+    \label{fig:entryexitdo}
+\end{figure}
 
 \noindent
 In der UML wird ein Zustand in einem Zustandsdiagramm als Rechteck mit abgerundeten Kanten dargestellt.\\
@@ -57,8 +64,12 @@ Wenn der Ausdruck zu \code{true} wechselt, wird die Transition ausgeführt.
     Ein Guard ist nicht mit einem Change Event zu verwechseln! (Unterschied?)
 \end{tcolorbox}
 
-\subsubsection*{Effekt}
-Ein\textbf{Effekt} definiert Aktionen, die \textit{während} einer Transition auszuführen sind (z.B. Neuberechnung eines Wertes aufgrund des geänderten Zustands).\\
+\subsubsection*{Effekt (Aktivität)}
+Ein\textbf{Effekt} (\textit{Aktivität}\footnote{\cite[88]{Bal05}}) definiert Aktionen, die \textit{während} einer Transition auszuführen sind (z.B. Neuberechnung eines Wertes aufgrund des geänderten Zustands).\\
+
+\begin{tcolorbox}[colback=white]
+    \textbf{Aktivitäten} sind mit einzelnen \textbf{Transitionen} verknüpft, \code{entry}/\code{exit}/\code{do}-Aktivitäten mit Zuständen: Diese werden immer ausgeführt, unabhängig von der Transition, die zu dem Zustand geführt hat.
+\end{tcolorbox}
 
 \subsubsection*{Entscheidung}
 Soll eine Transition mittels Guards in mehrere überwachte Transitionen aufgeteilt werden, kann eine \textbf{Entscheidung} modelliert werden.
