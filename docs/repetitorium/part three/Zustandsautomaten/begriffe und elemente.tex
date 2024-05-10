@@ -93,17 +93,25 @@ Ein \textbf{Effekt} (\textit{Aktivität}\footnote{\cite[88]{Bal05}}) definiert A
 
 \subsubsection*{Entscheidung}
 Soll eine Transition mittels Guards in mehrere überwachte Transitionen aufgeteilt werden, kann eine \textbf{Entscheidung} modelliert werden.
-Die auszuführende Transition wird \textbf{dynamisch} (\textit{dynamic conditional branch}, s.~\cite[339 f.]{Bal05}) ausgewählt, wenn der Guard erreicht wird.
+Die auszuführende Transition wird \textbf{dynamisch} (\textit{dynamic conditional branch}, s.~\cite[339 f.]{Bal05}) ausgewählt, wenn der Guard erreicht wird (s. Abbildung~\ref{fig:kreuzungentscheidung}).
 
-\subsubsection*{Terminator}
-Ein \textbf{Terminator} (\textit{terminate pseudo state})(in der UML dargestellt als großes "X") ist ein \textbf{Pseudozustand}, den man verwenden kann, um auszudrücken, das Objekte dynamisch ``vernichtet`` werden können (vgl. ~\cite[341]{Bal05}): Der Unterschied zum \textbf{Endzustand} besteht hierbei, dass auch die Lebensdauer des betreffenden Objektes beendet wird. \textit{Balzert} ergänzt, dass es sich beim \textbf{Endzustand} \textit{nicht} um einen Pseudozustand, sondern um einen echten Zustand handelt.
 
 \subsubsection*{Kreuzung}
-\textbf{Kreuzungen} teilen eine oder mehrere eingehende Transition in eine oder mehrere ausgehende Transition auf.\\
+\textbf{Kreuzungen} teilen eine oder mehrere eingehende Transition in eine oder mehrere ausgehende Transition auf (s. Abbildung~\ref{fig:kreuzungentscheidung}).\\
 Sind Guards vorhanden, werden diese \textbf{vor} der Kreuzung ausgewertet.
 Im Gegensatz zu dem Entscheidungszustand handelt es sich um eine statische Verzweigung (\textit{static conditional branch}, s.~\cite[340]{Bal05}).\\
 \textit{Buhl} merkt an, dass mit Hilfe von Kreuzungen Automaten übersichtlicher werden (vgl.~\cite[73]{Buh09}).
 
+\begin{figure}
+    \centering
+    \includegraphics[scale=0.4]{part three/Zustandsautomaten/img/kreuzungentscheidung}
+    \caption{\textbf{Static} (links) und \textbf{dynamic conditional branch}. Bei der Kreuzung (links) wird der Guard vor der Aktivität ausgewertet, weshalb sich das Objekt nach der Transition in \textit{Zustand 3} befindet. Im Gegensatz dazu reagiert die \textbf{Entscheidung} (rechts) dynamisch auf die Aktivität und befindet sich deshalb nach der Transition in Zustand 2. (Quelle: in Anlehnung an \cite[72, Abb. 7.7, Abb. 7.8]{Buh09})}
+    \label{fig:kreuzungentscheidung}
+\end{figure}
+
+
+\subsubsection*{Terminator}
+Ein \textbf{Terminator} (\textit{terminate pseudo state})(in der UML dargestellt als großes "X") ist ein \textbf{Pseudozustand}, den man verwenden kann, um auszudrücken, das Objekte dynamisch ``vernichtet`` werden können (vgl. ~\cite[341]{Bal05}): Der Unterschied zum \textbf{Endzustand} besteht hierbei, dass auch die Lebensdauer des betreffenden Objektes beendet wird. \textit{Balzert} ergänzt, dass es sich beim \textbf{Endzustand} \textit{nicht} um einen Pseudozustand, sondern um einen echten Zustand handelt.
 
 \subsubsection*{Zusammengesetzte Zustände}
 Hierarchien von Zuständen können modelliert werden, indem \textbf{zusammengesetzte Zustände} verwendet werden, die sich aus \textbf{Unterzuständen} zusammensetzen.\\
