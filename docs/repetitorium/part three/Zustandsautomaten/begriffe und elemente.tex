@@ -2,6 +2,15 @@
 
 Ein \textbf{Zustand} bildet eine Situation ab, in der \textit{spezielle Bedingungen} gelten.\\
 
+\begin{figure}
+    \centering
+    \includegraphics[scale=0.4]{part three/Zustandsautomaten/img/statechartdiagramnotation}
+    \caption{Elemente eines einfachen Zustandsautomaten. Eine Transitionen wird durch ein \textbf{Ereignis} ausgelöst, das ein \textit{Signal}, ein \textit{Operationsaufruf} oder auch eine bestimmte \textit{Attributänderung} sein kann. (Quelle: in Anlehnung an \cite[90, Abb. 2.11-6]{Bal05})}
+    \label{fig:statechartdiagramnotation}
+\end{figure}
+
+
+
 \noindent
 Zustände können so lange andauern, wie es bspw. die Dauer einer Aufgabe erfordert: Die Dauer ist für die Modellierung von Zuständen und \textbf{Aktivitäten} (s.u.) nicht relevant (vgl.~\cite[88]{Bal05}). \\
 
@@ -45,29 +54,40 @@ Objekte können auf Events reagieren, oder diese ignorieren.\\
 \noindent
 Die \textbf{Signatur} einer Transition ist \code{Event[Guard]/Effekt} (\cite[321]{OMG17}).
 
-\subsubsection*{Event}
+\subsubsection*{Event (Ereignis)}
+Transitionen werden durch Ereignisse ausgelöst (vgl.~\cite[91]{Bal05}).\\
 Es werden folgende Arten von Events definiert (vgl.~\cite[69]{Buh09}):
 
 \begin{itemize}
     \item \code{CallEvent}: Operationsaufruf; Der Ausgangszustand führt die Operation aus, und das Objekt wechselt in den Folgezustand.
     \item \code{SignalEvent}: Das Ereignis wird ausgelöst, wenn in einem (asynchronen) Prozess das Objekt dieses Signal empfängt.
-    \item \code{ChangeEvent}: Ein Ereignis, das immer mit \code{when} beginnt und als boolscher Ausdruck notiert wird. Das Ereignis wird ausgelöst, wenn der Ausdruck von \code{false} zu \code{true} wechselt.
+    \item \code{ChangeEvent}: Ein Ereignis, das immer mit \code{when} beginnt und als boolescher Ausdruck notiert wird. Das Ereignis wird ausgelöst, wenn der Ausdruck von \code{false} zu \code{true} wechselt.
     \item \code{TimeEvent}: Definiert eine Zeitspanne, nach der das Ereignis ausgelöst wird.
-    \item \code{AnyReceiveEvent}: Wird ausgeführt, wenn Ereignisse eintreffen, die nicht näher spezifiziert sind.
+    \item \code{AnyReceiveEvent}: Wird ausgeführt, wenn Ereignisse eintreffen, die nicht näher spezifiziert sind. Dieses Ereignis wird mit \code{all} beschriftet (vgl.\cite[293]{OMG17})\footnote{bei \textit{Balzert} wird das Ereignis \textit{AnyTrigger} erwähnt, das sich so in \cite{OMG17} nicht findet.}
 \end{itemize}
 
 \subsubsection*{Guard}
-Ein \code{Guard} wird in eckigen Klammern als boolscher Ausdruck geschrieben.\\
+Ein \code{Guard} wird in eckigen Klammern als boolescher Ausdruck geschrieben.\\
 Wenn der Ausdruck zu \code{true} wechselt, wird die Transition ausgeführt.
 
-\begin{tcolorbox}[colback=yellow!20]
-    Ein Guard ist nicht mit einem Change Event zu verwechseln! (Unterschied?)
+\begin{tcolorbox}
+    Ein Guard ist nicht mit einem Change Event zu verwechseln:\\
+
+    \blockquote[{\cite[292]{OMG17}}]{
+        A ChangeEvent occurs when a Boolean \textcolor{blue}{changeExpression} becomes true. For example, this could be as a result of a
+        change in the value of some Attribute or a change in the value referenced by a link corresponding to an Association. A
+        ChangeEvent occurs implicitly and is not the result of any explicit action.
+    }\\
+
+    \noindent
+    Ein \code{Guard} gibt an, unter welchen Bedingungen eine Transition stattfinden kann.\\
+    Eine \code{ChangeEvent} wird unter bestimmten Bedingungen ausgelöst und führt damit zu einer Transition.
 \end{tcolorbox}
 
 \subsubsection*{Effekt (Aktivität)}
-Ein\textbf{Effekt} (\textit{Aktivität}\footnote{\cite[88]{Bal05}}) definiert Aktionen, die \textit{während} einer Transition auszuführen sind (z.B. Neuberechnung eines Wertes aufgrund des geänderten Zustands).\\
+Ein \textbf{Effekt} (\textit{Aktivität}\footnote{\cite[88]{Bal05}}) definiert Aktionen, die \textit{während} einer Transition auszuführen sind (z.B. Neuberechnung eines Wertes aufgrund des geänderten Zustands).\\
 
-\begin{tcolorbox}[colback=white]
+\begin{tcolorbox}
     \textbf{Aktivitäten} sind mit einzelnen \textbf{Transitionen} verknüpft, \code{entry}/\code{exit}/\code{do}-Aktivitäten mit Zuständen: Diese werden immer ausgeführt, unabhängig von der Transition, die zu dem Zustand geführt hat.
 \end{tcolorbox}
 
@@ -100,7 +120,7 @@ Beim Betreten von zusammengesetzten Zuständen können mehrere Arten unterschied
 \end{itemize}
 
 \noindent
-Beim VErlassen von Zuständen können ebenfalls mehrere Arten verwendet werden:
+Beim Verlassen von Zuständen können ebenfalls mehrere Arten verwendet werden:
 
 \begin{itemize}
     \item \textbf{Endzustand}: der zusammengesetzte Zustand wird beendet.
