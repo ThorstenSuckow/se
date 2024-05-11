@@ -2,7 +2,7 @@
 
 In \textbf{Aktivitätsdiagrammen} werden \textbf{Aktivitäten} modelliert, die \textbf{Aktivitätsknoten} und \textbf{Aktivitätskanten} enthalten.
 
-\subsection{Aktivitätstsknoten}
+\subsection{Aktivitätsknoten}
 
 \textbf{Aktivitätsknoten} existieren in drei Ausprägungen:
 
@@ -20,6 +20,7 @@ Dazu gehören \textbf{Kontrollflüsse} und \textbf{Objektflüsse}.\\
 Ein \textbf{Startknoten} stellt den \textit{Startpunkt} eines Kontrollflusses innerhalb einer Aktivität dar.\\
 Es können mehrere Kontrollflüsse gestartet werden, wobei ein ein \textbf{Endknoten} / \textbf{Aktivitätsende} alle Kontrollflüsse der Aktivität beendet.\\
 
+\noindent
 Darüber hinaus ist es auch möglich, Endknoten zu modellieren, die nur einen zugeordneten Kontrollfluss beenden (Notation: Kreissymbol mit Kreuz, s. Abbildung~\ref{fig:aktivitätsdiagramm-notation}): Dies wirkt sich nicht auf andere Aktionen aus, die gerade in anderen Pfaden weiterlaufen (vgl.~\cite[72]{Bal05}).\\
 
 \noindent
@@ -33,7 +34,7 @@ Für Aktionen können \textbf{Vor-}/\textbf{Nachbedingungen} formuliert werden (
 Hierbei entscheidet die \textbf{Phase} des Softwareentwicklungsprozesses über die Darstellung der Bereiche, die durch \textit{Geschäftsbereiche} oder \textit{Klassen} repräsentiert werden können.
 
 \subsection{Kontrollknoten}
-Um das in Aktivitätsdiagrammen beschriebene dynamische Verhalten bereits in der \textbf{Analyse-} bzw. \textbf{Entwurfsphase} zu simulieren, bietet UML das \textbf{Token-Konzept} and, dessen Ursprung in den \textit{Petri-Netzen} liegt - ein \textbf{Token} ist hierbei eine \textit{Marke}, die sich nach bestimmten Regeln durch das Aktivitätsdiagramm bewegen kann: Die Knoten bestimmen, wann ein Token angenommen wird und wann es den Knoten wieder verlassen darf, und die Regeln der Kanten kontrollieren, wann ein Token von einem Ausgangsknoten entfernt und einem Zielknoten übergeben wird (~\cite[323]{Bal05}).\\
+Um das in Aktivitätsdiagrammen beschriebene dynamische Verhalten bereits in der \textbf{Analyse-} bzw. \textbf{Entwurfsphase} zu simulieren, bietet UML das \textbf{Token-Konzept} and, dessen Ursprung in den \textit{Petri-Netzen} liegt - ein \textbf{Token} ist hierbei eine \textit{Marke}, die sich nach bestimmten Regeln durch das Aktivitätsdiagramm bewegen kann: Die Knoten bestimmen, wann ein Token angenommen wird und wann es den Knoten wieder verlassen darf, und die Regeln der Kanten kontrollieren, wann ein Token von einem Ausgangsknoten entfernt und einem Zielknoten übergeben wird (vgl.~\cite[323]{Bal05}).\\
 Objektknoten können Token sammeln und puffern, in Aktionen können sich Token kürzere oder längere Zeit aufhalten.\\
 
 \subsection{Objektknoten}
@@ -45,6 +46,7 @@ Objektknoten können Token sammeln und puffern, in Aktionen können sich Token k
     Objektknoten werden durch Rechtecke dargestellt und häufig mit dem Namen der Klasse benannt.
 }
 
+\noindent
 Die Keywords \textcolor{blue}{\guillemotleft centralBuffer\guillemotright} bzw. \textcolor{blue}{\guillemotleft dataStore\guillemotright} erlauben eine nähere Spezifikation der Objektknoten\footnote{s.a.~\cite[398 f.]{OMG17}}:
 
 \begin{itemize}
@@ -60,18 +62,18 @@ Pins stellen einer Aktion Eingabewerte zur Verfügung und nehmen entsprechend vo
 Über eine \textbf{Gabelung} lassen sich Kontrollflüsse in mehrere \textbf{parallele} Kontrollflüsse aufteilen.
 
 \subsection{Vereinigung}
-Eine \texbf{Vereinigung} die wie eine Gabelung in umgekehrter Richtung gelesen werden kann, fasst \textit{mehrere} Kontrollflüsse zu \textit{einem} zusammen.\\
+Eine \texbf{Vereinigung}, die wie eine Gabelung in umgekehrter Richtung gelesen werden kann, fasst \textit{mehrere} Kontrollflüsse zu \textit{einem} zusammen.\\
 Vereinigungen können über eine \textbf{Synchronisationsspezifikation} näher spezifiziert werden.
 
 \subsection{Verzweigung und Verbindung}
-Be einer \textbf{Verzweigung} wird nur genau eine der möglichen Kontrollflüsse ausgewählt, eine \textbf{Verbindung} fasst mehrere alternative  Kontrollflüsse zusammen, von denen gerade nur \textit{einer} ausgeführt wird (vgl. \cite[60]{Buh09}).
+Bei einer \textbf{Verzweigung} wird nur genau eine der möglichen Kontrollflüsse ausgewählt, eine \textbf{Verbindung} fasst mehrere alternative  Kontrollflüsse zusammen, von denen gerade nur \textit{einer} ausgeführt wird (vgl. \cite[60]{Buh09}).
 
 \subsection{Auszeichnung von Objektknoten}
-Objektknoten und Objektflüsse können ausgezeichnet werden, bspw. durch gewichtete Kanten, die eine Anzahl von Token vorschreiben kann, oder durch Notizen an Objektknoten, über die bspw. eine Entnahmereihenfolge (\textit{LIFO}/\textit{FIFO}) vorgeschrieben wird.
+Objektknoten und Objektflüsse können ausgezeichnet werden, bspw. durch gewichtete Kanten, die eine Anzahl von Token vorschreiben kann, oder durch Notizen an Objektknoten, über die bspw. eine Entnahmereihenfolge (bspw. \textit{LIFO}/\textit{FIFO}) vorgeschrieben wird.
 
 \subsection{Signalsender / -empfänger}
 Aktionen können \textbf{Signale} senden und empfangen.\\
-Hierbei verbleibt der Kontrollfluss so lange in der Aktion, bis dies Aktion ein Signal gesendet (\textit{signal send action}, s.~\cite[76]{Buh09}) bzw. empfangen hat.\\
+Hierbei verbleibt der Kontrollfluss so lange in der Aktion, bis die Aktion ein Signal gesendet (\textit{signal send action}, s.~\cite[76]{Buh09}) bzw. empfangen hat.\\
 \textit{Buhl} merkt an, dass Ereignisse auch ``von außen kommen`` können, und deshalb nicht in der aktuellen Aktivität erzeugt werden (vgl.~\cite[63]{Buh09}).
 
 
