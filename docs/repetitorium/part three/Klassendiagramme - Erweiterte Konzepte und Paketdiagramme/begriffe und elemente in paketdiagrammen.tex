@@ -26,11 +26,11 @@ Wenn ein \textbf{Paket-Import} [Anm.: import/access] spezifiziert ist, dann kön
 \end{figure}
 
 \subsection{\guillemotleft merge\guillemotright}
-Bei einem \textbf{merge} werden Elemente eines Zielpaketes in das Quellpaket kopiert und könnend ann verändert werden (vgl.~\cite[307]{Bal05}).\\
+Bei einem \textbf{merge} werden Elemente eines Zielpaketes in das Quellpaket kopiert und können dann verändert werden (vgl.~\cite[307]{Bal05}).\\
 Durch einen Merge können Elemente gleichen Namens gemischt werden.
 Abbildung~\ref{fig:import-merge} verdeutlicht dies: Das Zielpaket \code{Z} wird in Quellpaket \code{Q} \textit{gemergt}.
 Unabhängig davon, ob \code{Q} bereits eine Klasse \code{A} oder \code{B} enthält, wird in \code{Q} jeweils eine Oberklasse \code{Z::A} bzw. \code{Z::B} eingefügt.
-Existiert in \code{Q} keine Klasse \code{A} ode \code{B}, wird diese entsprechend eingefügt (vgl. \textit{einfacher Paket-Merge}, \cite[308]{Bal05}).
+Existiert in \code{Q} keine Klasse \code{A} oder \code{B}, wird diese entsprechend eingefügt (vgl. \textit{einfacher Paket-Merge}, \cite[308]{Bal05}).
 
 
 \begin{figure}
