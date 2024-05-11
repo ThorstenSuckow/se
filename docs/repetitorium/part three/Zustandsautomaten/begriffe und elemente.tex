@@ -52,18 +52,18 @@ Eine \textbf{Transition} ist der \textit{Übergang} von einem Zustand zum nächs
 Objekte können auf Events reagieren, oder diese ignorieren.\\
 
 \noindent
-Die \textbf{Signatur} einer Transition ist \code{Event[Guard]/Effekt} (\cite[321]{OMG17}).
+Die \textbf{Signatur} einer Transition ist \code{Event[Guard]/Effekt} (s.a. \cite[321]{OMG17}).
 
 \subsubsection*{Event (Ereignis)}
 Transitionen werden durch Ereignisse ausgelöst (vgl.~\cite[91]{Bal05}).\\
-Es werden folgende Arten von Events definiert (vgl.~\cite[69]{Buh09}):
+Es werden folgende Arten von Ereignissen definiert (vgl.~\cite[69]{Buh09}):
 
 \begin{itemize}
     \item \code{CallEvent}: Operationsaufruf; Der Ausgangszustand führt die Operation aus, und das Objekt wechselt in den Folgezustand.
     \item \code{SignalEvent}: Das Ereignis wird ausgelöst, wenn in einem (asynchronen) Prozess das Objekt dieses Signal empfängt.
     \item \code{ChangeEvent}: Ein Ereignis, das immer mit \code{when} beginnt und als boolescher Ausdruck notiert wird. Das Ereignis wird ausgelöst, wenn der Ausdruck von \code{false} zu \code{true} wechselt.
     \item \code{TimeEvent}: Definiert eine Zeitspanne, nach der das Ereignis ausgelöst wird.
-    \item \code{AnyReceiveEvent}: Wird ausgeführt, wenn Ereignisse eintreffen, die nicht näher spezifiziert sind. Dieses Ereignis wird mit \code{all} beschriftet (vgl.\cite[293]{OMG17})\footnote{bei \textit{Balzert} wird das Ereignis \textit{AnyTrigger} erwähnt, das sich so in \cite{OMG17} nicht findet.}
+    \item \code{AnyReceiveEvent}: Wird ausgeführt, wenn Ereignisse eintreffen, die nicht näher spezifiziert sind. Dieses Ereignis wird mit \code{all} beschriftet (vgl.\cite[293]{OMG17})\footnote{bei \textit{Balzert} wird das Ereignis \textit{AnyTrigger} erwähnt (\cite[91]{Bal05}), das sich so in \cite{OMG17} nicht findet.}
 \end{itemize}
 
 \subsubsection*{Guard}
@@ -81,7 +81,7 @@ Wenn der Ausdruck zu \code{true} wechselt, wird die Transition ausgeführt.
 
     \noindent
     Ein \code{Guard} gibt an, unter welchen Bedingungen eine Transition stattfinden kann.\\
-    Eine \code{ChangeEvent} wird unter bestimmten Bedingungen ausgelöst und führt damit zu einer Transition.
+    Ein \code{ChangeEvent} wird unter bestimmten Bedingungen ausgelöst und führt damit zu einer Transition.
 \end{tcolorbox}
 
 \subsubsection*{Effekt (Aktivität)}
@@ -97,8 +97,8 @@ Die auszuführende Transition wird \textbf{dynamisch} (\textit{dynamic condition
 
 
 \subsubsection*{Kreuzung}
-\textbf{Kreuzungen} teilen eine oder mehrere eingehende Transition in eine oder mehrere ausgehende Transition auf (s. Abbildung~\ref{fig:kreuzungentscheidung}).\\
-Sind Guards vorhanden, werden diese \textbf{vor} der Kreuzung ausgewertet.
+\textbf{Kreuzungen} teilen eine oder mehrere eingehende Transition in eine oder mehrere ausgehende Transitionen auf (s. Abbildung~\ref{fig:kreuzungentscheidung}).\\
+Sind Guards vorhanden, werden diese \textit{vor} der Kreuzung ausgewertet.
 Im Gegensatz zu dem Entscheidungszustand handelt es sich um eine statische Verzweigung (\textit{static conditional branch}, s.~\cite[340]{Bal05}).\\
 \textit{Buhl} merkt an, dass mit Hilfe von Kreuzungen Automaten übersichtlicher werden (vgl.~\cite[73]{Buh09}).
 
@@ -111,7 +111,7 @@ Im Gegensatz zu dem Entscheidungszustand handelt es sich um eine statische Verzw
 
 
 \subsubsection*{Terminator}
-Ein \textbf{Terminator} (\textit{terminate pseudo state})(in der UML dargestellt als großes "X") ist ein \textbf{Pseudozustand}, den man verwenden kann, um auszudrücken, das Objekte dynamisch ``vernichtet`` werden können (vgl. ~\cite[341]{Bal05}): Der Unterschied zum \textbf{Endzustand} besteht hierbei, dass auch die Lebensdauer des betreffenden Objektes beendet wird. \textit{Balzert} ergänzt, dass es sich beim \textbf{Endzustand} \textit{nicht} um einen Pseudozustand, sondern um einen echten Zustand handelt.
+Ein \textbf{Terminator} (\textit{terminate pseudo state})(in der UML dargestellt als großes "X") ist ein \textbf{Pseudozustand}, den man verwenden kann, um auszudrücken, dass Objekte dynamisch ``vernichtet`` werden können (vgl. ~\cite[341]{Bal05}): Der Unterschied zum \textbf{Endzustand} besteht hierbei, dass auch die Lebensdauer des betreffenden Objektes beendet wird. \textit{Balzert} ergänzt, dass es sich beim \textbf{Endzustand} \textit{nicht} um einen Pseudozustand, sondern um einen echten Zustand handelt.
 
 \subsubsection*{Zusammengesetzte Zustände}
 Hierarchien von Zuständen können modelliert werden, indem \textbf{zusammengesetzte Zustände} verwendet werden, die sich aus \textbf{Unterzuständen} zusammensetzen.\\
@@ -148,7 +148,7 @@ Beim Verlassen von Zuständen können ebenfalls mehrere Arten verwendet werden:
 
 \begin{itemize}
     \item \textbf{Endzustand}: der zusammengesetzte Zustand wird beendet.
-    \item \textbf{Terminator}: der gesamte \textit{Automat} wird beendet.
+    \item \textbf{Terminator}: der gesamte \textit{Automat} wird beendet (vgl.~\cite[73]{Buh09}).
     \item \textbf{Transition aus einem inneren Zustand}: die Transition führt von einem Zustand aus dem zusammengesetzten Zustand heraus
     \item \textbf{Transition aus einem zusammengesetzten Zustand}: die Transition wird an den zusammengesetzten Zustand angetragen und führt heraus
     \item \textbf{Austrittspunkt}: eine Transition führt zum Ausgangspunkt und der zusammengesetzte Zustand wird verlassen, im Anschluss wird die vom Austrittspunkt wegführende Transition ausgeführt
