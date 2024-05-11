@@ -1,19 +1,19 @@
 \section{Begriffe und Elemente in Klassendiagrammen}
 
 \subsection{Komposition}
-Bei einer \textbf{Komposition} handelt es sich um eine Ganzes-Teile-Beziehung, bei der das Ganze verantwortlich für die Erstellung und Beseitigung der Teile.
-Außerdem sind die Teile an die \textbf{Existenz} des Ganzen gebunden.\\
-Teile gehören immer zu \textit{genau einem} Ganzen.\\
-Eine Komposition wird dargestellt durch eine gefüllte Raute an der Klassenbox, die das Ganze repräsentiert.\\
+Bei einer \textbf{Komposition} handelt es sich um eine \textit{Ganzes}-\textit{Teile}-Beziehung, bei der das \textit{Ganze} verantwortlich für die Erstellung und Beseitigung der \textit{Teile} ist.
+Außerdem sind die \textit{Teile} an die \textbf{Existenz} des \textit{Ganzen} gebunden.\\
+\textit{Teile} gehören immer zu \textit{genau einem} \textit{Ganzen}.\\
+Eine Komposition wird dargestellt durch eine gefüllte Raute an der Klassenbox, die das \textit{Ganze} repräsentiert.\\
 
 \noindent
-Um sicherzustellen, dass ein Teil immer nur zu einem ganzen gehört, kann bspw. in einer Methode, die Informationen über ein Teil zurückliefert, eine Kopie des Teils zurückgegeben werden.
+Um sicherzustellen, dass ein Teil immer nur zu einem \textit{Ganzen} gehört, kann bspw. in einer Methode, die Informationen über ein Teil zurückliefert, eine Kopie des Teils zurückgegeben werden.
 Dadurch ist sichergestellt, dass die Referenz auf ein existierendes Objekt nicht mehrfach verwendet werden kann.
 
 \subsection{Aggregation}
 Eine \textbf{Aggregation} ist in ihrer \semantischen Aussage unscharf (vgl.~\cite[40]{Buh09}).\\
-Auch hier geht es um eine Ganzes-Teile-Beziehung, aber die Teile können zu mehreren verschiedenen Ganzen gehören.
-Außerdem kann ein Teil dem Ganzen jederzeit wieder entnommen werden und das Ganze ist nicht verantwortlich für das Erstellen der Teile, weshalb Implementierungen beim Hinzufügen von Teilen oft schon fertige Objekte erwarten, die jeweils eins der Teile repräsentieren.
+Auch hier geht es um eine \textit{Ganzes}-\textit{Teile}-Beziehung, aber die \textit{Teile} können zu mehreren verschiedenen \textit{Ganzen} gehören.
+Außerdem kann ein Teil dem \textit{Ganzen} jederzeit wieder entnommen werden und das \textit{Ganze} ist nicht verantwortlich für das Erstellen der \textit{Teile}, weshalb Implementierungen beim Hinzufügen von Teilen oft schon fertige Objekte erwarten, die jeweils eines der \textit{Teile} repräsentieren.
 
 \subsection{Schnittstellen}
 \textbf{Schnittstellen} geben eine Vertrag vor, den implementierende Klassen erfüllen:
@@ -33,7 +33,7 @@ Schnittstellen können mit dem Stereotyp \textcolor{blue}{\guillemotleft interfa
 ``after or below its name`` (\cite[101]{OMG17})
 }, oder der Klassenname wird \textit{kursiv} gesetzt.\\
 Abstrakte Klassen können nicht instanziiert werden und können abstrakte Methoden und Methoden mit Implementierungen enthalten.\\
-Hat eine Klasse eine abstrakte Methode, ist die automatisch abstrakt.\\
+Hat eine Klasse eine abstrakte Methode, ist diese automatisch abstrakt.\\
 Wird eine abstrakte Klasse abgeleitet, und die ableitende Klasse ist nicht abstrakt, müssen die abstrakten Methoden in der ableitenden Klasse implementiert werden.
 
 \subsection{Assoziationsklasse (Attributierte Assotiation)}
@@ -57,10 +57,11 @@ Wird eine attributierte Assoziation in eine gewöhnliche Assoziation transformie
 \end{figure}
 
 \subsection{Templates (generische / parametrisierbare Klassen)}
-Klassen, die als \textbf{Template} gekennzeichnet sind, ist ``eine Beschreibung einer Klasse mit einem oder mehreren formalen Parametern `` (\cite[253]{Bal05})\footnote{
+Klassen, die als \textbf{Template} gekennzeichnet sind, stellen ``eine Beschreibung einer Klasse mit einem oder mehreren formalen Parametern`` (\cite[253]{Bal05})\footnote{
 s.a. \cite[103 ff.]{OMG17}
-}.\\
+} dar.\\
 
+\noindent
 Hierüber lassen sich bspw. Java-\texbf{Generics} modellieren.\\
 
 \noindent
