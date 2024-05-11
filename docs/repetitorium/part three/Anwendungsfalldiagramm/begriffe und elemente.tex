@@ -9,7 +9,7 @@ Akteure befinden sich \textit{außerhalb} des betrachteten Systems und spiegeln 
 
 
 \subsection{Anwendungsfälle}
-\textbf{Anwendungsfälle} stellen das \textit{Verhalten} des Systems dar und ermöglichen \textbf{Interaktionen} mit einem oder mehreren \textbf{Aktueren}.\\
+\textbf{Anwendungsfälle} stellen das \textit{Verhalten} des Systems dar und ermöglichen \textbf{Interaktionen} mit einem oder mehreren \textbf{Akteuren}.\\
 
 \noindent
 Anwendungsfälle geben \textiut{keine} Auskunft über \textit{interne Strukturen}.\\
@@ -39,6 +39,7 @@ Zwischen Akteuren und Anwendungsfällen können \textbf{Generalisierungsbeziehun
     \item zwischen \textbf{Akteuren}: Assoziationsbeziehungen zu den Anwendungsfällen werden vererbt
 \end{itemize}
 
+\noindent
 Es kann auch eine alternative Darstellung mit dem Klassensymbol verwendet werden, wobei diese Darstellung das Bereitstellen von Zusatzinformation ermöglicht (s. Abbildung~\ref{fig:usecase-notation}).
 
 
@@ -52,13 +53,13 @@ Es kann auch eine alternative Darstellung mit dem Klassensymbol verwendet werden
 
 \subsection{include-Beziehung}
 
-Die Modellierung einer \textbf{include}-Beziehung erlaubt das Wiederverwenden von Verhalten.\\
+Die Modellierung einer \code{include}-Beziehung erlaubt das Wiederverwenden von Verhalten.\\
 
 \noindent
-Eine \textbf{include}-Beziehung dient der Ausgliederung von \textbf{redundantem Verhalten} (s. Abbildung~\ref{fig:usecase-include}).\\
+Eine \code{include}-Beziehung dient der Ausgliederung von \textbf{redundantem Verhalten} (s. Abbildung~\ref{fig:usecase-include}).\\
 
 \noindent
-Bei der Verwendung einer \textbf{include}-Beziehung gilt (vgl.~\cite[53]{Buh09}):
+Bei der Verwendung einer \code{include}-Beziehung gilt (vgl.~\cite[53]{Buh09}):
 
 
 \begin{itemize}
@@ -77,12 +78,12 @@ Bei der Verwendung einer \textbf{include}-Beziehung gilt (vgl.~\cite[53]{Buh09})
 
 
 \subsection{extend-Beziehung}
-Die Verwendung der \textbf{extend}-Beziehung erlaubt die Erweiterung eines Anwendungsfalles \textbf{A} durch einen Anwendungsfall \textbf{B}.\\
-\textbf{A} beschreibt die Basisfunktionalität, \textbf{B} beschreibt die Erweiterung (s. Abbildung~\ref{fig:usecase-extend}).
-Hierbei kann der \textbf{A} alleine oder zusammen mit \textbf{B} ausgeführt werden (im Unterschied zur \textbf{include}-Beziehung: Hier ist inkludieren nicht optional) (vgl.~\cite[54]{Bal05}).
+Die Verwendung der \code{extend}-Beziehung erlaubt die Erweiterung eines Anwendungsfalles \code{A} durch einen Anwendungsfall \code{B}.\\
+\code{A} beschreibt die Basisfunktionalität, \code{B} beschreibt die Erweiterung (s. Abbildung~\ref{fig:usecase-extend}).
+Hierbei kann der \textbf{A} alleine oder zusammen mit \code{B} ausgeführt werden (im Unterschied zur \code{include}-Beziehung: Hier ist inkludieren nicht optional) (vgl.~\cite[54]{Bal05}).
 
 \noindent
-Bei der Verwendung einer \textbf{extend}-Beziehung gilt (vgl.~\cite[53]{Buh09}):
+Bei der Verwendung einer \code{extend}-Beziehung gilt (vgl.~\cite[53]{Buh09}):
 
 \begin{itemize}
     \item das Verhalten eines Anwendungsfalles kann durch das Verhalten eines anderen erweitert werden
@@ -97,3 +98,7 @@ Bei der Verwendung einer \textbf{extend}-Beziehung gilt (vgl.~\cite[53]{Buh09}):
     \caption{Notation der extend-Beziehung. in dem Beispiel wird die der Anwendungsfall \textbf{A} durch den Anwendungsfall \textbf{B} an dem \textit{extension point} \textbf{Point 1} erweitert, der aktiviert wird, falls die in der Notiz vermerkte Bedingung zutrifft (Quelle: in Anlehnung an \cite[65, Abb. 2.8-4]{Bal05})}
     \label{fig:usecase-extend}
 \end{figure}
+
+\subsection*{Anmerkung}
+Bei der \code{include}-Beziehung zeigt der Pfeil auf den einzubindenden Anwendungsfall.\\
+Bei der \code{extend}-Beziehung ist es umgekehrt, der Pfeil zeigt auf den zu erweiternden Anwendungsfall (\cite[218]{Oes05}).
