@@ -41,10 +41,13 @@ Eine \textbf{Assoziationsklasse} erlaubt das Hinzufügen von Operationen und Att
 
 \blockquote[{\cite[277]{Oes05}}]{
 Eine attributierte Assoziation ist immer dann nahe liegend, wenn Attribute oder Operationen gefunden werden, die weder der einen noch der anderen Klasse zugeordnet werden können, weil sie nämlich Eigenschaften der Beziehung selbst sind.
-}.\\
+}.
 
-\noindent
-Bei einer attributierten Assoziation dürfen zwei beteiligte Objekte maximal nur eine Beziehung zueinander haben.\\
+\begin{tcolorbox}
+Bei einer attributierten Assoziation dürfen zwei beteiligte Objekte maximal nur eine Beziehung zueinander haben (vgl.~\cite[277]{Oes05})\footnote{
+\textit{Ostereich} führt dies ebenda auf Seite 278 weiter aus, in dem er beschreibt, wie eine attributierte Assoziation für ein \textit{Beschäftigtenverhältnis} zwischen \textit{Mitarbeiter} und \textit{Unternehmen} modelliert wird. Dabei wird davon ausgegangen, dass ein \textit{Mitarbeiter} nur über \textit{ein} Arbeitsverhältnis mit einem \textit{Unternehmen} in Beziehung stehen kann. Bestehen mehrere Arbeitsverhältnisse (\textit{Mitarbeiter} hat zu unterschiedlichen Zeitpunkten für das \textit{Unternehmen} gearbeitet), kann die attributierte Assoziation nicht verwendet werden.
+}.
+\end{tcolorbox}
 
 \noindent
 Wird eine attributierte Assoziation in eine gewöhnliche Assoziation transformiert, muss darauf geachtet werden, die Multiplizitäten richtig zu setzen (s. Abbildung~\ref{fig:assoziationsklasse}).
