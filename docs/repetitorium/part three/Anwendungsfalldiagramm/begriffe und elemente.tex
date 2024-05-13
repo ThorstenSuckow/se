@@ -22,7 +22,9 @@ Anwendungsfälle beschreiben das Szenario der Nutzung, und sind deshalb \textit{
 
 \subsection{Assoziationsbeziehungen}
 
-\textbf{Assoziationsbeziehungen} können zwischen einem Akteur und einem oder mehreren Anwendungsfällen modelliert werden.\\
+\begin{tcolorbox}
+\textbf{Assoziationsbeziehungen} können zwischen einem Akteur und einem oder mehreren Anwendungsfällen modelliert werden.
+\end{tcolorbox}
 
 \noindent
 \textit{Buhl} weist darauf hin, dass bei den Assoziationsbeziehungen grundsätzlich dieselben Aussagen wie in Abschnitt~\ref{sec:klassendiagramme-begriffe-und-elemente} getroffen werden können (vgl. ~\cite[52]{Buh09}).\\
@@ -32,11 +34,20 @@ In Anwendungsfalldiagrammen \textit{müssen} die Systemgrenzen modelliert werden
 Systeme realisieren das Verhalten von Anwendungsfällen, bei denen sich Akteure immer außerhalb des Systems befinden: Entsprechende Systemgrenzen werden als Kasten dargestellt, in dem sich  die Anwendungsfälle befinden.
 
 \subsection{Generalisierungsbeziehungen}
-Zwischen Akteuren und Anwendungsfällen können \textbf{Generalisierungsbeziehungen} modelliert werden:
+Zwischen Akteuren und Anwendungsfällen können \textbf{Generalisierungsbeziehungen} modelliert werden (vgl. im Folgenden~\cite[66]{Bal05}):
 
 \begin{itemize}
-    \item zwischen \textbf{Anwendungsfällen}: Das Verhalten und die Beziehungen zu den Akteuren wird vererbt
-    \item zwischen \textbf{Akteuren}: Assoziationsbeziehungen zu den Anwendungsfällen werden vererbt
+    \item zwischen \textbf{Anwendungsfällen}
+    \begin{itemize}
+        \item Das Verhalten und die Beziehungen zu den Akteuren wird vererbt.
+        \item Der spezialisierte Akteur erbt die Eigenschaften des allgemeineren Akteurs und kann weitere Eigenschaften hinzufügen.
+    \end{itemize}
+    \item zwischen \textbf{Akteuren}:
+    \begin{itemize}
+        \item Der spezialisierte Use-Case erbt die Eigenschaften des allgemeineren Use-Cases.
+        \item Die Beziehungen des allgemeineren Use-Cases (bspw. \code{extend}-Beziehungen) und seine Assoziationen zu Akteuren werden an die spezialisierten Use-Cases vererbt.
+        \item  Der spezialisierte Use-Case kann neue Eigenschaften und neues Verhalten definieren.
+    \end{itemize}
 \end{itemize}
 
 \noindent
@@ -88,7 +99,9 @@ Bei der Verwendung einer \code{extend}-Beziehung gilt (vgl.~\cite[53]{Buh09}):
 \begin{itemize}
     \item das Verhalten eines Anwendungsfalles kann durch das Verhalten eines anderen erweitert werden
     \item die Beziehung zwischen den beteiligten Anwendungsfällen ist gerichtet
-    \item spezifische Erweiterungspunkte (\textit{extension points}) geben an, an welchen Stellen der Basis-Anwendungsfall erweitert wird
+    \item spezifische Erweiterungspunkte (\textit{extension points}\footnote{
+        ``ExtensionPoints may be listed in a compartment of the UseCase with the heading \textbf{extension points}.`` (\cite[642, Hervorhebung i.O.]{OMG17})
+    }) geben an, an welchen Stellen der Basis-Anwendungsfall erweitert wird
     \item Bedingungen zum Auslösen des erweiterten Verhalten wird mit angefügten Notizen spezifiziert
 \end{itemize}
 
