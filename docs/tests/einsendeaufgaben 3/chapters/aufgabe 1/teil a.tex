@@ -1,0 +1,37 @@
+\subsection*{a)}
+Erläutern Sie, wie UML‐Modell in einem Entwicklungsprozess eingesetzt werden können und welchen Nutzen sie haben.
+
+
+\section*{Antwort}
+UML-Modelle sind nicht an einen bestimmten Entwicklungsprozess gebunden und könne sowohl in \textbf{agilen} Prozessen als auch in \textbf{sequentiellen Modellen} (bspw. dem \textbf{Wasserfallmodell}) eingesetzt werden.\\
+
+\noindent
+UML-Modelle können hierbei als Skizze (\textit{Sketching Modus}) oder als Vorlage für die Implementierung (\textit{Blueprint Modus}) oder zur automatischen Codegenerierung im Entwicklungsprozess eingesetzt werden.\\
+Die Phase des Entwicklungsprozess beeinflusst dabei den Typ des eingesetzten UML-Modells: Ein Anwendungsfalldiagramm macht bspw. in der \textbf{Anforderungsphase} Sinn, in der \textbf{Testingphase} eher weniger.\\
+Im Entwicklungsprozess können dabei u.a. folgende UML-Modelle genutzt werden:
+
+\begin{itemize}
+    \item \textbf{Klassendiagramm} Klassendiagramme werden in der \textbf{Analysephase} und in der \textbf{Entwurfsphase} eingesetzt, um Klassen eines Systems und deren statische Beziehungen zwischen ihnen zu skizzieren\footnote{als \textit{Domainklassen} in der Analyse} und später im Entwurf als Vorlage (\textit{Blueprint}) für die \textbf{Implementierung} auszuarbeiten
+    \item \textbf{Paketdiagramm} Paketdiagramme zeigen Pakete des Systems und deren Beziehungen zueinander.
+    Sie dienen in frühen Phasen des \textbf{Entwurfs} dazu,  Klassen ähnlicher Funktionalität auszumachen, in Pakete zu gruppieren und damit ebenfalls deren Abhängigkeiten zu beschreiben - eine Abhängigkeit zwischen zwei Paketen gibt auch die Abhängigkeit der darin enthaltenen Klassen weider.
+    \item \textbf{Anwendungsfalldiagramm}
+    Anwendungsfalldiagramme dienen in der \textbf{Anforderungsphase} (während der \textit{Anforderungsspezifikation}) dazu, Anwendungsfälle zu erfassen und beteiligte Akteure zu identifizieren.\\
+     Ein Anwendungsfalldiagramm dient nicht dazu, ein Feature zu beschreiben, sondern ein \textbf{Szenario der Nutzung}: Features ermöglichen ein Szenario, werden aber nicht durch die Anwendungsfälle beschrieben (~\cite[52]{Buh09}).
+    \item \textbf{Sequenzdiagramme} Sequenzdiagramme werden sowohl im \textbf{Entwurf} als auch in der \textbf{Analyse} eingesetzt und stellen die Kommunikation verschiedener Objekte (geg. durch das erstellte \textit{Klassendesign}) in einem bestimmten Zeitraum dar.\\
+    In der Analysephase ermöglichen Sequenzdiagramm eine Ausarbeitung von Anwendungsfällen.
+    \item \textbf{Aktivitätsdiagramm}  Aktivitätsdiagramme gehören zu den Verhaltensdiagrammen und werden in allen Phasen des Entwicklungsprozesses eingesetzt.\\
+    Sie werden genutzt, um die Ausführung von Funktion bzw. Verhalten darzustellen (vgl.~\cite[69]{Bal05}) und ermöglichen unter Verwendung von \textit{Verantwortlichkeitsbereichen} auch die Identifizierung beteiligter Geschäftsbereiche\footnote{
+    ``They [Activity Partitions] often correspond to organizational units in a business model. They
+    may be used to allocate characteristics or resources among the nodes of an Activity.`` (\cite[406]{OMG17})
+    }.\\
+    \begin{itemize}
+        \item in der \textbf{Anforderungsphase} dienen sie zur Modellierung von Geschäftsprozessen
+        \item in der \textbf{Analysephase} ermöglichen sie die Darstellung von Verhalten von Anwendungsfällen
+        \item während des \textbf{Entwurfs} dienen sie zur Darstellung von Systemverhalten und als Vorlage für die Implementierung
+        \item die Modellierung komplexer Algorithmen hilft in der \textbf{Implementierungsphase}
+        \item in der \textbf{Testphase} können mit ihrer Hilfe Testfälle abgeleitet werden
+    \end{itemize}
+    \item \textbf{Zustandsautomaten} Zustandsautomaten modellieren wie Aktivitätsdiagramme \textit{Verhalten}, allerdings steht bei ihnen die Modellierung von \textit{Reaktionen} im Vordergrund.\\
+    Sie werden zur Darstellung des Lebenswegs einzelner Objekte genutzt und damit ergänzend zu \textbf{Klassendiagrammen} im \textbf{Entwurf} eingesetzt, um das Verhalten von Objekten durch Änderungen ihrer Attributen zu modellieren.
+\end{itemize}
+
