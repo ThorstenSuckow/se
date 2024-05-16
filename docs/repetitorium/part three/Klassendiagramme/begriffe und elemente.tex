@@ -101,15 +101,28 @@ Assoziationen können Namen besitzen, die mit einer Leserichtung ausgestattet si
 \end{itemize}
 
 \noindent
-\textbf{Pfeilspitzen} an Assoziationsenden geben die \textbf{Navigierbarkeit} an:
+\textbf{Pfeilspitzen} an Assoziationsenden geben die \textbf{Navigierbarkeit} an (s. Abbildung~\ref{fig:navigability}):
 
 \begin{itemize}
     \item \textbf{Bidirektional}: Pfeilspitzen an beiden Enden
-    \item \textopf{Unidirektional}: Pfeilspitze an nur einem Ende
+    \item \textopf{Unidirektional}: Pfeilspitze an nur einem Ende (\textit{navigabilityNotation}).
+    Ein offenes ``X`` (\textit{nonNavigabilityNotation}) an einem Ende weist darauf hin, dass der Zugriff auf diese Seite der Assoziation ausgeschlossen ist (vgl.~\cite[719]{OMG17}).
     \item \textbf{keine Angabe}: bidirektionale Assoziation, oder Navigierbarkeit wurde noch nicht modelliert\footnote{
      zur Vermeidung von Unklarheiten empfiehlt es sich, die Navigierbarkeit anzugeben. S. auch die obige Anmerkung zur \textit{Multiplizität}
     }
 \end{itemize}
+
+\begin{figure}
+    \centering
+    \includegraphics[scale=0.5]{part three/Klassendiagramme/img/navigability}
+    \caption{Notation für ein \textit{navigabilityNotation} (oben) und eine \textit{nonNavigabilityNotation} (unten): Die \textit{navigabilityNotation} wird verwendet, wenn ``Indicates when to show navigability of associations or connectors typed by associations``; die \textit{nonNavigabilityNotation}, falls ``Indicates when to show non-navigability of associations or connectors typed by associations.`` (\cite[731]{OMG17}). (Quelle: in Anlehnung an \cite[719]{OMG17})}
+    \label{fig:navigability}
+\end{figure}
+
+\begin{tcolorbox}[title=Angabe der Navigierbarkeit,colback=white]
+    Die UML Spezifikation weist in~\cite[203]{OMG17} darauf hin, dass es möglich ist, durch die gleichzeitige Angabe der \textit{nonNavigabilityNotation} / \textit{navigabilityNotation} die Navigierbarkeit \textit{explizit} darzustellen.\\
+    In der Praxis wird häufig nur der Pfeil in eine Richtung verwendet (unidirektionale Assoziation), auf die \textit{nonNavigabilityNotation} wird hingegen verzichtet: In diesem Fall können wir \textit{Balzert} folgen, und behandelt die Navigierbarkeit in die andere Richtung als \textit{undefiniert} (vgl.~\cite[285]{Bal05}).
+\end{tcolorbox}
 
 \subsection*{Anmerkungen}
 \textit{Buhl} weist darauf hin, dass
@@ -119,6 +132,20 @@ Assoziationen können Namen besitzen, die mit einer Leserichtung ausgestattet si
     \item es günstig ist, Klassen \textit{restriktiv} zu entwerfen: Rechte können in Unterklassen erweitert werden.\\
     Rechte können aber nicht in Unterklassen eingeschränkt werden.
 \end{itemize}
+
+\begin{tcolorbox}[title=Attribut- vs. Assoziationsnotation,colback=white]
+    Jedes Attribute kann laut UML alternativ zur Textnotation mithilfe von Assoziationen dargestellt werden (vgl.~\cite[264]{Bal05}).\\
+    Eine äquivalente Darstellung von einer Attribut- / Assoziationsnotation findet sich in Abbildung~\ref{fig:attassocequiv}.
+\end{tcolorbox}
+
+
+\begin{figure}
+    \centering
+    \includegraphics[scale=0.5]{part three/Klassendiagramme/img/attassocequiv}
+    \caption{Darstellung eines Attributs in Attribut-/Assoziationsnotation. Die Darstellung sind äquivalent zueinander. (Quelle: in Anlehnung an~\cite[Abb. 6.2-4, 264]{Bal05})}
+    \label{fig:attassocequiv}
+\end{figure}
+
 
 \subsection{Operationen}
 
