@@ -1,0 +1,12 @@
+\subsection*{a)}
+
+Alle dargestellten Elemente sind so als Verwendung in dem vorliegenden Klassendiagramm erlaubt:
+
+\begin{itemize}
+    \item \code{Hund} ist eine Klasse, die die Operation \code{bellen()} zur Verfügung stellt
+    \item \code{Schäferhund} und \code{Pudel} \textbf{spezialisieren} (\cite[52]{Bal05}) \code{Hund}.
+    Beide überschreiben (\textit{redefine}\footnote{
+    s.~\cite[100]{OMG17}
+    }) das Verhalten ihrer Oberklasse, indem sie \code{bellen()} als Operation in ihrer Klassenbox aufführen - sie \textit{verfeinern} also das Verhalten ihrer Oberklasse (\cite[54]{Bal05})
+    \item \code{Mischling} erbt von \code{Schäferhund} und \code{Pudel}, es liegt eine \textbf{Mehrfachvererbung} vor
+\end{itemize}

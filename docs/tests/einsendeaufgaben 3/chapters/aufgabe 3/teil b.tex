@@ -1,0 +1,14 @@
+\subsection*{b)}
+
+\subsection*{Problematik der Klassenbeziehung}
+\begin{itemize}
+    \item \code{Mischling} erbt von \code{Schäferhund} und \code{Pudel}, die beide die Operation \code{bellen()} von \code{Hund} überschreiben.
+    \item[] $\rightarrow$ \code{Mischling} stellt demnach eine Operation mit demselben Namen und derselben Signatur zur Verfügung, was zu einem Konflikt führt, da nicht klar ist, welche der \code{bellen()}-Operation aufgerufen werden soll - die von \code{Schäferhund} oder die von \code{Pudel}
+    \item Dem Klassendiagramm nach zu urteilen bietet es sich an, \code{Hund} als abstrakte Klasse zum modellieren: Es ist fraglich, ob es direkte Objekte vom Typ \code{Hund} gegeben wird, da Hund als \textit{Tierart} als abstrakte Generalisierung zu spezialisierender Hundearten verstanden werden kann.\\
+    Es könnte darüber hinaus analysiert werden, ob ein Verfeinern von \code{Hund} durch Überschreiben der Methode \code{bellen()} in den Unterklassen notwendig ist.
+\end{itemize}
+
+\subsection{Problematik der Implementierung in Java}
+Es ist grundsätzlich möglich, \textbf{Mehrfachvererbung} in UML zu modellieren (\cite[300]{Bal05}).\\
+Allerdings erlaubt Java bei Klassenvererbung nicht mehr als eine direkte Oberklasse (\cite[526]{Ull23}).\\
+\code{Mischling} könnte deshalb in Java so nicht umgesetzt werden.
