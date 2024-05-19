@@ -2,34 +2,27 @@
 
 \section*{Antwort}
 
-Es empfiehlt sich, eine \textbf{Kompositionsbeziehung} (\cite[49]{Bal05}) zu modellieren: Abbildung~\ref{fig:aufgabe-4-teil-b} zeigt einen Entwurf für eine Umsetzung in Java.\\
+Es empfiehlt sich, eine \textbf{Aggregationsbeziehung} (\cite[48]{Bal05}) zu modellieren: Abbildung~\ref{fig:aufgabe-4-teil-b} zeigt einen Entwurf für eine Umsetzung in Java.\\
 
 \begin{figure}
     \centering
-    \includegraphics[scale=0.35]{chapters/aufgabe 4/img/aufgabe4b}
-    \caption{Modellierung eines Quadrats als Komposition der Klassen \textit{Quadrat} und \textit{Punkt} in Java. Punkt realisiert \textit{Cloneable} und überschreibt \textit{clone()}, damit Kopien erzeugt werden können. (Quelle: eigene)}
+    \includegraphics[scale=0.5]{chapters/aufgabe 4/img/aufgabe4b}
+    \caption{Modellierung der Klassen \textit{Quadrat} und \textit{Punkt} und ihrer Aggregationsbeziehung.
+    Ein \textit{Quadrat} besteht immer aus $4$ Objekten des Typs \textit{Punkt}. Ein Objekt vom Typ \textit{Punkt} kann zu keinem oder bis zu 3 Objekten des Typs \textit{Quadrat} gehören. Eine Navigierbarkeit geben wir nicht explizit an, da ein Ganzes implizit weiß, aus welchen Teilen es besteht. Die andere Richtung lassen wir undefiniert, da nicht klar hervorgeht, ob ein Punkt auch über seine Zugehörigkeit zu einem Quadrat wissen muss (Quelle: eigene)}
     \label{fig:aufgabe-4-teil-b}
 \end{figure}
 
 \noindent
-Die Klasse \code{Quadrat} hat als Eigenschaft 4 Objekte des Typs \code{Punkt}.\\
-Die Klasse als \textit{Ganzes} übernimmt die Erzeugung der Punkte, seiner \textit{Teile}.
-    \begin{itemize}
-        \item Der Konstruktor \code{Quadrat(a1: double,a2: double,b1: double,b2: double,c1: double,c2: double,d1: double,d2: double)} erzeugt aus einem Paar der insg. 8 Übergabeparameter jeweils einen \code{Punkt}
-        \item Der Konstruktor \code{Quadrat(a: Punkt, b: Punkt, c: Punkt, d: Punkt)} sorgt dafür, dass Kopien der \code{Punkt}-Instanzen erzeugt werden\footnote{
-            hierzu realisiert \textit{Punkt} \textit{Cloneable}, s. a. \url{https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Cloneable.html}, abgerufen 18.05.2024
-        }
-    \end{itemize}
+Wie auf der Skizze ersichtlich, kann ein Objekt vom Typ \code{Punkt} ohne Beziehung zu einem Objekt vom Typ \code{Quadrat} existieren.\\
+Des Weiteren kann ein Punkt zu max. $3$ Quadraten gehören.\\
+Eine  \textbf{Aggregationsbeziehung} stellt sicher, dass der Entwurf diese Anforderung ausdrückt.\\
 
-\noindent
-\code{Quadrat} verwaltet die Punkte und stellt sicher, dass über die Methode \code{getPunkte()} \textit{Kopien} der jeweiligen Punkte zurückgeliefert werden: Änderungen der Eigenschaften der Punkte wirken sich also nicht auf \code{Quadrat} aus - damit ist \code{Quadrat} in der Hinsicht \textbf{immutable}\footnote{
-vgl. \cite[21]{LG00} und insbesondere ebenda S. 94 f.
-}\\
+\subsection*{Anmerkung}
+In der Analyse kann diskutiert werden, ob ein Punkt auch zu max. $4$ Quadraten als ``Mittelpunkt`` gehören kann.\\
+Außerdem wäre zu klären, ob \code{Punkt} als \textbf{Immutable}\footnote{
+    vgl. \cite[21]{LG00}; eine mögliche Implementierung geometrischer Figuren wird ebenda auf S. 94 f. angerissen
+} implementiert werden soll, sofern sich die Änderungen eines Punktes \textit{nicht} auf alle assoziierten Aggregatobjekte auswirken soll\footnote{
+    s. a. \textbf{Aliasing-Bugs}, \url{https://martinfowler.com/bliki/AliasingBug.html}, abgerufen 18.05.2024
+}.
 
-\noindent
-Ein \code{Punkt} kann nur zu einem Quadrat gehören.\\
-Zwar sieht die Skizze so aus, als könnte ein Punkt auch zu max. 4 Quadraten gehören (als ``Mittelpunkt``) - allerdings würde die Änderung eines solchen Punktes dann auch direkt 4 Quadrate betreffen, die sich die betreffende Referenz auf das Objekt vom Typ \code{Punkt} teilen.\\
-Die \textbf{Kompositionsbeziehung} formuliert an der Stelle - im Unterschied zu einer Aggregationsbeziehung - die Ganzes-Teile-Beziehung entsprechend schärfer, damit Probleme, wie bspw. \textbf{Aliasing-Bugs}\footnote{
-\url{https://martinfowler.com/bliki/AliasingBug.html}, abgerufen 18.05.2024
-}) im Betrieb vermieden werden.\\
 
