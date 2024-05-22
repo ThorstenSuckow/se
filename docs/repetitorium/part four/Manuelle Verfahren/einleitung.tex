@@ -1,0 +1,59 @@
+\section{Einleitung}
+
+Viele Produkte der Softwareentwicklung (\textit{Artefakte}) sind nicht testbar, dazu gehören bspw. Dokumente, die Anwendungsfälle beschreiben, das Data Dictionary\footnote{
+hält fest, in welchem Format welche Daten verarbeitet werden
+} aber auch Klassendiagramme aus Analyse und Entwurf.\\
+Wenn sich die Qualität von Artefakten nicht oder nicht ausschließlich durch Testen sicherstellen lässt, kommen \textbf{manuelle Verfahren} zum Einsatz: Mitarbeiter untersuchen den \textbf{Prüfgegenstand} durch \textbf{systematisches Korrekturlesen}.\\
+
+\noindent
+Es ist wichtig, Defekte früh im Entwicklungsprozess zu finden.\\
+Bei einem falschen Entwurf oder einer falschen Spezifikation fällt der Fehler u.U. erst in eienr späten Phase bei den \textbf{Systemtests} durch spezialisierte Tester\footnote{
+s. Abschnitt~\ref{sec:v-modell}
+} oder bei dem \textbtf{Abnahmetest} durch den Kunden auf.\\
+Fehlerhafter Code kann also auch in frühen Phasen durch das \textbf{manuelle Prüfen} von Dokumenten und Modellen verhindert werden, indem andere Personen Prüfgegenstände \textit{systematisch lesen}.\\
+Hierbei kommen auch \textbf{Checklisten} zum Einsatz.\\
+Gefundene Defekte und Verbesserungsvorschläge werden dem \textbf{Autor} vom \textbf{Prüfer} mitgeteilt.\\
+
+\noindent
+Die Funktionsfähigkeit von Software wird i.d.R. durch Tests sichergestellt, aber auch eine manuelle Prüfung kann sinnvoll sein: Manche Defekttypen werden so effektiver gefunden\footnote{
+das \textit{Vieraugenprinzip} gilt als effektive präventive Kontrolle, s. \url{https://de.wikipedia.org/wiki/Vier-Augen-Prinzip}, abgerufen 22.05.2024
+}.
+Außerdem kann nur bei einer Analyse des Quellcodes überprüft werden, ob ein Entwickler den Quellcode auf eine \textbf{wartbare} Art und Weise geschrieben hat, also ob der Code \textbf{lesbar} und \textbf{einfach zu ändern} ist\footnote{
+dass die Einhaltung von Coding-Standards im gesamten Quellcode besser automatisierte durch Werkzeuge stattfindet, bleibt hiervon unberührt
+}.\\
+
+\noindent
+Ein wichtiger Nebeneffekt manueller Prüfverfahren ist, dass sich der Prüfer \textit{intensiv} mit dem Prüfgegenstand \textit{auseinandersetzt}.
+Dies wirkt sich positiv bei einem Ausfall oder einer Umstrukturierung aus.\\
+
+\noindent
+Manuelle Prüfungen sind recht aufwändig, was sich auch in den Kosten widerspiegelt.
+Aus diesem Grund schrecken viele Projektverantwortliche davor zurück. \textit{Wedemann} führt an, dass im Zuge einer \textit{objektiven Argumentation} die Kosten miteinander verglichen werden sollten, die bei der Beseitigung der Defekte in bestimmten Phasen entstehen (vgl.~\cite[16]{Wed09c}).
+Auch \textit{Brooks} weist auf die Notwendigkeit hin, Defekte möglichst früh zu erkennen:
+
+\blockquote[{\cite[142]{Bro95}}]{
+The most pernicious and subtle bugs are system bugs arising from mismatched assumptions made by the authors or various components. [\ldots] Long before any code exists, the specification must be handed to an outside testing group to be scrutinized for completeness and clarity.
+}
+
+\noindent
+\textit{Wedemann} schließt aus verschiedenen Quellen (\cite{Rad01}, \cite{Wie02}, \cite{GG93}), dass eine Reduktion der Kosten zur Behebung von Defekten erreicht werden kann, wenn diese Defekte bei einer manuellen Überprüfung in einer frühen Phase gefunden werden.
+Weiter stellt er fest,  dass ``bei einer Inspektion ca. 60{\%} aller Defekte gefunden werden`` (~\cite[16]{Wed09c}).\\
+
+\noindent
+Prinzipiell sollten alle Dokumente und Modelle mit manuellen Verfahren geprüft werden, da diese Verfahren das einzig praktikable Verfahren sind (\cite[16]{Wed09c}).\\
+Manuell geprüft werden sollten insb.
+
+\begin{itemize}
+    \item wichtige Codeteile:
+    \begin{itemize}
+        \item \textbf{Vorlagen}
+        \item denen eine \textbf{entscheidende Rolle} in der Software zukommt
+    \end{itemize}
+    \item Code, der von \textbf{neuen} oder \textbf{unerfahrenen Mitarbeitern} geschrieben wird
+\end{itemize}
+
+\noindent
+Der Einsatz von manuellen Verfahren ist unkompliziert, allerdings sollte vor Beginn der Entwicklung überlegt werden, welche manuellen Verfahren durchgeführt werden sollen.
+Diese Abläufe sollten im Management-Plan schriftlich fixiert werden, um das Verständnis aller Mitarbeiter zu schärfen.
+Es sollte außerdem ausreichend Zeit zur Durchführung der Maßnahmen eingeplant werden und die Durchführung dementsprechend verfolgt und die Ergebnisse protokolliert werden.\\
+Wenn Autoren die Maßnahmen als unangenehm empfinden, sollte bei der Durchführung sorgsam mit ihnen umgegangen werden (vgl. \cite[17]{Wed09c}).
