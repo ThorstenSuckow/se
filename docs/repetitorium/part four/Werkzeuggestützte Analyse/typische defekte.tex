@@ -1,0 +1,59 @@
+\section{Typische Defekte}\label{sec:typische-defekte}
+
+Bestimmte Defekte lassen sich durch genaues Ansehen des Quellcodes entdecken. Dazu gehören bspw.
+
+\begin{minted}{java}
+    public void doSomething() {
+        try {
+            FileInputStream fis = new FileInputStream("/dev/null");
+        } catch(IOException e) {
+            // leerer catch-Block
+        }
+    }
+
+    void foo(int x) {
+        if (x == 0){
+            // leerer block
+        }
+    }
+
+    public class Bar() {
+        public int hashcode() { // eher "hashCode"?
+            ...
+        }
+    }
+
+    for (int i = 0; i < 10; i++) {
+        for (int j = 0; j < 10; i++) { // j++?
+            ...
+        }
+    }
+
+
+    if (x = 0) { // Zuweisung? Vergleich?
+        ...
+    }
+\end{minted}
+
+\subsection*{Potentielle Fehler und schlechte Wartbarkeit}
+Die o.a. Beispiele können zu korrektem Laufzeitverhalten führen, meistens handelt es sich aber um Defekte.\\
+Selbst bei korrektem Laufzeitverhalten handelt es sich um potentielle Schwachpunkte, die die Wartbarkeit erschweren - folglich muss solcher Code als Defekt kategorisiert werden.
+
+\subsection*{Werkzeuge}
+Für Java gibt es das Tool \textit{PMD}\footnote{
+    \url{https://pmd.github.io}, abgerufen 24.05.2024
+}, für PHP den \textit{PHP Mess Detector}\footnote{
+    \url{https://phpmd.org}, abgerufen 24.05.2024
+} (\textit{PHPMD}).
+
+\subsection*{Einsatz}
+Für den Einsatz dieser Werkzeuge gelten die gleichen Aussagen wie für den Einsatz von Werkzeugen zur Einhaltung von Programmierrichtlinien (s. Abschnitt~\ref{sec:programmierrichtlinien}
+).\\
+\textit{Wedemann} weist darauf hin, dass es bei diesen Werkzeugen noch wichtiger ist, die Regeln anzupassen, da die ``Standardeinstellungen häufig zu strenge und zum Teil sogar widersprüchliche Regeln beinhalten`` (\cite[31]{Wed09c}).
+
+\subsection*{Pro und Contra}
+Der Vorteil ist, dass die Werkzeuge leicht anzuwenden sind und viele Defekte gefunden werden können.
+Außerdem hat sich in der Praxis gezeigt, dass auch erfahrene Mitarbeiter bei dem Einsatz der Werkzeuge noch dazulernen können.\\
+Bei schlechter Anpassung der Werkzeuge besteht die Gefahr, dass Probleme an Stellen angezeigt werden, an denen keine Defekte vorliegen.
+Mitarbeiter neigen dann eher dazu, die Werkzeuge abzulehnen.\\
+Für Embedded-Applikationen ist der Einsatz solcher Werkzeuge bewährter Industriestandard (vgl.~\cite[31]{Wed09c}).
