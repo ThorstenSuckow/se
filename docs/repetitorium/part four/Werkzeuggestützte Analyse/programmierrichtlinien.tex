@@ -1,0 +1,50 @@
+\section{Programmierrichtlinien}\label{sec:programmierrichtlinien}
+
+\subsection*{Einhaltung der Programmierrichtlinien wichtig für Wartbarkeit}
+
+Die \textbf{Einhaltung von Programmierrichtlinien} ist eine naheliegende Aufgabe für die \textbf{werkzeuggestützte Analyse}.\\
+\textbf{Programmierrichtlinien} können \textbf{projektweit}, \textbf{unternehmensweit} oder \textbf{weltweit} (wie bei Java\footnote{
+s. \url{https://www.oracle.com/java/technologies/javase/codeconventions-introduction.html}, abgerufen 24.05.2024
+}) vorgegeben sein.\\
+
+\noindent
+Die Einhaltung von Programmierrichtlinien ist wichtig für die \textbf{Qualitätsforderung} \textbf{Wartbarkeit}: \textbf{Wartbarkeit} setzt auch voraus, dass der Code verständlich und damit einfach lesbar ist.
+
+\subsection*{Ursachen für gefundene Defekte}
+Ein erster Einsatz solcher Werkzeuge ist meist sehr ernüchternd: Oft werden mehr Defekte angezeigt, als praktischerweise behoben werden können.
+Die hängt u.a. damit zusammen, dass
+
+\begin{enumerate}
+    \item die Einstellungen der IDE meistens nicht mit der Einstellung der Analysewerkzeuge zusammenpassen
+    \item viele Entwickler die Programmierrichtlinien nicht gut genug kennen
+    \item manche der standardmäßig vorgegebenen Programmierrichtlinien für die Praxis zu strikt sind
+\end{enumerate}
+
+\noindent
+Bei existierendem Code sind \textit{nachträgliche} Programmierrichtlinien schwer durchzusetzen.
+Es ist denkbar, in solchen Fällen die Programmierrichtlinien nur für neuen Code durchzusetzen.
+
+\subsection*{Vorgehen}
+\begin{itemize}
+    \item Werkzeuge sollten von Anfang an benutzt werden, da ein nachträglicher Einsatz mit hohem Aufwand verbunden ist.
+    \item Die Einführung sollte zunächst an einem kleinen Stück Software erprobt werden, die Einstellungen der IDE werden dann anhand des Beispiels angepaßt, Regeln ggf. modifiziert
+    \item während des ersten Gebrauchs sollten die Regeln systematisch auf die Brauchbarkeit überprüft und Werkzeug und IDE  angepaßt werden, bis ein akzeptabler Stand erreicht ist
+    \item die Projektleitung sollte darauf achten, dass alle Entwickler den Quellcode gleich prüfen - das Werkzeug sollte also in die IDE integriert sein, zumindest aber in das Build-Management, damit die Prüfung automatisch und periodisch durchgeführt wird
+\end{itemize}
+
+\subsection*{Werkzeuge}
+Für Java gibt es für die Einhaltung von Programmierrichtlinien bspw. \textit{Checkstyle}\footnote{
+    \url{https://checkstyle.org}, abgerufen 24.05.2024
+}, für JavaScript hat sich \textit{eslint}\footnote{
+    \url{https://eslint.org}, abgerufen 24.05.2024
+} bewährt, für PHP bspw. \textit{PHPCS}\footnote{
+\url{https://github.com/squizlabs/PHP_CodeSniffer}, abgerufen 24.05.2024
+}.
+
+\subsection*{Pro und Contra}
+Die Einhaltung von Programmierrichtlinien ist mittlerweile ein weit verbreitetes Standardverfahren in der Praxis.\\
+Bspw. haben im Automobilbereich die Kunden ihre eigenen Vorgaben, die werkzeuggestützt überprüft werden.\\
+Problematisch ist die Einführung von Programmierrichtlinien in ein seit länger laufendem Projekt.
+
+
+
