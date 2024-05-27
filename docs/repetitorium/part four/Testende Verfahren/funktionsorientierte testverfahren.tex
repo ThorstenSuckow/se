@@ -1,0 +1,134 @@
+\section{Funktionsorientierte Testverfahren}
+
+\begin{tcolorbox}
+    \textbf{Funktionsorientierte Tests} werden in allen Testphasen des \textbf{V-Modells}\footnote{s. Abschnitt~\ref{sec:v-modell}} durchgeführt mit dem Ziel, die in den Spezifikationen festgehaltene  Funktionalität vollständig gegenzuprüfen.\\
+    Sie testen das Verhalten eines \textbf{Testgegenstands}, also einer \textit{Methode}, einer \textit{Klasse} oder eines (Sub-)Systems.
+\end{tcolorbox}
+\vspace{2mm}
+
+\noindent
+Im Folgenden werden Verfahren beschrieben, mit denen funktionsorientierte Tests effektiv und gestaltet werden können.
+
+\subsection{Funktionale Äquivalenzklassen}
+Die Vielfältigkeit möglicher Eingabefolgen für in Software übersteigt oft die Umsetzbarkeit in Testfälle.\\
+\textbf{Äquivalenzklassen} beruhen auf der Idee, dass viele Eingabemöglichkeiten von dem System auf die gleiche Art und Weise bearbeitet werden.
+
+\begin{tcolorbox}[title=Äquivalenzklassen]
+    \blockquote[{\cite{43}[Wed09c]}]{
+    Die unterschiedlichen Bereiche, in denen ein Testgegenstand gleichartig reagiert, werden Äquivalenzklassen genannt.
+    }
+    \textbf{Gültige Äquivalenzklassen} stellen hierbei zulässige Elemente dar, die vom Testgegenstand verarbeitet werden sollen, \textbf{ungültige Äquivalenzklassen} hingegen Elemente, die vom Testgegenstand abgelehnt werden sollen.
+\end{tcolorbox}
+
+\noindent
+Sinnvollerweise werden Äquivalenzklassen zur Identifikation durchnummeriert.
+
+\subsubsection*{Beispiel}
+Ein Programm berechnet den zu gewährenden Rabatt bei einem Einkauf:
+\begin{itemize}
+    \item $2\%$ Rabatt werden bei einem Einkauf ab € $1000,-$ gewährt
+    \item Beträge $<= 0$ lösen eine Fehlermeldung aus
+    \item für einen Betrag $x$ mit $0 < x < 1000$ werden unterschiedliche Rabatte berechnet
+\end{itemize}
+
+Hieraus können folgende Äquivalenzklassen ermittelt werden:
+
+\begin{itemize}
+    \item \textbf{Gültige Äquivalenzklassen}
+    \begin{itemize}
+        \item[] \textbf{(1a)} Betrag $0 < x < 1000 $
+        \item[] \textbf{(1b)} Betrag $\geq 1000 $
+    \end{itemize}
+    \item \textbf{Ungültige Äquivalenzklassen}
+    \begin{itemize}
+      \item[] \textbf{(1c)} Betrag $\leq 0 $
+    \end{itemize}
+\end{itemize}
+
+\subsubsection*{Typen von Äquivalenzklassen}
+\textit{Wedemann} empfiehlt die Einteilung von Äquivalenzklassen in Kategorien (vgl.~\cite[43]{Wed09c}):
+
+\begin{enumerate}
+    \item \textbf{Wertebereich}, z.B. Zeiträume
+    \item \textbf{Aufzählungen}, z.B. Familienstand
+    \item \textbf{Voraussetzungen}, z.B.bei Passworteingaben: Eine Ziffer, einen Großbuchstaben
+\end{enumerate}
+
+\subsubsection*{Tests mit Stellvertretern einer Äquivalenzklasse}
+Die Tests verwenden dann aus jeer Äquivalenzklasse einen \textbf{Stellvertreter}.
+Es wird unterschieden nach
+
+\begin{itemize}
+    \item \textbf{Gutfälle}: Tests, in denen nur Stellvertreter aus gültigen Äquivalenzklassen verwendet werden
+    \item \textbf{Schlechtfälle}: Tests, in denen nur Stellvertreter aus ungültigen Äquivalenzklassen verwendet werden
+\end{itemize}
+
+\noindent
+Mit o.a. Beispiel lassen sich somit 3 konkrete Stellvertreter definieren:
+
+\begin{itemize}
+    \item \textbf{Gutfälle}:
+    \begin{itemize}
+        \item (1a) € $12,-$
+        \item (1b) € $2000,-$
+    \end{itemize}
+    \item \textbf{Schlechtfälle}:
+    \begin{itemize}
+        \item (1a) € $-26,-$
+    \end{itemize}
+\end{itemize}
+
+\subsection*{Mehrere Äquivalenzklassen pro Eingabe}
+Oft können mögliche Eingabewerte nach unterschiedlichen Kriterien in verschiedene Äquivalenzklassen gruppiert werden.\\
+Als Beispiel führt \textit{Wedemann} die Eingabe eines Passworts an: Das Passwort muss
+\begin{itemize}
+    \item aus mindestens 8 Zeichen bestehen
+    \item[] und
+    \item mindestens einen Buchstaben enthalten
+    \item[] und
+    \item mindestens eine Zahl enthalten
+\end{itemize}
+
+\noindent
+Es ergeben sich folgende Äquivalenzklassen:
+
+\begin{itemize}
+    \item \textbf{Anzahl der Zeichen}:
+    \begin{itemize}
+        \item[] \textbf{gültig} (1a) 8 oder mehr Zeichen
+        \item[] \textbf{ungültig} (1b) weniger als 8 Zeichen
+    \end{itemize}
+    \item \textbf{Mindestens ein Buchstabe und eine Zahl}:
+    \begin{itemize}
+        \item[] \textbf{gültig} (2a) ein Buchstabe und eine Zahl
+        \item[] \textbf{ungültig}
+        \begin{itemize}
+            \item[] (2b) keine Zahl
+            \item[] (2c) keine Buchstaben
+        \end{itemize}
+    \end{itemize}
+\end{itemize}
+
+\subsubsection*{Testdaten}
+Um zu verhindern, dass ein Fehler durch einen anderen maskiert wird, muss nun \textit{jede} Äquivalenzklasse mindestens einmal im Test so vorkommen, dass alle anderen Äquivalenzklassen gültig sind (vgl.~\cite[44]{Wed09c}).
+Mit o.a. Beispiel ergibt sich das folgende Stellvertreter:
+
+\begin{itemize}
+    \item \textbf{Gutfälle}
+    \begin{itemize}
+        \item[] (1a) (2a) \textit{abcd1234§}
+    \end{itemize}
+    \item \item \textbf{Schelechtfälle}
+    \begin{itemize}
+        \item[] (1b) (2a) \textit{ab12§}
+        \item[] (1a) (2b) \textit{abcdefgh§}
+        \item[] (1a) (2c) \textit{1234567§}
+    \end{itemize}
+\end{itemize}
+
+\vspace{2mm}
+\begin{tcolorbox}[colback=white]
+    Es werden ausschliesslich Gutfälle und Gutfälle und Schlechtfälle kombiniert.
+    Schlechtfälle werden nicht kombiniert, da man davon ausgeht, das dabei nur in Sonderfällen neue Fehler entdeckt werden, aber dadurch die Anzahl der Testfälle zu stark ansteigt.
+\end{tcolorbox}
+\vspace{2mm}
