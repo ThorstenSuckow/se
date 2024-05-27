@@ -16,7 +16,7 @@ Die Vielfältigkeit möglicher Eingabefolgen für in Software übersteigt oft di
 \begin{tcolorbox}[title=Äquivalenzklassen]
     \blockquote[{\cite{43}[Wed09c]}]{
     Die unterschiedlichen Bereiche, in denen ein Testgegenstand gleichartig reagiert, werden Äquivalenzklassen genannt.
-    }
+    }\\
     \textbf{Gültige Äquivalenzklassen} stellen hierbei zulässige Elemente dar, die vom Testgegenstand verarbeitet werden sollen, \textbf{ungültige Äquivalenzklassen} hingegen Elemente, die vom Testgegenstand abgelehnt werden sollen.
 \end{tcolorbox}
 
@@ -118,7 +118,7 @@ Mit o.a. Beispiel ergibt sich das folgende Stellvertreter:
     \begin{itemize}
         \item[] (1a) (2a) \textit{abcd1234§}
     \end{itemize}
-    \item \item \textbf{Schelechtfälle}
+    \item \item \textbf{Schlechtfälle}
     \begin{itemize}
         \item[] (1b) (2a) \textit{ab12§}
         \item[] (1a) (2b) \textit{abcdefgh§}
@@ -132,3 +132,106 @@ Mit o.a. Beispiel ergibt sich das folgende Stellvertreter:
     Schlechtfälle werden nicht kombiniert, da man davon ausgeht, das dabei nur in Sonderfällen neue Fehler entdeckt werden, aber dadurch die Anzahl der Testfälle zu stark ansteigt.
 \end{tcolorbox}
 \vspace{2mm}
+
+\subsubsection*{Mehrere Eingaben}
+Gibt es \textbf{mehrere Eigaben} wird genauso vorgegangen wir bei zwei Gruppen von Äquivalenzklassen pro Eingabe: Jede Äquivalenzklasse muss mindestens einmal im Test vorkommen, wobei alle anderen Äquivalenzklasse gültig sind (vgl.~\cite[44]{Wed09c}).\\
+Als Beispiel führt \textit{Wedemann} die Eingabe von \textit{Vorname} und \textit{Nachname} an (vgl.~\cite[44]{Wed09c}): Ein Vorname und ein Nachname muss aus mindestens 2 Zeichen bestehen, woraus sich folgende Äquivalenzklassen ergeben:
+
+\begin{itemize}
+    \item \textbf{Vorname}
+    \begin{itemize}
+        \item \textbf{Gültige Äquivalenzklassen}
+        \begin{itemize}
+            \item[] \textbf{(1a)} 2 oder mehr Zeichen
+        \end{itemize}
+        \item \textbf{Ungültige Äquivalenzklassen}
+        \begin{itemize}
+            \item[] \textbf{(1b)} weniger als 2 Zeichen
+        \end{itemize}
+    \end{itemize}
+    \item \textbf{Nachname}
+    \begin{itemize}
+        \item \textbf{Gültige Äquivalenzklassen}
+        \begin{itemize}
+            \item[] \textbf{(2a)} 2 oder mehr Zeichen
+        \end{itemize}
+        \item \textbf{Ungültige Äquivalenzklassen}
+        \begin{itemize}
+            \item[] \textbf{(2b)} weniger als 2 Zeichen
+        \end{itemize}
+    \end{itemize}
+\end{itemize}
+
+\noindent
+Die Testdaten sind dann:
+
+\begin{itemize}
+    \item \textbf{Gutfälle}
+    \begin{itemize}
+        \item[] (1a) (2a) ``\textit{Max}`` ``\textit{Moritz}``
+    \end{itemize}
+    \item \item \textbf{Schlechtfälle}
+    \begin{itemize}
+        \item[] (1a) (2b) ``\textit{Max}`` ``\textit{M}``
+        \item[] (1b) (2a) ``\textit{M}`` ``\textit{Moritz}``
+    \end{itemize}
+\end{itemize}
+
+\begin{tcolorbox}[colback=white]
+    Auch hier gilt: Kombinationen von ungültigen Äquivalenzklassen werden nicht getestet, weshalb (1b) (2b) nicht in den Testdaten auftaucht.
+\end{tcolorbox}
+
+\subsubsection*{Mehrere Eingaben und mehrere Gruppen von Äquivalenzklassen}
+Bei realen Anforderungen mit \textbf{mehreren Eingaben und mehreren Gruppen von Äquivalenzklassen} pro Eingabe wird genauso wie bei den o.a. Beispielen vorgegangen.
+Dadurch ist auch bei einer größeren Anzahl von Äquivalenzklassengruppen eine noch überschaubare Anzahl der konstruierten  Testfällen gewährleistet (vgl.~\cite[45]{Wed09c}).
+
+\subsubsection*{Grenzwertanalyse}
+Es ist sinnvoll, an den \textbf{Grenzen von Äquivalenzklassen} zu testen, da hier erfahrungsgemäß Fehler auftreten.\\
+Mit o.a. Beispiel der Rabattberechnung würden sich unter Berücksichtigung der Grenzwerte  folgende Testfälle ergeben:
+
+\begin{itemize}
+    \item \textbf{Gutfälle}:
+    \begin{itemize}
+        \item (1a) € $1$, € $999,-$
+        \item (1b) € $1000,-$
+    \end{itemize}
+    \item \textbf{Schlechtfälle}:
+    \begin{itemize}
+        \item (1a) € $0,-$
+    \end{itemize}
+\end{itemize}
+
+\noindent
+Für die gültige Äquivalenzklasse (1a) ist ein Gutfall hinzugekommen.\\
+Tatsächlich bedeutet die Berücksichtigung von Grenzwerten von Äquivalenzklassen, dass meistens mehr Testfälle hinzukommen.\\
+Es bietet sich dann nach Möglichkeit an, die Testfälle so zu gestalten, dass die verschiedenen Grenzwerte in unterschiedlichen Testfällen gleichzeitig geprüft werden.\\
+In dem Beispiel mit den mehreren Eingaben (Vorname, Nachname)könnten die Testdaten folgendermaßen aussehen:
+
+\begin{itemize}
+    \item \textbf{Gutfälle}
+    \begin{itemize}
+        \item[] (1a) (2a) ``\textit{hu}`` ``\textit{li}``
+    \end{itemize}
+    \item \item \textbf{Schlechtfälle}
+    \begin{itemize}
+        \item[] (1a) (2b) ``\textit{hu}`` ``\textit{l}``
+        \item[] (1b) (2a) ``\textit{h}`` ``\textit{li}``
+    \end{itemize}
+\end{itemize}
+
+\subsubsection*{Test spezieller Werte}
+\texbf{Spezielle Eingebewerte} verursachen häufig Probleme, weshalb diese mit dem \textbf{Test spezieller Werte} geprüft werden:
+
+\begin{itemize}
+    \item wird mit Zahlen gerechnet, wird häufig die $0$ als Testdatum verwendet, um Probleme bei der Division aufzudecken
+    \item bei der Verarbeitung von Zeichenketten kann der leere String \code{""} Probleme verursachen
+    \item bei Datenbankanwendungen werden SQL-Schlüsselwörter in den Testdaten verwendet
+    \item Schalttage bzw. die Umstellung von Sommer-/Winterzeit wird bei Datumsberechnungen als spezielle Werte verwendet
+\end{itemize}
+
+\subsubsection*{Grenzen des Verfahrens}
+Auch wenn die Methode der Äquivalenzklassen eine etablierte, ausgereifte Methode darstellt, ist ihr Einsatz schwierig, wenn das Verhalten vom Zustand abhängt - in diesen Fällen verwendet man \textbf{zustandsbasierte Tests} (s. Abschnitt~\ref{subsec:zustandsbasierte-tests}).
+
+\subsubsection*{Ursache-Wirkungs-Analyse}
+Besitzen Äquivalenzklassen untereinander Abhängigkeiten, weil sich bspw. Eingaben gegenseitig bedingen, wird es schwer, Testdaten vernünftig zu konsturieren.\\
+\textit{Wedemann} gibt hierzu exemplarisch das Beispiel eines Tests für einen Geldautomaten an, der nur Geld auszahlen soll, wenn die Karte gültig, die PIN richtig und genügend Geld auf dem Konto vorhanden ist; ist die PIN korrekt und die Karte gültig, soll ein anderer Betrag eingegeben werden können; die Karte soll eingezogen werden, wenn die PIN falsch ist und es sich um den dritten Versuch der Eingabe der PIN handelt. Für diesen Fall sei das Verfahren der \textbf{Ursache-Wirkungs-Analyse} geeignet (vgl.~\cite[46]{Wed09c}); \textit{Wedemann} verweist in diesem Zusammenhang auf \cite{ST05}.
