@@ -230,8 +230,67 @@ In dem Beispiel mit den mehreren Eingaben (Vorname, Nachname)könnten die Testda
 \end{itemize}
 
 \subsubsection*{Grenzen des Verfahrens}
-Auch wenn die Methode der Äquivalenzklassen eine etablierte, ausgereifte Methode darstellt, ist ihr Einsatz schwierig, wenn das Verhalten vom Zustand abhängt - in diesen Fällen verwendet man \textbf{zustandsbasierte Tests} (s. Abschnitt~\ref{subsec:zustandsbasierte-tests}).
+Auch wenn die Methode der Äquivalenzklassen eine etablierte, ausgereifte Methode darstellt, ist ihr Einsatz schwierig, wenn das Verhalten vom Zustand abhängt - in diesen Fällen verwendet man \textbf{zustandsbasierte Tests} (s. Abschnitt~\ref{subsec:zustandsbasierter-test}).
 
 \subsubsection*{Ursache-Wirkungs-Analyse}
 Besitzen Äquivalenzklassen untereinander Abhängigkeiten, weil sich bspw. Eingaben gegenseitig bedingen, wird es schwer, Testdaten vernünftig zu konsturieren.\\
 \textit{Wedemann} gibt hierzu exemplarisch das Beispiel eines Tests für einen Geldautomaten an, der nur Geld auszahlen soll, wenn die Karte gültig, die PIN richtig und genügend Geld auf dem Konto vorhanden ist; ist die PIN korrekt und die Karte gültig, soll ein anderer Betrag eingegeben werden können; die Karte soll eingezogen werden, wenn die PIN falsch ist und es sich um den dritten Versuch der Eingabe der PIN handelt. Für diesen Fall sei das Verfahren der \textbf{Ursache-Wirkungs-Analyse} geeignet (vgl.~\cite[46]{Wed09c}); \textit{Wedemann} verweist in diesem Zusammenhang auf \cite{ST05}.
+
+
+\subsection{Zustandsbasierter Test}\label{subsec:zustandsbasierter-test}
+Wenn eine Methode einer Klasse bei unterschiedlichen Feldern ein anderes Verhalten zeigt, ist das Verhalten von dem \textbf{inneren Zustand abhängig}.\\
+Da sich dies auf Testgegenstände auswirkt, muss das unterschiedliche Verhalten in den verschiedenen Zuständen getestet werden.\\
+\textit{Wedemann} führt als Beispiel in \cite[46 ff.]{Wed09c} einen Stack an, bei dem die Methoden \code{push()} / \code{pop() / \code{top()}} anderes Verhalten zeigen, je nachdem, ob der Stack gefüllt (\textit{filled}), leer (\textit{empty}) oder voll (\textit{full}) ist:
+
+\begin{minted}{java}
+class Stack {
+    public Stack(int maxSize){...}
+    public boolean isEmpty(){...}
+    public int size(){...}
+    public Object top() throws EmptyStack{...}
+    public void push(Object o) throws FullStack{...}
+    public void pop() throws EmptyStack{...}
+    ...
+}
+\end{minted}
+
+\subsubscetion{Zustände und Zustandsübergänge}
+Für einen \textbf{vollständigen Test} muss nicht nur das Verhalten in allen Zuständen z.B. anhand von allen \textbf{Äquivalenzklassen} getestet werden, sondern auch alle \textbf{Zustandsänderungen}: Hierbei werden nicht bloß die \textit{definierten} Zustandsänderungen getestet, sondern es wird auch versucht, für den Testgegenstand nicht erlaubte Zustandsänderungen zu provozieren, um die Möglichkeit diesbzgl. auszuschließen und somit evtl. späteren Fehler vorzubeugen. \\
+
+\begin{tcolorbox}[colback=red!20]
+    s. Martin temporal Coupling
+\end{tcolorbox}
+
+\noindent
+In einfachen Fällen können die benötigten Testfälle ohne Formalismus erraten werden; für kompliziertere Fälle wird ein systematisches Vorgehen benötigt, damit nichts übersehen wird.\\
+Hierzu wird zunächst ein \textbf{UML-Zustandsdiagramm} (s. Abschnitt~\ref{ch:zustandsautomaten}) der Zustände und ihrer Zustandsübergänge erstellt (s. Abbidung~\ref{fig:popstate}), woraufhin dann eine Zustandsübergangstabelle (s. Tabelle~\ref{tab:popstate}) erstellt wird, aus der alle Zustände und Ereignisse mit ihren Folgezuständen abgelesen werden können.
+
+\begin{figure}
+    \centering
+    \includegraphics[scale=0.5]{part four/Testende Verfahren/img/popstate}
+    \caption{UML-Zustandsdiagramm für Objekte der Klasse \textit{Stack}. (Quelle: in Anlehnung an \cite[Abb. 5.1, 47]{Wed09c})}
+    \label{fig:popstate}
+\end{figure}
+
+\begin{table}[]
+    \centering
+    \setlength{\tabcolsep}{0.5em}
+    \def\arraystretch{1.5}
+    \begin{tabular}{|l|c|l|c|}
+        \hline
+        & \textbf{empty}                                                                     & \multicolumn{1}{c|}{\textbf{filled}}                                                                          & \textbf{full}                                                                     \\ \hline
+        \code{push()} & filled                                                                             & \begin{tabular}[c]{@{}l@{}}{[}size\textless{}maxsize-1{]}: filled\\ {[}size = maxsize-1{]}: full\end{tabular} & \begin{tabular}[c]{@{}c@{}}full\\ \textless{}Exception\textgreater{}\end{tabular} \\ \hline
+        \code{pop()}  & \begin{tabular}[c]{@{}c@{}}empty\\ \textless{}Exception\textgreater{}\end{tabular} & \begin{tabular}[c]{@{}l@{}}{[}size>1{]} : filled\\ {[}size=1{]}: empty\end{tabular}                       & filled                                                                            \\ \hline
+    \end{tabular}
+    \caption{Zustandsübergangstabelle für das Beispiel \textit{Stack}. Die Inhalte der Tabelle sind die Folgezustände; in spitzen Klammern stehen die Ergebnisse bei verbotenen Übergängen. (Quelle: \cite[Tab. 5.1, 48]{Wed09c})}
+    \label{tab:popstate}
+\end{table}
+
+\noindent
+Für den Test müssen in allen Zuständen die Methode \code{isEmpty()}, \code{size()} und \codde{top()} getestet werden, die den Zustand nicht verändern, woraus sich bereits $9$ Tests ergeben.\\
+Anhand der Zustandsübergangstabelle müssen alle Zustandsübergänge getestet werden, woraus sich $8$ weitere Tests ergeben.\\
+Die Aufgabe der Tester hierbei ist es, einen oder mehrere Pfade zufinden, die dies mit möglichst geringem Aufwand ermöglichen (vgl.~\cite[48]{Wed09c}): Für das o.a. Beispiel wäre das ein Stack mit \code{maxsize=3}, bei dem $4$-mal \code{push()} und $3$-mal \code{pop()} hintereinander aufgerufen wird.
+
+\subsubsection*{Zustände}
+\textit{Wedemann} merkt an, das sich bei dieser Diskussion die Frage ergeben kann, ``was denn nun genau unter einem Zustand zu verstehen ist`` (\cite[48]{Wed09c}): Ist das bereits jedes Attribut, das über \code{set()} verändert und über \code{get()} einen anderen Zustand repräsentieren kann bereits der Fall? \textit{Wedemann} bejaht dies: ``[...] auch ein Attriutwert [ist] als Zustand zu sehen und der Test ist vollständig, wenn ein gesetzter Wert auch verwendet wird.`` (\cite[48]{Wed09c}).
+Er fügt allerdings an, dass es für solch einfache Fälle nicht notwendig sei, den vorgestellten Formalismus zu verwenden, da dieser nur sinnvoll bei Kassen sei, ``wenn es mehrere Zustände gibt, in denen sich die Methoden so unterschiedlich verhalten, dass dies mit Äquivalenzklassen nicht mehr abgebildet werden kann`` (\textit{ebenda}).
