@@ -1,0 +1,46 @@
+\section{Strukturorientierte Testverfahren}
+\begin{tcolorbox}
+Bei \textbf{strukturorientierten Testverfahren}, auch \textbf{White-Box-Tests} genannt, wird zur \textbf{Konstruktion der Testfälle} als auch zur \textbf{Bestimmung der Vollständigkeit} der Tests der Quellcode herangezogen.
+\end{tcolorbox}
+
+\noindent
+Dadurch soll sichergestellt werden, dass jede existierende Codezeile in Tests ausgeführt worden ist.\\
+Wird Code in Tests nicht ausgeführt, ist nicht bekannt, ob dieser funktioniert oder nicht - was auch darauf hinweisen könnte, dass der Code nicht erreichbar und damit überflüssig ist, oder ob es sich um einen Defekt handelt.
+
+\subsubsection*{Überdeckungskriterien}
+Unter \textbf{vollständiger Überdeckung} des Quellcodes versteht man häufig, dass jede Zeile des Quellcodes einmal ausgeführt wird.\\
+Allerdings kann die Vollständigkeit von Tests auch dadurch charakterisiert werden dass jede \textbf{Verzweigung} mindestens einmal durchlaufen werden muss.\\
+Im Folgenden beschränkt sich \textit{Wedemann} auf Kriterien, die zur Definition den \textbf{Kontrollfluss} heranziehen (vgl.~\cite[49 f.]{Wed09c}); für diese existieren auch eine Vielzahl von Werkzeugen\footnote{
+\textit{Wedemann} weist ebenda auf \textbf{datenflussorientierte Testverfahren}, die sich auf die vollständige Nutzung von Daten in Tests beziehen. Zum Zeitpunkt der Veröffentlichung von \cite{Wed09c} (2009) gibt er an, dass diese zwar vielversprechend sein, es aber kaum Werkzeuge dafür gäbe.
+}.
+
+\subsubsection*{Einsatz}
+Strukturorientierte Testverfahren werden i.d.R. im \textbf{Modultest} eingesetzt (s. Abschnitt~\ref{sec:v-modell}), teilweise aber auch im Integrationstests.
+Bei System- oder Abnahmetests werden eher \textbf{Black-Box-Tests} genutzt (vgl.~\cite[50]{Wed09c}).
+
+\subsubsection*{Werkzeuge}
+Für strukturorientierte Tests ist der Einsatz von Werkzeugen notwendig, da eine händische Kontrolle viel zu aufwändig wäre.
+Für die praktische Einsetzbarkeit ist außerdem eine gute Integration in die Entwicklungsumgebung wichtig.
+
+\subsection{Anweisungsüberdeckung}
+Das einfachste Kriterium ist die \textbf{Anweisungsüberdeckung} (\textit{statement coverage}).
+
+\begin{tcolorbox}[title=Anweisungsüberdeckung]
+    Liegt eine \textbf{Anweisungsüberdeckung} vor, wurde im Test \textit{jede} Anweisung mindestens einmal ausgeführt.\\
+    Eine \textbf{Anweisungsüberdeckung} liegt dann vor, wenn \textit{jeder} Knoten eines \textbf{Kontrollflussgraphen} mindestens einmal ausgeführt worden ist.
+\end{tcolorbox}
+
+\subsubsection*{Beispiel}
+Als Beispiel sei der Kontrollflussgraph der Methode \code{countVowels()} gegeben (s. Abbildung~\ref{fig:kontrollflussgraph}).\\
+Jeder Knoten wird mit den Testdaten \code{txt="A"} mindestens einmal ausgeführt.
+
+\subsubsection*{Effektivität}
+Untersuchungen, die für verschiedene fehlerhafte Methoden die Tests ausschließlich nach Überdeckungskriterien konstruiert haben, haben festgestellt, dass die Tests, die die \textbf{Anweisungsüberdeckung} erfüllen, ca. 15\% der Fehler finden\footnote{
+\textit{Wedemann} gibt leider keine Quelle an, vgl.~\cite[51]{Wed09c}
+}.
+
+\subsubsection*{Werkzeugunterstützung}
+Für die meisten imperativen Sprachen gibt es kommerzielle und freie Tools zur Messung der Anweisungsüberdeckung.
+
+\subsubsection*{Einsatzgebiet}
+\textit{Wedemann} gibt an, dass die Messung der Anweisungsüberdeckung das verbreiteste Verfahren darstellt, es aber alleine nicht ausreicht, und deshalb im Modultest gemeinsam mit \textbf{funktionsorientierten Testverfahren} (\textit{Grey-Box-Test}) eingesetzt wird (vgl.~\cite[51]{Wed09c}).
