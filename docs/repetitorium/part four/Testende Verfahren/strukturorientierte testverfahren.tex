@@ -36,7 +36,7 @@ Jeder Knoten wird mit den Testdaten \code{txt="A"} mindestens einmal ausgeführt
 
 \subsubsection*{Effektivität}
 Untersuchungen, die für verschiedene fehlerhafte Methoden die Tests ausschließlich nach Überdeckungskriterien konstruiert haben, haben festgestellt, dass die Tests, die die \textbf{Anweisungsüberdeckung} erfüllen, ca. 15\% der Fehler finden\footnote{
-\textit{Wedemann} gibt leider keine Quelle an, vgl.~\cite[51]{Wed09c}
+\textit{Wedemann} gibt leider keine Quelle an, vgl.~\cite[51]{Wed09c}. Das gleiche gilt im übrigen für die von ihm benannten Kennzahlen zu den nachfolgenden Überdeckungskriterien.
 }.
 
 \subsubsection*{Werkzeugunterstützung}
@@ -44,3 +44,78 @@ Für die meisten imperativen Sprachen gibt es kommerzielle und freie Tools zur M
 
 \subsubsection*{Einsatzgebiet}
 \textit{Wedemann} gibt an, dass die Messung der Anweisungsüberdeckung das verbreiteste Verfahren darstellt, es aber alleine nicht ausreicht, und deshalb im Modultest gemeinsam mit \textbf{funktionsorientierten Testverfahren} (\textit{Grey-Box-Test}) eingesetzt wird (vgl.~\cite[51]{Wed09c}).
+
+\subsection{Zweigüberdeckung}
+
+Eine \textbf{Zweigüberdeckung} \textit{branch coverage} wird erreicht, wenn im Test jede \textit{Verzweigung} einmal ausgeführt worden ist.
+
+\begin{tcolorbox}[title=Zweigüberdeckung]
+Eine \textbf{Zweigüberdeckung} liegt vor, wenn \textit{jede} Kante des Kontrollflussgraphen mindestens einmal ausgeführt worden ist.\\
+    Liegt eine Zweigüberdeckung vor, ist gleichzeitig auch die \textbf{Anweisungsüberdeckung} erfüllt.
+\end{tcolorbox}
+
+\subsubsection*{Beispiel}
+Als Beispiel sei der Kontrollflussgraph der Methode \code{countVowels()} gegeben (s. Abbildung~\ref{fig:kontrollflussgraph}).\\
+Jeder Knoten wird mit den Testdaten \code{txt="AB"} mindestens einmal ausgeführt - jeder Knoten des Kontrollflussgraphen wird von mindestens einer Kante erreicht.
+
+\subsubsection*{Effektivität}
+Untersuchungen haben ergeben, dass die Tests, die so konstruiert werden, dass sie die \textbf{Zweigüberdeckung} erfüllen, ca. 30\% der Fehler finden.
+
+\subsubsection*{Werkzeugunterstützung}
+Weniger Tools zur Messung der Zweigüberdeckung als Anweisungsüberdeckung im Jahr der Veröffentlichung von \cite{Wed09c}. \textit{Wedemann} weist auf kommerziell verfügbare Werkzeuge, ohne die Werkzeuge näher zu benennen.
+
+\subsection{Pfadüberdeckung}
+Die Zweigüberdeckung bietet schon eine ziemlich vollständige Überdeckung, berücksichtigt aber Schleifen nicht genügend.
+Das Verhalten des Testgegenstandes beim abweisenden Fall oder bei mehreren Durchläufen der Schleife führen zu der Forderung verallgemeinert werden, dass im Test alle Möglichkeiten, durch den Kontrolflussgraphen zu laufen, vorkommen sollen, also alle \textit{Pfade}.
+In diesem Fall spricht man von \textbf{Pfadüberdeckung} (\textit{path coverage} bzw. \textit{loop coverage}).
+Da es bei Schleifen häufig unendlich viele Pfade gibt (\cite[52]{Wed09c}), wird anstatt der Pfadüberdeckung die \textbf{Boundary-Interior-Überdeckung} gewählt.
+
+\begin{tcolorbox}[title=Boundary-Interior-Coverage]
+    Die \textbf{Boundary-Interior-Coverage} ist eine Form der \textbf{Pfadüberdeckung}, bei der bei Schleifen der abweisende Fall (\textit{boundary}) und mindestens zwei Durchläufe (\textit{interior}) genügen.\\
+    Wird eine Boundary-Interior-Überdeckung erreicht, ist automatisch auch die \textbf{Zweigüberdeckung} erreicht.
+\end{tcolorbox}
+
+\noindent
+Boundary-Interior ist allerdings nicht immer erreichbar, da manchmal der \textbf{abweisende Fall} \textit{nicht} provoziert werden kann.\\
+\textit{Wedemann} weist darauf hin, dass Boundary-Interior von verschiedenen Autoren und Standard unterschiedlich definiert wird; so wird häufig gefordert, dass die Schleife \textit{genau einmal} durchlaufen werden soll, was aber nicht immer realisiert werden kann (vgl.~\cite[52]{Wed09c}).
+
+\subsubsection*{Beispiel}
+Als Beispiel sei der Kontrollflussgraph der Methode \code{countVowels()} gegeben (s. Abbildung~\ref{fig:kontrollflussgraph}).\\
+Eine Boundary-Interior-Überdeckung wird mit $5$ Testfällen erreicht:
+
+\begin{itemize}
+    \item \textbf{Boundary}: \code{txt = ""} (Schleife wird nicht betreten)
+    \item \textbf{Interior} (Schleife wird zweimal betreten, alle möglichen Pfade werden durchlaufen):
+    \begin{itemize}
+        \item \code{txt="AA"}
+        \item \code{txt="AB"}
+        \item \code{txt="BA"}
+        \item \code{txt="BB"}
+    \end{itemize}
+\end{itemize}
+
+\subsubsection*{Effektivität}
+Untersuchungen haben ergeben, dass die Tests, die so konstruiert werden, dass sie die Boundary-Interior-Überdeckung erfüllen, ca. 60\% der Fehler finden.
+
+\subsubsection*{Werkzeugunterstützung}
+Für kommerziell wichtige Sprachen weist \textit{Wedemann} auf kommerziell verfügbare Werkzeuge hin, ohne die Werkzeuge näher zu benennen.
+
+\subsection{Bedingungsüberdeckung}
+Die bisherigen Testfälle lassen die im Beispiel der Methode \code{countVowels()} vorhandenen Bedingungen im \code{if}-Statement außer Acht - die bisherigen Testfälle haben allesamt nur $A$ bzw. $B$ berücksichtigt.\\
+Die \textbf{Bedingungsüberdeckung} fordert, dass im Test \textit{jede} Bedingung mindestens einmal \textit{wahr} und einmal \textit{falsch} sein muss.\\
+Die wichtigste Variante der \textbf{Bedingungsüberdeckung} ist die \textbf{einfache Mehrfachbedingungsüberdeckung} \textit{modified condition decision coverage}:
+
+\begin{tcolorbox}[title=Einfache Mehrfachbedingungsüberdeckung]
+Die \textbf{einfache Mehrfachbedingungsüberdeckung} wird erreicht, wenn \textit{jede} atomare Bedingung, also jeer \textit{direkte Vergleich}, und \textit{alle zusammengesetzten Bedingungen} einmal den Wahrheitswert \textit{wahr} und einmal den Wahrheitswert \textit{falsch} annehmen.\\
+    Dadurch wird gleichzeitig eine \textbf{Zweigüberdeckung} erreicht
+\end{tcolorbox}
+
+\subsubsection*{Beispiel}
+Als Beispiel sei der Kontrollflussgraph der Methode \code{countVowels()} gegeben (s. Abbildung~\ref{fig:kontrollflussgraph}).\\
+Eine einfache Mehrfachbedingungsüberdeckung wird mit den Testdaten \code{txt="AEIOUX"} erreicht: Die Vokale in dem String sorgen dafür, dass \textit{jede atomare Bedingung} einmal wahr wird, durch das \code{X} wird einmal der \textit{gesamte Ausdruck} falsch.
+
+\subsubsection*{Effektivität}
+Untersuchungen haben ergeben, dass die Tests, die so konstruiert werden, dass sie die einfache Mehrfachbedingungsüberdeckung  erfüllen, ca. 60\% der Fehler finden.
+
+\subsubsection*{Werkzeugunterstützung}
+\textit{Wedemann} weist auf eine bessere Werkzeugunterstützung als bei der Boundary-Interior-Überdeckung hin (vgl.~\cite[53]{Wed09c}).
