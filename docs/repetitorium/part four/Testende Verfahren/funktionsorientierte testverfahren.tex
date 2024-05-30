@@ -9,7 +9,7 @@
 \noindent
 Im Folgenden werden Verfahren beschrieben, mit denen funktionsorientierte Tests effektiv und gestaltet werden können.
 
-\subsection{Funktionale Äquivalenzklassen}
+\subsection{Funktionale Äquivalenzklassen}\label{subsec:funktionale-aquivalenzklassen}
 Die Vielfältigkeit möglicher Eingabefolgen für in Software übersteigt oft die Umsetzbarkeit in Testfälle.\\
 \textbf{Äquivalenzklassen} beruhen auf der Idee, dass viele Eingabemöglichkeiten von dem System auf die gleiche Art und Weise bearbeitet werden.
 
@@ -254,28 +254,28 @@ class Stack {
 }
 \end{minted}
 
-\subsubscetion{Zustände und Zustandsübergänge}
+\subsubsection*{Zustände und Zustandsübergänge}
 Für einen \textbf{vollständigen Test} muss nicht nur das Verhalten in allen Zuständen z.B. anhand von allen \textbf{Äquivalenzklassen} getestet werden, sondern auch alle \textbf{Zustandsänderungen}: Hierbei werden nicht bloß die \textit{definierten} Zustandsänderungen getestet, sondern es wird auch versucht, für den Testgegenstand nicht erlaubte Zustandsänderungen zu provozieren, um die Möglichkeit diesbzgl. auszuschließen und somit evtl. späteren Fehler vorzubeugen. \\
 
 \begin{tcolorbox}[colback=white]
     Eine oft übersehene Fehlerquelle ist das sog. \textbf{temporal coupling}: Eine Methode ist von dem Zustand des Objektes abhängig und funktioniert korrekt, wenn das Objekt vorher durch eine andere Operation in einen entsprechenden Zustand versetzt wurde; liegt der Zustand nicht vor, erfolgt u.U. keine korrekte Berechnung (vgl.\cite[44 f.]{Mar08} sowie \cite[259]{Mar08}):
 
     \begin{minted}{java}
-        private Object calculate() {
-            this.computationBase = calculateBase();
-            this.result = calculateValue();
+private Object calculate() {
+    this.computationBase = calculateBase();
+    this.result = calculateValue();
 
-            return result;
-        }
+    return result;
+}
 
-        private Object calculateValue() {
-            ComputatioBase base = this.computationBase;
+private Object calculateValue() {
+    ComputatioBase base = this.computationBase;
 
-            if (base.leastSigificantBit() == 0) {
-                ...
-            }
-            ...
-        }
+    if (base.leastSigificantBit() == 0) {
+        ...
+    }
+    ...
+}
     \end{minted}
 
     \noindent
@@ -284,19 +284,19 @@ Für einen \textbf{vollständigen Test} muss nicht nur das Verhalten in allen Zu
      \noindent
      Eine mögliche Lösung für dieses Problem könnte durch ein Refactoring erfolgen:
     \begin{minted}{java}
-        // calculateBase wird in jedem Fall ausgeführt, wenn
-        // die Berechnung des Ergebnisses angefordert wird
-        private Object calculateBaseAndValue() {
-            this.computationBase = calculateBase();
+// calculateBase wird in jedem Fall ausgeführt, wenn
+// die Berechnung des Ergebnisses angefordert wird
+private Object calculateBaseAndValue() {
+    this.computationBase = calculateBase();
 
-            if (this.computationBase.leastSigificantBit() == 0) {
-                this.result = ...
-            } else {
-                this.result = ...
-            }
+    if (this.computationBase.leastSigificantBit() == 0) {
+        this.result = ...
+    } else {
+        this.result = ...
+    }
 
-            return this.result;
-        }
+    return this.result;
+}
     \end{minted}
 \end{tcolorbox}
 
