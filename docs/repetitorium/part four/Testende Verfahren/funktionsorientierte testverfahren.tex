@@ -257,9 +257,49 @@ class Stack {
 \subsubscetion{Zustände und Zustandsübergänge}
 Für einen \textbf{vollständigen Test} muss nicht nur das Verhalten in allen Zuständen z.B. anhand von allen \textbf{Äquivalenzklassen} getestet werden, sondern auch alle \textbf{Zustandsänderungen}: Hierbei werden nicht bloß die \textit{definierten} Zustandsänderungen getestet, sondern es wird auch versucht, für den Testgegenstand nicht erlaubte Zustandsänderungen zu provozieren, um die Möglichkeit diesbzgl. auszuschließen und somit evtl. späteren Fehler vorzubeugen. \\
 
-\begin{tcolorbox}[colback=red!20]
-    s. Martin temporal Coupling
+\begin{tcolorbox}[colback=white]
+    Eine oft übersehene Fehlerquelle ist das sog. \textbf{temporal coupling}: Eine Methode ist von dem Zustand des Objektes abhängig und funktioniert korrekt, wenn das Objekt vorher durch eine andere Operation in einen entsprechenden Zustand versetzt wurde; liegt der Zustand nicht vor, erfolgt u.U. keine korrekte Berechnung (vgl.\cite[44 f.]{Mar08} sowie \cite[259]{Mar08}):
+
+    \begin{minted}{java}
+        private Object calculate() {
+            this.computationBase = calculateBase();
+            this.result = calculateValue();
+
+            return result;
+        }
+
+        private Object calculateValue() {
+            ComputatioBase base = this.computationBase;
+
+            if (base.leastSigificantBit() == 0) {
+                ...
+            }
+            ...
+        }
+    \end{minted}
+
+    \noindent
+    Das \textbf{hidden temporal coupling} sorgt in diesem Fall dafür, dass wahrscheinlich ein falsches Ergebnis berechnet wird, wenn zuerst \code{calculateValue()} aufgerufen wird, ohne, das vorher \code{calculateBase()} ausgeführt wurde.\\
+
+     \noindent
+     Eine mögliche Lösung für dieses Problem könnte durch ein Refactoring erfolgen:
+    \begin{minted}{java}
+        // calculateBase wird in jedem Fall ausgeführt, wenn
+        // die Berechnung des Ergebnisses angefordert wird
+        private Object calculateBaseAndValue() {
+            this.computationBase = calculateBase();
+
+            if (this.computationBase.leastSigificantBit() == 0) {
+                this.result = ...
+            } else {
+                this.result = ...
+            }
+
+            return this.result;
+        }
+    \end{minted}
 \end{tcolorbox}
+
 
 \noindent
 In einfachen Fällen können die benötigten Testfälle ohne Formalismus erraten werden; für kompliziertere Fälle wird ein systematisches Vorgehen benötigt, damit nichts übersehen wird.\\
