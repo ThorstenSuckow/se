@@ -121,3 +121,28 @@ Untersuchungen haben ergeben, dass die Tests, die so konstruiert werden, dass si
 
 \subsubsection*{Werkzeugunterstützung}
 \textit{Wedemann} weist auf eine bessere Werkzeugunterstützung als bei der Boundary-Interior-Überdeckung hin (vgl.~\cite[53]{Wed09c}).
+
+\subsection{Vergleich der Überdeckungen}
+
+Die verschiedenen Überdeckungskriterien lassen sich auch hierarchisch darstellen (s. Abbildung~\ref{fig:coverage-criteria-hierarchy}).
+
+\begin{figure}
+    \centering
+    \includegraphics[scale=0.4]{part four/Testende Verfahren/img/coverage-criteria-hierarchy}
+    \caption{Hierarchie der verschiedenen Überdeckungskriterien. (Quelle: in Anlehnung an \cite[Abb. 5.2, 53]{Wed09c})}
+    \label{fig:coverage-criteria-hierarchy}
+\end{figure}
+
+ \noindent
+Eine \tectbf{vollständige Überdeckung} zu erreichen ist schwierig.
+Bereits eine Anweisungsüberdeckung ist bei \textit{nicht trivialer} Software mit hohem Aufwand verbunden: Forderungen nach höheren Überdeckungen ziehen entsprechend höheren Aufwand nach sich.\\
+Man sollte also entscheiden, ob eine vollständige Überdeckung notwendig ist, oder ob eine \textbf{partielle Überdeckung} (z.B. $80$ - $90$\%) ausreichend sein könnte\footnote{
+``da [erfahrungsgemäß] die letzte 10-20\% am schwierigsten zu erreichen sind`` (\cite[54]{Wed09c}).
+}.\\
+Eine vollständige Überdeckung kann auch nur für \textbf{kritische Codeteile} gefordert werden.\\
+
+\noindent
+Trotz des hohen Aufwandes ist es gerade bei Software, von der Menschenleben abhängen, notwendig, die Überdeckungskriterien in der Praxis als Werkzeug zu nutzen: Wird im Test die Boundary-Interior-Überdeckung und die einfache Mehrfachbedingungsüberdeckung gleichzeitig erfüllt, sind mit sehr hoher Wahrscheinlichkeit die meisten durch Codierfehler verursachten Defekte entdeckt.\\
+
+\noindent
+Coverage-Werkzeuge sind aber in jedem Fall wertvolle Hilfen für Entwickler im \textbf{Modultest}, um die Vollständigkeit der Testfälle zu prüfen.
