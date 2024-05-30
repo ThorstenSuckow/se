@@ -106,13 +106,15 @@ Die \textbf{Bedingungsüberdeckung} fordert, dass im Test \textit{jede} Bedingun
 Die wichtigste Variante der \textbf{Bedingungsüberdeckung} ist die \textbf{einfache Mehrfachbedingungsüberdeckung} \textit{modified condition decision coverage}:
 
 \begin{tcolorbox}[title=Einfache Mehrfachbedingungsüberdeckung]
-Die \textbf{einfache Mehrfachbedingungsüberdeckung} wird erreicht, wenn \textit{jede} atomare Bedingung, also jeer \textit{direkte Vergleich}, und \textit{alle zusammengesetzten Bedingungen} einmal den Wahrheitswert \textit{wahr} und einmal den Wahrheitswert \textit{falsch} annehmen.\\
+Die \textbf{einfache Mehrfachbedingungsüberdeckung} wird erreicht, wenn \textit{jede} atomare Bedingung, also jeder \textit{direkte Vergleich}, und \textit{alle zusammengesetzten Bedingungen} einmal den Wahrheitswert \textit{wahr}\footnote{
+\textit{Minterm}: Für genau eine Variablenbelegung wahr (vgl.~\cite[92]{Hof22})
+} und einmal den Wahrheitswert \textit{falsch} annehmen.\\
     Dadurch wird gleichzeitig eine \textbf{Zweigüberdeckung} erreicht
 \end{tcolorbox}
 
 \subsubsection*{Beispiel}
 Als Beispiel sei der Kontrollflussgraph der Methode \code{countVowels()} gegeben (s. Abbildung~\ref{fig:kontrollflussgraph}).\\
-Eine einfache Mehrfachbedingungsüberdeckung wird mit den Testdaten \code{txt="AEIOUX"} erreicht: Die Vokale in dem String sorgen dafür, dass \textit{jede atomare Bedingung} einmal wahr wird, durch das \code{X} wird einmal der \textit{gesamte Ausdruck} falsch.
+Eine einfache Mehrfachbedingungsüberdeckung wird mit den Testdaten \code{txt="AEIOUX"} erreicht: Die Vokale in dem String sorgen dafür, dass \textit{jede atomare Bedingung} einmal wahr wird, durch das \code{X} wird einmal der \textit{gesamte Ausdruck} falsch (\code{if (txt.charAt(i) == 'A' || txt.charAt(i) == ...)}).
 
 \subsubsection*{Effektivität}
 Untersuchungen haben ergeben, dass die Tests, die so konstruiert werden, dass sie die einfache Mehrfachbedingungsüberdeckung  erfüllen, ca. 60\% der Fehler finden.
