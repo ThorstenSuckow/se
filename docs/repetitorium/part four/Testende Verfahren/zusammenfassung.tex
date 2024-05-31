@@ -1,0 +1,28 @@
+\section{Zusammenfassung}
+
+\begin{itemize}
+    \item für die \textbf{Qualitätssicherung} einer Software sind \textbf{testende Verfahren} unverzichtbar
+    \item es gibts verschiedene \textbf{systematische Verfahren}, die bei der Erstellung von \textbf{Testfällen} hilfreich sein können:
+    \begin{itemize}
+        \item Bei \textbf{funktionsorientierten Tests} (\textbf{Black-Box-Tests}) orientieren sich Tester an \textbf{spezifizierter Funktionalität}.
+        \item[] Wichtige Hilfsmittel sind hierbei \textbf{Äquivalenzklassen} von \textbf{Eingabedaten}, bei denen sich Software \textbf{gleichartig} verhält.
+        \item[] Außerdem helfen \textbf{zustandsbasierte Tests} dabei, Systeme in allen \textbf{Zuständen} und \textbf{Zustandsübergängen} zu testen.
+        \item Bei \textbf{strukturorientierten Testverfahren} (\textbf{White-Box-Tests}) orientieren sich Tester an der \textbf{inneren Struktur} der Software.
+        \item[] Der Umfang strukturorientierter Testverfahren hängt davon ab, ob
+        \begin{itemize}
+            \item alle Anweisungen (\textbf{Anweisungsüberdeckung})
+            \item alle Verzweigungen (\textbf{Zweigüberdeckung})
+            \item alle Schleifendurchläufe (\textbf{Boundary-Interior-Überdeckung})
+            \item alle Bedingungen (\textbf{einfache Mehrfachbedingungsüberdeckung})
+        \end{itemize}
+        \noindent getestet werden sollen, wobei der tatsächliche Umfang durch Überdeckungskriterien  definiert wird
+        \item[] Strukturorientierte Tests werden in der Regel nur im \textbf{Klassen-} bzw. \textbf{Komponententest} durchgeführt.
+        \item eine \textbf{vollständige Überdeckung} garantiert keinen vollständigen Test, da hierbei nicht auf Funktionalität geachtet wird, umgekehrt werden wahrscheinlich nicht alle Codeteile getestet
+        \item aus diesem Grund existiert der \textbf{Grey-Box-Test}, der funktionsorientiert testet und die Quellcode-Abdeckung mit Werkzeugen überprüft.
+        \item \textbf{Grey-Box-Tests} werden häufig im \textbf{Klassentest} eingesetzt
+    \end{itemize}
+    \item für den Test von Systemen, die mit \textbf{objektorientierten Mitteln} implementiert worden sind, gibt es Techniken, die \textbf{Vererbung}, \textbf{Kapselung}  und \textbf{parametrisierte Klassen} berücksichtigen
+    \item für die \textbf{Integration} und den \textbf{Integrationstest} gibt es verschiedene Vorgehensweisen, wobei sich in der Praxis der \textbf{Bottom-Up-Ansatz} bewährt hat
+    \item im \textbf{Systemtest} wird neben der \textbf{Funktionalität} des Gesamtsystems ach die nicht-funktionalen Anfforderungen getestet
+    \item der Kunde prüft das System im \textbf{Abnahmetest} auf seine Einsetzbarkeit, wozu der \textbf{Verbundtest}, \textbf{Probebetrieb} oder der \textbf{Betatest} gehören kann
+\end{itemize}
