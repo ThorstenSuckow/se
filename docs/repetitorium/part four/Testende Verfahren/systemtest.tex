@@ -1,0 +1,48 @@
+\section{Systemtest}
+
+\begin{tcolorbox}[title=Systemtest]
+    Im \textbf{Systemtest} als reiner \textbf{Black-Box-Test} wird die korrekte Funktion des \textbf{Gesamtsystems} getestet, und die Übereinstimmung mit den Ergebnissen der Analyse überprüft.\\
+    Der \textbf{Systemtest} testet das Gesamtsystem in möglichst realier Umgebung auf Grundlage der Analyse und Anforderungsdokumente.
+\end{tcolorbox}
+
+\noindent
+Der \textbf{Systemtest} wird manchmal auch Werkstest genannt.
+
+\subsubsection*{Durchführung}
+Art oder Details der Implementierung werden im Systemtest nicht berücksichtigt und häufig von für diese Testart geschulten Testern durchgeführt. Partnersysteme, mit denen das zu testende System interagiert, werden meist simuliert.
+
+\subsubsection*{Testarten}
+Der \textbf{Systemtest} umfasst nicht nur den Test der Funktionalität, sondern als wesentliches Elemente auch die Überprüfung der Erfüllung der \textbf{nicht-funktionalen Anforderungen}.
+
+\subsubsection*{Funktionstest}
+Ein wichtiges Element des Systemtests ist der \textbf{Funktionstest}: Hier wird die \textbf{Funktionstüchtigkeit} und die \textbf{Vollständigkeit} des gesamten entwickelten Systems überprüft.\\
+Hierbei handelt es sich um einen rein \textbf{funktionsorientierten} Test: Grundlage für die testfälle sind \textbf{Anwendungsfälle}, \textbf{GUI-Beschreibungen} oder \textbf{Schnittstellenbeschreibungen}.
+
+\subsubsection*{Massentest}
+Der \textbf{Massentest} überprüft, ob das System für das \textbf{geforderte Volumen} geeignet ist.
+Bspw. kann überprüft werden, ob das System mit einer realen (großen) Datenmenge wie spezifiziert funktioniert.
+Gemessen wird hier die \textbf{Reaktionszeit}.
+
+\subsubsection*{Lasttest}
+Prüfziel des \textbf{Lasttests} ist die \textbf{Zuverlässigkeit} des Systems: Hierzu wird das System im \textbf{Grenzbereich} des spezifizierten Verhaltens betrieben, bspw. $n$ Aufrufe / Minute, Ausfall von Partnersystemen, Import fehlerhafter Daten (vgl.~\cite[63]{Wed09c}).
+
+\subsubsection*{Stresstest}
+Der \textbf{Stresstest} prüft die \textbf{Robustheit} des Systems: Wie reagiert das System, wenn \textbf{spezifizierte Grenzen überschritten} werden: Bspw. kann geprüft werden, ob $1000$ statt $100$ Zugriffe / Minute das System zusammenbricht oder nur extrem langsam wird.
+
+\subsubsection*{Dokumentenprüfung}
+Bei der \textbf{Dokumentenprüfung} wird geprüft, ob \textbf{benötigte} und \textbf{sinnvolle} Dokumente vorhanden sind, und ob diese vollständig, inhaltlich korrekt und für die Zielgruppe angemessen sind.
+
+\subsubsection*{Installationstest}
+Im \textbf{Installationstest} wird überprüft, ob sich die Software so wie beschrieben installieren lässt.
+
+\subsubsection*{Regressionstest}
+Wird eine Software in mehreren Inkrementen geliefert, muss das bereits vorhandene System mit den gelieferten Inkrementen erneut geprüft werden, um auszuschliessen, dass bereits existierende Funktionalität durch unerwartete Querwirkungen oder Missverständnisse \textit{bricht}.
+Diese Tests nennt man \textbf{Regressionstests}.\\
+Um Aufwand zu vermeiden sind Regressionstest i.d.R. automatisiert.
+
+\subsubsection*{Smoke-Test}
+Der \textbf{Smoke-Test} stellt einen Spezialfall da.
+Diese Art von Test bedeutet eine \textbf{strichprobenartige Überprüfung der Kernfunktionalität}.\\
+Es wird dann eingesetzt, wenn ein Systemtest aus wichtigem Grund nicht möglich ist, aber trotzdem geliefert werden muss (vgl.~\cite[64]{Wed09c}).
+Als Beispiel führt \textit{Wedemann} ebenda die Lieferung eines \textit{Hotfixes} für einen akuten Fehlerfall im Wirkbetrieb an: In diesem Fall stellt ein grober Test über alle Funktionalität sicher, dass sich nicht weitere Fehler einschleichen.\\
+Smoke-Tests werden auch bei iterativer und agiler Entwicklung regelmäßig während der Entwicklung durchgeführt.
