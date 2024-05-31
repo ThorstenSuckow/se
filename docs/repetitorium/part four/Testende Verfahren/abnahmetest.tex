@@ -1,0 +1,36 @@
+\section{Abnahmetest}
+
+\begin{tcolorbox}[title=Abnahmetest]
+Im \textbf{Abnahmetest} wird das gesamte System in realer Umgebung durch den \textbf{Kunden} auf der Grundlage des \textbf{Vertrags} und der \textbf{Anforderungsdokumente} getestet, bevor es generell zum Einsatz gebracht wird. Es handelt sich um einen reinen \textbf{Black-Box-Test}.
+\end{tcolorbox}
+
+\subsubsection*{Anonymer Markt}
+Auch wenn die Software für den \textbf{anonymen Markt} entwickelt wurde, sollte ein Abnahmetest der Software durch Unabhängige durchgeführt werden, die das System unvoreingenommen prüfen.
+
+\subsubsection*{Umfang}
+Anstatt den \textbf{Systemtest} zu wiederholen, werden seine Testfälle und Testprotokolle begutachtet und das System stichprobenartig getestet.
+Hierzu werden i.d.R. Beispiele aus der mitgelieferten Dokumentation von späteren Endanwendern ausprobiert.
+
+\subsubsection*{Verbundtest}
+Software, die für Kunden entwickelt wurde, die Rechenzentren betreiben und einen Mix aus Standardanwendungen und Individualsoftware einsetzen, wirkt sich oft auf andere im Betrieb befindliche Software aus, weshalb der Betrieb neuer Software häufig mit Änderungen an bestehenden Systemen in Verbindung steht.\\
+Dies birgt ein hohes Risiko für Fehler im Gesamtsystem (vgl.~\cite[65]{Wed09c}).\\
+Damit dieses Risiko minimiert wird, werden \textbf{Verbundtests} durchgeführt, bei denen alle geänderten Systeme in speziellen Rechenzentren getestet werden, die identisch zu den Rechenzentren sind, die der Kunde im Produktionsbetrieb verwaltet\footnote{
+    \textit{Wedemann} merkt an, dass diese Rechenzentren häufig gleichzeitig Ersatz für einen möglichen Ausfall von Produktivrechenzentren sind (vgl.~\cite[65]{Wed09c})
+}.
+
+\subsubsection*{Probebetrieb}
+Die Eignung eines vollständig getesteten Systems und die Akzeptanz von Endanwendern im realen Betrieb kann in einem \textbf{Probebetrieb} überprüft werden, bevor das neue System umfassen in Betrieb genommen wird.\\
+\textit{Wedemann} führt hierzu verschiedene Möglichkeiten auf (vgl.~\cite[65]{Wed09c}):
+
+\begin{itemize}
+    \item Paralleler Einsatz der neuen Anwendung zum existierenden System
+    \item[]$\rightarrow$ dies kann allerdings zu einer hohen Arbeitsbelastung bei den Anwendern führen
+    \item Einsatz des neuen Systems nur in einem Teil der Organisation, nachträgliches Einführen in der gesamten Organisation
+    \item[] $\rightarrow$ hierbei werden meist Daten erfasst, die dann anschliessend in das Produktivsystem überführt werden müssen, was mit Schwierigkeiten und Aufwänden verbunden ist
+    \item als Alternative kann die Akzeptanz der Nutzer in umfangreichen Schulungen überprüft und eine \textbf{Rückfalllösung} für eine nicht erfolgreiche Einführung implementiert werden
+    \item[]$\rightarrow$ auch dieses Vorgehen ist mit erheblichem Aufwand un Risiko verbunden
+\end{itemize}
+
+\subsubsection*{Betatest}
+Bei Entwicklungen für den anonymen Markt ist der Probebetrieb nicht direkt möglich, weshalb in einem \textbf{Betatest} die Software bei ausgewählten \textit{Piloktkunden} installiert wird.\\
+Ein negativer Seiteneffekt des Betatests als \textbf{Marketingmaßnahme} kann allerdings die gänzliche Abkehr des Pilotkunden von der Software sein, falls dieser im Betatest feststellt, dass die Software nicht ausgereift ist.
