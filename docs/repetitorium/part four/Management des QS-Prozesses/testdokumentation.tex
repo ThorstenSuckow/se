@@ -1,0 +1,95 @@
+\section{Testdokumentation}
+Tests müssen aus verschiedenen Gründen \textbf{dokumentiert} werden:
+
+\begin{itemize}
+    \item Tests sollen von Mitarbeitern und Kunden begutachtet werden können, damit diese feststellen können, ob Annahmen der Tester korrekt und Tests vollständig sind; Projektleiter möchten Testfälle prüfen, damit Merkmale mit hoher Priorität genügend intensiv und Merkmale mit niedriger Priorität nicht zu intensiv geprüft werden
+    \item die Dokumentation soll helfen, den Testbetrieb reibungslos ablaufen zu lassen, für den meist wenig Zeit zur Verfügung steht
+    \item die Dokumentation soll Testern helfen, wenn eine Unterbrechung der Durchführung der Tests erfolgen muss (aufgrund Fehler oder Ausfall Personal)
+    \item ein schriftlicher Nachweis der Durchführung von Tests ist oft Voraussetzung für eine \textbf{Zertifizierung}, bspw. nach \textbf{ISO 9000}\footnote{
+    \url{https://de.m.wikipedia.org/wiki/Qualit\%C3\%A4tsmanagementnorm}, abgerufen 01.06.2024
+    } oder \textbf{CMM}\footnote{
+    \url{https://de.wikipedia.org/wiki/Capability_Maturity_Model}, abgerufen 01.06.2024
+    }
+\end{itemize}
+
+\noindent
+In der Praxis hat sich eine Unterteilung der Dokumentation in \textbf{Testfälle}, \textbf{Testprotokolle} und \textbf{Fehlerberichte} als geeignet erwiesen:
+
+\begin{itemize}
+    \item der \textbf{Testfall} beschreibt die Durchführung eines Tests detailliert
+    \item das \textbf{Testprotokoll} protokolliert die Durchführung eines Tests
+    \item im Test gefundene Fehler werden in \textbf{Fehlerberichten} detailliert festgehalten und verarbeitet
+\end{itemize}
+
+\noindent
+Dieses Vorgehen hat verschiedene Gründe: Die Aufteilung in \textbf{Testfall} und \textbf{Testprotokoll} ist wichtig, da ein Test meist mehrfach durchgeführt wird, bspw. wenn Fehler auftreten oder mehrere Lieferungen erfolgen - der gleiche Test muss also mehrfach dokumentiert werden, was mit \textit{minimalem Aufwand} gelingt, wenn Testfall und Protokoll getrennt sind.\\
+Die gesonderte Verarbeitung von \textbf{Fehlerberichten} ist günstig, da einerseits ein Fehler gleichzeitig in mehreren Tests auftreten kann (s. Abbildung~\ref{fig:testdokumentation}) und andererseits Fehlerberichte Gegenstand eines komplexen Arbeitsprozesses sind.
+
+\begin{figure}
+    \centering
+    \includegraphics[scale=0.4]{part four/Management des QS-Prozesses/img/testdokumentation}
+    \caption{Übersicht über die Testdokumentation. (Quelle: in Anlehnung an~\cite[Abb. 6.1, 72]{Wed09c})}
+    \label{fig:testdokumentation}
+\end{figure}
+
+
+\subsubsection*{Testfall}
+Ein \textbf{Testfall} beschreibt detailliert die Durchführung von Tests und dient vor allem dazu, dass Tester die Tests schnell und ohne besonderen Vorkenntnisse der fachlichen Zusammenhänge durchführen können.\\
+Hierzu werden die durchzuführenden Aktionen und die erwarteten Ergebnisse tabellarisch beschrieben, wie im folgenden Beispiel:
+
+\subsubsection*{Testfall MAR1-01: Kundenliste erzeugen für PLZ - Gutfall}
+
+    \begin{itemize}
+        \item[] \textbf{Autor}: at
+        \item[] \textbf{Kategorie}: Systemtest
+        \item[] \textbf{Beschreibung}:
+        \item[] \textbf{Setup}:
+        \begin{itemize}
+            \item Im System sind die Kundendaten TD01 eingespielt und nicht modifiziert worden
+            \item Der Nutzer ist angemeldet und besitzt die Rolle ``Leitender Mitarbeiter``
+        \end{itemize}
+    \end{itemize}
+
+    \noindent
+    \textbf{Vorgehen}:
+    \begin{table}[]
+        \centering
+        \setlength{\tabcolsep}{0.5em}
+        \def\arraystretch{1.5}
+        \begin{tabular}{|c|l|c|}
+            \hline
+            \multicolumn{1}{|l|}{\textbf{Lfd. Nr.}} & \multicolumn{1}{c|}{\textbf{Schritt}}        & \textbf{erwartetes Ergebnis}                        \\ \hline
+            1                                       & Auswahl PLZ Combobox                         & ist ausgewählt                                      \\ \hline
+            2                                       & Auswahl von-bis                              & ist ausgewählt                                      \\ \hline
+            3                                       & Eingabe 18430 und 18435 in die Eingabefelder & Zahlen werden dargestellt                           \\ \hline
+            4                              & Export anklicken                             & \multicolumn{1}{l|}{Dateiauswahldialog öffnet sich} \\ \hline
+            5                              & Auswahl eines geeigneten Dateinamens         & \multicolumn{1}{l|}{Datei mit Inhalt der Daten}     \\ \hline
+        \end{tabular}
+    \end{table}
+
+\begin{itemize}
+    \item[] \textbf{Zugrundeliegende Anforderungen}:
+    \begin{itemize}
+        \item Anwendungsfall MAR-1 vom 11.01.08
+        \item GUI-Entwurf MAR-1 vom 26.03.08
+        \item Liste der Geschäftsregeln (GSR) vom 18.01.08
+    \end{itemize}
+\end{itemize}
+
+\subsubsection*{TestProtokoll}
+Im \textbf{Tesprotokoll} wird der \textbf{Testfortschritt} protokolliert - da der Ablauf bereits im \textbf{Testfall} beschrieben ist, kann das Protokoll kurz gefasst sein, wie im Folgenden Beispiel:
+
+\subsubsection*{Testprotokoll für Testfall MAR1-01: Kundenliste erzeugen für PLZ - Gutfall}
+\begin{table}[]
+    \begin{tabular}{|c|c|c|c|c|c|c|}
+        \hline
+        \multicolumn{1}{|l|}{\textbf{Lfd. Nr.}} & \textbf{getestete Version} & \textbf{Datum} & \multicolumn{1}{l|}{\textbf{Tester}} & \multicolumn{1}{l|}{\textbf{bis Schritt}} & \multicolumn{1}{l|}{\textbf{Status}} & \multicolumn{1}{l|}{\textbf{Ticket}} \\ \hline
+        1                                       & SYSTST2                    & 04.04.08       & at                                   & 1                                         & Fehler                               & 123                                  \\ \hline
+        2                                       & SYSTST3                    & 04.04.08       & at                                   & 5                                         & Fehler                               & 456                                  \\ \hline
+        3                                       & SYSTST5                    & 04.04.08       & at                                   & 5                                         & OK                                   &                                      \\ \hline
+    \end{tabular}
+\end{table}
+
+\subsubsection*{Modultest}
+Die Dokumentation von \textbf{Modultest} stellt einen Sonderfall dar.\\
+Bei der Verwendung von Unittests (bspw. \textbf{JUnit}) kann die Dokumentation in dem Quellcode als Javadoc hinterlegt werden; außerdem ist eine Protokollierung nicht notwendig, da die Tests jederzeit ohne großen Aufwand durchgeführt werden können.
