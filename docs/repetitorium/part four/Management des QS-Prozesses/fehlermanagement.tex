@@ -1,0 +1,45 @@
+\section{Fehlermanagement}
+\textbf{Fehlerberichte} (\textit{Bug-Tickets}) werden von verschiedenen Projektbeteiligten genutzt:
+
+\begin{itemize}
+    \item Tester, Entwickler und Kunden finden Fehler und  möchten diese dem Entwicklungsteam mitteilen
+    \item Entwickler benötigen eine möglichst präzise Beschreibung der Fehler, um Fehlersituationen nachvollziehen und den Defekt beheben zu können
+    \item die Projektleitung will verhindern, dass Fehlermeldungen verloren gehen, die Bearbeitung von Fehlermeldungen steuern und den Überblick über Fehlerberichte und den Bearbeitungsstand behalten
+\end{itemize}
+
+\subsubsection*{Fehlerbericht}
+
+Ein Fehlerbericht sollte mindestens folgende Informationen beinhalten (vgl.~\cite[75]{Wed09c}):
+
+\begin{itemize}
+    \item eindeutige Nummer
+    \item Kurztitel
+    \item Autor
+    \item Priorität
+    \item betroffenes System
+    \item betroffene Version
+    \item ausführliche Beschreibung
+    \item Bearbeiter
+    \item Bearbeitungsvermerke mit Datum
+    \item aktueller Status der Bearbeitung (etwa: offen, zugewiesen, nicht nachvollziehbar, in Arbeit, im Test, Wiedervorlage, gelöst, fertig)
+    \item Anlagen, bspw. Screenshots
+\end{itemize}
+
+\noindent
+Solche Berichte werden üblicherweise mit Hilfe von \textbf{Fehlermanagementwerkzeugen} (\textit{Bugtracking-Tools}, bspw. \textbf{Jira}\footnote{
+\url{https://www.atlassian.com/de/software/jira}, abgerufen 01.06.2024
+}) gepflegt.
+
+\subsubsection*{Workflow}
+Die \textbf{Bearbeitung von Fehlerberichten} erfolgt i.d.R. durch viele Personen, wobei der Ablauf der Bearbeitungen bestimmten \textbf{Workflows} folgt, bspw. wie folgt:
+
+\begin{enumerate}
+    \item Ein Fehler tritt beim Kunden im Abnahmetest auf und wird in einem Fehlerbericht dokumentiert
+    \item der Fehlerbericht wird vom Fehlermanager des Entwicklungsteams geprüft und einem Entwickler zur Prüfung weitergeleitet
+    \item der Entwickler versucht, die Fehlermeldung nachzuvollziehen; im Erfolgsfall behebt er den Defekt und leitet dies an den Fehlermanager weiter, der den Fehlerbericht einem Tester zum Test gibt
+    \item treten erneut Fehler auf, bekommt ein Entwickler den Fehlerbericht erneut, bis die Bearbeitung erfolgreich war
+    \item der Fehlerbericht wird an den Liefermanager weitergegeben, damit er ihn bei der nächsten Lieferung für den Abnahmetest berücksichtigen kann
+\end{enumerate}
+
+\noindent
+Der Ablauf solcher Workflows wird in größeren Projekten normalerweise im Managementplan genau definiert (vgl.~\cite[76]{Wed09c}).
