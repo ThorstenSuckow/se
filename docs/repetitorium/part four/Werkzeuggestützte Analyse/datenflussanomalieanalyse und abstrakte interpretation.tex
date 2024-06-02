@@ -1,4 +1,4 @@
-\usepackage{lstmisc}\section{Datenflussanomalieanalyse und abstrakte Interpretation}
+\section{Datenflussanomalieanalyse und abstrakte Interpretation}
 Es gitb auch Werkzeuge, die unabhängig von Mustern Fehlersituationen auch anhand der Analyse des Quelltextes erkennen können.\\
 Hierzu gibt es zwei Verfahren, die \textbf{Datenflussanomalieanalyse} und die \textbf{abstrakte Interpretation}: Bei beiden Verfahren wird der Zugriff auf Variablen durch mögliche Programmabläufe untersucht (vgl.~\cite[33]{Wed09c}).
 
@@ -109,7 +109,7 @@ für Java gibt es beispielsweise das bereits erwähnte \textit{PMD}, s. Abschnit
 Viele Werkzeuge beschränken sich außerdem auf die Analyse von lokalen Variablen und analysieren keine Instanzvariablen, weshalb der Einsatz der Datenflussanomalieanalyse in den meisten Bereichen nur für qualifizierte Entwickler mit einigen Einschränkungen möglich ist (vgl.~\cite[36]{Wed09c}).
 Trotz alledem erlaubt die Datenflussanomalianalyse das Auffinden insb. von Defekten in Zusammenhang mit Schleifen, die sonst nur schwer zu entdecken gewesen wären.
 
-\subsection{Abstrakte Interpretation}
+\subsection{Abstrakte Interpretation}\label{subsec:abstrakte-interpretation}
 Ähnlich wie bei der \textbf{Datenflussanomalieanalyse} wird bei der \textbf{abstrakten Interpretation} bzw. \textbf{abstrakten Semantik} die Nutzung von Variablen in allen Kontrollflüssen analysiert.\\
 Es werden hierbei aber keine Kontrollflüsse \textit{konstruiert}, sondern es kommen aufwändige mathematische Verfahren zum Einsatz.
 
