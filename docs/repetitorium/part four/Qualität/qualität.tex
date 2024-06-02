@@ -47,10 +47,10 @@ In weiteren Gesprächen stellt sich heraus, dass er darunter folgendes versteht:
 \begin{itemize}
     \item eine geringe Antwortzeit des Systems im Onlinebetrieb
     \item einen hohen Datendurchsatz beim Massendatenimport
-    \item Anwortzeiten, die nicht mehr als 1 Sekund benötigen, und zwar
+    \item Antwortzeiten, die nicht mehr als 1 Sekunde benötigen, und zwar
         \begin{itemize}
             \item unter Vollast des Systems
-            \item bei 100 angemeldeten und gleichzeig arbeitenden Benutzern
+            \item bei 100 angemeldeten und gleichzeitig arbeitenden Benutzern
         \end{itemize}
     \item Verarbeitung von 50 Datensätze pro Minute bei einem Massenimport
 \end{itemize}
@@ -71,22 +71,28 @@ Es stellt sich heraus:
 Diese schrittweise Konkretisierung ist typisch.
 
 \subsection*{Systematik von Qualitätssystemen}
-Aufgrund der typischen schrittweise Konkretisierung von Qualitätsforderungen sind Qualitätssysteme hierarchisch aufgebaut (s. Abbildung~\ref{fig:qualitätssysteme}):
+Aufgrund der typischen schrittweisen Konkretisierung von Qualitätsforderungen sind Qualitätssysteme  \textit{hierarchisch} aufgebaut (s. Abbildung~\ref{fig:qualitätssysteme}):
 
-\begin{enumerate}
+\begin{itemize}
     \item \textbf{Qualität} wird definiert durch
-    \item \textbf{Qualitätsmerkmale} (bspw. ``\textit{Effizienz}``), die konkretisiert werden durch
-    \item \textbf{Qualitätsteilmerkmale} (bspw. ``\textit{Performance}``, ``\textit{Verbrauchsverhalten}``), die genau definiert werden durch
-    \item \textbf{Qualitätsindikatoren}, die jeweils einem \textit{Artefakt} innewohnende Eigenschaften beschreibt, die objektiv bestimmt werden kann (bspw. ``\textit{Antwortzeit}``, ``\textit{Datendurchsatz}``)
-\end{enumerate}
+    \begin{itemize}
+        \item  \textbf{Qualitätsmerkmale} (bspw. ``\textit{Effizienz}``), die konkretisiert werden durch
+        \begin{itemize}
+            \item  \textbf{Qualitätsteilmerkmale} (bspw. ``\textit{Performance}``, ``\textit{Verbrauchsverhalten}``), die genau definiert werden durch
+             \begin{itemize}
+                       \item \textbf{Qualitätsindikatoren}, die jeweils einem \textit{Artefakt} innewohnende Eigenschaften beschreibt, die objektiv bestimmt werden kann (bspw. ``\textit{Antwortzeit}``, ``\textit{Datendurchsatz}``)
+            \end{itemize}
+        \end{itemize}
+    \end{itemize}
+\end{itemize}
 
 \noindent
-Zur Bestimmung von Qualitätsindikatoren werden \texbf{Metriken} eingesetzt, also ``\textit{Vorschriften}, anhand derer Zahlen berechnet werden können, die ein Maß für die Güte einer Software darstellen`` (\cite[3]{Wed09c}).
+Zur Bestimmung von Qualitätsindikatoren werden \texbf{Metriken} eingesetzt, also ``\textit{Vorschriften}, anhand derer Zahlen berechnet werden können, die ein Maß für die Güte einer Software darstellen`` (\cite[3, Hervorhebung eigene]{Wed09c}).
 
 
 \begin{figure}
     \centering
-    \includegraphics[scale=0.4]{part four/Qualität/img/qualitätssysteme}
+    \includegraphics[scale=0.8]{part four/Qualität/img/qualitätssysteme}
     \caption{Skizzenhafter Aufbau von Qualitätssystemen. \textit{Qualitätsindikatoren} sind als breiter Balken dargestellt, da sich mehrere \textit{Qualitätsteilmerkmale} auf einen gemeinsamen \textit{Qualitätsindikator} beziehen können. (Quelle: in Anlehnung an~\cite[Abb. 1.1, 3]{Wed09c})}
     \label{fig:qualitätssysteme}
 \end{figure}
