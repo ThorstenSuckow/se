@@ -39,18 +39,18 @@ The most pernicious and subtle bugs are system bugs arising from mismatched assu
 \textit{Wedemann} schließt aus verschiedenen Quellen (\cite{Rad01}, \cite{Wie02}, \cite{GG93}), dass eine Reduktion der Kosten zur Behebung von Defekten erreicht werden kann, wenn diese Defekte bei einer manuellen Überprüfung in einer frühen Phase gefunden werden.
 Weiter stellt er fest,  dass ``bei einer Inspektion ca. 60{\%} aller Defekte gefunden werden`` (~\cite[16]{Wed09c}).\\
 
-\noindent
+\begin{tcolorbox}
 Prinzipiell sollten alle Dokumente und Modelle mit manuellen Verfahren geprüft werden, da diese Verfahren das einzig praktikable Verfahren sind (\cite[16]{Wed09c}).\\
 Manuell geprüft werden sollten insb.
 
 \begin{itemize}
-    \item wichtige Codeteile:
-    \begin{itemize}
-        \item \textbf{Vorlagen}
-        \item denen eine \textbf{entscheidende Rolle} in der Software zukommt
-    \end{itemize}
-    \item Code, der von \textbf{neuen} oder \textbf{unerfahrenen Mitarbeitern} geschrieben wird
+    \item durch eine \textbf{Inspektion}\footnote{
+    oder mindestens einem \textbf{Review} (vgl.~\cite[Aufgabe 3.8, 83]{Wed09c})
+    }: wichtige Codeteile, die als \textbf{Vorlage} in Projekten dienen, bzw. denen eine \textbf{entscheidende Rolle} in der Software zukommt
+    \item durch angemessene Prüfverfahren: Code, der von \textbf{neuen} oder \textbf{unerfahrenen Mitarbeitern} geschrieben wird
 \end{itemize}
+\end{tcolorbox}
+\vspace{2mm}
 
 \noindent
 Der Einsatz von manuellen Verfahren ist unkompliziert, allerdings sollte vor Beginn der Entwicklung überlegt werden, welche manuellen Verfahren durchgeführt werden sollen.
