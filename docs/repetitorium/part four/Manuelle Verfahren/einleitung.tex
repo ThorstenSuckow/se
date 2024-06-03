@@ -1,13 +1,13 @@
 \section{Einleitung}
 
-Viele Produkte der Softwareentwicklung (\textit{Artefakte}) sind nicht testbar, dazu gehören bspw. Dokumente, die Anwendungsfälle beschreiben, das Data Dictionary\footnote{
-hält fest, in welchem Format welche Daten verarbeitet werden
+Viele Produkte der Softwareentwicklung (\textit{Artefakte}) sind nicht testbar, dazu gehören bspw. Dokumente, die Anwendungsfälle beschreiben, das DataDictionary\footnote{
+hält fest, in welchem Format welche Daten verarbeitet werden; s. Abschnitt~\ref{fig:sec:datadictionary-und-mengengerust}
 } aber auch Klassendiagramme aus Analyse und Entwurf.\\
 Wenn sich die Qualität von Artefakten nicht oder nicht ausschließlich durch Testen sicherstellen lässt, kommen \textbf{manuelle Verfahren} zum Einsatz: Mitarbeiter untersuchen den \textbf{Prüfgegenstand} durch \textbf{systematisches Korrekturlesen}.\\
 
 \noindent
 Es ist wichtig, Defekte früh im Entwicklungsprozess zu finden.\\
-Bei einem falschen Entwurf oder einer falschen Spezifikation fällt der Fehler u.U. erst in eienr späten Phase bei den \textbf{Systemtests} durch spezialisierte Tester\footnote{
+Bei einem falschen Entwurf oder einer falschen Spezifikation fällt der Fehler u.U. erst in einer späten Phase bei den \textbf{Systemtests} durch spezialisierte Tester\footnote{
 s. Abschnitt~\ref{sec:v-modell}
 } oder bei dem \textbtf{Abnahmetest} durch den Kunden auf.\\
 Fehlerhafter Code kann also auch in frühen Phasen durch das \textbf{manuelle Prüfen} von Dokumenten und Modellen verhindert werden, indem andere Personen Prüfgegenstände \textit{systematisch lesen}.\\
@@ -24,12 +24,12 @@ dass die Einhaltung von Coding-Standards im gesamten Quellcode besser automatisi
 
 \noindent
 Ein wichtiger Nebeneffekt manueller Prüfverfahren ist, dass sich der Prüfer \textit{intensiv} mit dem Prüfgegenstand \textit{auseinandersetzt}.
-Dies wirkt sich positiv bei einem Ausfall oder einer Umstrukturierung aus.\\
+Dies wirkt sich positiv bei einem personellen Ausfall oder einer Umstrukturierung aus.\\
 
 \noindent
 Manuelle Prüfungen sind recht aufwändig, was sich auch in den Kosten widerspiegelt.
 Aus diesem Grund schrecken viele Projektverantwortliche davor zurück. \textit{Wedemann} führt an, dass im Zuge einer \textit{objektiven Argumentation} die Kosten miteinander verglichen werden sollten, die bei der Beseitigung der Defekte in bestimmten Phasen entstehen (vgl.~\cite[16]{Wed09c}).
-Auch \textit{Brooks} weist auf die Notwendigkeit hin, Defekte möglichst früh zu erkennen:
+Auch \textit{Brooks} weist auf die Notwendigkeit hin, Defekte in den relevanten Dokumenten möglichst früh zu erkennen:
 
 \blockquote[{\cite[142]{Bro95}}]{
 The most pernicious and subtle bugs are system bugs arising from mismatched assumptions made by the authors or various components. [\ldots] Long before any code exists, the specification must be handed to an outside testing group to be scrutinized for completeness and clarity.
