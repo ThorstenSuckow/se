@@ -7,12 +7,14 @@ Im Folgenden werden die laut \textit{Wedemann} wichtigsten Code-Metriken zur Ana
 \begin{figure}
     \centering
     \includegraphics[scale=0.35]{part four/Werkzeuggestützte Analyse/img/metriken}
-    \caption{Typische Metriken zur Bestimmung des \textbf{Qualitätsmerkmals} \textit{Wartbarkeit} und ihr Zusammenhang mit den Qualitätsteilmerkmalen. (Quelle: in Anlehnung an \cite[Abb. 4.3, 37]{Wed09c})}
+    \caption{Typische Metriken zur Bestimmung des \textbf{Qualitätsmerkmals} \textit{Wartbarkeit} und ihr Zusammenhang mit den Qualitätsteilmerkmalen. \textbf{WMC} steht für  \textit{Weighted Mean Compexity} (s. ``Komplexität``). (Quelle: in Anlehnung an \cite[Abb. 4.3, 37]{Wed09c})}
     \label{fig:metriken}
 \end{figure}
 
-\noindent
-\textbf{Wartbarkeit} von Code ist immer auch abhängig von den Qualitätsteilmerkmalen \textbf{Strukturiertheit} und \textbf{Verständlichkeit}, die sich mit Metriken messen lassen.\\
+\begin{tcolorbox}[colback=white]
+    \textbf{Wartbarkeit} von Code ist immer auch abhängig von den Qualitätsteilmerkmalen \textbf{Strukturiertheit} und \textbf{Verständlichkeit}, die sich mit Metriken messen lassen.\\
+\end{tcolorbox}
+\vspace{2mm}
 
 \noindent
 Folgende Qualitätsteilmerkmale werden erfüllt, wenn der Entwurf bestimmte Regeln bzw. Prinzipien befolgt, die sich dann in der Implementierung widerspiegeln:
@@ -23,7 +25,7 @@ Folgende Qualitätsteilmerkmale werden erfüllt, wenn der Entwurf bestimmte Rege
 \end{itemize}
 
 \begin{tcolorbox}
-    Die Erreichung der Qualitätsforderung \textbf{Wartbarkeit} kann durch Code-Metriken überprüft werden, die versuchen, Prinzipien wie \textbf{Modularität} und Regeln wie \textbf{geringe Kopplung} in Zahlen zu fassen (vgl.~\cite[38]{Wed09c})
+    Ob die Qualitätsforderung \textbf{Wartbarkeit} erreicht ist, kann auch durch Code-Metriken überprüft werden, die versuchen, Prinzipien wie \textbf{Modularität} und Regeln wie \textbf{geringe Kopplung} in Zahlen zu fassen (vgl.~\cite[38]{Wed09c}).
 \end{tcolorbox}
 \vspace{2mm}
 
@@ -68,7 +70,7 @@ McCabe verwendet in seinem Paper $10$ als ``a reasonable, but not magical,  uppe
 \subsection*{Komplexität}
 Ein weiteres Maß für die Komplexität einer Methode ist die Anzahl der Anweisungen.
 Lange Methoden sind sicherlich schwieriger zu verstehen, weshalb auch hier weniger Anweisungen besser sind.\\
-Die Komplexität einer \textbf{Klasse} kann mit Hilfe der \textbf{Weighted Mean Complexity} (\textit{WMC}) gemessen werden, für deren Bestimmung die zyklomatische Zahlen \textit{aller Methoden} zusammengezählt werden - auch hier ist ein gerinegrer Wert besser.
+Die Komplexität einer \textbf{Klasse} kann mit Hilfe der \textbf{Weighted Mean Complexity} (\textit{WMC}) gemessen werden, für deren Bestimmung die zyklomatische Zahlen \textit{aller Methoden} zusammengezählt werden - auch hier ist ein geringerer Wert besser.
 
 \subsection*{Vorgehen}
 Für den Umgang mit den berechneten Zahlenwerten gibt es zwei Strategien:
@@ -90,6 +92,6 @@ Für Java gibt es bspw. \textit{Metrics}\footnote{
 
 \subsection*{Pro und Contra}
 Code-Metriken sind ein bewährtes Mittel zur Analyse von Code in Bezug auf \textbf{Wartbarkeit}.\\
-Wenn Metriken parallel zur laufenden Entwicklung eingesetzt werden, können viele Schwachstellen vermieden werden - sie sind allerdings auch geeignet, um in fremden Code Schwachstellen zu entdecken, wodurch sie ein wertvolles Werkzeug für Projektleiter, QS-Verantwortliche und auch kunden sind (vgl.~\cite[39]{Wed09c}).\\
+Wenn Metriken parallel zur laufenden Entwicklung eingesetzt werden, können viele Schwachstellen vermieden werden - sie sind allerdings auch geeignet, um in fremden Code Schwachstellen zu entdecken, wodurch sie ein wertvolles Werkzeug für Projektleiter, QS-Verantwortliche und auch Kunden sind (vgl.~\cite[39]{Wed09c}).\\
 In der Praxis kann es sich als schwierig erweisen, geeignete Metriken auszuwählen und die ermittelten Daten korrekt zu interpretieren: Hier werden fehlerhafte Ergebnisse dann durch ungeeignete oder falsch interpretierte Metriken verursacht, was zu Ablehnung der Werkzeuge führen kann.\\
 Es ist also ratsam, sich in die einzusetzenden Metriken einzuarbeiten und an bekannten Projekten zunächst auszuprobieren.
