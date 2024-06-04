@@ -7,8 +7,10 @@ Die \textbf{Einhaltung von Programmierrichtlinien} ist eine naheliegende Aufgabe
 s. \url{https://www.oracle.com/java/technologies/javase/codeconventions-introduction.html}, abgerufen 24.05.2024
 }) vorgegeben sein.\\
 
-\noindent
+\begin{tcolorbox}
 Die Einhaltung von Programmierrichtlinien ist wichtig für die \textbf{Qualitätsforderung} \textbf{Wartbarkeit}: \textbf{Wartbarkeit} setzt auch voraus, dass der Code verständlich und damit einfach lesbar ist.
+\end{tcolorbox}
+\vspace{2mm}
 
 \subsection*{Ursachen für gefundene Defekte}
 Ein erster Einsatz solcher Werkzeuge ist meist sehr ernüchternd: Oft werden mehr Defekte angezeigt, als praktischerweise behoben werden können.
@@ -22,12 +24,12 @@ Die hängt u.a. damit zusammen, dass
 
 \noindent
 Bei existierendem Code sind \textit{nachträgliche} Programmierrichtlinien schwer durchzusetzen.
-Es ist denkbar, in solchen Fällen die Programmierrichtlinien nur für neuen Code durchzusetzen.
+Es ist denkbar, in solchen Fällen die Programmierrichtlinien nur für \textit{neuen} Code durchzusetzen.
 
 \subsection*{Vorgehen}
 \begin{itemize}
-    \item Werkzeuge sollten von Anfang an benutzt werden, da ein nachträglicher Einsatz mit hohem Aufwand verbunden ist.
-    \item Die Einführung sollte zunächst an einem kleinen Stück Software erprobt werden, die Einstellungen der IDE werden dann anhand des Beispiels angepaßt, Regeln ggf. modifiziert
+    \item Werkzeuge sollten von Anfang an benutzt werden, da ein nachträglicher Einsatz mit hohem Aufwand verbunden ist
+    \item die Einführung sollte zunächst an einem kleinen Stück Software erprobt werden, die Einstellungen der IDE werden dann anhand des Beispiels angepaßt, Regeln ggf. modifiziert
     \item während des ersten Gebrauchs sollten die Regeln systematisch auf die Brauchbarkeit überprüft und Werkzeug und IDE  angepaßt werden, bis ein akzeptabler Stand erreicht ist
     \item die Projektleitung sollte darauf achten, dass alle Entwickler den Quellcode gleich prüfen - das Werkzeug sollte also in die IDE integriert sein, zumindest aber in das Build-Management, damit die Prüfung automatisch und periodisch durchgeführt wird
 \end{itemize}
@@ -44,7 +46,7 @@ Für Java gibt es für die Einhaltung von Programmierrichtlinien bspw. \textit{C
 \subsection*{Pro und Contra}
 Die Einhaltung von Programmierrichtlinien ist mittlerweile ein weit verbreitetes Standardverfahren in der Praxis.\\
 Bspw. haben im Automobilbereich die Kunden ihre eigenen Vorgaben, die werkzeuggestützt überprüft werden.\\
-Problematisch ist die Einführung von Programmierrichtlinien in ein seit länger laufendem Projekt.
+Problematisch ist die Einführung von Programmierrichtlinien in Projekten, die bereits länger laufen.
 
 
 
