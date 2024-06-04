@@ -29,7 +29,10 @@ Bestimmte Defekte lassen sich durch genaues Ansehen des Quellcodes entdecken. Da
         }
     }
 
-
+    // In Java wird folgender Defekt durch den Compiler
+    // verhindert; in PHP und JavaScript hingegen
+    // wird die Rückgabe der Zuweisung als boolescher Wert
+    // interpretiert (0 == false)
     if (x = 0) { // Zuweisung? Vergleich?
         ...
     }
