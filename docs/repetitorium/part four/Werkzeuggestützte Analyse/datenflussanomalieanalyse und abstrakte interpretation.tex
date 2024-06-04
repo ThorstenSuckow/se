@@ -1,5 +1,5 @@
 \section{Datenflussanomalieanalyse und abstrakte Interpretation}
-Es gitb auch Werkzeuge, die unabhängig von Mustern Fehlersituationen auch anhand der Analyse des Quelltextes erkennen können.\\
+Es gibt auch Werkzeuge, die unabhängig von Mustern Fehlersituationen anhand der Analyse des Quelltextes erkennen können.\\
 Hierzu gibt es zwei Verfahren, die \textbf{Datenflussanomalieanalyse} und die \textbf{abstrakte Interpretation}: Bei beiden Verfahren wird der Zugriff auf Variablen durch mögliche Programmabläufe untersucht (vgl.~\cite[33]{Wed09c}).
 
 
@@ -21,7 +21,8 @@ Zugriffe auf eine Variable werden dazu durch drei Attribute beschrieben (s. Tabe
         \textbf{r}                                                    & Referenzierung                                                  & \begin{tabular}[c]{@{}l@{}}\code{y = x + 1}\\ \code{if (x < 4)}\end{tabular} \\ \hline
         \textbf{u}                                                    & Undefinition                                                    & \code{int x;} oder Zerstörung                                         \\ \hline
     \end{tabular}
-    \caption{Kürzel in der Datenflussanomalieanalyse und ihre Bedeutung. (Quelle: \cite[33]{VW16c})}
+    \caption{Kürzel in der Datenflussanomalieanalyse und ihre Bedeutung.
+    Im Beispiel $y=x+1$ wird $y$ \textit{definiert}, $x$ \textit{referenziert}. (Quelle: \cite[33]{Wed09c})}
     \label{tab:dfaa}
 \end{table}
 
@@ -49,8 +50,7 @@ Sei folgendes Beispiel in Java gegeben:
 \end{minted}
 
 \noindent
-\code{minMax()} soll überprüfen, ob \code{min} kleiner als \code{max}, und ansonsten den Inhalt beider vertauschen, was aber im Code nicht umgesetzt ist.
-Der Code weist also einen Defekt auf.\\
+\code{minMax()} soll überprüfen, ob \code{min} kleiner als \code{max} ist; ansonsten wird der Inhalt beider Variablen vertauschen - was aber im Code nicht umgesetzt ist: Also liegt ein Defekt vor, wie im Folgenden durch die Datenflussanomalieanalyse überprüft werden kann.\\
 
 \noindent
 Der Kontrollflussgraph zu \code{minMax} ist in Abbildung~\ref{fig:minmax} gezeigt.
@@ -87,7 +87,7 @@ Es gibt bei der Datenflussanomalieanalyse \textbf{3 mögliche Anomalien}, die al
 \begin{itemize}
     \item \textbf{ur-Anomalie}: Zugriff auf eine Variable, bevor sie initialisiert wurde.\\
     Der Compiler von Java erkennt diesen Defekt.
-    \item \textbf{du-Anomalie}: Definition einer Variable und anschließende Undefinition, ohne, dass auf sie davor lesend / schreibend verwendet wurde
+    \item \textbf{du-Anomalie}: Definition einer Variable und anschließende Undefinition, ohne, dass sie davor lesend / schreibend verwendet wurde
     \item \textbf{dd-Anomalie}: Mehrmalige Definition einer Variable, ohne, dass zwischendurch lesend auf sie zugegriffen wird.
 \end{itemize}
 
