@@ -9,7 +9,7 @@ Wird Code in Tests nicht ausgeführt, ist nicht bekannt, ob dieser funktioniert 
 
 \subsubsection*{Überdeckungskriterien}
 Unter \textbf{vollständiger Überdeckung} des Quellcodes versteht man häufig, dass jede Zeile des Quellcodes einmal ausgeführt wird.\\
-Allerdings kann die Vollständigkeit von Tests auch dadurch charakterisiert werden dass jede \textbf{Verzweigung} mindestens einmal durchlaufen werden muss.\\
+Allerdings kann die Vollständigkeit von Tests auch dadurch charakterisiert werden, dass jede \textbf{Verzweigung} mindestens einmal durchlaufen werden muss.\\
 Im Folgenden beschränkt sich \textit{Wedemann} auf Kriterien, die zur Definition den \textbf{Kontrollfluss} heranziehen (vgl.~\cite[49 f.]{Wed09c}); für diese existieren auch eine Vielzahl von Werkzeugen\footnote{
 \textit{Wedemann} weist ebenda auf \textbf{datenflussorientierte Testverfahren}, die sich auf die vollständige Nutzung von Daten in Tests beziehen. Zum Zeitpunkt der Veröffentlichung von \cite{Wed09c} (2009) gibt er an, dass diese zwar vielversprechend sein, es aber kaum Werkzeuge dafür gäbe.
 }.
@@ -26,8 +26,7 @@ Für die praktische Einsetzbarkeit ist außerdem eine gute Integration in die En
 Das einfachste Kriterium ist die \textbf{Anweisungsüberdeckung} (\textit{statement coverage}).
 
 \begin{tcolorbox}[title=Anweisungsüberdeckung]
-    Liegt eine \textbf{Anweisungsüberdeckung} vor, wurde im Test \textit{jede} Anweisung mindestens einmal ausgeführt.\\
-    Eine \textbf{Anweisungsüberdeckung} liegt dann vor, wenn \textit{jeder} Knoten eines \textbf{Kontrollflussgraphen} mindestens einmal ausgeführt worden ist.
+    Liegt eine \textbf{Anweisungsüberdeckung} vor, wurde im Test \textit{jede} Anweisung mindestens einmal ausgeführt: \textit{Jeder} Knoten eines \textbf{Kontrollflussgraphen} wurde dann mindestens einmal ausgeführt.
 \end{tcolorbox}
 
 \subsubsection*{Beispiel}
@@ -36,18 +35,18 @@ Jeder Knoten wird mit den Testdaten \code{txt="A"} mindestens einmal ausgeführt
 
 \subsubsection*{Effektivität}
 Untersuchungen, die für verschiedene fehlerhafte Methoden die Tests ausschließlich nach Überdeckungskriterien konstruiert haben, haben festgestellt, dass die Tests, die die \textbf{Anweisungsüberdeckung} erfüllen, ca. 15\% der Fehler finden\footnote{
-\textit{Wedemann} gibt leider keine Quelle an, vgl.~\cite[51]{Wed09c}. Das gleiche gilt im übrigen für die von ihm benannten Kennzahlen zu den nachfolgenden Überdeckungskriterien.
+\textit{Wedemann} gibt hierfür - wie für alle Kennzahlen nachfolgender Überdeckungskriterien - leider keine Quelle an, vgl.~\cite[51]{Wed09c}.
 }.
 
 \subsubsection*{Werkzeugunterstützung}
 Für die meisten imperativen Sprachen gibt es kommerzielle und freie Tools zur Messung der Anweisungsüberdeckung.
 
 \subsubsection*{Einsatzgebiet}
-\textit{Wedemann} gibt an, dass die Messung der Anweisungsüberdeckung das verbreiteste Verfahren darstellt, es aber alleine nicht ausreicht, und deshalb im Modultest gemeinsam mit \textbf{funktionsorientierten Testverfahren} (\textit{Grey-Box-Test}) eingesetzt wird (vgl.~\cite[51]{Wed09c}).
+\textit{Wedemann} gibt an, dass die Messung der Anweisungsüberdeckung das verbreiteste Verfahren darstellt, es aber alleine nicht ausreicht, und deshalb im Modultest gemeinsam mit \textbf{funktionsorientierten Testverfahren} (\textit{Grey-Box-Test}) eingesetzt wird (vgl.~\cite[51]{Wed09c}, s. a. Abschnitt~\ref{sec:klassentest-objektorientierter-systeme}).
 
 \subsection{Zweigüberdeckung}
 
-Eine \textbf{Zweigüberdeckung} \textit{branch coverage} wird erreicht, wenn im Test jede \textit{Verzweigung} einmal ausgeführt worden ist.
+Eine \textbf{Zweigüberdeckung} (\textit{branch coverage}) wird erreicht, wenn im Test jede \textit{Verzweigung} einmal ausgeführt worden ist.
 
 \begin{tcolorbox}[title=Zweigüberdeckung]
 Eine \textbf{Zweigüberdeckung} liegt vor, wenn \textit{jede} Kante des Kontrollflussgraphen mindestens einmal ausgeführt worden ist.\\
@@ -59,14 +58,14 @@ Als Beispiel sei der Kontrollflussgraph der Methode \code{countVowels()} gegeben
 Jeder Knoten wird mit den Testdaten \code{txt="AB"} mindestens einmal ausgeführt - jeder Knoten des Kontrollflussgraphen wird von mindestens einer Kante erreicht.
 
 \subsubsection*{Effektivität}
-Untersuchungen haben ergeben, dass die Tests, die so konstruiert werden, dass sie die \textbf{Zweigüberdeckung} erfüllen, ca. 30\% der Fehler finden.
+Untersuchungen haben ergeben, dass Tests, die so konstruiert werden, dass sie die \textbf{Zweigüberdeckung} erfüllen, ca. 30\% der Fehler finden.
 
 \subsubsection*{Werkzeugunterstützung}
-Weniger Tools zur Messung der Zweigüberdeckung als Anweisungsüberdeckung im Jahr der Veröffentlichung von \cite{Wed09c}. \textit{Wedemann} weist auf kommerziell verfügbare Werkzeuge, ohne die Werkzeuge näher zu benennen.
+Weniger Tools zur Messung der Zweigüberdeckung als Anweisungsüberdeckung im Jahr der Veröffentlichung von \cite{Wed09c} (2009). \textit{Wedemann} gibt Hinweise auf kommerziell verfügbare Werkzeuge, ohne die Werkzeuge näher zu benennen.
 
 \subsection{Pfadüberdeckung}
 Die Zweigüberdeckung bietet schon eine ziemlich vollständige Überdeckung, berücksichtigt aber Schleifen nicht genügend.
-Das Verhalten des Testgegenstandes beim abweisenden Fall oder bei mehreren Durchläufen der Schleife führen zu der Forderung verallgemeinert werden, dass im Test alle Möglichkeiten, durch den Kontrolflussgraphen zu laufen, vorkommen sollen, also alle \textit{Pfade}.
+Das Verhalten des Testgegenstandes beim abweisenden Fall oder bei mehreren Durchläufen der Schleife führen zu der Forderung der Verallgemeinerung der Möglichkeiten: Im Test sollen alle \textit{Pfade}, die durch den Kontrolflussgraphen laufen, vorkommen.
 In diesem Fall spricht man von \textbf{Pfadüberdeckung} (\textit{path coverage} bzw. \textit{loop coverage}).
 Da es bei Schleifen häufig unendlich viele Pfade gibt (\cite[52]{Wed09c}), wird anstatt der Pfadüberdeckung die \textbf{Boundary-Interior-Überdeckung} gewählt.
 
@@ -77,7 +76,7 @@ Da es bei Schleifen häufig unendlich viele Pfade gibt (\cite[52]{Wed09c}), wird
 
 \noindent
 Boundary-Interior ist allerdings nicht immer erreichbar, da manchmal der \textbf{abweisende Fall} \textit{nicht} provoziert werden kann.\\
-\textit{Wedemann} weist darauf hin, dass Boundary-Interior von verschiedenen Autoren und Standard unterschiedlich definiert wird; so wird häufig gefordert, dass die Schleife \textit{genau einmal} durchlaufen werden soll, was aber nicht immer realisiert werden kann (vgl.~\cite[52]{Wed09c}).
+\textit{Wedemann} weist darauf hin, dass Boundary-Interior von verschiedenen Autoren und Standards unterschiedlich definiert wird; so wird häufig gefordert, dass die Schleife \textit{genau einmal} durchlaufen werden soll, was aber nicht immer realisiert werden kann (vgl.~\cite[52]{Wed09c}).
 
 \subsubsection*{Beispiel}
 Als Beispiel sei der Kontrollflussgraph der Methode \code{countVowels()} gegeben (s. Abbildung~\ref{fig:kontrollflussgraph}).\\
@@ -103,7 +102,7 @@ Für kommerziell wichtige Sprachen weist \textit{Wedemann} auf kommerziell verf�
 \subsection{Bedingungsüberdeckung}
 Die bisherigen Testfälle lassen die im Beispiel der Methode \code{countVowels()} vorhandenen Bedingungen im \code{if}-Statement außer Acht - die bisherigen Testfälle haben allesamt nur $A$ bzw. $B$ berücksichtigt.\\
 Die \textbf{Bedingungsüberdeckung} fordert, dass im Test \textit{jede} Bedingung mindestens einmal \textit{wahr} und einmal \textit{falsch} sein muss.\\
-Die wichtigste Variante der \textbf{Bedingungsüberdeckung} ist die \textbf{einfache Mehrfachbedingungsüberdeckung} \textit{modified condition decision coverage}:
+Die wichtigste Variante der \textbf{Bedingungsüberdeckung} ist die \textbf{einfache Mehrfachbedingungsüberdeckung} (\textit{modified condition decision coverage}):
 
 \begin{tcolorbox}[title=Einfache Mehrfachbedingungsüberdeckung]
 Die \textbf{einfache Mehrfachbedingungsüberdeckung} wird erreicht, wenn \textit{jede} atomare Bedingung, also jeder \textit{direkte Vergleich}, und \textit{alle zusammengesetzten Bedingungen} einmal den Wahrheitswert \textit{wahr}\footnote{

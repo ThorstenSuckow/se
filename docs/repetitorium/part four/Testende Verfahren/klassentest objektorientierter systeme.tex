@@ -1,4 +1,4 @@
-\section{Klassentest objektorientierter Systeme}
+\section{Klassentest objektorientierter Systeme}\label{sec:klassentest-objektorientierter-systeme}
 Tester werden im \textbf{Modul-} und \textbf{Integrationstest} vor besondere Schwierigkeiten gestellt, wenn es um den Test von Systemen geht, die mit objektorientierten Mitteln implementiert wurden.\\
 Aufgrund von Zugriffsmodifizierern wie \code{public} / \code{private} und der dadurch möglichen \textbf{Kapselung} können Tests nicht auf \textbf{private} Attribute oder Methoden zugreifen.\\
 Außerdem ergeben sich Probleme durch die Konzepte
@@ -27,38 +27,38 @@ Als geeignet hat sich ein Vorgehen als geeignet erwiesen, dass \textbf{Black-Box
 \end{tcolorbox}
 
 \subsection*{Testumgebung}
-Für die testdurchführung müssen die zu testenden Methoden aufgerufen werden, wofür \textit{Treiber} benötigt werden (vgl.~\cite[55]{Wed09c}).
+Für die Testdurchführung müssen die zu testenden Methoden aufgerufen werden, wofür \textit{Treiber} benötigt werden (vgl.~\cite[55]{Wed09c}).
 Für Java gibt es hierzu bspw. \textit{JUnit}\footnote{
 \url{https://junit.org}, abgerufen 30.05.2024
 }.\\
 Ein Problem ergibt sich dadurch, dass Klassen von anderen Klassen abhängig sind und deshalb so nicht einzeln getestet werden können.
-Dieses Problem kann mitigiert werden, indem die Abhängigkeiten durch \textbf{Mock-Objekte} (auch: \textbf{Stubs}) ersetzt werden, die von den Klassen abgeleitet sind, die Schnittstelle implementieren und insg. Verhalten \textit{simulieren}.\\
+Dieses Problem kann mitigiert werden, indem die Abhängigkeiten durch \textbf{Mock-Objekte} (auch: \textbf{Stubs}) ersetzt werden, die von den Klassen abgeleitet sind oder Schnittstellen implementieren und insg. Verhalten \textit{simulieren}.\\
 
 \begin{tcolorbox}[title=Unterschied Mock / Stub]
-    \blockquote[{\url{https://martinfowler.com/articles/mocksArentStubs.html}, abgerufen 30.05.2024}]{
-        \begin{itemize}
-            \item \textbf{Stubs} provide canned answers to calls made during the test, usually not responding at all to anything outside what's programmed in for the test.
-            \item[] [\ldots]
-            \item \textbf{Mocks} are [\ldots] objects pre-programmed with expectations which form a specification of the calls they are expected to receive.
-        \end{itemize}
-    }
+    \begin{itemize}
+        \item \textbf{Stubs} provide canned answers to calls made during the test, usually not responding at all to anything outside what's programmed in for the test.
+        \item[] [\ldots]
+        \item \textbf{Mocks} are [\ldots] objects pre-programmed with expectations which form a specification of the calls they are expected to receive.
+    \end{itemize}
+    \noindent
+    (Quelle: \url{https://martinfowler.com/articles/mocksArentStubs.html}, abgerufen 30.05.2024)
 \end{tcolorbox}
 
 \subsection*{Kapselung}
 \textbf{Kapselung} ermöglicht Testmethoden nur den Zugriff auf öffentliche Methoden, private Methoden sind nicht sichtbar.
-\textit{Wedemann} stellt fest, dass es ausreichend sei, in tests nur die öffentlichen Methoden zu benutzen, eine Überdeckung der privaten Methoden sollte so ebenfalls möglich sein (vgl.~\cite[56]{Wed09c}): Auch, wenn bspw. mittels \textit{Reflection} Zugriff auf private Attribute bzw. Methoden möglich gemacht wird, sind private Methoden häufig von Datenkonstellationen abhängig\footnote{
+\textit{Wedemann} stellt fest, dass es ausreichend sei, in Tests nur die öffentlichen Methoden zu benutzen, eine Überdeckung der privaten Methoden sollte so ebenfalls möglich sein (vgl.~\cite[56]{Wed09c}): Auch, wenn bspw. mittels \textit{Reflection} Zugriff auf private Attribute bzw. Methoden möglich gemacht wird, sind private Methoden häufig von Datenkonstellationen abhängig\footnote{
 s. \textit{temporal coupling} in Abschnitt~\ref{subsec:zustandsbasierter-test}
 }, die die aufrufenden öffentlichen Methoden garantieren.
 Wird dies zusätzlich berücksichtigt, werden die Tests unnötig aufwändig.\\
-Des weiteren bleiben die Testfälle stabiler, wenn nur die öffentliche Schnittstelle einer Klasse in einem test verwendet werden.\\
+Des Weiteren bleiben die Testfälle stabiler, wenn nur die öffentliche Schnittstelle einer Klasse in einem test verwendet werden.\\
 Insgesamt kommt \textit{Wedemann} zu dem Schluss, dass Kapselung als Vorteil angesehen werden sollte, ``da dann im Test abgeschlossene, funktionsfähige Einheiten vorliegen`` (\cite[56]{Wed09c}).
 
 \subsection*{Vererbungshierarchien}
 Bei der \textbf{Vererbung} übernehmen abgeleitete Klassen von der Oberklasse bestehende Methoden - neue Methoden können hinzugefügt und bestehende ergänzt werden.\\
 Dass neue und überschriebene Methoden getestet werden müssen, ist selbstverständlich.
 Bestehende, ererbte Methoden könnten aber überschriebene Methoden nutzen; sie müssen deshalb genauso gestestet werden, damit fehlerhaftes Verhalten entdeckt werden kann.\\
-Im Folgenden nutzt Bar die geerbete Methode \code{z()} um die Summe von $1$ und $3$ zu berechnen.
-Ändert sich das Verhalten von \code{z()} und oder \code{x()}in der Oberklasse, kann das unerwartete Auswirkungen auf Objekte der Klasse \code{Bar} haben, weshalb auch \code{z()} für  Instanzen von \code{Bar} getestet werden sollte.
+Im Folgenden nutzt \code{Bar} die geerbte Methode \code{z()} um die Summe von $1$ und $3$ zu berechnen.
+Ändert sich das Verhalten von \code{z()} und/oder \code{x()}in der Oberklasse, kann das unerwartete Auswirkungen auf Objekte der Klasse \code{Bar} haben, weshalb auch \code{z()} für  Instanzen von \code{Bar} getestet werden sollte.
 
 \begin{minted}{java}
 class Foo {
@@ -84,10 +84,10 @@ class Bar extends Foo {
 
 \subsection*{Abstrakte Klassen}
 \textbf{Abstrakte Klassen} stellen ein Problem dar, da sie nicht instanziiert werden, aber auch nicht-abstrakte Methoden implementieren können.\\
-Damit in diesem Fall Fehler abgeleiteter Klassen nicht Fehler der abstrakten Klasse maskieren, werden im Tests möglichst einfache Klassen von den abstrakten Klassen abgeleitet\footnote{
+Damit in diesem Fall Fehler abgeleiteter Klassen nicht Fehler der abstrakten Klasse maskieren, werden in Tests möglichst einfache Klassen von den abstrakten Klassen abgeleitet\footnote{
     die abgeleiteten Klassen enthalten nur die durch die abstrakte Klasse vorgegebene Funktionalität
 }, instanziiert und dann entsprechend getestet.
 
 \subsection*{Parametrisierte Klassen}
-Wie auch abstrakte Klassen stellen \textbf{parametrisierte Klassen} die Tester vor das Problem, das keine direkten Objekte von ihnen erstellt werden können, Funktionalität trotzdem getestet werden muss.\\
+Wie auch abstrakte Klassen stellen \textbf{parametrisierte Klassen} die Tester vor das Problem, das keine direkten Objekte von ihnen erstellt werden können, Funktionalität aber trotzdem getestet werden muss.\\
 In diesem Fall werden sehr gut getestete Klassen, wie in Java bspw. \code{java.lang.Integer}, als Parameter genutzt, mit denen die parametrisierten Klassen dann getestet werden

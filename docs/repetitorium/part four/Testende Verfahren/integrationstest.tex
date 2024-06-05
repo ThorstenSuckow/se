@@ -8,14 +8,14 @@
 Der \textbf{Integrationstest} hängt eng mit der Art der Integration zusammen, wobei sich die Typen der Integration nach der Art des Vorgehens (\textbf{Bottom-Up}, \textbf{Ad-hoc}, \textbf{Big-Bang}, \textbf{High-Frequency}) oder an der Architektur der Anwendung orientieren (\textbf{Bottom-up}, \textbf{Layer}, \textbf{Client/Server}).\\
 
 \noindent
-\textit{Wedemann} listet folgende Arten der Integration auf, wobei er sich u.a. auf \textit{Binder}, \cite{Bin99}, bezieht (vgl.~\cite[59]{Wed09c}):
+\textit{Wedemann} listet folgende Arten der Integration auf, wobei er sich u.a. auf \textit{Binder} (\cite{Bin99}), bezieht (vgl.~\cite[59]{Wed09c}):
 
 \begin{itemize}
     \item \textbf{Bottom-Up-Integration}: Integration der Komponenten von den Blättern des Abhängigkeitsbaumes zur Wurzel
     \item \textbf{Layer-Integration}: Einteilung des Systems in verschiedene Schichten, die Bottom-Up oder Top-Down integriert werden (vgl.~\cite[688]{Bin99})
     \item \textbf{Client-Server-Integration}: Client- und Serverkomponenten werden schrittweise integriert
     \item \textbf{Ad-hoc-Integration}: Bauteile werden in der Reihenfolge ihrer Fertigstellung integriert
-    \item \textbf{Big-Bang-Integration}: Alle Komponenten werden werden zusammengeführt und auf einmal getestet
+    \item \textbf{Big-Bang-Integration}: Alle Komponenten werden zusammengeführt und auf einmal getestet
     \item \textbf{High-Frequency-Integration}: Häufige und regelmäßige Wiederholung der Integration und der Integrationstests, bspw. beim \textit{push} in das Repository
 \end{itemize}
 
@@ -25,8 +25,8 @@ Durchgesetzt hat sich vor allem die \textbf{Bottom-Up-Integration} bei gleichzei
 
 \subsubsection*{Bottom-Up}
 Der \textbf{Bottom-Up-Ansatz} ist das normale Vorgehen beim Integrationstest (vgl.~\cite[60]{Wed09c}).\\
-Hierbei werden die KLassen vorher einzeln im Klassentest getestet, danach im Integrationstest schrittweise zusammengeführt und ihre Zusammenarbeit getestet.
-Abhängigkeit werden durch von den entsprechenden Klassen abgeleitete \textbf{Mock-Objekte} simuliert.
+Hierbei werden die Klassen vorher einzeln im Klassentest getestet, danach im Integrationstest schrittweise zusammengeführt und ihre Zusammenarbeit getestet.
+Abhängigkeiten werden durch von den entsprechenden Klassen abgeleitete \textbf{Mock-Objekte} simuliert.
 In Abbildung~\ref{fig:bottomup} wird im \textbf{Klassentest} für \code{B} ein Mock für \code{C} erstellt, für \code{A} ein Mock für \code {B}.\\
 Bei der Integration wird dann im ersten Schritt \code{B} und \code{C} integriert, im Erfolgsfall dann \code{A} und \code{B} und \code{C}.
 
@@ -59,8 +59,8 @@ In dem in Abbildung~\ref{fig:integration-vererbung} gezeigten Beispiel müsste a
 \end{figure}
 
 \noindent
-Bei \textbf{großen vererbungshierarchien} wächst die Anzahl der möglichen Kombinationen schnell an, weshalb eine durchdchte Automatisierung der Tests notwendig und evtl. geprüft werden muss, ob wirklich alle möglichen Paare getestet werden können (vgl.~\cite[61]{Wed09c}).
+Bei \textbf{großen Vererbungshierarchien} wächst die Anzahl der möglichen Kombinationen schnell an, weshalb eine durchdachte Automatisierung der Tests notwendig ist und evtl. geprüft werden muss, ob wirklich alle möglichen Paare getestet werden können (vgl.~\cite[61]{Wed09c}).
 
 \subsubsection*{Test von Frameworks und Bibliotheken}
 Schwieriger wird es beim Test von Bibliotheken oder Frameworks, die durch das Einfügen abgeleiteter Klassen benutzt werden, oder wenn Klassen durch Plugin-Schnittstellen zur Laufzeit hinzugefügt werden können: In diesem Fall ist ein vollständiger Test überhaupt nicht möglich.\\
-In diesem Fall sind für den test der Bibliothek bzw. des Frameworks die die Klassen selber als \textbf{Inputdaten} zu betrachten: Die Entwickler müssen dann mit eigens dafür konstruierten Klassen das korrekte Verhalten in Grenzsituationen erproben (vgl.~\cite[62]{Wed09c}).
+In diesem Fall sind für den Test der Bibliothek bzw. des Frameworks die Klassen selber als \textbf{Inputdaten} zu betrachten: Die Entwickler müssen dann mit eigens dafür konstruierten Klassen das korrekte Verhalten in Grenzsituationen erproben (vgl.~\cite[62]{Wed09c}).
