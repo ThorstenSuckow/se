@@ -7,35 +7,40 @@ Ein Test setzt ein \textbf{lauffähiges System} voraus, weshalb ein Test meisten
 }.\\
 
 \noindent
-Tests sollen nach Möglichkeit so strukturiert sein, dass mit möglichst wenig Aufwand möglichst viele Defekte identifiziert werden können, sowie möglichst \textit{vollständig} getestet wird
+Tests sollen nach Möglichkeit so strukturiert sein, dass
+\begin{itemize}
+    \item mit möglichst wenig Aufwand möglichst viele Defekte identifiziert werden können
+    \item möglichst \textit{vollständig} getestet wird
+\end{itemize}
+
 
 \subsection*{Vollständigkeit von Tests}
-Es muss zunächst geklärt werden, was mit \textbf{Volsltändigkeit von Tests} gemeint ist.\\
+Es muss zunächst geklärt werden, was mit \textbf{Vollständigkeit von Tests} gemeint ist.\\
 \textit{Wedemann} führt aus, dass die Vollständigkeit von Tests anhand von zwei Hauptkriterien beschrieben werden kann:
 
 \begin{itemize}
-    \item \textbf{Funktionsorientierter Test (Black-BoxTest}: Ein Test kann als \textbf{vollständig} betrachtet werden, wenn die \textbf{gesamte Funktionalität} im Test erprobt worden ist.
+    \item \textbf{Funktionsorientierter Test (Black-BoxTest)}: Ein Test kann als \textbf{vollständig} betrachtet werden, wenn die \textbf{gesamte Funktionalität} im Test erprobt worden ist.
     \item[] Diese Art von Test wird als \textbf{funktionsorientierter} bzw. \textbf{Black-Box-Test} bezeichnet.
-    \item[] Bei dieser Art von Tests ist es möglich, dass nicht alle Codeteile ausgeführt werden, weil
+    \item[] Bei dieser Art von Tests ist es möglich, dass nicht alle Codeteile ausgeführt werden, weil sie
     \begin{itemize}
-        \item weil sie nicht erreichbar sind
-        \item nicht spezifiziert sind ,aber technisch notwendig
+        \item nicht erreichbar sind
+        \item nicht spezifiziert sind, aber technisch notwendig
         \item fehlerhafterweise überflüssig sind
     \end{itemize}
     \noindent
     Es könnte kritisch sein, wenn diese Codeteile ungetestet bleiben.\\
-    Auch Tests, die sich auf nicht-funktionale Anforderungen beziehen (etwa Performance), werden meistens ohne Berücksichtigung auf die \textit{innere Struktur} durchgeführt und deswegen in die Reihe der Black-Bos-Tests eingereiht - auch, wenn sie nicht funktionsorientiert sind.
+    Auch Tests, die sich auf nicht-funktionale Anforderungen beziehen (etwa Performance), werden meistens ohne Berücksichtigung auf die \textit{innere Struktur} durchgeführt und deswegen in die Reihe der Black-Box-Tests eingereiht - auch, wenn sie nicht funktionsorientiert sind.
     \item \textbf{Strukturorientierter Test (White-Box-Test)}: Ein Test ist \textbf{strukturorientiert}, wenn seine Vollständigkeit anhand der Codeüberdeckung definiert wird.
 \end{itemize}
 
 \vspace{2mm}
-\begin{tcolorbox}[title=Strukturorientierte und Funktionsorientierte Tests]
+\begin{tcolorbox}[title=Strukturorientierte und funktionsorientierte Tests]
     Ein Test ist \textbf{strukturorientiert}, wenn seine Vollständigkeit anhand der Codeüberdeckung definiert wird.  \textbf{Funktionsorientierte Tests} testen die gesamte Funktionalität ohne Berücksichtigung der inneren Struktur.
 \end{tcolorbox}
 \vspace{2mm}
 
 \noindent
-Alle Verfahren sind wichtig: Ein rein \textbf{strukturorientierter Test} wäre nicht ausreichend, da fehlende Funktionalität nicht bemerkt werden würde.\\
+Alle Verfahren sind wichtig: Ein rein \textbf{strukturorientierter Test} wäre nicht ausreichend, da \textit{fehlende Funktionalität} nicht bemerkt werden würde.\\
 In der Praxis wird meist \textbf{funktionsorientiert} getestet.\\
 
 \noindent
