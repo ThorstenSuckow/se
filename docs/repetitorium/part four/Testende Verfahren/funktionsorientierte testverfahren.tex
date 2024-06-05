@@ -7,14 +7,14 @@
 \vspace{2mm}
 
 \noindent
-Im Folgenden werden Verfahren beschrieben, mit denen funktionsorientierte Tests effektiv und gestaltet werden können.
+Im Folgenden werden Verfahren beschrieben, mit denen funktionsorientierte Tests effektiv gestaltet werden können.
 
 \subsection{Funktionale Äquivalenzklassen}\label{subsec:funktionale-aquivalenzklassen}
-Die Vielfältigkeit möglicher Eingabefolgen für in Software übersteigt oft die Umsetzbarkeit in Testfälle.\\
+Die Vielfältigkeit möglicher Eingabefolgen in Software übersteigt oft die Umsetzbarkeit in Testfälle.\\
 \textbf{Äquivalenzklassen} beruhen auf der Idee, dass viele Eingabemöglichkeiten von dem System auf die gleiche Art und Weise bearbeitet werden.
 
 \begin{tcolorbox}[title=Äquivalenzklassen]
-    \blockquote[{\cite{43}[Wed09c]}]{
+    \blockquote[{\cite[43]{Wed09c}}]{
     Die unterschiedlichen Bereiche, in denen ein Testgegenstand gleichartig reagiert, werden Äquivalenzklassen genannt.
     }\\
     \textbf{Gültige Äquivalenzklassen} stellen hierbei zulässige Elemente dar, die vom Testgegenstand verarbeitet werden sollen, \textbf{ungültige Äquivalenzklassen} hingegen Elemente, die vom Testgegenstand abgelehnt werden sollen.
@@ -55,7 +55,7 @@ Hieraus können folgende Äquivalenzklassen ermittelt werden:
 \end{enumerate}
 
 \subsubsection*{Tests mit Stellvertretern einer Äquivalenzklasse}
-Die Tests verwenden dann aus jeer Äquivalenzklasse einen \textbf{Stellvertreter}.
+Die Tests verwenden dann aus jeder Äquivalenzklasse einen \textbf{Stellvertreter}.
 Es wird unterschieden nach
 
 \begin{itemize}
@@ -118,7 +118,7 @@ Mit o.a. Beispiel ergibt sich das folgende Stellvertreter:
     \begin{itemize}
         \item[] (1a) (2a) \textit{abcd1234§}
     \end{itemize}
-    \item \item \textbf{Schlechtfälle}
+    \item \textbf{Schlechtfälle}
     \begin{itemize}
         \item[] (1b) (2a) \textit{ab12§}
         \item[] (1a) (2b) \textit{abcdefgh§}
@@ -128,13 +128,13 @@ Mit o.a. Beispiel ergibt sich das folgende Stellvertreter:
 
 \vspace{2mm}
 \begin{tcolorbox}[colback=white]
-    Es werden ausschliesslich Gutfälle und Gutfälle und Schlechtfälle kombiniert.
-    Schlechtfälle werden nicht kombiniert, da man davon ausgeht, das dabei nur in Sonderfällen neue Fehler entdeckt werden, aber dadurch die Anzahl der Testfälle zu stark ansteigt.
+    Es werden ausschliesslich Gutfälle/Gutfälle und Gutfälle/Schlechtfälle kombiniert.
+    Schlechtfälle/Schlechtfälle werden nicht kombiniert, da man davon ausgeht, das dabei nur in Sonderfällen neue Fehler entdeckt werden, aber dadurch die Anzahl der Testfälle zu stark ansteigt.
 \end{tcolorbox}
 \vspace{2mm}
 
 \subsubsection*{Mehrere Eingaben}
-Gibt es \textbf{mehrere Eigaben} wird genauso vorgegangen wir bei zwei Gruppen von Äquivalenzklassen pro Eingabe: Jede Äquivalenzklasse muss mindestens einmal im Test vorkommen, wobei alle anderen Äquivalenzklasse gültig sind (vgl.~\cite[44]{Wed09c}).\\
+Gibt es \textbf{mehrere Eigaben} wird genauso vorgegangen wie bei zwei Gruppen von Äquivalenzklassen pro Eingabe: Jede Äquivalenzklasse muss mindestens einmal im Test vorkommen, wobei alle anderen Äquivalenzklasse gültig sind (vgl.~\cite[44]{Wed09c}).\\
 Als Beispiel führt \textit{Wedemann} die Eingabe von \textit{Vorname} und \textit{Nachname} an (vgl.~\cite[44]{Wed09c}): Ein Vorname und ein Nachname muss aus mindestens 2 Zeichen bestehen, woraus sich folgende Äquivalenzklassen ergeben:
 
 \begin{itemize}
@@ -170,7 +170,7 @@ Die Testdaten sind dann:
     \begin{itemize}
         \item[] (1a) (2a) ``\textit{Max}`` ``\textit{Moritz}``
     \end{itemize}
-    \item \item \textbf{Schlechtfälle}
+    \item \textbf{Schlechtfälle}
     \begin{itemize}
         \item[] (1a) (2b) ``\textit{Max}`` ``\textit{M}``
         \item[] (1b) (2a) ``\textit{M}`` ``\textit{Moritz}``
@@ -183,7 +183,7 @@ Die Testdaten sind dann:
 
 \subsubsection*{Mehrere Eingaben und mehrere Gruppen von Äquivalenzklassen}
 Bei realen Anforderungen mit \textbf{mehreren Eingaben und mehreren Gruppen von Äquivalenzklassen} pro Eingabe wird genauso wie bei den o.a. Beispielen vorgegangen.
-Dadurch ist auch bei einer größeren Anzahl von Äquivalenzklassengruppen eine noch überschaubare Anzahl der konstruierten  Testfällen gewährleistet (vgl.~\cite[45]{Wed09c}).
+Dadurch ist auch bei einer größeren Anzahl von Äquivalenzklassengruppen eine noch überschaubare Anzahl der konstruierten Testfälle gewährleistet (vgl.~\cite[45]{Wed09c}).
 
 \subsubsection*{Grenzwertanalyse}
 Es ist sinnvoll, an den \textbf{Grenzen von Äquivalenzklassen} zu testen, da hier erfahrungsgemäß Fehler auftreten.\\
@@ -212,7 +212,7 @@ In dem Beispiel mit den mehreren Eingaben (Vorname, Nachname)könnten die Testda
     \begin{itemize}
         \item[] (1a) (2a) ``\textit{hu}`` ``\textit{li}``
     \end{itemize}
-    \item \item \textbf{Schlechtfälle}
+    \item \textbf{Schlechtfälle}
     \begin{itemize}
         \item[] (1a) (2b) ``\textit{hu}`` ``\textit{l}``
         \item[] (1b) (2a) ``\textit{h}`` ``\textit{li}``
@@ -233,14 +233,14 @@ In dem Beispiel mit den mehreren Eingaben (Vorname, Nachname)könnten die Testda
 Auch wenn die Methode der Äquivalenzklassen eine etablierte, ausgereifte Methode darstellt, ist ihr Einsatz schwierig, wenn das Verhalten vom Zustand abhängt - in diesen Fällen verwendet man \textbf{zustandsbasierte Tests} (s. Abschnitt~\ref{subsec:zustandsbasierter-test}).
 
 \subsubsection*{Ursache-Wirkungs-Analyse}
-Besitzen Äquivalenzklassen untereinander Abhängigkeiten, weil sich bspw. Eingaben gegenseitig bedingen, wird es schwer, Testdaten vernünftig zu konsturieren.\\
+Besitzen Äquivalenzklassen untereinander Abhängigkeiten, weil sich bspw. Eingaben gegenseitig bedingen, wird es schwer, Testdaten vernünftig zu konstruieren.\\
 \textit{Wedemann} gibt hierzu exemplarisch das Beispiel eines Tests für einen Geldautomaten an, der nur Geld auszahlen soll, wenn die Karte gültig, die PIN richtig und genügend Geld auf dem Konto vorhanden ist; ist die PIN korrekt und die Karte gültig, soll ein anderer Betrag eingegeben werden können; die Karte soll eingezogen werden, wenn die PIN falsch ist und es sich um den dritten Versuch der Eingabe der PIN handelt. Für diesen Fall sei das Verfahren der \textbf{Ursache-Wirkungs-Analyse} geeignet (vgl.~\cite[46]{Wed09c}); \textit{Wedemann} verweist in diesem Zusammenhang auf \cite{ST05}.
 
 
 \subsection{Zustandsbasierter Test}\label{subsec:zustandsbasierter-test}
 Wenn eine Methode einer Klasse bei unterschiedlichen Feldern ein anderes Verhalten zeigt, ist das Verhalten von dem \textbf{inneren Zustand abhängig}.\\
 Da sich dies auf Testgegenstände auswirkt, muss das unterschiedliche Verhalten in den verschiedenen Zuständen getestet werden.\\
-\textit{Wedemann} führt als Beispiel in \cite[46 ff.]{Wed09c} einen Stack an, bei dem die Methoden \code{push()} / \code{pop() / \code{top()}} anderes Verhalten zeigen, je nachdem, ob der Stack gefüllt (\textit{filled}), leer (\textit{empty}) oder voll (\textit{full}) ist:
+\textit{Wedemann} führt als Beispiel in \cite[46 ff.]{Wed09c} einen Stack an, bei dem die Methoden \code{push()} / \code{pop()} / \code{top()} anderes Verhalten zeigen, je nachdem, ob der Stack gefüllt (\textit{filled}), leer (\textit{empty}) oder voll (\textit{full}) ist:
 
 \begin{minted}{java}
 class Stack {
@@ -332,5 +332,5 @@ Anhand der Zustandsübergangstabelle müssen alle Zustandsübergänge getestet w
 Die Aufgabe der Tester hierbei ist es, einen oder mehrere Pfade zufinden, die dies mit möglichst geringem Aufwand ermöglichen (vgl.~\cite[48]{Wed09c}): Für das o.a. Beispiel wäre das ein Stack mit \code{maxsize=3}, bei dem $4$-mal \code{push()} und $3$-mal \code{pop()} hintereinander aufgerufen wird.
 
 \subsubsection*{Zustände}
-\textit{Wedemann} merkt an, das sich bei dieser Diskussion die Frage ergeben kann, ``was denn nun genau unter einem Zustand zu verstehen ist`` (\cite[48]{Wed09c}): Ist das bereits jedes Attribut, das über \code{set()} verändert und über \code{get()} einen anderen Zustand repräsentieren kann bereits der Fall? \textit{Wedemann} bejaht dies: ``[...] auch ein Attriutwert [ist] als Zustand zu sehen und der Test ist vollständig, wenn ein gesetzter Wert auch verwendet wird.`` (\cite[48]{Wed09c}).
-Er fügt allerdings an, dass es für solch einfache Fälle nicht notwendig sei, den vorgestellten Formalismus zu verwenden, da dieser nur sinnvoll bei Kassen sei, ``wenn es mehrere Zustände gibt, in denen sich die Methoden so unterschiedlich verhalten, dass dies mit Äquivalenzklassen nicht mehr abgebildet werden kann`` (\textit{ebenda}).
+\textit{Wedemann} merkt an, das sich bei dieser Diskussion die Frage ergeben kann, ``was denn nun genau unter einem Zustand zu verstehen ist`` (\cite[48]{Wed09c}): Ist ein Zustand bereits durch jedes Attribut, das über \code{set()} verändert werden kann, gegeben? \textit{Wedemann} bejaht dies: ``[...] auch ein Attributwert [ist] als Zustand zu sehen und der Test ist vollständig, wenn ein gesetzter Wert auch verwendet wird.`` (\cite[48]{Wed09c}).
+Er fügt allerdings an, dass es für solch einfache Fälle nicht notwendig sei, den vorgestellten Formalismus zu verwenden, da dieser nur sinnvoll bei Kassen sei, bei denen ``es mehrere Zustände gibt, in denen sich die Methoden so unterschiedlich verhalten, dass dies mit Äquivalenzklassen nicht mehr abgebildet werden kann`` (\textit{ebenda}).
