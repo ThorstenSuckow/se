@@ -1,0 +1,35 @@
+\section{Datenflussanomalieanalyse}
+
+\begin{tcolorbox}[title=Datenflussanomalieanalyse]
+Die Abfolgen der \textbf{Zugriffe auf Variablen} in den verschiedenen Pfaden eines Kontrollflussgraphen werden bei der \textbf{Datenflussanomalieanalyse} analysiert.\\
+
+Zugriffe auf eine Variable werden dazu durch drei Attribute beschrieben (s. Tabelle~\ref{tab:dfaa_cheatsheet}): \textbf{u} (\textit{Undefinition}), \textbf{r} (\textit{Referenzierung}), \textbf{d} (\textit{Definition}).
+
+Es gibt bei der Datenflussanomalieanalyse \textbf{3 mögliche Anomalien}:
+
+\begin{itemize}
+    \item \textbf{ur-Anomalie}: Zugriff auf eine Variable, bevor sie initialisiert wurde.
+    \item \textbf{du-Anomalie}: Definition einer Variable und anschließende Undefinition, ohne, dass sie davor lesend / schreibend verwendet wurde.
+    \item \textbf{dd-Anomalie}: Mehrmalige Definition einer Variable, ohne, dass zwischendurch lesend auf sie zugegriffen wird.
+\end{itemize}
+
+\end{tcolorbox}
+
+
+
+
+\begin{table}[]
+    \centering
+    \setlength{\tabcolsep}{0.5em}
+    \def\arraystretch{1.5}
+    \begin{tabular}{|c|l|l|}
+        \hline
+        \textbf{Kürzel} & \textbf{Bedeutung} & \textbf{Beispiel}                                            \\ \hline
+        \textbf{d}                                                    & Definition                                                      & \code{x = 5}                                                          \\ \hline
+        \textbf{r}                                                    & Referenzierung                                                  & \begin{tabular}[c]{@{}l@{}}\code{y = x + 1}\\ \code{if (x < 4)}\end{tabular} \\ \hline
+        \textbf{u}                                                    & Undefinition                                                    & \code{int x;} oder Zerstörung                                         \\ \hline
+    \end{tabular}
+    \caption{Kürzel in der Datenflussanomalieanalyse und ihre Bedeutung.
+    Im Beispiel $y=x+1$ wird $y$ \textit{definiert}, $x$ \textit{referenziert}. (Quelle: \cite[33]{Wed09c})}
+    \label{tab:dfaa_cheatsheet}
+\end{table}
