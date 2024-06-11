@@ -1,0 +1,14 @@
+
+\section*{Antwort}
+
+Es gibt folgende Typen von werkzeuggestützter Analyse von Quellcode:
+
+\begin{itemize}
+    \item Werkzeuggestützte Analyse zur Einhaltung von \textbf{Programmierrichtlininen}
+    \item Werkzeuggestützte Analyse zum Aufspüren \textbf{typischer Defekte}, bspw. mittels \textit{Mess Detektoren} (bspw. PMD für Java, s. Aufgabe 2) oder durch die \textbf{Datenflussanomalieanalyse}
+    \item Erfassen von \textbf{Code-Metriken}:
+    \begin{itemize}
+        \item Code-Metriken können wertvolle Hinweise auf den Grad der Kopplung in einer Software / einem Software-Modul geben, und ob allgemeine Prinzipien guten Entwurfs verletzt sind (keine schlanken Schnittstellen, viele öffentliche Methoden in einer Klasse)
+        \item durch die \textbf{zyklomatische Zahl} (auch: \textit{McGabe-Metrik}) lässt sich feststellen, ob die Anzahl durchlaufbarer Pfade im Vergleich zu der Anzahl der Anweisungen überproportional hoch ist, was auf übermäßig komplexe Implementierung einer Methode (bzw. durch die \textit{weighted mean complexity} einer Klasse) hinweist (vgl.~\cite[Abb. 4.3, 37]{Wed09c})
+    \end{itemize}
+\end{itemize}
