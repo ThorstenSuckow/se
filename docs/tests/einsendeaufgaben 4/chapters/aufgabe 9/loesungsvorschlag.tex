@@ -1,0 +1,30 @@
+
+\section*{Antwort}
+
+
+\textit{Binder} listet folgende Arten von Integrationstests auf (vgl.~\cite[642]{Bin99})\footnote{
+    \textit{Wedemann}'s Abschnitt über Integrationstests \cite[59]{Wed09c} enthält einige dieser Verfahren, sowie ergänzt um \textit{Ad-Hoc-Integration}
+}:
+
+\begin{itemize}
+    \item Big-Bang Integration
+    \item Bottom-Up Integration
+    \item Top-Down Integration
+    \item Collaboration Integration
+    \item Backbone Integration
+    \item Layer Integration
+    \item Client/ Server Integration
+    \item Distributed Services Integration
+    \item High-Frequency Integration
+\end{itemize}
+
+
+\noindent
+Das gebräuchlichste Verfahren dürfte sicherlich die \textbf{Bottom-Up-Integration} sein, nach der zunächst ``kleine Teile``\footnote{
+bspw. Komponenten in Schichten, die wenig Abhängigkeiten haben, bspw. in der Datenhaltungsschicht
+} für sich getestet werden, bevor dann ``kontrollierenden Teile``\footnote{
+höherliegende Module, bspw. in der Fachkonzeptschicht
+}  zusammen mit den bereits getesteten kleinen Teile integriert und getestet werden (\textit{Binder}: ``following usage dependencies`` \cite[642]{Bin99}). Abhängigkeiten, die noch nicht zur Verfügung stehen, werden bei diesem Verfahren i.d.R. durch \textit{Stub-} und \textit{Mock-Objekte} simuliert; somit muss ein kontrollierender Teil nicht auf die Fertigstellung einer Abhängigkeit warten, es kann \textit{unabhängig} voneinander getestet werden.\\
+\textit{High-Frequency-Integration} wird meist im Zusammenspiel mit der \textbf{Bottom-Up-Integration} angewendet\footnote{
+s. \cite[60]{Wed09c}
+}, insb. bei iterativen/agilen Entwicklungsmodellen: Bereits durchgeführte Tests werden somit bei (jeder) Quellcode-Änderung nochmals durchgeführt, und es können neue Defekte durch Änderungen / neue Teile eher festgestellt werden.
