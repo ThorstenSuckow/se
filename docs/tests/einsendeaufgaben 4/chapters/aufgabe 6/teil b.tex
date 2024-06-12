@@ -1,0 +1,36 @@
+\subsection*{b)}
+
+\begin{itemize}
+    \item[] \textbf{Testfall}: Anzeige Orte für PLZ, \textbf{ID}: abc123
+    \item[] \textbf{Autor}: [Vorname] [Nachname] [email-adresse]
+    \item[] \textbf{Datum}: 01.01.1970
+    \item[] \texbf{Setup}: PLZ/Orte-Tabelle muss mit den Testdaten gefüllt sein
+\end{itemize}
+
+\textbf{Vorgehen}: (s. Tabelle~\ref{tab:testfall})
+
+\begin{table}[]
+    \centering
+    \setlength{\tabcolsep}{0.5em}
+    \def\arraystretch{1.5}
+    \begin{tabular}{|c|p{6cm}|p{6cm}|}
+        \hline
+        \multicolumn{1}{|l|}{\textbf{Lfd. Nr.}} & \multicolumn{1}{c|}{\textbf{Schritt}}        & \textbf{erwartetes Ergebnis}                        \\ \hline
+        1 & Anwender klickt ``PLZ Eingabe``-Button & Dialog ``Postleitzahl eingeben`` öffnet sich\\ \hline
+        2 & Füllen des PLZ-Feldes mit $1234$ & Fehlermeldung ``ungültige Eingabe``\\ \hline
+        3 & Füllen des PLZ-Feldes mit $1234a$ & Fehlermeldung ``ungültige Eingabe``\\ \hline
+        4 & Füllen des PLZ-Feldes mit $12345$ & Schliessen `Postleitzahl eingeben``-Dialog und Anzeige der zugehörigen Orte zu der PLZ\\ \hline
+        5 & Dialog erkennt gültige Eingabe &  Anzeige der zugehörigen Orte zu der PLZ, Schliessen `Postleitzahl eingeben``-Dialog\\ \hline
+    \end{tabular}
+    \caption[]{}
+    \label{tab:testfall}
+\end{table}
+
+\noindent
+
+\begin{itemize}
+    \item[]  \textbf{Zugrundeliegende Anforderungen}:
+    \item[] [Verweis auf Anwendungsfall]
+    \item[] [Verweis auf GUI-Entwurf]
+    \item[] [Verweis auf Geschäftsregeln / Data Dictionary]
+\end{itemize}

@@ -1,0 +1,29 @@
+\subsection*{a)}
+
+\section*{Antwort}
+
+\begin{itemize}
+    \item \textbf{Gültige Äquivalenzklassen}:
+    \begin{itemize}
+        \item \textit{1a)} Zeichenlänge = $5$
+        \item \textit{1b)} Nur Ziffern $0-9$
+    \end{itemize}
+    \item \textbf{Ungültige Äquivalenzklassen}:
+    \begin{itemize}
+        \item \textit{2a)} Zeichenlänge $\neq 5$
+        \item \textit{2b)} Mindestens ein Zeichen keine Ziffer
+    \end{itemize}
+\end{itemize}
+
+\noindent
+Um die Gutfälle bzw. Schlechtfälle zu ermitteln und daraus die Testdaten zu ermitteln, werden alle Gutfälle miteinander kombiniert und die Gutfälle mit den Schlechtfällen.\\
+Schlechtfälle werden nicht miteinander kombiniert, da man davon ausgeht, dass man selten neue Fehler entdeckt, die Anzahl der Testfälle aber zu stark ansteigt (vgl.~\cite[44]{Wed09c}).
+
+\begin{itemize}
+    \item \textbf{Gutfälle}: \textit{1a) 1b)}, Testdaten: $12345$
+    \item \textbf{Schlechtfälle}:
+    \begin{itemize}
+        \item[] \textit{1a) 2b)}, Testdaten: $1234a$
+        \item[] \textit{1b) 2a)}, Testdaten: $1234$
+    \end{itemize}
+\end{itemize}
