@@ -1,0 +1,26 @@
+\subsection*{c)}
+
+\section*{Antwort}
+
+\textbf{Richtig}\\
+Da es sich bei den überschriebenen Methoden um eine neue Implementierung handelt, muss diese auch getestet werden.\\
+
+\noindent
+Gleiches gilt im übrigen für die öffentlichen Methoden, die von der abgeleiteten Klasse geerbt werden: Auch für diese sollten Testfälle bestehen, damit das fehlerfreie Zusammenspiel abgeleiteter und überschriebener Methoden garantiert werden kann und auf Defekte, die durch Änderungen in der abgeleiteten Klasse entstehen können, sofort gefunden werden.\\
+Im Folgenden Beispiel wird die Methode \code{inc(x: int): int} in der ableitenden Klasse verwendet unter der Annahme, dass diese stets den Wert $x + 1$ zurückliefert.
+Wird diese Methode abgeändert, muss sicher gestellt sein, dass dies durch Tests für die ableitende Klasse erkannt wird:
+
+\begin{minted}{java}
+
+    class A {
+        public int inc(int x) {
+            return x + 1;
+        }
+    }
+
+    class B {
+        public int id(int x) {
+            return inc(x) - 1;
+        }
+    }
+\end{minted}
