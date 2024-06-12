@@ -1,0 +1,19 @@
+\subsection*{d)}
+
+\section*{Antwort}
+Die \textbf{zyklomatische Zahl}\footnote{
+    auch \textit{McCabe-Metrik} (\cite{McC76})
+} gibt die Anzahl der vorhandenen \textbf{unabhängigen Zyklen} in einer Methode an, also die Anzahl der enthaltenen Verzweigungen $+1$ (vgl.~\cite[38]{Wed09c}).
+Sie lässt sich formal berechnen nach der Anzahl der Anweisungen und der vorhandenen Pfade und soll somit eine Aussage über die enthaltene Komplexität treffen können (hohe zyklomatische Zahl entspricht einer hohen Komplexität).\\
+Die Zahl lässt sich wie folgt berechnen:
+
+\begin{equation}\notag
+    z = e - n + 2, \text{ mit $e$ = Anzahl der Kanten, $n$ = Anzahl der Knoten}
+\end{equation}
+
+\noindent
+Damit ergibt sich für den Kontrollflussgraph aus Aufgabenteil a) die Zyklomatische Zahl $z$ wie folgt:
+
+\begin{equation}\notag
+    z = 7 - 7 + 2 = 2
+\end{equation}

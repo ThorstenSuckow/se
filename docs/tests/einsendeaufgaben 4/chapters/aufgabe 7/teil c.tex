@@ -1,0 +1,18 @@
+\subsection*{c)}
+
+\section*{Antwort}
+
+Eine \textbf{Boundary-Interior Überdeckung} ist ein Kriterium bei strukturorientierten Testverfahren (\textit{White-Box Tests}) zur Angabe, wieviele der im Programm vorhandenen Anweisungen durch die Tests ausgeführt wurden: Allerdings wird im Gegensatz zu anderen Überdeckungskriterien wie bspw. der  \textit{Anweisungsüberdeckung} gefordert, dass vorhandene Schleifen durch entsprechende Testdaten durchlaufen und \textit{nicht} durchlaufen werden.\\
+
+\noindent
+Eine \textit{vollständige} Boundary-Interior Überdeckung wird erreicht, wenn die in dem zu testenden Programm enthaltenen Schleifen mindestens 2-mal\footnote{
+nach \textit{Wedemann} die ``schlüssigere`` Variante als die Forderung nach genau einem Durchlauf (vgl.~\cite[52]{Wed09c})
+} und  \textit{keinmal} (abweisender Fall)  durchlaufen worden sind.
+
+\noindent
+Um in dem geg. Quellcode eine  Boundary-Interior Überdeckung zu erreichen, können folgende minimale Testdaten genutzt werden:
+
+\begin{itemize}
+    \item $i=0$ (abweisender Fall)
+    \item $i=2$ (Schleife wird 2-mal durchlaufen)
+\end{itemize}
