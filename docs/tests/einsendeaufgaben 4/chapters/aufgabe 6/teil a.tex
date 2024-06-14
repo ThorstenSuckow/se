@@ -1,29 +1,36 @@
 \subsection*{a)}
 
-\section*{Antwort}
+Gruppierung in Äquivalenzklassen nach unterschiedlichen Kriterien der möglichen Eingabewerte (vgl.~\cite[44]{Wed09c}):
 
 \begin{itemize}
-    \item \textbf{Gültige Äquivalenzklassen}:
+    \item \textbf{Anzahl der Zeichen}
     \begin{itemize}
-        \item \textit{1a)} Zeichenlänge = $5$
-        \item \textit{1b)} Nur Ziffern $0-9$
+        \item Gültige Äquivalenzklassen:
+        \item[] (1a) Zeichenlänge $=5$
+        \item Ungültige Äquivalenzklassen
+        \item[] (1b) Zeichenlänge $<5$
+        \item[] (1c) Zeichenlänge $>5$
     \end{itemize}
-    \item \textbf{Ungültige Äquivalenzklassen}:
+    \item \textbf{Art der Zeichen}
     \begin{itemize}
-        \item \textit{2a)} Zeichenlänge $\neq 5$
-        \item \textit{2b)} Mindestens ein Zeichen keine Ziffer
+        \item Gültige Äquivalenzklassen:
+        \item[] (2a) nur Ziffern
+        \item Ungültige Äquivalenzklassen
+        \item[] (2b) mindestens ein Zeichen ist keine Ziffer
     \end{itemize}
 \end{itemize}
 
+
 \noindent
-Um die Gutfälle bzw. Schlechtfälle zu ermitteln und daraus die Testdaten zu ermitteln, werden alle Gutfälle miteinander kombiniert und die Gutfälle mit den Schlechtfällen.\\
+Um die Gutfälle bzw. Schlechtfälle zu ermitteln und daraus die Testdaten zu ermitteln, werden alle Gutfälle und die Gutfälle mit den Schlechtfällen kombiniert.\\
 Schlechtfälle werden nicht miteinander kombiniert, da man davon ausgeht, dass man selten neue Fehler entdeckt, die Anzahl der Testfälle aber zu stark ansteigt (vgl.~\cite[44]{Wed09c}).
 
 \begin{itemize}
-    \item \textbf{Gutfälle}: \textit{1a) 1b)}, Testdaten: $12345$
+    \item \textbf{Gutfälle}: \textit{(1a) (2a))}, Testdaten: $12345$
     \item \textbf{Schlechtfälle}:
     \begin{itemize}
-        \item[] \textit{1a) 2b)}, Testdaten: $1234a$
-        \item[] \textit{1b) 2a)}, Testdaten: $1234$
+        \item[] \textit{(1a) (2b)}, Testdaten: $1234a$
+        \item[] \textit{(2a) (1b)}, Testdaten: $1234$
+        \item[] \textit{(2a) (1c)}, Testdaten: $123456$
     \end{itemize}
 \end{itemize}
