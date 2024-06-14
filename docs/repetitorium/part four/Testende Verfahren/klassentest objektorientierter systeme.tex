@@ -58,24 +58,24 @@ Bei der \textbf{Vererbung} übernehmen abgeleitete Klassen von der Oberklasse be
 Dass neue und überschriebene Methoden getestet werden müssen, ist selbstverständlich.
 Bestehende, ererbte Methoden könnten aber überschriebene Methoden nutzen; sie müssen deshalb genauso gestestet werden, damit fehlerhaftes Verhalten entdeckt werden kann.\\
 Im Folgenden nutzt \code{Bar} die geerbte Methode \code{z()} um die Summe von $1$ und $3$ zu berechnen.
-Ändert sich das Verhalten von \code{z()} und/oder \code{x()}in der Oberklasse, kann das unerwartete Auswirkungen auf Objekte der Klasse \code{Bar} haben, weshalb auch \code{z()} für  Instanzen von \code{Bar} getestet werden sollte.
+Ändert sich das Verhalten von \code{z()} und/oder \code{x()}in der Oberklasse, kann das unerwartete Auswirkungen auf Objekte der Klasse \code{Bar} haben, weshalb auch \code{z()} für  Instanzen von \code{Bar} getestet werden sollte (vgl. ``\textit{naughty children}``,~\cite[Table 17.2, 843]{Bin99}).
 
 \begin{minted}{java}
 class Foo {
-    int z() {
+    public int z() {
         return x() + y();
     }
-    int x() {
+    public int x() {
         return 1;
     }
-    int y() {
+    public int y() {
         return 2;
     }
 }
 
 class Bar extends Foo {
     @Override
-    int y() {
+    public int y() {
         return 3;
     }
 }
