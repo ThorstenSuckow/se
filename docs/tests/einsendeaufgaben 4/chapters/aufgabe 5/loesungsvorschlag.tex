@@ -1,11 +1,12 @@
 
-\section*{Antwort}
 
 Es gibt folgende Typen von werkzeuggestützter Analyse von Quellcode:
 
 \begin{itemize}
     \item Werkzeuggestützte Analyse zur Einhaltung von \textbf{Programmierrichtlininen}
-    \item Werkzeuggestützte Analyse zum Aufspüren \textbf{typischer Defekte}, bspw. mittels \textit{Mess Detektoren} (bspw. PMD für Java, s. Aufgabe 2) oder durch die \textbf{Datenflussanomalieanalyse}
+    \item Werkzeuggestützte Analyse zum Aufspüren \textbf{typischer Defekte}, bspw. mittels \textit{Mess Detektoren} (bspw. PMD für Java, s. Aufgabe 2) oder durch die \textbf{Datenflussanomalieanalyse} und der \textbf{abstrakten Interpretation}\footnote{
+    statische Programmanalyse, bei der u.a. Details der Implementierung abstrahiert werden, um allgemeine Aussagen über das Laufzeitverhalten zu treffen (\cite{CC77})
+    }
     \item Erfassen von \textbf{Code-Metriken}:
     \begin{itemize}
         \item Code-Metriken können wertvolle Hinweise auf den Grad der Kopplung in einer Software / einem Software-Modul geben, und ob allgemeine Prinzipien guten Entwurfs verletzt sind (keine schlanken Schnittstellen, viele öffentliche Methoden in einer Klasse)
