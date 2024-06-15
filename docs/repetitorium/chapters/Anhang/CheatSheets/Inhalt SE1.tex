@@ -1,0 +1,114 @@
+\section{Inhalt SE1}
+
+\section*{1. Software und Software Engineering}
+\subsection*{Lernziele}
+\begin{itemize}
+    \item Probleme bei der Softwareentwicklung benennen können, die zur Notwendigkeit des Software Engineerings führen
+    \item Aufgaben und Ziele des Software Engineerings erklären / benennen können
+    \item Probleme und Risiken des Software Engineerings kennen
+\end{itemize}
+
+\subsection*{Zusammenfassung}
+
+\begin{itemize}
+    \item \textbf{Software Engineering} beschäftigt sich mit dem \textbf{ingenieurmäßigen Vorgehen} bei der Entwicklung von Software
+    \item dabei nutzt es ein \textbf{systematisches}, \textbf{diszipliniertes} und \textbf{messbares Vorgehen} auf \textbf{wissenschaftlicher Basis} und \textbf{kodifzierter Erfahrung}
+    \item SE stellt \textbf{Techniken} und \textbf{Methoden} zur Verfügung, um Entwicklung möglich zu machen und Kosten bei Betrieb und Produktion zu sparen sowie den Nutzen zu maximieren
+    \begin{itemize}
+        \item \textbf{Techniken} und Werkzeuge sind u.a. \textbf{Normen} und \textbf{Standards} die bei der Entwicklung helfen
+        \item \textbf{Methoden} und Verfahren beschreiben hingegen organisatorische Abläufe
+    \end{itemize}
+    \item die Wahl der Hilfsmittel hängt von unterschiedlichen Faktoren ab, u.a. der
+    \begin{itemize}
+        \item \textbf{Teamgröße}
+        \item \textbf{Art des Produkts} (Individualsoftware, Standardsoftware)
+    \end{itemize}
+    \item ein wesentlicher Aspekt des SE ist die Berücksichtigung menschlicher Bedürfnisse der von der SD betroffenen Menschen (Kunden, Entwickler, Management, Benutzer\ldots) sowie der Organisation der Zusammenarbeit der Menschen
+\end{itemize}
+
+\section*{2. Uebersicht ueber die Phasen des Entwicklungszyklus}
+\subsection*{Lernziele}
+\begin{itemize}
+    \item Bedeutung systematischen Vorgehens und Auswirkungen unsystematischen Vorgehens beurteilen können
+    \item mit den Phasen der Softwareentwicklung vertraut sein
+    \item die Inhalte der einzelnen Phasen kennen
+\end{itemize}
+
+\subsection*{Zusammenfassung}
+\begin{itemize}
+    \item Unsystematisches Vorgehen bei der Softwareentwicklung verursacht Verzögerungen und Probleme
+    \item Systematisches Vorgehen, wie es das \textit{Wasserfallmodell} in seinen 6 Phasen definiert, kann helfen, eine höhere Qualität
+    durch Planbarkeit zu erreichen.\\
+    Die einzelnen Phasen mit ihren jeweiligen Ergebnissen lauten:\\
+    \item[]
+    \begin{enumerate}
+        \item \textbf{Anforderungen}: Es entsteht ein \textbf{Lastenheft}.
+        \item \textbf{Analyse}: Das Domänen-Modell wird erarbeitet, es entsteht ein \textbf{Fachkonzept}.
+        \item \textbf{Entwurf}: Das Fachkonzept wird zu einem \textbf{DV-Konzept} ausgearbeitet.
+        \item \textbf{Implementierung}: Es entstehen \textbf{Programmcode} und \textbf{Datenbankschemen}.
+        \item \textbf{Test}: Die in der vorherigen Phase erstellten Systemkomponenten werden in das System integriert, es finden Systemtests und Integrationstests statt, das Ergebnis sind \textbf{Testfälle} und \textbf{-protokolle}.
+        \item \textbf{Betrieb}: Das System geht in den Betrieb über und wird über Aktualisierungen und Fehlerbehebungen gepflegt.
+    \end{enumerate}
+\end{itemize}
+
+\section*{Prozessmodelle}
+
+\subsection*{Lernziele}
+\begin{itemize}
+    \item Grenzen des Wasserfallmodells einschätzen können
+    \item Unterschiede zwischen iterativem und inkrementellem Vorgehen verstehen
+    \item Anliegen und Grundprinzipien agilen Vorgehens kennen
+    \item einige klassische und agile Vorgehensmodelle kennen (V-Modell XT, RUB, Scrum, XP)
+    \item einschätzen können, welches Vorgehen wann zu bevorzugen ist
+\end{itemize}
+
+\subsection*{Zusammenfassung}
+
+\begin{itemize}
+    \item Anforderungen lassen sich bei Projekten vorab nicht genügend festlegen.
+    \item Fehlt im Team die Erfahrung oder werden neue Technologien eingesetzt, ist ein ausgereifter Entwurf nicht machbar.
+    \item Bei großen Projekten würde man unter diesen Voraussetzungen mit dem Wasserfallmodell nicht flexibel genug sein,
+    um auf Änderungen reagieren zu können.
+    \item Aus diesem Grund gibt es alternative Modelle, die eingesetzt werden können:
+    \begin{itemize}
+        \item \textbf{inkrementell}: Aufteilung der Anforderungen, so dass Teilsysteme umgesetzt und an den Kunden ausgeliefert werden können
+        Die Teilsysteme werden sequentiell bearbeitet.
+        \item \textbf{iterativ}: In Iterationen wird das Projekt in Zeitabschnitte unterteilt, in denen die Anforderungen umgesetzt werden; entsprechend dem Spiralmodell zunächst die risikoreichsten.
+        Vorhergehende Ergebnisse werden in darauffolgenden Iterationen weiterbearbeitet.
+        Ein bekanntes iteratives Modell ist \textit{RUP}, bei dem einzelne Phasen Ergebnis-Artefakte liefern, wie Anwendungsfälle oder Klassendiagramme.
+        \item \textbf{nebenläufig}: Die Aufgaben werden aufgeteilt in parallel (oder nacheinander) bearbeitbare Aufgaben, die dann von den Mitarbeitern umgesetzt werden.
+    \end{itemize}
+    \item Die genannten Modelle werden häufig nicht isoliert betrachtet, sondern je nach Projekt auch kombiniert, insb. bei dem \textbf{agilen Vorgehen}.
+\end{itemize}
+
+\section*{Requirements Engineering}
+
+\subsection*{Lernziele}
+\begin{itemize}
+    \item wissen, wie man bei der Ermittlung von Anforderungen vorgeht
+    \item wissen, auf welche typischen Probleme man bei der Ermittlung von Anforderungen stößt
+    \item Unterschiede zwischen funktionalen und nicht-funktionalen Anforderungen verstehen
+    \item funktionale Anforderungen als Anwendungsfälle dokumentieren können
+    \item Bedeutung nicht-funktionaler Anforderungen einschätzen können, sowie diese erfassen und dokumentieren können
+    \item Pflichten- und Lastenhefte erstellen können
+\end{itemize}
+
+\subsection*{Zusammenfassung}
+
+\begin{itemize}
+    \item \textbf{Anforderungen} sind Bedürfnisse der Stakeholder und Kunden an das Softwaresystem.
+    \item Vor der Erarbeitung der Anforderung sollte eine \textbf{Domänenanalyse} erfolgen, um sich mit den Begriffen und Konzepten der Domäne vertraut zu machen.
+    \item daraufhin wird der wirtschaftliche Nutzen, den sich der Kunde verspricht, als \textbf{Geschäftsanforderungen} in einem \textbf{Lastenheft} festgehalten.
+    \item Anschließend werden die Anforderungen aller involvierten Personen (\textbf{Stakeholder}) ermittelt, insbesondere der \textbf{Endanwender}.
+    \item Diese Anforderungen werden grob unterteilt in \textbf{funktionale} und \textbf{nicht-funktionale} Anforderungen.
+    \item funktionale Anforderungen sind hierbei die Funktionen, die der Endanwender von dem System erwartet.
+    \begin{itemize}
+        \item funktionale Anforderungen werden als \textbf{Use Case} oder \textbf{User Story} erfaßt.
+        \item Anwendungsfälle (Use Cases) können hierbei sehr detailliert und formell beschrieben werden.
+        \item User Stories sind i.d.R. wenig detailliert und beschreiben nur kurz den Umgang des Endanwenders mit dem System.
+        \item für die Planung von Steueranwendungen (Hardware) können auch \textbf{Ereignistabellen} verwendet werden.
+    \end{itemize}
+    \item nicht-funktionale Anforderungen sind technische und organisatorische Anforderungen, die üblicherweise in Form von Listen gesammelt werden
+    \item \textbf{Regeln}, und \textbf{Formate von Daten} werden gesondert erfaßt, als \textbf{Business Rules} in Listen bzw. in \textbf{Datadictionaries} und der Angabe von \textbf{Mengengerüste}.
+    \item Die Aufstellung all dieser Anforderung wird bei dem \textbf{Wasserfallmodell} oft in Form des \textbf{Pflichtenhefts} realisiert.
+\end{itemize}
