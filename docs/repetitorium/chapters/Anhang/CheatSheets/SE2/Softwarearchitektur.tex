@@ -1,0 +1,24 @@
+\section{Softwarearchitektur}
+
+\begin{tcolorbox}[title=Softwarearchitektur]
+Die \textbf{Softwarearchitektur} beschreibt den grundlegenden Aufbau einer Softwarelösung.\\
+Die Grundlage sind \textbf{Anforderungen} und \textbf{Randbedingungen}: Die Erfüllung der Anforderungen unter Einhaltung der Randbedingungen sollen durch eine Architektur ermöglicht werden.\\
+I.d.R. bestimmen nicht die funktionalen, sondern die \textbf{nicht-funktionalen Anforderungen} die Systemarchitektur.\\
+
+\noindent
+Softwarearchitekten sollten bereits bei der Klärung der \textbf{Geschäftsanforderungen} beteiligt sein.\\
+Architekten liefern \textbf{Aufwandsabschätzungen}, die die Wirtschaftlichkeit beeinflussen können, und überprüfen die \textbf{Machbarkeit von Ideen}.
+Hierbei entsteht eine \textbf{Rückkoppelungsschleife}, da Ideen zum Produkt zu Fragen und Aussagen zur Softwarearchitektur führen, die wiederum die Ideen zum Produkt beeinflussen.\\
+
+\noindent
+Die \textbf{Dokumentation} erfolgt hierbei in \textbf{Sichten}:
+\begin{itemize}
+    \item \textbf{Kontextsicht} (zeigt das System als Blackbox in seinem Kontext aus einer Vogelperspektive)
+    \item \textbf{Baustein-Sicht} (statisches Modell: ``Bausteinsichten zeigen die statischen Strukturen der Architekturbausteine des Systems, Subsysteme, Komponenten und deren Schnittstellen.``\footnote{
+        \cite[81]{Sta14e}.
+        Nachfolgende Beschreibungen der Sichten wurden \textit{Starke} entnommen.
+    } Dies beinhaltet auch die Organisation des Quellcodes.)
+    \item \textbf{Laufzeitsicht} (dynamisches Modell, Zusammenwirken der Bausteine des Systems zur Laufzeit)
+    \item \textbf{Verteilungssicht} (Beschreibung der Hardwarekomponenten, auf denen das System läuft; dokumentiert Rechner, Prozessoren, Netztopologien u.a., also Bestandteile der \textit{physischen} Systemumgebung: Das System wird aus Betreibersicht gezeigt)
+\end{itemize}
+\end{tcolorbox}
