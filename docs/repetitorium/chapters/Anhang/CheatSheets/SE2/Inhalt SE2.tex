@@ -1,0 +1,75 @@
+\section{Inhalt SE2}
+
+\section*{1. Objektorientierte Analyse}
+
+\subsection*{Lernziele}
+\begin{itemize}
+    \item verstehen, wie und wozu Modelle in Analyse und Entwurf verwendet werden
+    \item wissen, wie Objekte und Klassen zur Analyse von Anforderungen der Software verwendet werden
+    \item Klassendiagramme der Analyse auf systematische Art und Weise erstellen können
+    \item Nutzen von Mustern beurteilen können
+    \item den Aufbau von Mustern verstehen
+    \item die wichtigsten Analysemuster kennen und verwenden können
+    \item Konzepte zum systematischen Entwurf und zur ergonomischen Gestaltung von Benutzeroberflächen kennen
+\end{itemize}
+
+\subsection*{Zusammenfassung}
+\begin{itemize}
+    \item in der \textbf{Analyse} werden \textbf{Modelle} genutzt, um Anforderungen zu verstehen und Lösungen aus fachlicher Sicht zu entwickeln
+    \item hierzu werden Modelle des Umfelds und der Lösung auf formalisierte Art erstellt
+    \item diese dienen den Modellen des \textbf{Entwurfs}
+    \item Modelle bestehen aus \textbf{statischen} und \textbf{dynamischen} Modellteilen, wobei statische Modellteile die Teile und ihre Beziehungen untereinander modellieren, und dynamische das Zusammenspiel der Teile beschreiben
+    \item In der OO-Analyse wird statische Modellierung mit \textbf{Klassendiagrammen} realisiert.
+    \item[] Dynamische Modelle, die Zustände und Übergänge von Zuständen beschreiben, werden mittels \textbf{Zustandsdiagrammen} modelliert.
+    \item[] Beschreiben dynamische Modelle Abläufe von Aktivitäten, nutzt man \textbf{Aktivitätsdiagramme}.
+    \item Bei der Analyse kommen außerdem Analysemuster zum Einsatz: Muster beschreiben Lösungskizzen verallgemeinerter Probleme
+    \item[] Sie helfen, indem sie \textbf{bewährte Lösungen} beschreiben und ein \textbf{Kommunikationsmittel} darstellen
+    \item Die wichtigsten Analysemuster sind \textbf{Exemplartyp}, \textbf{Wechselnde Rollen} und \textbf{Allgemeine Hierarchie}.
+    \item Die Gestaltung der Benutzeroberfläche ist Bestandteil der Analyse, wobei logische Struktur, die Informationsarchitektur und die physische Gestalt entworfen werden.
+    \item[] Ergonomie und Barrierefreiheit sind wichtige Punkte, die dabei beachtet werden müssen.
+\end{itemize}
+
+\section*{2. Architektur}
+
+\subsection*{Lernziele}
+\begin{itemize}
+    \item verstehen, was Architektur ist und welchen Einflüssen sie unterliegt
+    \item die wichtigsten Architekturmuster kennen und einordnen können
+\end{itemize}
+
+\subsection*{Zusammenfassung}
+
+\begin{itemize}
+    \item Der grundlegende Aufbau einer Software wird über die \textbf{Softwarearchitektur} beschrieben.
+    \item Die Architektur sollte aufgrund ihrer grundsätzlichen Bedeutung von Anfang an berücksichtigt werden.
+    \item Grundlage für eine Architektur sind Anforderungen und Randbedingungen, wobei \textbf{nicht-funktionale Anforderungen} und \textbf{Randbedingungen} entscheidenden Einfluss haben.
+    \item Hilfsmittel für eine Softwarearchitektur sind \textbf{Taktiken}, \textbf{Muster} (bspw. Client-Server, Schichtenbildung) und \textbf{Referenzarchitekturen}.
+    \item Die Dokumentation von Architekturen erfolgt in \textbf{Sichten}.
+\end{itemize}
+
+\section*{3. Objektorientierter Entwurf}
+
+\subsection*{Lernziele}
+\begin{itemize}
+    \item verstehen, wie und wozu Modelle im Entwurf verwendet werden
+    \item Zusammenhang zwischen Modellen der Analyse und des Entwurfs verstehen
+    \item Klassendiagramme des Entwurfs auf systematische Art und Weise erstellen können
+    \item bei der Erstellung von Entwürfen Entwurfsmuster verwenden können
+    \item die Qualität von Entwürfen beurteilen und systematisch verbessern können
+\end{itemize}
+
+\subsection*{Zusammenfassung}
+
+\begin{itemize}
+    \item im \textbf{Entwurf} werden Klassen und Dateien eines zu entwerfenden Systems \textbf{geplant}
+    \item dabei beruht der Entwurf auf den \textbf{Anforderungen}, den \textbf{Ergebnissen der Analyse} und der \textbf{Architektur}
+    \item die Klassen des Entwurfs entsprechen den Klassen der verwendeten objektorientierten Sprache
+    \item die \textbf{Struktur der Klassen} wird mit \textbf{UML-Klassendiagrammen} definiert
+    \item \textbf{Abläufe} und das \textbf{Zusammenspiel} von Klassen wird mit \textbf{UML-Sequenzdiagrammen} modelliert
+    \item der Entwurf sollte sinnvollerweise \textbf{schrittweise} (\texit{iterativ}) entwickelt werden
+    \item hierbei helfen grundlegende Prinzipien wie ``\textit{Reise mit leichtem Gepäck}``
+    \item Entwurfsmuster wie \textbf{Beobachter}, \textbf{MVC} und \textbf{Fassade} sind wichtige Hilfsmittel beim Entwurf
+    \item anhand von \textbf{Prinzipien guten Entwurfs} kann die \textbf{Qualität eines Entwurfs} beurteilt werden
+    \item das wichtigste Prinzip hierbei ist die Aufteilung der Gesamtaufgabe in \textbf{kleine Teile}, wobei die Teile lose untereinander gekoppelt sein sollen, was durch eine \textbf{hohe Kohäsion} (\textit{Zusammenhalt}) sowie \textbf{Vermeidung starker Kopplung} (Globale Variablen, lange formale Parameterlisten in den Methoden-Signaturen usw.) erreicht werden kann, außerdem durch die Beachtung guten Entwurfs wie Vermeidung zirkulärer Abhängigkeiten
+    \item die Qualität eines Entwurfs bleibt gut, indem der Code durch \textbf{Refactorings} stetig verbessert wird
+\end{itemize}
