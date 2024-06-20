@@ -4,6 +4,7 @@
 \textbf{Paketdiagramme} zeigen Pakete und ihre Abhängigkeiten und werden in frühen Designphasen genutzt, um Strukturen (großer Systeme) aufzuzeigen.
 \end{tcolorbox}
 
+\noindent
 Durch die Gruppierung können Details weggelassen werden.\\
 Eine Abhängigkeit zwischen zwei Paketen gibt die Abhängigkeit darin enthaltener Elemente wieder.\\
 
@@ -29,7 +30,7 @@ Es können immer nur \textbf{public} Elemente in anderen Paketen gesehen werden.
 \textit{Buhl} weist darauf hin, dass dies erlaubt, ``Pakete mit Fassaden auszustatten. Das bedeutet, es gibt nur eine public Klasse (Facade) und alle anderen Klassen sind privat.`` (\cite[46]{Buh09}).\\
 
 \begin{tcolorbox}
-    Elemente sollten so in Paketen gruppiert werden, dass ihr \textbf{funktionaler Zusammenhalt} (\textit{Kohäsion}, s. Abschnitt~\ref{subsec:hohe-kohasion}) klar wird\\.
+    Elemente sollten so in Paketen gruppiert werden, dass ihr \textbf{funktionaler Zusammenhalt} (\textit{Kohäsion}, s. Abschnitt~\ref{subsec:hohe-kohasion}) klar wird.\\
     Hierdurch kann vermieden werden, dass Änderungen einer Klasse eines Paketes auch Änderungen außerhalb des Paketes erfordern.\\
     Außerdem erhöht sich die Wahrscheinlichkeit, dass einzelne Pakete als solche in anderen Projekten wiederverwendet werden können.
 \end{tcolorbox}

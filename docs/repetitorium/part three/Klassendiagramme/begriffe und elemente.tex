@@ -32,9 +32,9 @@ Es gibt zwei unterschiedliche Notationen für Properties: Die \textbf{Attribut}-
         \item \textbf{Multiplizität}:
         \begin{itemize}
             \item \code{[0..*]}: optionales Attribut, gekennzeichnet durch $0$ als untere Grenze.
-            Der Stern $*$ zeigt an, dass bel. viele Ausprägungen vorhanden sein dürfen.
-            Statt \code{[0..*]} kann in dem Fall auch \code{[*]} gnotiert werden.
-            \item \code{[1..n]}: obligatorische Property, gekennzeichnet durch $1$ als untere Grenze ($n >= 1 \land n=*$):
+            Der Stern \code{*} zeigt an, dass bel. viele Ausprägungen vorhanden sein dürfen.
+            Statt \code{[0..*]} kann in dem Fall auch \code{[*]} notiert werden.
+            \item \code{[1..n]}: obligatorische Property, gekennzeichnet durch $1$ als untere Grenze ($1 \leq n < \infty, n \in \mathbb{N}$):
             \item \code{[1]}: Standardwert
         \end{itemize}
         \item \textbf{Vorgabewert}: Initialisierungswert
@@ -121,7 +121,7 @@ Assoziationen können Namen besitzen, die mit einer Leserichtung ausgestattet si
 
 \begin{tcolorbox}[title=Angabe der Navigierbarkeit,colback=white]
     Die UML Spezifikation weist in~\cite[203]{OMG17} darauf hin, dass es möglich ist, durch die gleichzeitige Angabe der \textit{nonNavigabilityNotation} / \textit{navigabilityNotation} die Navigierbarkeit \textit{explizit} darzustellen.\\
-    In der Praxis wird häufig nur der Pfeil in eine Richtung verwendet (unidirektionale Assoziation), auf die \textit{nonNavigabilityNotation} wird hingegen verzichtet: In diesem Fall können wir \textit{Balzert} folgen, und behandelt die Navigierbarkeit in die andere Richtung als \textit{undefiniert} (vgl.~\cite[285]{Bal05}).
+    In der Praxis wird häufig nur der Pfeil in eine Richtung verwendet (unidirektionale Assoziation), auf die \textit{nonNavigabilityNotation} wird hingegen verzichtet: In diesem Fall können wir \textit{Balzert} folgen, der die Navigierbarkeit in die andere Richtung als \textit{undefiniert} behandelt (vgl.~\cite[285]{Bal05}).
 \end{tcolorbox}
 
 \subsection*{Anmerkungen}
@@ -272,7 +272,7 @@ Generalisierungen können in Gruppen zusammengefasst werden, die weitere Eigensc
 
 \subsection*{Abhängigkeitsbeziehungen}
 \textbf{Abhängigkeitsbeziehungen} (\textit{dependencies}) werden durch eine gestrichelte Linie dargestellt mit einer \textit{offenen Pfeilspitze}.\\
-Dabei geht die Leserichtung von dem \textbf{Client} aus in Richtung \textbf{Supplier} - der Client ist also abhängig vom Supplier, wodurch eine kopplung gegeben ist: Ändert sich der Supplier, muss sich in der Regel auch der Client ändern.\\
+Dabei geht die Leserichtung von dem \textbf{Client} aus in Richtung \textbf{Supplier} - der Client ist also abhängig vom Supplier, wodurch eine Kopplung gegeben ist: Ändert sich der Supplier, muss sich in der Regel auch der Client ändern.\\
 
 \noindent
 Aus Gründen der Übersichtlichkeit sollten nur die wichtigsten Abhängigkeitsbeziehungen modelliert werden, also wenn ein wichtiger Sachverhalt dargestellt werden muss, bspw. bei \textit{parametrischen Abhängigkeiten}.\\
