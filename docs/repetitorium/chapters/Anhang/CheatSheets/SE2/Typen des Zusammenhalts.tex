@@ -1,0 +1,31 @@
+\section{Typen des Zusammenhalts}
+
+
+\begin{tcolorbox}[title=Typen des Zusammenhalts]
+
+    Mit Absteigender Richtung wird der Zusammenhalt schwächer:
+
+\begin{itemize}
+    \item \textbf{Funktionaler Zusammenhalt}
+    \begin{itemize}
+        \item ähnliche Funktionalität wird in gleichen Softwareteilen implementiert
+        \item die Funktionalität ist nach Möglichkeit nicht von anderer Funktionalität abhängig und besitzt keine Nebeneffekte
+        \item Idealfall: Eine Operation liefert ein bestimmtes Ergebnis und ist unabhängig von vorausgegangen Aufrufen, internen Zuständen oder Teilen des Systems
+        \item Forderung nach Unabhängigkeit allerdings meist nicht möglich, da in der Objetorientierung Objekte i.d.R. über Attribute interne Zustände besitzen (s. Abbildung~\ref{fig:adt}); außerdem benutzen Klassen anderen Klassen, oder externe Systeme wie Datenbanken
+    \end{itemize}
+
+    \item \textbf{Schichten-Zusammenhalt}
+    \begin{itemize}
+        \item Teile, die ähnliche Services für andere Teile zur Verfügung stellen, werden in Schichten zusammengefügt (s. Abschnitt~\ref{sec:architekturmuster})
+    \end{itemize}
+    \item \textbf{kommunikativer Zusammenhalt}
+    \begin{itemize}
+        \item Teile, die auf gleichen Daten operieren, gehören zusammen
+        \item der Zusammenhalt ist an der Stelle schwächer als der Schichten-Zusammenhalt, da man i.d.R. nicht Geschäftslogik und Zugriff auf Datenbanken in derselben Klasse implementiert, auch, wenn das Model dieselben Daten benötigt
+    \end{itemize}
+    \item \textbf{Utility-Zusammenhalt}
+    \begin{itemize}
+        \item unter ``\textit{Utility}`` werden hier Teile gemeint, die ähnliche Funktionalität bereitstellen, sich aber logisch nicht ordnen lassen (bspw. in Schichten)\footnote{s. bspw. Klassen aus \url{https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/package-summary.html}, abgerufen 19.04.2024}
+    \end{itemize}
+\end{itemize}
+    \end{tcolorbox}
