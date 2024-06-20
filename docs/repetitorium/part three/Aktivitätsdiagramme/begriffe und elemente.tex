@@ -18,7 +18,7 @@ Dazu gehören \textbf{Kontrollflüsse} und \textbf{Objektflüsse}.\\
 
 \noindent
 Ein \textbf{Startknoten} stellt den \textit{Startpunkt} eines Kontrollflusses innerhalb einer Aktivität dar.\\
-Es können mehrere Kontrollflüsse gestartet werden, wobei ein ein \textbf{Endknoten} / \textbf{Aktivitätsende} alle Kontrollflüsse der Aktivität beendet.\\
+Es können mehrere Kontrollflüsse gestartet werden, wobei ein \textbf{Endknoten} / \textbf{Aktivitätsende} alle Kontrollflüsse der Aktivität beendet.\\
 
 \noindent
 Darüber hinaus ist es auch möglich, Endknoten zu modellieren, die nur einen zugeordneten Kontrollfluss beenden (Notation: Kreissymbol mit Kreuz, s. Abbildung~\ref{fig:aktivitätsdiagramm-notation}): Dies wirkt sich nicht auf andere Aktionen aus, die gerade in anderen Pfaden weiterlaufen (vgl.~\cite[72]{Bal05}).\\
@@ -41,7 +41,7 @@ Objektknoten können Token sammeln und puffern, in Aktionen können sich Token k
 \subsection{Objektknoten}
 
 
-\textbf{Objektknoten} modellieren die Übergabe von Objekten zwischen Aktionen und stellen eine Art Speicher für Objekte einer Klasse dar: Hineingehende \textbf{Token} können Daten enthalten, die den \textbf{Objeknoten} setzen oder dort gesammelt werden, herausgehende \textbf{Token} transportieren das Objekt oder Kopien davon.\\
+\textbf{Objektknoten} modellieren die Übergabe von Objekten zwischen Aktionen und stellen eine Art Speicher für Objekte einer Klasse dar: Hineingehende \textbf{Token} können Daten enthalten, die den \textbf{Objektknoten} setzen oder dort gesammelt werden, herausgehende \textbf{Token} transportieren das Objekt oder Kopien davon.\\
 
 \blockquote[{\cite[73]{Bal05}}]{
     Objektknoten werden durch Rechtecke dargestellt und häufig mit dem Namen der Klasse benannt.
@@ -52,7 +52,7 @@ Die Keywords \textcolor{blue}{\guillemotleft centralBuffer\guillemotright} bzw. 
 
 \begin{itemize}
     \item \textcolor{blue}{\guillemotleft centralBuffer\guillemotright}: enthält einen Vorrat an Objekten und kann zwischen mehr als zwei Aktionen gestellt werden\footnote{
-    bspw. als ``unsortierter`` Objektknoten, dann findet die Aktivität ``sortieren`` statt, was in einen ``sortierten`` Objektknoten resultiert (vgl.\cite[Abb. 6.6, 62]{Buh09}phpo)
+    bspw. als ``unsortierter`` Objektknoten, dann findet die Aktivität ``sortieren`` statt, was in einen ``sortierten`` Objektknoten resultiert (vgl.\cite[Abb. 6.6, 62]{Buh09})
     }
     \item \textcolor{blue}{\guillemotleft dataStore\guillemotright}: persistiert Objekte und liefert \textit{Kopien} der Objekte, die Objekte bleiben also erhalten
 \end{itemize}
@@ -94,8 +94,8 @@ Objektknoten und Objektflüsse können ausgezeichnet werden, bspw. durch gewicht
 
 \subsection{Signalsender / -empfänger}
 Aktionen können \textbf{Signale} senden und empfangen.\\
-Bei dem \textbf{Signalsender} wird der Kontrollfluss fortgesetzt, sobald das Signal gesendet wurde (\textit{signal send action}. \\
-Bei dem \textbf{Signalempfänger} wird der Kontrollfluss erst fortgesetzt, wenn das Signal empfangen wurde (vgl..~\cite[76]{Bal05}).\\
+Bei dem \textbf{Signalsender} wird der Kontrollfluss fortgesetzt, sobald das Signal gesendet wurde (\textit{signal send action}). \\
+Bei dem \textbf{Signalempfänger} wird der Kontrollfluss erst fortgesetzt, wenn das Signal empfangen wurde (vgl.~\cite[76]{Bal05}).\\
 \textit{Buhl} merkt an, dass Ereignisse auch ``von außen kommen`` können, und deshalb nicht in der aktuellen Aktivität erzeugt werden (vgl.~\cite[63]{Buh09}).
 
 
