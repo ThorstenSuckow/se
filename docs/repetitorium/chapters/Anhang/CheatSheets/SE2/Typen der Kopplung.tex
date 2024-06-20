@@ -1,0 +1,31 @@
+\section{Typen der Kopplung}
+
+
+\begin{tcolorbox}[title=Typen der Kopplung]
+    \begin{itemize}
+        \item \textbf{Content-Kopplung}
+        \begin{itemize}
+            \item ein Teil ändert interne Daten eines anderen Teils
+            \item die ändernde Klasse ist von der Struktur der zu ändernden Klasse \textbf{abhängig}
+        \end{itemize}
+        \item \textbf{Common-Kopplung}
+        \begin{itemize}
+            \item bezeichnet Kopplung über die gemeinsame Verwendung globaler Variablen
+        \end{itemize}
+        \item \textbf{Stamp-Kopplung}
+        \begin{itemize}
+            \item ein Objekt wird als Argument einer Methode verwendet
+            \item wird der öffentliche Teil der Klasse des Objektes geändert, muss auch die aufrufende Methode geändert werden
+        \end{itemize}
+        \item \textbf{Data-Kopplung}
+        \begin{itemize}
+            \item je mehr Argumente eine Methode hat, desto größer ist die Kopplung mit der benutzenden Komponente
+        \end{itemize}
+        \item \textbf{Routine Call-Kopplung}
+        \begin{itemize}
+            \item eine Methode ruft eine andere Methode auf
+            \item werden sehr viele Methode eines anderen Teils aufgerufen, sollte man die Zerlegung überlegen
+            \item werden Methoden immer in gleicher Sequenz aufgerufen, könnte man überlegen, die Sequenz auch als eigenständige Methode zusammenfassen
+        \end{itemize}
+    \end{itemize}
+\end{tcolorbox}
