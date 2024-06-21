@@ -1,0 +1,22 @@
+\section{Paketdiagramm}
+
+\begin{tcolorbox}[title=Komposition]
+    \textbf{Paketdiagramme} zeigen Pakete und ihre Abhängigkeiten und werden in frühen Designphasen genutzt, um Strukturen (großer Systeme) aufzuzeigen.\\
+
+    \noindent
+    Elemente sollten so in Paketen gruppiert werden, dass ihr \textbf{funktionaler Zusammenhalt} (\textit{Kohäsion}, s. Abschnitt~\ref{subsec:hohe-kohasion}) klar wird.\\
+    Hierdurch kann vermieden werden, dass Änderungen einer Klasse eines Paketes auch Änderungen außerhalb des Paketes erfordern.\\
+    Außerdem erhöht sich die Wahrscheinlichkeit, dass einzelne Pakete als solche in anderen Projekten wiederverwendet werden können.\\
+
+    \noindent
+    In Paketdiagrammen können Beziehungen über folgende Schlüsselwörter deutlich gemacht werden:
+
+    \begin{itemize}
+        \item \guillemotleft import\guillemotright
+        \item[] $\rightarrow$ \textbf{public-Import} zwischen Quell- und Zielpaket; Quellpaket kann die öffentlichen Elemente des Zielpaketes unter Verwendung des unqualifizierten und des qualifizierten Namens verwenden; die importierten Elemente sind auch für Pakete sichtbar, die das Quellpaket importieren
+        \item \guillemotleft access\guillemotright
+        \item[] $\rightarrow$ \textbf{privater Import} zwischen Quell- und Zielpaket; Zugriff auf Elemente des importierten Paketes ohne qualifizierenden Namen möglich; der Import eines Paketes in \textbf{Java} entspricht der \guillemotleft access\guillemotright-Beziehung
+        \item \guillemotleft merge\guillemotright
+        \item[] $\rightarrow$ Bei einem \textbf{merge} werden Elemente eines Zielpaketes in das Quellpaket
+   \end{itemize}
+\end{tcolorbox}
