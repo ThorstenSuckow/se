@@ -1,0 +1,154 @@
+\section{Inhalt SE3}
+
+\section*{1. Übersicht UML}
+
+\subsection*{Lernziele}
+\begin{itemize}
+    \item einen Einblick in den Sprachaufbau der UML 2.0 gewinnen
+    \item einen Überblick über die Diagramme der UML 2.0 und deren Zweck haben
+\end{itemize}
+
+\subsection*{Zusammenfassung}
+\begin{itemize}
+    \item Die \textbf{UML} ist eine weit verbreitete Modellierungssprache zur Modellierung objektorientierter Softwaresysteme.
+    \item Die UML 2.0 Spezifikation besteht aus vier Teilen:
+    \begin{enumerate}
+        \item \textbf{Superstructure}: Diagrammtypen
+        \item \textbf{Infrastructure}: Modellierungskonzepte
+        \item \textbf{OCL}: formale Sprache zur Formulierung von Einschränkungen
+        \item \textbf{Diagram Interchange}: Austauschformate
+    \end{enumerate}
+    \item Die UML kann im \textbf{Sketching} oder \textbf{Blueprint Modus} eingesetzt werden, oder als Grundlage für automatische Codegenerierung
+    \item Die UML ist an keinen speziellen Entwicklungsprozess gebunden
+\end{itemize}
+
+\section*{2. Klassendiagramme}
+
+\subsection*{Lernziele}
+\begin{itemize}
+    \item wissen, wie Klassendiagramme im Entwicklungsprozess eingesetzt werden
+    \item Klassendiagramme für Analyse- und Designentscheidungen einsetzen können
+    \item die wichtigsten Modellierungskonzepte kennen
+    \item sinnvolle Klassendiagramme erstellen und Java-Implementierungen ableiten können
+    \item Klassendiagramme aus Java Quellcode erzeugen können
+\end{itemize}
+
+\subsection*{Zusammenfassung}
+
+\begin{itemize}
+    \item \textbf{Klassendiagramme} dienen zur \textbf{strukturellen Darstellung} von Softwaresystemen
+    \item hierbei werden Klassen und \textbf{Beziehungen} zwischen Klassen dargestellt
+    \item Properties können durch die \textbf{Attribut}- oder \textbf{Assoziationsnotation} modelliert werden
+    \item Operationen werden als separate Zeile in ihrem Compartment dargestellt
+    \item im Klassendiagramm können auch \textbf{Generalisierungsbeziehungen} modelliert werden
+    \item \textbf{Abhängigkeitsbeziehungen} drücken ein Verhältnis zwischen \textbf{Client} und \textbf{Supplier} aus
+\end{itemize}
+
+\section*{3. Objektorientierter Entwurf}
+
+\subsection*{Sequenzdiagramme}
+\begin{itemize}
+    \item das Wesen einer Interaktion kennen
+    \item wissen, wie Sequenzdiagramme im Entwicklungsprozess eingesetzt werden
+    \item Sequenzdiagramme für Analyse- und Designentscheidungen sowie zur Darstellung von Kontrollflüssen einsetzen können
+    \item die wichtigsten Modellierungskonzepte kennen
+    \item sinnvolle Sequenzdiagramme erstellen und Java-Implementierungen ableiten können
+    \item Sequenzdiagramme aus Java Quellcode erzeugen können
+\end{itemize}
+
+\subsection*{Zusammenfassung}
+
+\begin{itemize}
+    \item Sequenzdiagramme sind \textbf{Verhaltensdiagramme}
+    und können im gesamten Entwicklungszyklus zur Modellierung von Interaktionen angewendet werden
+    \item Interaktionen bestehen im Wesentlichen aus dem Nachrichtenaustausch zwischen verschiedenen Kommunikationspartnern
+    \item in den meisten Fällen wird die Kommunikation von Objekten von Klassen modelliert, aber es können auch Teilnehmer auf anderen Ebenen modelliert werden
+    \item gewöhnlich gibt ein Sequenzdiagramm einen \textbf{Anwendungsfall} (\textit{Szenario}) wieder
+    \item sie dienen nicht dazu, um Zustandsänderungen darzustellen (hierfür werden Zustandsdiagramme verwendet)
+    \item Sequenzdiagramme sind \textit{nicht} gut geeignet für die Darstellung von
+    \begin{itemize}
+        \item nebenläufigem Verhalten (\textit{asynchrone} Nachrichten, \textit{kombiniertes Fragment})
+        \item Schleifen und alternativem Verhalten (\textit{kombinierte Fragmente})
+        \item[] $\rightarrow$  für beide Fälle sind \textbf{Aktivitätsdiagramme} besser geeignet
+    \end{itemize}
+\end{itemize}
+
+\section*{4. Klassendiagramme - Erweiterte Konzepte und Paketdiagramme}
+
+\subsection*{Sequenzdiagramme}
+\begin{itemize}
+    \item erweiterte Modellierungskonzepte in Klassendiagrammen für den Detailentwurf von Systemen kennen
+    \item die Konsequenzen dieser Konzepte in der Implementierung kennen
+    \item wissen, wie Paketdiagramme im Entwicklungsprozess eingesetzt werden
+    \item die Modellierungskonzepte in Paketdiagrammen kennen
+    \item anhand von Paketdiagrammen Software-Architekturen gestalten und bewerten können
+\end{itemize}
+
+\subsection*{Zusammenfassung}
+
+\begin{itemize}
+    \item Die vorgestellten erweiterten Konzepte werden vor allem im \textbf{Feinentwurf} von Klassenstrukturen eingesetzt.
+    \item Generell gilt, dass die Spezifikationen von Objekten und Properties nur so detailliert ausgeführt werden sollen, wie nötig: Sind Details für das Verständnis unnötig, sollte darauf verzichtet werden.
+    \item \textbf{Generalisierungsbeziehungen} sollten grundsätzlich modelliert werden.
+    \item Ist eine \textbf{Komposition} statt einer Generalisierung für den Sachverhalt möglich, sollte diese verwendet werden: ``Favor object composition over inheritance.`` (\cite[19 f.]{GHJV94})
+    \item \textbf{Kompositionsbeziehungen} geben eindeutige Impulse für eine Implementierung, \textbf{Aggregationsbeziehungen} sind in ihrer semantischen Aussage nicht sehr eindeutig
+    \item \textbf{Assoziationsklassen} sind in ihrer frühen Designphase empfehlenswert, die Realisierung (mit {bspw.} Java) erfordert aber eine Transformation in eine volle Klasse, wobei die Multiplizitäten angepasst werden müssen
+    \item Elemente können in \textbf{Paketen} zusamengefasst und unter einem gemeinsamen Namensraum gruppiert werden
+\end{itemize}
+
+\section*{4. Anwendungsfalldiagramm (Use-Case-Diagramm)}
+
+\subsection*{Sequenzdiagramme}
+\begin{itemize}
+    \item wissen, wie die Anwendungsfallanalyse im Rahmen der Anforderungsspezifikation eingesetzt wird
+    \item Prozessschritte der Anwendungsfallanalyse beherrschen
+    \item die wichtigsten Modellierungskonzepte in Anwendungsfalldiagrammen kennen
+    \item den Aufbau einer Anwendungsfallbeschreibung kennen
+\end{itemize}
+
+\subsection*{Zusammenfassung}
+
+\begin{itemize}
+    \item \textbf{Anwendungsfalldiagramme} besitzen eine einfache Notation, um \textbf{Akteure} und \textbf{Anwendungsfälle} eines \textbf{Systems} grafisch darzustellen
+    \item auf Basis eines Anwendungsfalldiagramms lässt sich ermitteln, ob die Anwendungsfälle gewünschtes Verhalten realisieren bzw. Beziehungen zu einem oder mehreren Akteuren haben
+    \item Anwendungsfälle und Akteure \textit{müssen} zusätzlich textlich beschrieben werden
+\end{itemize}
+
+\section*{5. Aktivitätsdiagramme}
+
+\subsection*{Sequenzdiagramme}
+\begin{itemize}
+    \item wissen, wie Aktivitätsdiagramme im Rahmen der Verhaltensanalyse in verschiedenen Prozessphasen eingesetzt werden können
+    \item die wichtigsten Modellierungskonzepte in Aktivitätsdiagrammen kennen
+    \item Aktivitätsdiagramme interpretieren, erstellen und implementieren können
+\end{itemize}
+
+\subsection*{Zusammenfassung}
+
+\begin{itemize}
+    \item \textbf{Aktivitätsdiagramme} gehören zu den \textbf{Verhaltensdiagrammen} und können im \textit{gesamten} \textbf{Entwicklungsprozess} eingesetzt werden
+    \item durch ein Aktivitätsdiagramm kann gezeigt werden, wie \textbf{Verhalten} realisiert wird
+    \item es können mehrere \textbf{Aktivitäten} dargestellt werden
+    \item \textbf{Aktivitätskanten} und \textbf{Aktivitätsknoten} werden zur Beschreibung von Verhalten verwendet
+\end{itemize}
+
+\section*{5. Zustandsautomaten}
+
+\subsection*{Sequenzdiagramme}
+\begin{itemize}
+    \item wissen, wie Zustandsdiagramme im Rahmen der Verhaltensanalyse einzelner Objekte eingesetzt werden können
+    \item die wichtigsten Modellierungskonzepte in Zustandsdiagrammen kennen
+    \item Zustandsdiagramme interpretieren, erstellen und implementieren können
+\end{itemize}
+
+\subsection*{Zusammenfassung}
+
+\begin{itemize}
+    \item Das \textbf{Zustandsdiagramm} gehört wie das \textbf{Aktivitätsdiagramm} zu den \textbf{Verhaltensdiagrammen}.
+    \item Ein Zustandsdiagramm zeigt den \textbf{Lebensweg} eines \textbf{Objektes}.
+    \item \textbf{Attributwerte} bestimmen den Zustand eines Objektes.
+    \item \textbf{Transitionen} zwischen Zuständen werden durch \textbf{Guards} und \textbf{Events} gesteuert.
+    \item Während der Transitionen können \textbf{Effekte} (\textit{Aktivitäten}) realisiert werden.
+    \item Die Modellierung \textbf{zusammengesetzter Zustände} ist ebenfalls möglich.
+    \item Für die Darstellung \textbf{paralleler} oder  \textbf{konkurrierender} Abläufe können \textbf{Regionen} modelliert werden.
+\end{itemize}
