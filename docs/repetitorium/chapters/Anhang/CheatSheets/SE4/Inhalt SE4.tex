@@ -1,0 +1,145 @@
+\section{Inhalt SE4}
+
+\section*{1. Qualität}
+
+\subsection*{Lernziele}
+
+\begin{itemize}
+    \item die Qualität eines Softwaresystems definieren können
+    \item typische Qualitätsmerkmale kennen
+    \item Qualitätskriterien messbar festlegen können
+\end{itemize}
+
+\subsection*{Zusammenfassung}
+
+\begin{itemize}
+    \item \textbf{Qualität} kann mit Hilfe von \textbf{Qualitätssystemen} definiert werden.
+    \item \textbf{Qualitätssysteme} teilen \textbf{Qualität} in \textbf{Qualitätsmerkmale} ein, die in \textbf{Qualitätsteilmerkmale} eingeteilt werden.
+    \item \textbf{Qualitätsindikatoren} definieren die \textbf{Qualitätsteilmerkmale}: Sie repräsentieren \textbf{Messvorschriften} (\textit{Metriken}), die eine Bestimmung von \textbf{Kennzahlen} und deren \textbf{Sollwerte} beschreiben.
+    \item Als Hilfsmittel zur Beschreibung von Qualitätsteilmerkmalen dienen \textbf{Qualitäts-Szenarien}.
+    \item \textbf{Vorlagen} für \textbf{Qualitätssysteme} finden sich in den Standards, bspw. in der Norm \textbf{ISO/EC 25000}.
+    \item I.d.R. werden aus einem Qualitätssystem \textbf{Teilmerkmale} ausgesucht, geeignete Metriken gesucht und die \textit{relative Wichtigkeit} der Teilmerkmale definiert.
+\end{itemize}
+
+
+\section*{2. Typen von Qualitätsmaßnahmen}
+\subsection*{Lernziele}
+\begin{itemize}
+    \item grundlegende Arten von qualitätssichernden Maßnahmen kennen
+    \item grundlegende Arten von qualitätssichernden Maßnahmen nach verschiedenen Gesichtspunkten kategorisieren können
+\end{itemize}
+
+\subsection*{Zusammenfassung}
+\begin{itemize}
+    \item Bei \textbf{qualitätssichernden Maßnahmen} können \textbf{konstruktive} und \textbf{analytische Maßnahmen} unterschieden werden
+    \item \textbf{Konstruktive Maßnahmen} beinhalten \textbf{organisatorische Maßnahmen} (bspw. Standards)
+    sowie \textbf{technische Maßnahmen} (bspw. Einsatz von Werkzeugen): Diese Maßnahmen sollen das \textit{Entstehen von Fehlern} verhindern
+    \item \textbf{Analytische Maßnahmen} hefen dabei, entstandene Fehler zu finden: Hierzu gehören \textbf{Tests}, aber auch analysierende manuelle oder werkzeuggestützte Maßnahmen
+    \item das \textbf{V-Modell} beschreibt qualitätssichernde Maßnahmen in ihrer Einordung in den Entwicklungsprozess: Klassen und Module werden im \textbf{Modultest} geprüft, das Zusammenspiel der Teile im \textbf{Integrationstest}, die \textit{gesamte Anwendung} im \textbf{Systemtest} und im Anschluss vom Kunden im \textbf{Abnahmetest}
+\end{itemize}
+
+\section*{3. Manuelle Verfahren}
+\subsection*{Lernziele}
+\begin{itemize}
+    \item wissen, was manuelle Verfahren sind
+    \item die verschiedenen manuellen Verfahren kennen
+    \item den sinnvollen Einsatz der verschiedenen manuellen Verfahren kennen
+    \item manuelle Verfahren durchführen können
+\end{itemize}
+
+\subsection*{Zusammenfassung}
+\begin{itemize}
+    \item \textbf{Manuelle Verfahren} sind wichtige Werkzeuge zur \textbf{Qualitätssicherung} von \textbf{Artefakten} der Softwareentwicklung
+    \item sie sind bei \textbf{Dokumenten} und \textbf{Code} unabdingbar - Dokumente lassen sich zudem besser manuell vollständig prüfen
+    \item bei \textbf{Programmcode} lassen sich manche Defekte einfacher und damit kostengünstiger finden
+    \item je nach Verfahren untersuchen \textit{einzelne} oder \textit{mehrere} \textbf{Gutachter} oder \textit{zusammen in Gruppen}
+    \item dabei unterscheiden sich die Verfahren in Umfang und dem Grad an Formalisierung: Je nach Wichtigkeit des \textbf{Prüfgegenstandes} ist eine andere \textbf{Prüfart} angemessen
+    \item bei formalisierten Verfahren ist es wichtig, sich an die Abläufe zu halten, damit die Verfahren erfolgreich durchgeführt werden
+    \item hilfreiche Werkzeuge sind \textbf{Checklisten}, um \textbf{systematisch} nach Defekten in Prüfgegenständen
+    zu suchen
+\end{itemize}
+
+\section*{4. Werkzeuggestützte Analyse}
+\subsection*{Lernziele}
+\begin{itemize}
+    \item einen Überblick über die Typen von werkzeuggestützte Analyse besitzen
+    \item die Leistungsfähigkeit von werkzeuggestützter Analyse beurteilen können
+    \item beurteilen können, bei welcher Problemstellung welcher Typ sinnvollerweise eingesetzt wird
+\end{itemize}
+
+\subsection*{Zusammenfassung}
+\begin{itemize}
+    \item Werkzeuge zur \textbf{statischen Analyse von Sourcecode} werden eingesetzt, um
+    \begin{itemize}
+        \item die Einhaltung von \textbf{Programmierrichtlinien} zu überprüfen
+        \item \textbf{typische Defekte} anhand vorgegebener Muster zu finden
+        \item Ablauffehler mit Hilfe der \textbf{Datenflussanomalieanalyse} und der \textbf{abstrakten Interpretation} zu erkennen
+        \item die Wartbarkeit mit Metriken zu beurteilen
+    \end{itemize}
+    \item In bestimmten Bereichen ist der Einsatz solcher Werkzeuge zum Industriestandard geworden, bspw. im Bereich Automotive
+    \item mittels der werkzeuggestützten Analyse können Defekte entdeckt werden, aber eine Aussage über die \textbf{Lauffähigkeit} oder \textbf{Brauchbarkeit} kann nicht angegeben werden, da die \textbf{Funktionalität} \textit{nicht} analysiert wird
+    \item der Einsatz der Werkzeuge muss sorgfältig vorbereitet werden
+    \item die Regelsätze der Werkzeuge müssen an die Gegebenheiten angepasst werden
+    \item der Entwicklungsprozess muss den Einsatz der Werkzeuge berücksichtigen
+    \item der Einsatz solcher Werkzeuge kann eine sehr kostengünstige und effektive Maßnahme sein
+\end{itemize}
+
+\section*{5. Testende Verfahren}
+\subsection*{Lernziele}
+\begin{itemize}
+    \item Kriterien für die Vollständigkeit von Tests kennen
+    \item geeignete Testverfahren für die Aufgabe auswählen
+    \item Tests effektiv gemäß den Zielen definieren und durchführen können
+\end{itemize}
+
+\subsection*{Zusammenfassung}
+\begin{itemize}
+    \item für die \textbf{Qualitätssicherung} einer Software sind \textbf{testende Verfahren} unverzichtbar
+    \item es gibt verschiedene \textbf{systematische Verfahren}, die bei der Erstellung von \textbf{Testfällen} hilfreich sein können:
+    \begin{itemize}
+        \item Bei \textbf{funktionsorientierten Tests} (\textbf{Black-Box-Tests}) orientieren sich Tester an \textbf{spezifizierter Funktionalität}.
+        \item[] Wichtige Hilfsmittel sind hierbei \textbf{Äquivalenzklassen} von \textbf{Eingabedaten}, bei denen sich Software \textbf{gleichartig} verhält.
+        \item[] Außerdem helfen \textbf{zustandsbasierte Tests} dabei, Systeme in allen \textbf{Zuständen} und \textbf{Zustandsübergängen} zu testen.
+        \item Bei \textbf{strukturorientierten Testverfahren} (\textbf{White-Box-Tests}) orientieren sich Tester an der \textbf{inneren Struktur} der Software.
+        \item[] Der Umfang strukturorientierter Testverfahren hängt davon ab, ob
+        \begin{itemize}
+            \item alle Anweisungen (\textbf{Anweisungsüberdeckung})
+            \item alle Verzweigungen (\textbf{Zweigüberdeckung})
+            \item alle Schleifendurchläufe (\textbf{Boundary-Interior-Überdeckung})
+            \item alle Bedingungen (\textbf{einfache Mehrfachbedingungsüberdeckung})
+        \end{itemize}
+        \noindent getestet werden sollen, wobei der tatsächliche Umfang durch Überdeckungskriterien  definiert wird
+        \item[] Strukturorientierte Tests werden in der Regel nur im \textbf{Klassen-} bzw. \textbf{Komponententest} durchgeführt.
+        \item eine \textbf{vollständige Überdeckung} garantiert keinen vollständigen Test, da hierbei nicht auf Funktionalität geachtet wird, umgekehrt werden wahrscheinlich nicht alle Codeteile getestet
+        \item aus diesem Grund existiert der \textbf{Grey-Box-Test}, der funktionsorientiert testet und die Quellcode-Abdeckung mit Werkzeugen überprüft.
+        \item \textbf{Grey-Box-Tests} werden häufig im \textbf{Klassentest} eingesetzt
+    \end{itemize}
+    \item für den Test von Systemen, die mit \textbf{objektorientierten Mitteln} implementiert worden sind, gibt es Techniken, die \textbf{Vererbung}, \textbf{Kapselung}  und \textbf{parametrisierte Klassen} berücksichtigen
+    \item für die \textbf{Integration} und den \textbf{Integrationstest} gibt es verschiedene Vorgehensweisen, wobei sich in der Praxis der \textbf{Bottom-Up-Ansatz} bewährt hat
+    \item im \textbf{Systemtest} wird neben der \textbf{Funktionalität} des Gesamtsystems auch die nicht-funktionalen Anforderungen getestet
+    \item der Kunde prüft das System im \textbf{Abnahmetest} auf seine Einsetzbarkeit, wozu der \textbf{Verbundtest}, \textbf{Probebetrieb} oder der \textbf{Betatest} gehören kann
+\end{itemize}
+
+\section*{6. Management des QS-Prozesses}
+\subsection*{Lernziele}
+\begin{itemize}
+    \item für kleinere Projekte qualitätssichernde Maßnahmen planen und verfolgen können
+    \item Tests planen und dokumentieren können
+    \item gefundene Fehler geeignet verwalten können
+\end{itemize}
+
+
+\subsection*{Zusammenfassung}
+\begin{itemize}
+    \item die \textbf{Qualitätssicherung} bei der Softwareentwicklung ist ein komplexer Prozess, der u.a. verschiedene Aufgaben wie Tests, Reviews und werkzeuggestützte Analysen beinhaltet
+    \item diese Maßnahmen werden im \textbf{Qualitätssicherungsplan} und \textbf{Testplan} beschrieben
+    \item je nach Art und Größe  der Aufgabe werden diese Maßnahmen durch die Entwickler, dedizierte Tester oder Testteams durchgeführt
+    \item qualitätssichernde Maßnahmen müssen \textbf{dokumentiert} werden:
+    \begin{itemize}
+        \item \textbf{Testfälle} beschreiben die Durchführung der Tests
+        \item \textbf{Testprotokolle} halten die Durchführung der Tests fest
+        \item \textbf{Fehlerberichte} beschreiben die aufgetretenen Fehler
+    \end{itemize}
+    \item die Bearbeitung von Fehlermeldungen folgt einem komplexen \textbf{Workflow}, weshalb dafür spezielle Werkzeuge zum Einsatz kommen
+    \item der gesamte Testprozess wird mit \textbf{Kennzahlen} verfolgt, wobei die wichtigsten Kennzahlen die \textbf{Anzahl der Fehlerberichte} und die \textbf{Abarbeitung der Testfälle} sind
+\end{itemize}
