@@ -1,0 +1,40 @@
+\section{Testfall}
+
+\subsubsection*{Testfall MAR1-01: Kundenliste erzeugen für PLZ - Gutfall}
+
+\begin{itemize}
+    \item[] \textbf{Autor}: at
+    \item[] \textbf{Kategorie}: Systemtest
+    \item[] \textbf{Beschreibung}:
+    \item[] \textbf{Setup}:
+    \begin{itemize}
+        \item Im System sind die Kundendaten TD01 eingespielt und nicht modifiziert worden
+        \item Der Nutzer ist angemeldet und besitzt die Rolle ``Leitender Mitarbeiter``
+    \end{itemize}
+\end{itemize}
+
+\noindent
+\textbf{Vorgehen}:
+\begin{table}[]
+    \centering
+    \setlength{\tabcolsep}{0.5em}
+    \def\arraystretch{1.5}
+    \begin{tabular}{|c|l|c|}
+        \hline
+        \multicolumn{1}{|l|}{\textbf{Lfd. Nr.}} & \multicolumn{1}{c|}{\textbf{Schritt}}        & \textbf{erwartetes Ergebnis}                        \\ \hline
+        1                                       & Auswahl PLZ Combobox                         & ist ausgewählt                                      \\ \hline
+        2                                       & Auswahl von-bis                              & ist ausgewählt                                      \\ \hline
+        3                                       & Eingabe 18430 und 18435 in die Eingabefelder & Zahlen werden dargestellt                           \\ \hline
+        4                              & Export anklicken                             & \multicolumn{1}{l|}{Dateiauswahldialog öffnet sich} \\ \hline
+        5                              & Auswahl eines geeigneten Dateinamens         & \multicolumn{1}{l|}{Datei mit Inhalt der Daten}     \\ \hline
+    \end{tabular}
+\end{table}
+
+\begin{itemize}
+    \item[] \textbf{Zugrundeliegende Anforderungen}:
+    \begin{itemize}
+        \item Anwendungsfall MAR-1 vom 11.01.08
+        \item GUI-Entwurf MAR-1 vom 26.03.08
+        \item Liste der Geschäftsregeln (GSR) vom 18.01.08
+    \end{itemize}
+\end{itemize}
