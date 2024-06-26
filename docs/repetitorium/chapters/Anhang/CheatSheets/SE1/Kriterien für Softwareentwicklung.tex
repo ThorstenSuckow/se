@@ -1,16 +1,22 @@
 \section{Kriterien für Softwareentwicklung}
 
 \begin{tcolorbox}[title=Kriterien für Softwareentwicklung]
-    \begin{itemize}
-        \item Nähe und Anzahl der Kunden
-        \item Art der Benutzer, Art der Benutzung
-        \item Größe/Komplexität der Software und des Projekts
-        \item Wie kritisch ist nichttechnisches Domänenwissen?
-        \item Müssen Näherungslösungen verwendet werden?
-        \item Wie kritisch ist Effizienz?
-        \item Wie kritisch ist Verlässlichkeit?
-        \begin{itemize}
-            \item[] (Verlässlichkeit: Summe aus Zuverlässigkeit, Sicherheit, Verfügbarkeit und Schutz vor unberechtigtem Zugriff)
-        \end{itemize}
-    \end{itemize}
+    \begin{enumerate}
+        \item \textbf{Nähe und Anzahl der Kunden}
+        \item[] Individualentwicklung od. anonymer Markt?
+        \item \textbf{Art der Benutzer, Art der Benutzung}
+        \item[] Professionell, geschult? Lösung sollte effektives Werkzeug darstellen, um Produktivität zu erhöhen
+        \item[] Seltene Benutzung? Lösung sollte robust sein und intuitiv zu bedienen
+        \item \textbf{Größe/Komplexität der Software und des Projekts}
+        \item[] Auswahl der Methoden maßgeblich davon abhängig, um Aufwand nicht unnötig in die Höhe zu treiben.
+        ``Größe`` betrifft auch die Anzahl der involvierten Entwickler/Projektbeteiligter
+        \item \textbf{Wie kritisch ist nichttechnisches Domänenwissen?}
+        \item[] Fachexperten sollten bei komplexen Fragestellungen zur Verfügung stehen
+        \item \textbf{Müssen Näherungslösungen verwendet werden?}
+        \item[] Falls die Aufgaben mit der geg. Technik nicht vollständig gelöst werden können
+        \item \textbf{Wie kritisch ist Effizienz?}
+        \item[] Embedded Systems, wenig Hardware-Ressourcen: Kritisch!
+        \item \textbf{Wie kritisch ist Verlässlichkeit?}
+        \item[] Verlässlichkeit: Summe aus Zuverlässigkeit, Sicherheit, Verfügbarkeit und Schutz vor unberechtigtem Zugriff
+    \end{enumerate}
 \end{tcolorbox}
