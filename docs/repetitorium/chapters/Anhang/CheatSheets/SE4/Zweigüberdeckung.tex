@@ -1,0 +1,18 @@
+\section{Zweigüberdeckung}
+
+
+\begin{tcolorbox}[title=Zweigüberdeckung]
+    Eine \textbf{Zweigüberdeckung} liegt vor, wenn \textit{jede Kante} des Kontrollflussgraphen mindestens einmal ausgeführt worden ist.
+    Es ist also nicht notwendig, alle Bedingungen auf einmal zu erfüllen, solange mit entsprechenden Testdaten jeweils ein Zweig durchlaufen werden kann, und am Ende alle Zweige durchlaufen worden sind.
+    \begin{minted}[fontsize=\small]{java}
+        // a = 1 -> erstes if
+        // a = -2 -> zweites if
+        if (a > 0) {...}
+        if (a % 2 == 0) {...}
+    \end{minted}
+    Liegt eine Zweigüberdeckung vor, ist gleichzeitig auch die \textbf{Anweisungsüberdeckung} erfüllt.\\
+    Die Zweigüberdeckung bietet schon eine ziemlich vollständige Überdeckung, berücksichtigt aber Schleifen nicht genügend.\\
+
+    \noindent
+    Die Zweigüberdeckung wird auch \textbf{Entscheidungsüberdeckung} genannt, da jede Entscheidung die Wahrheitswerte \code{true} und \code{false} mindestens einmal annehmen muss (vgl.~\cite[404]{Bal97}).
+\end{tcolorbox}
