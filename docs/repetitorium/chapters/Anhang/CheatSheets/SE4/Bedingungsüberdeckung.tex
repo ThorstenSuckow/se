@@ -1,0 +1,42 @@
+\section{Bedingungsüberdeckung}
+
+\begin{tcolorbox}[title=Bedingungsüberdeckung]
+
+    Der \textbf{Bedingungsüberdeckungstest} (\textit{condition coverage test}) beachtet die logische Struktur von Entscheidungen der zu testenden Software und kommt in unterschiedlichen Ausprägungen vor, wobei die schwächste der \textbf{einfache Bedingungsüberdeckungstest} (\textit{simple condition coverage test}) ist, der weder Anweisungsüberdeckungs- noch Zweigüberdeckungstest subsumiert (vgl.~\cite[93]{Lig09a}).
+
+    \begin{itemize}
+        \item \textbf{Einfacher Bedingungsüberdeckungstest} (\textit{simple condition coverage}): Fordert den Test aller \textbf{atomaren} Teilentscheidungen gegen \textit{wahr} oder \textit{falsch}, allerdings ist dadurch \textbf{nicht} garantiert, dass eine vollständige Zweigüberdeckung erreicht wird:
+
+         \begin{minted}{java}
+             if ((A || B) && (C || D)) {...
+         \end{minted}
+
+        \noindent
+        Folgende zwei Testfälle genügen der einfachen Bedingungsüberdeckung, erreichen aber keine  Zweigüberdeckung:
+        \begin{equation}\notag
+            \begin{alignat}{3}
+                &A: true, B: false, C: true, D: false && \text{ (Gesamtausdruck: $true$)}\\
+                &A: false, B: true, C: false, D: true && \text{ (Gesamtausdruck: $true$)}\\
+            \end{alignat}
+        \end{equation}
+        \noindent
+        Die Forderung, dass jede atomare Bedingung einmal den Wahrheitswert \textit{wahr} und einmal den Wahrheitswert \texti{falsch} annimmt, ist durch beide Testfälle erfüllt. \\
+        Folgende Testfälle erfüllen dieselbe Forderung, erreichen aber im Gegensatz zu den vorherigen Testfällen eine Zweigüberdeckung:
+        \begin{equation}\notag
+        \begin{alignat}{3}
+            &A: true, B: true, C: true, D: true && \text{ (Gesamtausdruck: $true$)}\\
+            &A: false, B: false, C: false, D: false && \text{ (Gesamtausdruck: $false$)}\\
+        \end{alignat}
+        \end{equation}
+        \item \textbf{Bedinguns-/Entscheidungsüberdeckungstest} \textit{(condition / decision coverage)}:
+        Garantiert ergänzend zu der einfachen Bedingungsüberdeckung einen vollständigen Zweigüberdeckungstest, allerdings kann dadruch die logische Gliederung kompliziert aufgebauter Entscheidungen ignoriert werden (vgl.~\cite[100]{Lig09a}):
+        \begin{equation}\notag
+        \begin{alignat}{3}
+            &A: false, B: true, C: false, D: false\\ &\qquad \text{ ($A||B:true, C||D: false$, Gesamtausdruck: $false$)}\\
+            &A: true, B: false, C: true, D: true\\ &qquad \text{ ($A||B:true, C||D: true$, Gesamtausdruck: $true$)}\\
+        \end{alignat}
+        \end{equation}
+        In dem Beispiel wird zwar eine Zweigüberdeckung erreicht, aber die Teilentscheidungen ($A||B, C||D$) evaluieren nicht zu jeweils unterschiedlichen Ergebnissen in den Testfällen.
+    \end{itemize}
+
+\end{tcolorbox}
