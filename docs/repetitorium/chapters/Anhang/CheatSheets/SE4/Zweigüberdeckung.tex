@@ -1,7 +1,9 @@
 \section{Zweigüberdeckung}
 
 
-\begin{tcolorbox}[title=Zweigüberdeckung]
+\begin{tcolorbox}[title=Zweigüberdeckung ($C_1$-Test)]
+    Das Ziel des Zweigüberdeckungstest (\textit{branch coverage test}), auch $C_1$-Test genannt, ist die Ausführung aller Zweige des Prüflings  (vgl.~\cite[88]{Lig09a}).\\
+
     Eine \textbf{Zweigüberdeckung} liegt vor, wenn \textit{jede Kante} des Kontrollflussgraphen mindestens einmal ausgeführt worden ist.
     Es ist also nicht notwendig, alle Bedingungen auf einmal zu erfüllen, solange mit entsprechenden Testdaten jeweils ein Zweig durchlaufen werden kann, und am Ende alle Zweige durchlaufen worden sind.
     \begin{minted}[fontsize=\small]{java}
@@ -10,9 +12,19 @@
         if (a > 0) {...}
         if (a % 2 == 0) {...}
     \end{minted}
-    Liegt eine Zweigüberdeckung vor, ist gleichzeitig auch die \textbf{Anweisungsüberdeckung} erfüllt.\\
+    Liegt eine Zweigüberdeckung vor, ist gleichzeitig auch die \textbf{Anweisungsüberdeckung} erfüllt: Der Zweigüberdeckungstest \textbf{subsumiert} den Anweisungsüberdeckungstest.\\
+
+    \noindent
     Die Zweigüberdeckung bietet schon eine ziemlich vollständige Überdeckung, berücksichtigt aber Schleifen nicht genügend.\\
 
     \noindent
-    Die Zweigüberdeckung wird auch \textbf{Entscheidungsüberdeckung} genannt, da jede Entscheidung die Wahrheitswerte \code{true} und \code{false} mindestens einmal annehmen muss (vgl.~\cite[404]{Bal97}).
+    Die Zweigüberdeckung wird auch \textbf{Entscheidungsüberdeckung} genannt, da jede Entscheidung die Wahrheitswerte \code{true} und \code{false} mindestens einmal annehmen muss (vgl.~\cite[404]{Bal97}).\\
+
+
+    \noindent
+    Das Testmaß ist das Verhältnis der ausgeführten Zweige zu der im Prüfling vorkommenden Gesamtzahl an Zweigen (Zweig = Kante):
+
+    \begin{equation}\notag
+    C_{Zweig} = \frac{\text{Anzahl ausgeführte Zweige}}{\text{Anzahl vorhandene Zweige}}
+    \end{equation}
 \end{tcolorbox}
