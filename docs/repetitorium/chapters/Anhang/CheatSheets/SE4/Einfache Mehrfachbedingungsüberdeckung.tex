@@ -1,8 +1,20 @@
 \section{Einfache Mehrfachbedingungsüberdeckung}
 
-\begin{tcolorbox}[title=Einfache Mehrfachbedingungsüberdeckung]
-    Die \textbf{einfache Mehrfachbedingungsüberdeckung} wird erreicht, wenn \textit{jede} atomare Bedingung, also jeder \textit{direkte Vergleich}, und \textit{alle zusammengesetzten Bedingungen} einmal den Wahrheitswert \textit{wahr} und einmal den Wahrheitswert \textit{falsch} annehmen\footnote{
-        \textit{Maxterm}: Für genau eine Variablenbelegung falsch (Disjunktion: $A \lor B \lor C$); bzw. \textit{Minterm}: für genau eine Variablenbelegung wahr (Konjunktion: $A \land B \land C$)(vgl.~\cite[92]{Hof22})
-    }.\\
-    Dadurch wird gleichzeitig eine \textbf{Zweigüberdeckung} erreicht
+\begin{tcolorbox}[title=Einfache Mehrfachbedingungsüberdeckung (minimale Mehrfachbedingungsüberdeckung)]
+    Die \textbf{minimale Mehrfachbedingungsüberdeckung} wird erreicht, wenn \textit{jede} atomare Bedingung, also jeder \textit{direkte Vergleich}, und \textit{alle zusammengesetzten Bedingungen} einmal den Wahrheitswert \textit{wahr} und einmal den Wahrheitswert \textit{falsch} annehmen.\\
+    Dadurch wird gleichzeitig eine \textbf{Zweigüberdeckung} erreicht.\\
+
+    \noindent
+    Bei zusammengesetzten Entscheidungen muss für eine \textbf{vollständige Evaluation} darauf geachtet werden, dass die Bedingungen einer Teilentscheidung so mit Werten versehen werden, dass die Gesamtentscheidung den Forderungen der minimalen Mehrfachbedingung entspricht:
+
+    \begin{minted}{java}
+        if (E) {
+            if (A || B || C || D) { ...
+
+    \end{minted}
+
+    \noindent
+    Der Gesamtausdruck  \code{(A || B || C || D)} wird zu \code{false} evaluiert, wenn \code{A}, \code{B}, \code{C}, \code{D} auf \code{false} gesetzt wird.\\
+
+
 \end{tcolorbox}

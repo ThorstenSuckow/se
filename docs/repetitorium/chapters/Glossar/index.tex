@@ -427,3 +427,26 @@ Der dynamische Test besitzt u.a. folgende Eigenschaften  (vgl.~\cite[396]{Bal97}
 \end{itemize}
 }
 }
+
+\newglossaryentry{Vollständige Evaluation}
+{
+singular={Vollständige Evaluation},
+plural={Vollständige Evaluation},
+name={Vollständige Evaluation},
+description={
+Alle Bedingungen einer zsuammengesetzten Entscheidung werden evaluiert.\\
+In \textbf{Java} kann dies bspw. durch die Verwendung der bitweisen Operatoren \textcolor{blue}{\&} bzw. \textcolor{blue}{|} erreicht werden, während es bei den booleschen Operatoren \textcolor{blue}{\&\&} bzw. \textcolor{blue}{||} zu einer \textbf{unvollständigen Evaluation} des Gesamtausdrucks kommen kann.
+}
+}
+
+\newglossaryentry{Unvollständige Evaluation}
+{
+singular={Unvollständige Evaluation},
+plural={Unvollständige Evaluation},
+name={Unvollständige Evaluation},
+description={
+Die Prüfung einer zusammengesetzten Entscheidung wird beendet, wenn der Wahrheitswert der Entscheidung bekannt ist.\\
+Wird in der deutschsprachigen Fachliteratur (bspw. von \textit{Liggesmeyer} in \cite{Lig09}) gleichbedeutung zu der \textbf{Kuzschlussauswertung} (\textit{short-circuit-evaluation}) verwendet. Unvollständige Evaluation wird bspw. in \textbf{Java} durch die booleschen Operatoren \textcolor{blue}{\&\&} bzw. \textcolor{blue}{||} erreicht:
+Steht bei \textcolor{blue}{A \&\& B} die Linke Seite des Ausdrucks als \textcolor{blue}{false} fest, wird die rechte Seite nicht mehr evaluiert. Analog wird bei \textcolor{blue}{A || B} die rechte Seite nicht ausgewertet, wenn die Bedingung \textcolor{blue}{A} bereits zu \textcolor{blue}{true} ausgewertet wurde.
+}
+}
