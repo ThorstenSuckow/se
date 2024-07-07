@@ -3,7 +3,9 @@
 \begin{tcolorbox}[title=Bedingungsüberdeckung]
 
     Der \textbf{Bedingungsüberdeckungstest} (\textit{condition coverage test}) beachtet die logische Struktur von Entscheidungen der zu testenden Software und kommt in unterschiedlichen Ausprägungen vor, wobei die schwächste der \textbf{einfache Bedingungsüberdeckungstest} (\textit{simple condition coverage test}) ist, der weder Anweisungsüberdeckungs- noch Zweigüberdeckungstest subsumiert (vgl.~\cite[93]{Lig09a}).
+\end{tcolorbox}
 
+\begin{tcolorbox}[title=Einfacher Bedingungsüberdeckungstest]
     \begin{itemize}
         \item \textbf{Einfacher Bedingungsüberdeckungstest} (\textit{simple condition coverage}): Fordert den Test aller \textbf{atomaren} Teilentscheidungen gegen \textit{wahr} oder \textit{falsch}, allerdings ist dadurch \textbf{nicht} garantiert, dass eine vollständige Zweigüberdeckung erreicht wird:
 
@@ -28,12 +30,17 @@
             &A: false, B: false, C: false, D: false && \text{ (Gesamtausdruck: $false$)}\\
         \end{alignat}
         \end{equation}
-        \item \textbf{Bedinguns-/Entscheidungsüberdeckungstest} \textit{(condition / decision coverage)}:
+    \end{itemize}
+\end{tcolorbox}
+
+\begin{tcolorbox}[title={Bedingungs-/Entscheidungsüberdeckungstest}]
+    \begin{itemize}
+        \item \textbf{Bedingungs-/Entscheidungsüberdeckungstest} \textit{(condition / decision coverage)}:
         Garantiert ergänzend zu der einfachen Bedingungsüberdeckung einen vollständigen Zweigüberdeckungstest, allerdings kann dadruch die logische Gliederung kompliziert aufgebauter Entscheidungen ignoriert werden (vgl.~\cite[100]{Lig09a}):
         \begin{equation}\notag
         \begin{alignat}{3}
             &A: false, B: true, C: false, D: false\\ &\qquad \text{ ($A||B:true, C||D: false$, Gesamtausdruck: $false$)}\\
-            &A: true, B: false, C: true, D: true\\ &qquad \text{ ($A||B:true, C||D: true$, Gesamtausdruck: $true$)}\\
+            &A: true, B: false, C: true, D: true\\ &\qquad \text{ ($A||B:true, C||D: true$, Gesamtausdruck: $true$)}\\
         \end{alignat}
         \end{equation}
         In dem Beispiel wird zwar eine Zweigüberdeckung erreicht, aber die Teilentscheidungen ($A||B, C||D$) evaluieren nicht zu jeweils unterschiedlichen Ergebnissen in den Testfällen.
