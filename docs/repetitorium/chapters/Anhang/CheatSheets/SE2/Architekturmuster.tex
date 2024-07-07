@@ -1,0 +1,18 @@
+\section{Architekturmuster}
+
+\begin{tcolorbox}[title=Architekturmuster]
+
+    \textbf{Architekturmuster} sind wie \textbf{Analyse}- oder \textbf{Entwurfsmuster} Lösungskizzen für verallgemeinerte (Architektur-)Probleme.\\
+    Im Skript wurden zwei Architekturmuster vorgestellt:
+
+    \begin{itemize}
+        \item \textbf{Client-Server} - löst u.a.: mehrere Nutzer arbeiten verteilt an unetrschiedlichen Rechnern, eine direkte Kommunikation der Peers untereinander ist nicht gewünscht. Als Lösung greifen die \textit{Clients} auf einen gemeinsamen \textit{Server} zu.
+        \item[]
+        \item \textbf{Mehrschichtenmodell} - löst u.a.: logisch gruppierbare Anwendungsteile werden in hiararchisch angeordnete \textit{Schichten} unterteilt: Niedrig angeordnete Schichten können i.d.R. nicht auf höher liegende Schichten zugreifen; höhere Schichten nutzen Funktionalitäten der nierdrigeren Schichten.\\
+        \blockquote[{\cite[31, Hervorhebung i.O.]{BMRS96}}]{
+            The \textit{Layers} architectural pattern helps to structure applications that can be decomposed into groups of subtasks in which each group of subtasks is at a particular level of abstraction.
+        }.
+        \item[] Schichten können darüberhinaus \textit{vertikal} (Layers) und orthogonal dazu \textit{horizontal} (Tiers) unterteilt werden: Vertikal dient zur Abstraktion von der Anwendung, der Hardware und dem Betriebssystem, horizontal wird logisch gruppiert, also Infrastruktur, Domäne, Client usw.: \textit{Wedemann} folgt im Skript der Begriffsbestimmung \textit{Tier} der von \textit{Alur et al.}:  ``A tier is a logical partition of separation of concerns in the system. We view each tier as logically separated from one another.`` (\cite[120]{ACM03})
+    \end{itemize}
+
+\end{tcolorbox}
