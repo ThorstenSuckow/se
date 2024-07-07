@@ -2,20 +2,42 @@
 
 
 \begin{tcolorbox}[title=Äquivalenzklassen]
-    \blockquote[{\cite[43]{Wed09c}}]{
-        Die unterschiedlichen Bereiche, in denen ein Testgegenstand gleichartig reagiert, werden Äquivalenzklassen genannt.
-    }\\
+    Die \textbf{funktionale Äquivalenzklassenbildung} gehört zu den \textbf{funktionsorientierten Testtechniken}, da Testfälle anhand der Spezifikation von Programmteilen erstellt werden. Unterschiedlichen Bereiche, in denen ein Testgegenstand gleichartig reagiert, werden Äquivalenzklassen genannt (vgl.~\cite[43]{Wed09c}).\\
     \textbf{Gültige Äquivalenzklassen} stellen hierbei zulässige Elemente dar, die vom Testgegenstand verarbeitet werden sollen, \textbf{ungültige Äquivalenzklassen} hingegen Elemente, die vom Testgegenstand abgelehnt werden sollen.\\
 
     \noindent
     Die Tests verwenden dann aus jeder Äquivalenzklasse einen \textbf{Stellvertreter}.
-    Es wird unterschieden nach
+    Es wird unterschieden nach \textbf{Gutfällen} und \textbf{Schlechtfällen}.\\
+    Es ist sinnvoll, an den \textbf{Grenzen von Äquivalenzklassen} zu testen, da hier erfahrungsgemäß Fehler auftreten.\\
 
+    \noindent
+    Bei der Ableitung von Testfällen wird i.d.R. so vorgegangen:
+    \begin{enumerate}
+        \item \textbf{Gutfälle}: Bilden von Testfällen die ausschliesslich gültige Äquivalenzklassen (\textit{gK})enthalten: So kann die Anwesenheit gültiger Repräsentanten über mögliche Werte(-bereiche) sichergestellt werden
+        \item \textbf{Schlechtfälle}: Anschliessend Bilden von Schlechtfällen, wobei immer eine ungültige Äquivalenzklasse (\textit{uK}) mit ausschliesslich gültigen Äquivalenzklassen kombiniert wird.
+        Dadurch wird für einen Testfall sichergestellt, dass der Fehler nur durch ein ungültiges Testdatum verursacht wird (vgl.~\cite[55 f.]{Lig09b}).
+    \end{enumerate}
+
+    \noindent
+    Regeln für die Bildung von Äquivalenzklassen (vgl.~\cite[52 ff.]{Lig09b}):
     \begin{itemize}
-        \item \textbf{Gutfälle}: Tests, in denen nur Stellvertreter aus gültigen Äquivalenzklassen verwendet werden
-        \item \textbf{Schlechtfälle}: Tests, in denen nur Stellvertreter aus ungültigen Äquivalenzklassen verwendet werden
+        \item[] \textbf{Wertebereich}
+        \begin{itemize}
+            \item \textbf{1 gK} für einen Wert, der in dem Bereich liegt
+            \item \textbf{2 uK} jeweils für Werte außerhalb des Bereiches
+            \item \textbf{Beispiel}: $1 \leq n  \leq 100$, \textit{gK}: $1 \leq n  \leq 100$, \textit{uK}: $0, 101$
+        \end{itemize}
+        \item[] \textbf{Wertemenge}
+        \begin{itemize}
+            \item \textbf{$n$ gK} für die $n$ Werte innerhalb der Wertemenge
+            \item \textbf{1 uK} für einen Wert, der nicht Teil der Wertemenge ist
+            \item \textbf{Beispiel}: \code{[A, D, F]}, \textit{$3$ gK}: \code{A, D, F}, \textit{1 uK}: \code{Z}
+        \end{itemize}
+        \item[] \textbf{Zwingend zu erfüllende Bedingung}
+        \begin{itemize}
+            \item \textbf{gK} für die Erfüllung der Bedingung
+            \item \textbf{uK} für die Nichterfüllung der Bedingung
+            \item \textbf{Beispiel}: erster Buchstabe ein \code{'W'}, \textit{gK}: \code{'W'}, \textit{uK}: \code{'!'}
+        \end{itemize}
     \end{itemize}
-
-    Es ist sinnvoll, an den \textbf{Grenzen von Äquivalenzklassen} zu testen, da hier erfahrungsgemäß Fehler auftreten.
-
 \end{tcolorbox}
