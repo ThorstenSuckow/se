@@ -2,13 +2,20 @@
 
 
 \begin{tcolorbox}[title=Äquivalenzklassen]
-    Die \textbf{funktionale Äquivalenzklassenbildung} gehört zu den \textbf{funktionsorientierten Testtechniken}, da Testfälle anhand der Spezifikation von Programmteilen erstellt werden. Unterschiedlichen Bereiche, in denen ein Testgegenstand gleichartig reagiert, werden Äquivalenzklassen genannt (vgl.~\cite[43]{Wed09c}).\\
+    Die \textbf{funktionale Äquivalenzklassenbildung} gehört zu den \textbf{funktionsorientierten Testtechniken}, da Testfälle anhand der Spezifikation von Programmteilen erstellt werden. Unterschiedlichen Bereiche, in denen ein Testgegenstand gleichartig reagiert, werden \textbf{Äquivalenzklassen} genannt (vgl.~\cite[43]{Wed09c}).\\
+
+    \noindent
     \textbf{Gültige Äquivalenzklassen} stellen hierbei zulässige Elemente dar, die vom Testgegenstand verarbeitet werden sollen, \textbf{ungültige Äquivalenzklassen} hingegen Elemente, die vom Testgegenstand abgelehnt werden sollen.\\
 
     \noindent
     Die Tests verwenden dann aus jeder Äquivalenzklasse einen \textbf{Stellvertreter}.
     Es wird unterschieden nach \textbf{Gutfällen} und \textbf{Schlechtfällen}.\\
-    Es ist sinnvoll, an den \textbf{Grenzen von Äquivalenzklassen} zu testen, da hier erfahrungsgemäß Fehler auftreten.\\
+    Es ist sinnvoll, an den \textbf{Grenzen von Äquivalenzklassen} zu testen, da hier erfahrungsgemäß Fehler auftreten\footnote{
+    fällt unter die Kategorie ``Test spezieller Werte`` (vgl.~\cite[432]{Bal97})
+    }.\\
+    Hierzu werden für (un)gültige Äquivalenzklassen diejenigen Werte gewählt, die als Grenzwerte der möglichen Eingaben in Frage kommen.\\
+    Für die gültigen Äquivalenzklassen gilt: Es entstehen nicht mehrere gültige Äquivalenzklassen durch die Auswahl der Grenzwerte, sondern nur Testdaten, die in den Testfällen vorkommen sollten (vgl.~\cite[Tabelle 2.2, Tabelle 2.3, 56 f.]{Lig09b}).
+    Sind alle Grenzen getestet für eine Äquivalenzklasse, ist eine Auswahl von Testdaten aus der Mitte dieser Äquivalenzklasse sinnvoll (vgl.~\cite[431]{Bal97}).\\
 
     \noindent
     Bei der Ableitung von Testfällen wird i.d.R. so vorgegangen:
@@ -19,25 +26,31 @@
     \end{enumerate}
 
     \noindent
+    \blockquote[{\cite[58]{Bal97}}]{
+        Die funktionale Äquivalenzklassenbildung ist gut geeignet für den Test von Software, die nicht zustandsbasiert ist und bei der die Reaktionen nicht abhängig sind von komplizierten Eingabeverknüpfungen.
+    }
+\end{tcolorbox}
+
+\begin{tcolorbox}[title=Beispiel,colback=white]
     Regeln für die Bildung von Äquivalenzklassen (vgl.~\cite[52 ff.]{Lig09b}):
     \begin{itemize}
         \item[] \textbf{Wertebereich}
         \begin{itemize}
             \item \textbf{1 gK} für einen Wert, der in dem Bereich liegt
             \item \textbf{2 uK} jeweils für Werte außerhalb des Bereiches
-            \item \textbf{Beispiel}: $1 \leq n  \leq 100$, \textit{gK}: $1 \leq n  \leq 100$, \textit{uK}: $0, 101$
+            \item \textbf{Beispiel}: $1 \leq n  \leq 100$, \textit{gK}: $1 \leq n  \leq 100$, \textit{uK}: $x < 1, x > 100$
         \end{itemize}
-        \item[] \textbf{Wertemenge}
+        \item[] \textbf{Aufzählung}
         \begin{itemize}
-            \item \textbf{$n$ gK} für die $n$ Werte innerhalb der Wertemenge
-            \item \textbf{1 uK} für einen Wert, der nicht Teil der Wertemenge ist
-            \item \textbf{Beispiel}: \code{[A, D, F]}, \textit{$3$ gK}: \code{A, D, F}, \textit{1 uK}: \code{Z}
+            \item \textbf{$n$ gK} für die $n$ Werte innerhalb der Aufzählung
+            \item \textbf{1 uK} für einen Wert, der nicht Teil der Aufzählung ist
+            \item \textbf{Beispiel}: \code{[A, D, F]}, \textit{$3$ gK}: \code{A, D, F}, \textit{1 uK}: alles anderes, bspw. \code{Z}
         \end{itemize}
         \item[] \textbf{Zwingend zu erfüllende Bedingung}
         \begin{itemize}
             \item \textbf{gK} für die Erfüllung der Bedingung
             \item \textbf{uK} für die Nichterfüllung der Bedingung
-            \item \textbf{Beispiel}: erster Buchstabe ein \code{'W'}, \textit{gK}: \code{'W'}, \textit{uK}: \code{'!'}
+            \item \textbf{Beispiel}: erster Buchstabe ein \code{'W'}, \textit{gK}: \code{'W'}, \textit{uK}: alles andere, bspw. \code{'!'}
         \end{itemize}
     \end{itemize}
 \end{tcolorbox}
