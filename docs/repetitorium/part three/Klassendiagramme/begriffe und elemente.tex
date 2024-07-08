@@ -32,7 +32,7 @@ Es gibt zwei unterschiedliche Notationen für Properties: Die \textbf{Attribut}-
         \item \textbf{Multiplizität}:
         \begin{itemize}
             \item \code{[0..*]}: optionales Attribut, gekennzeichnet durch $0$ als untere Grenze.
-            Der Stern \code{*} zeigt an, dass bel. viele Ausprägungen vorhanden sein dürfen.
+            Der Stern \code{*} zeigt an, dass beliebig viele Ausprägungen vorhanden sein dürfen.
             Statt \code{[0..*]} kann in dem Fall auch \code{[*]} notiert werden.
             \item \code{[1..n]}: obligatorische Property, gekennzeichnet durch $1$ als untere Grenze ($1 \leq n < \infty, n \in \mathbb{N}$):
             \item \code{[1]}: Standardwert
@@ -105,7 +105,7 @@ Assoziationen können Namen besitzen, die mit einer Leserichtung ausgestattet si
 
 \begin{itemize}
     \item \textbf{Bidirektional}: Pfeilspitzen an beiden Enden
-    \item \textopf{Unidirektional}: Pfeilspitze an nur einem Ende (\textit{navigabilityNotation}).
+    \item \textpf{Unidirektional}: Pfeilspitze an nur einem Ende (\textit{navigabilityNotation}).
     Ein offenes ``X`` (\textit{nonNavigabilityNotation}) an einem Ende weist darauf hin, dass der Zugriff auf diese Seite der Assoziation ausgeschlossen ist (vgl.~\cite[719]{OMG17}).
     \item \textbf{keine Angabe}: bidirektionale Assoziation, oder Navigierbarkeit wurde noch nicht modelliert\footnote{
      zur Vermeidung von Unklarheiten empfiehlt es sich, die Navigierbarkeit anzugeben. S. auch die obige Anmerkung zur \textit{Multiplizität}
