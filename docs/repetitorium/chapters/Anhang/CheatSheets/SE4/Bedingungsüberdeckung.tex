@@ -36,11 +36,11 @@
 \begin{tcolorbox}[title={Bedingungs-/Entscheidungsüberdeckungstest}]
     \begin{itemize}
         \item \textbf{Bedingungs-/Entscheidungsüberdeckungstest} \textit{(condition / decision coverage)}:
-        Garantiert ergänzend zu der einfachen Bedingungsüberdeckung einen vollständigen Zweigüberdeckungstest, allerdings kann dadruch die logische Gliederung kompliziert aufgebauter Entscheidungen ignoriert werden (vgl.~\cite[100]{Lig09a}):
+        Garantiert ergänzend zu der einfachen Bedingungsüberdeckung einen vollständigen Zweigüberdeckungstest, allerdings kann dadurch die logische Gliederung kompliziert aufgebauter Entscheidungen ignoriert werden (vgl.~\cite[100]{Lig09a}). Für $(A || B) \&\& (C || D)$:
         \begin{equation}\notag
         \begin{alignat}{3}
-            &A: false, B: true, C: false, D: false\\ &\qquad \text{ ($A||B:true, C||D: false$, Gesamtausdruck: $false$)}\\
-            &A: true, B: false, C: true, D: true\\ &\qquad \text{ ($A||B:true, C||D: true$, Gesamtausdruck: $true$)}\\
+            &A: false, B: true, C: false, D: false\\ &\qquad \text{ ($A || B:true, C || D: false$, Gesamtausdruck:  $false$)}\\
+            &A: true, B: false, C: true, D: true\\ &\qquad \text{ ($A || B:true, C || D: true$, Gesamtausdruck: $true$)}\\
         \end{alignat}
         \end{equation}
         In dem Beispiel wird zwar eine Zweigüberdeckung erreicht, aber die Teilentscheidungen ($A||B, C||D$) evaluieren nicht zu jeweils unterschiedlichen Ergebnissen in den Testfällen.

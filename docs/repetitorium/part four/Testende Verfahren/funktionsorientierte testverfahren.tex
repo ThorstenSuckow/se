@@ -303,7 +303,14 @@ private Object calculateBaseAndValue() {
 
 \noindent
 In einfachen Fällen können die benötigten Testfälle ohne Formalismus erraten werden; für kompliziertere Fälle wird ein systematisches Vorgehen benötigt, damit nichts übersehen wird.\\
-Hierzu wird zunächst ein \textbf{UML-Zustandsdiagramm} (s. Abschnitt~\ref{ch:zustandsautomaten}) der Zustände und ihrer Zustandsübergänge erstellt (s. Abbidung~\ref{fig:popstate}), woraufhin dann eine Zustandsübergangstabelle (s. Tabelle~\ref{tab:popstate}) erstellt wird, aus der alle Zustände und Ereignisse mit ihren Folgezuständen abgelesen werden können.
+Hierzu wird zunächst ein \textbf{UML-Zustandsdiagramm} (s. Abschnitt~\ref{ch:zustandsautomaten}) der Zustände und ihrer Zustandsübergänge erstellt (s. Abbildung~\ref{fig:popstate}), woraufhin dann eine Zustandsübergangstabelle (s. Tabelle~\ref{tab:popstate}) erstellt wird, aus der alle Zustände und Ereignisse mit ihren Folgezuständen abgelesen werden können.
+
+\vspace{5mm}
+\begin{tcolorbox}[colback=red!20,title={Notation für \textit{Event[Guard]}}]
+    \textit{Wedemann} verwendet den Doppelpunkt ``:`` als Separator für die Notation \textit{Event[Guard]} (lies: ``das Ereignis wird getriggert, wenn der Guard zu $true$ evaluiert.``) in Abbildung~\ref{fig:popstate}.\\
+    Für diese Notation findet sich in \cite[320 f.]{OMG17} kein Hinweis.
+\end{tcolorbox}
+\vspace{5mm}
 
 \begin{figure}
     \centering
