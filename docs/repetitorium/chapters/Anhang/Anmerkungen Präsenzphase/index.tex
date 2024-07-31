@@ -98,3 +98,16 @@ Möglich sind u.a.
     Eine \textbf{Verzeigungsbedingung} ist ein Knoten mit mindestens zwei ausgehenden Kanten.
 \end{tcolorbox}
 \vspace{5mm}
+
+\noindent
+Wenn die Anzahl der Schleifendurchläufe von der Eingabe abhängig ist, lässt sich eine obere Schranke für die Anzahl der Iterationen of nut schwer finden.\\
+Für eine volsltändige Pfadüberdeckung bedeutet das, dass die Anzahl der möglichen zu durchlaufenden Pfade oft von exponentiellem Maß ist, und generell eine 100\%ige Pfadüberdeckung dadurch nur schwer erreicht werden kann (Anzahl der Testfälle, Dauer für die Tests).\\
+Als ``gute Heuristik`` gibt das \textit{T\&V-Skript} die \textbf{vereinfachte Pfadüberdeckung} an, die aus folgenden Testfällen besteht:
+
+\begin{itemize}
+    \item Kein Eintritt in die Schleife
+    \item genau ein Durchlauf der Schleife, um \textit{Initialisierungsfehler} aufzudecken
+    \item genau zwei Durchläufe der Schleife. Manche Initialisierungsfehler fallen nur so auf
+    \item eine typische Anzahl von Iterationen als \textbf{Normalfall}
+    \item die maximal mögliche Anzahl von Iterationen. hierdurch sollen Fehler im \textit{Abbruchkriterium} gefunden werden.
+\end{itemize}
