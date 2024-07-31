@@ -1,0 +1,100 @@
+\chapter{Anmerkungen Präsenzphase}
+
+\section{Black-Box-Verfahren / Äquivalenzklassen}
+
+Funktionsorientierte Tests sind \textbf{Black-Box-Verfahren}.
+Sie testen die vollständige Funktionalität von Programm(teil)en ohne Berücksichtigung der inneren Struktur.\\
+Testfälle werden hierbei aus den Spezifikationen abgeleitet.
+
+\begin{itemize}
+    \item dienen zur sinnvollen Auswahl von Testmengen aus der großen Zahl der Möglichkeiten: bspw. \textbf{Äquivalenzklassen}
+    \item Idee: Üblicherweise verhält sich ein Programm nicht für jeden Werst eines Eingabeparameters unterschiedlich
+    \item[] $\rightarrow$ Eingabewerte werden zu Äquivalenzklassen zusammengefasst, und es wird angenommen
+    \begin{enumerate}
+        \item Ist der Test mit einem Repräsentanten einer Äquivalenzklasse fehlerfrei, ist er für andere Eingabedaten der Klasse auch fehlerfrei
+        \item Erzeugt der Test mit einem Repräsentanten einer Äquivalenzklasse einen Fehler, treten auch Fehler mit anderen Eingabedaten dieser Klasse auf
+    \end{enumerate}
+\end{itemize}
+
+\vspace{5mm}
+\begin{tcolorbox}[title={Ideale Testmenge}]
+    Repräsentanten von Äquivalenzklassen unterstellt man, dass sie eine ideale Testmenge darstellen.
+\end{tcolorbox}
+
+\subsection*{Bestimmung der Äquivalenzklassen}
+
+Grundsätzlich wird der Definitionsbereich einer Eingabe eines Programmes betrachtet und daraus eine (oder mehrere\footnote{
+``oder mehrere``: bezieht sich auf eine Granulierung der Äquivalenzklassen durch weitere Unterteilungen, falls nötig
+}) \textbf{gültige} Äquivalenzklassen gebildet ($gK$); für ungültige Werte wird eine (oder mehrere) \textbf{ungültige} Äquivalenzklassen gebildet ($uK$).\\
+
+\subsubsection{Richtlinien zur Bildung von Äquivalenzklassen}
+
+\begin{itemize}
+    \item \textbf{geordneter Definitionsbereich}: eine $gK$ für Werte innerhalb des Definitionsbereichs, je eine $uK$ unterhalb und eine oberhalb des Definitionsbereichs
+    \item \textbf{Aufzählung $K$}: für jedes Element in $K$ wird eine $gK$ gebildet, eine $uK$ für ein Element aus $\overline{K}$
+    \item \textbf{zusammengesetzter Datentyp}: für jeden Untertyp mindestens eine $gK$ und eine $uK$
+\end{itemize}
+
+\subsection*{Bestimmung der Testmenge}
+
+\begin{itemize}
+    \item Bildung von \textbf{Gutfällen} ausschliesslich durch alle möglichen Kombinationen der vorhandenen Repräsentanten der $gK$
+    \item Bildung von \textbf{Schlechtfällen} ausschliesslich durch genau einen Repräsentanten einer $uK$, der mit Repräsentanten der übrigen $gK$ kombiniert wird
+\end{itemize}
+
+\subsection*{Grenzwertanalyse}
+
+Die Grundidee der Grenzwertanalyse lautet: Es werden die \textbf{Grenzen der Äquivalenzklassen} und deren benachbarte Werte betrachtet, da hier besonders oft ``fehlerträchtige Fallunterscheidungen`` (\textit{T\&V-Skript}) gemacht werden.
+
+\vspace{5mm}
+\begin{tcolorbox}[title={Vorraussetzungen für die Grenzwertanalyse}]
+    \begin{itemize}
+        \item die Äquivalenzklasse ist geordnet
+        \item Grenzen lassen sich identifizieren
+    \end{itemize}
+\end{tcolorbox}
+
+\section{White-Box-Verfahren}
+
+Zur Konstruktion von Testfällen als auch zur Bestimmung der Vollständigkeit wird bei den strukturorientierten Testverfahren der Quellcode betrachtet.\\
+Verschiedene Überdeckungskriterien sollen hierbei sicherstellen, das bspw. alle Anweisungen mindestens einmal ausgeführt worden sind.\\
+
+\noindent
+Als Hilfsmittel bei den White-Box-Verfahren wird der Programmablaufgraph bzw. der Kontrollflussgraph herangezogen:
+
+\vspace{5mm}
+\begin{tcolorbox}[title={Programmablaufgraph}]
+    Ein $PAG$ (\textit{Programmablaufgraph}) ist ein gerichteter Graph mit einer endlichen Knotenmenge und gerichteten Kanten.\\
+
+    \noindent
+    Knoten können zu \textbf{Anweisungsblöcken} zusammengefasst werden.
+    Bedingung ist hier, dass die erste Anweisung des Anweisungsblockes den Beginn des Blckes markiert, und dieser genau einmal vollständig durchlaufen wird.\\
+
+    \noindent
+    Ein \textbf{Pfad} ist ein \textbf{geschlossener Kantenzug} zwischen zwei Knoten.\\
+
+    \noindent
+    Ein \textbf{vollständiger Pfad} ist ein Pfad zwischen Start- und Endknoten des Graphs.
+\end{tcolorbox}
+\vspace{5mm}
+
+\noindent
+Die Auswahl der Testmenge für einen strukturorientierten Test richtet sich nach der Auswahl der Überdeckungskriterien.
+Möglich sind u.a.
+
+\begin{itemize}
+    \item \textbf{Knotenüberdeckung}: Jeder Knoten (also jede Anweisung eines Programmes) wird mindestens einmal durchlaufen
+    \item \textbf{Kantenüberdeckung}: Jede Kante (also jeder Zweig eines Programmes) wird mindestens einmal durchlaufen
+    \item \textbf{Bedingungsüberdeckung}: Verschiedene Auswertungsmöglichkeiten der \textbf{Verzweigungsbedingung} werden berücksichtigt, bspw.
+    \begin{itemize}
+        \item einfache Bedingungsüberdeckung: Jede atomare bedingung in jeder Verzweigungsbedingung nimmt jeweils einmal den Wert $true$/$false$ an
+        \item mehrfache Bedingungsüberdeckung: alle Kombinationen der Wahrheitswerte treten auf. Jede Verzweigungsbedingung mit $n$ atomaren Bedingungen nimmt somit alle $2^n$ verschiedenen Kombinationen von $true$/$false$ an.
+    \end{itemize}
+    \item \textbf{Pfadüberdeckung}: Alle möglichen vollständigen Pfade werden mindestens einmal durchlaufen
+\end{itemize}
+
+\vspace{5mm}
+\begin{tcolorbox}[title={Verzweigungsbedingung}]
+    Eine \textbf{Verzeigungsbedingung} ist ein Knoten mit mindestens zwei ausgehenden Kanten.
+\end{tcolorbox}
+\vspace{5mm}
