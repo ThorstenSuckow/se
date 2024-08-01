@@ -1,10 +1,21 @@
 \chapter{Anmerkungen Präsenzphase}
 
-\section{Black-Box-Verfahren / Äquivalenzklassen}
+\section{Black-Box-Verfahren}
 
-Funktionsorientierte Tests sind \textbf{Black-Box-Verfahren}.
-Sie testen die vollständige Funktionalität von Programm(teil)en ohne Berücksichtigung der inneren Struktur.\\
-Testfälle werden hierbei aus den Spezifikationen abgeleitet.
+Funktionsorientierte Tests werden auch \textbf{Black-Box-Tests} genannt und testen das Verhalten eines Programmteils, eines Systems oder auch Subsystems.\\
+Ziel ist der Test der vollständigen Funktionalität ohne Berücksichtigung der inneren Struktur.\\
+Testfälle werden hierbei aus den Spezifikationen abgeleitet: Grundlage aller Black-Box ist stets die Spezifikation.\\
+
+\noindent
+Zu den \textbf{Nachteilen} aller Black-Box Verfahren gehört
+\begin{itemize}
+    \item das nicht systematisch geprüft wird, ob das Programm mehr kann, als in der Spezifikation gefordert
+    \item Fehler in der Spezifikation werden nicht entdeckt\footnote{
+    hierfür eignen sich manuelle Prüfverfahren wie die (formale) Inspektion oder Reviews
+    }.
+\end{itemize}.
+
+\section{Äquivalenzklassen}
 
 \begin{itemize}
     \item Black-Box-Verfahren dienen zur sinnvollen Auswahl von Testmengen aus der großen Zahl der Möglichkeiten: bspw. \textbf{Äquivalenzklassen}
@@ -27,7 +38,7 @@ Grundsätzlich wird der Definitionsbereich einer Eingabe eines Programmes betrac
 ``oder mehrere``: bezieht sich auf eine Granulierung der Äquivalenzklassen durch weitere Unterteilungen, falls nötig
 }) \textbf{gültige} Äquivalenzklassen gebildet ($gK$); für ungültige Werte wird eine (oder mehrere) \textbf{ungültige} Äquivalenzklassen gebildet ($uK$).\\
 
-\subsubsection{Richtlinien zur Bildung von Äquivalenzklassen}
+\subsubsection*{Richtlinien zur Bildung von Äquivalenzklassen}
 
 \begin{itemize}
     \item \textbf{geordneter Definitionsbereich}: eine $gK$ für Werte innerhalb des Definitionsbereichs, je eine $uK$ unterhalb und eine oberhalb des Definitionsbereichs
@@ -83,14 +94,14 @@ Die Auswahl der Testmenge für einen strukturorientierten Test richtet sich nach
 Möglich sind u.a.
 
 \begin{itemize}
-    \item \textbf{Knotenüberdeckung}: Jeder Knoten (also jede Anweisung eines Programmes) wird mindestens einmal durchlaufen
-    \item \textbf{Kantenüberdeckung}: Jede Kante (also jeder Zweig eines Programmes) wird mindestens einmal durchlaufen
+    \item \textbf{Knotenüberdeckung}: Jeder Knoten (also jede Anweisung eines Programmes) wird mindestens einmal durchlaufen. Nachteil: Nicht alle Kanten werden verfolgt
+    \item \textbf{Kantenüberdeckung}: Jede Kante (also jeder Zweig eines Programmes) wird mindestens einmal durchlaufen. Nachteil: Nicht alle Kombinationen von Kanten werden berückscihtigt
     \item \textbf{Bedingungsüberdeckung}: Verschiedene Auswertungsmöglichkeiten der \textbf{Verzweigungsbedingung} werden berücksichtigt, bspw.
     \begin{itemize}
-        \item einfache Bedingungsüberdeckung: Jede atomare bedingung in jeder Verzweigungsbedingung nimmt jeweils einmal den Wert $true$/$false$ an
-        \item mehrfache Bedingungsüberdeckung: alle Kombinationen der Wahrheitswerte treten auf. Jede Verzweigungsbedingung mit $n$ atomaren Bedingungen nimmt somit alle $2^n$ verschiedenen Kombinationen von $true$/$false$ an.
+        \item einfache Bedingungsüberdeckung: Jede atomare Bedingung in jeder Verzweigungsbedingung nimmt jeweils einmal den Wert $true$/$false$ an. Nachteil: Geringe Aussagekraft, insb. werden nicht immer zusammengesetzte Bedingungen genügend berücksichtigt. Messung der Überdeckung schwierig, wenn im Programm short-circuit evaluation verwendet wird.
+        \item mehrfache Bedingungsüberdeckung: alle Kombinationen der Wahrheitswerte treten auf. Jede Verzweigungsbedingung mit $n$ atomaren Bedingungen nimmt somit alle $2^n$ verschiedenen Kombinationen von $true$/$false$ an. Nachteil: Hoher Aufwand durch exponentielles Wachstum mit der Anzahl der atomaren Bedingungen.
     \end{itemize}
-    \item \textbf{Pfadüberdeckung}: Alle möglichen vollständigen Pfade werden mindestens einmal durchlaufen
+    \item \textbf{Pfadüberdeckung}: Alle möglichen vollständigen Pfade werden mindestens einmal durchlaufen. Nachteil: ``Explosives Wachstum`` der Pfade bei Schleifen und Verzweigungen (\cite[406]{Bal97})
 \end{itemize}
 
 \vspace{5mm}
@@ -109,5 +120,14 @@ Als ``gute Heuristik`` gibt das \textit{T\&V-Skript} die \textbf{vereinfachte Pf
     \item genau ein Durchlauf der Schleife, um \textit{Initialisierungsfehler} aufzudecken
     \item genau zwei Durchläufe der Schleife. Manche Initialisierungsfehler fallen nur so auf
     \item eine typische Anzahl von Iterationen als \textbf{Normalfall}
-    \item die maximal mögliche Anzahl von Iterationen. hierdurch sollen Fehler im \textit{Abbruchkriterium} gefunden werden.
+    \item die maximal mögliche Anzahl von Iterationen. Hierdurch sollen Fehler im \textit{Abbruchkriterium} gefunden werden.
 \end{itemize}
+
+\noindent
+Zu den \textbf{Vorteilen} aller White-Box Verfahren gehört, dass die Testintensität an die Software angepasst werden kann, und dass eine große Menge an bereits fertigen Tools für den Einsatz der Verfahren gibt.\\
+Zu den \textbf{Nachteilen} aller White-Box Verfahren gehört
+\begin{itemize}
+    \item es wird davon ausgegangen, dass immer alle Anweisungen erreichbar sind, was nicht immer der Fall sein muss: 100\% Überdeckung ist dann nicht möglich
+    \item falls keine 100\%ige Überdeckung gemessen wird, kann algorithmisch nicht entschieden werden, ob dies an den Testfällen liegt, oder ob unerreichbare Anweisungen vorliegen
+    \item selbst wenn 100\% Überdeckung erreicht wird, ist nicht garantiert, dass das getestete System die geforderten Spezifikationen erfüllt\footnote{hierfür eignen sich Grey-Box-Tests}
+\end{itemize}.
