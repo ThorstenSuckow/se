@@ -19,7 +19,7 @@ Zu den \textbf{Nachteilen} aller Black-Box Verfahren gehört
 
 \begin{itemize}
     \item Black-Box-Verfahren dienen zur sinnvollen Auswahl von Testmengen aus der großen Zahl der Möglichkeiten: bspw. \textbf{Äquivalenzklassen}
-    \item Idee: Üblicherweise verhält sich ein Programm nicht für jeden Werst eines Eingabeparameters unterschiedlich
+    \item Idee: Üblicherweise verhält sich ein Programm nicht für jeden Wert eines Eingabeparameters unterschiedlich
     \item[] $\rightarrow$ Eingabewerte werden zu Äquivalenzklassen zusammengefasst, und es wird angenommen
     \begin{enumerate}
         \item Ist der Test mit einem Repräsentanten einer Äquivalenzklasse fehlerfrei, ist er für andere Eingabedaten der Klasse auch fehlerfrei
@@ -79,7 +79,7 @@ Als Hilfsmittel bei den White-Box-Verfahren wird der Programmablaufgraph bzw. de
 
     \noindent
     Knoten können zu \textbf{Anweisungsblöcken} zusammengefasst werden.
-    Bedingung ist hier, dass die erste Anweisung des Anweisungsblockes den Beginn des Blckes markiert, und dieser genau einmal vollständig durchlaufen wird.\\
+    Bedingung ist hier, dass die erste Anweisung des Anweisungsblockes den Beginn des Blockes markiert, und dieser genau einmal vollständig durchlaufen wird.\\
 
     \noindent
     Ein \textbf{Pfad} ist ein \textbf{geschlossener Kantenzug} zwischen zwei Knoten.\\
@@ -98,8 +98,8 @@ Möglich sind u.a.
     \item \textbf{Kantenüberdeckung}: Jede Kante (also jeder Zweig eines Programmes) wird mindestens einmal durchlaufen. Nachteil: Nicht alle Kombinationen von Kanten werden berückscihtigt
     \item \textbf{Bedingungsüberdeckung}: Verschiedene Auswertungsmöglichkeiten der \textbf{Verzweigungsbedingung} werden berücksichtigt, bspw.
     \begin{itemize}
-        \item einfache Bedingungsüberdeckung: Jede atomare Bedingung in jeder Verzweigungsbedingung nimmt jeweils einmal den Wert $true$/$false$ an. Nachteil: Geringe Aussagekraft, insb. werden nicht immer zusammengesetzte Bedingungen genügend berücksichtigt. Messung der Überdeckung schwierig, wenn im Programm short-circuit evaluation verwendet wird.
-        \item mehrfache Bedingungsüberdeckung: alle Kombinationen der Wahrheitswerte treten auf. Jede Verzweigungsbedingung mit $n$ atomaren Bedingungen nimmt somit alle $2^n$ verschiedenen Kombinationen von $true$/$false$ an. Nachteil: Hoher Aufwand durch exponentielles Wachstum mit der Anzahl der atomaren Bedingungen.
+        \item \textbf{einfache Bedingungsüberdeckung}: Jede atomare Bedingung in jeder Verzweigungsbedingung nimmt jeweils einmal den Wert $true$/$false$ an. Nachteil: Geringe Aussagekraft, insb. werden nicht immer zusammengesetzte Bedingungen genügend berücksichtigt. Messung der Überdeckung schwierig, wenn im Programm short-circuit evaluation verwendet wird.
+        \item \textbf{mehrfache Bedingungsüberdeckung}: alle Kombinationen der Wahrheitswerte treten auf. Jede Verzweigungsbedingung mit $n$ atomaren Bedingungen nimmt somit alle $2^n$ verschiedenen Kombinationen von $true$/$false$ an. Nachteil: Hoher Aufwand durch exponentielles Wachstum mit der Anzahl der atomaren Bedingungen.
     \end{itemize}
     \item \textbf{Pfadüberdeckung}: Alle möglichen vollständigen Pfade werden mindestens einmal durchlaufen. Nachteil: ``Explosives Wachstum`` der Pfade bei Schleifen und Verzweigungen (\cite[406]{Bal97})
 \end{itemize}
@@ -112,7 +112,7 @@ Möglich sind u.a.
 
 \noindent
 Wenn die Anzahl der Schleifendurchläufe von der Eingabe abhängig ist, lässt sich eine obere Schranke für die Anzahl der Iterationen of nur schwer finden.\\
-Für eine vollständige Pfadüberdeckung bedeutet das, dass die Anzahl der möglichen zu durchlaufenden Pfade oft von exponentiellem Maß ist, und generell eine 100\%ige Pfadüberdeckung dadurch nur schwer erreicht werden kann (Anzahl der Testfälle, Dauer für die Tests).\\
+Für eine \textbf{vollständige Pfadüberdeckung} bedeutet das, dass die Anzahl der möglichen zu durchlaufenden Pfade oft von exponentiellem Maß ist, und generell eine 100\%ige Pfadüberdeckung dadurch nur schwer erreicht werden kann (Anzahl der Testfälle, Dauer für die Tests).\\
 Als ``gute Heuristik`` gibt das \textit{T\&V-Skript} die \textbf{vereinfachte Pfadüberdeckung} an, die aus folgenden Testfällen besteht:
 
 \begin{itemize}
